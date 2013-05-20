@@ -451,11 +451,18 @@ add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
 
 
 
-////Custom functions
+/**
+ * Custom functions by Artyficial Media
+ *
+ * artyficialmedia@gmail.com
+ */
 
-// DISABLE CERTAIN FIELDS
-function enqueue_gf_disable() {
-	wp_enqueue_script( 'gf-disable', plugins_url( '/scripts/gravity-forms-disable.js', dirname(__FILE__) ) );
-}
 
-add_action( 'wp_enqueue_scripts', 'enqueue_gf_disable' );
+// ADD UNIQUE IDENTIFIER
+function customer_reference(){
+	$number = mt_rand(100000, 999999);
+	return 'ES-' . substr($number,0,11).'-PR';
+};
+add_filter('gform_field_value_uuid', 'customer_reference');
+
+
