@@ -449,6 +449,15 @@ function twentytwelve_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
 
+
+
+/**
+ * Custom functions by Artyficial Media
+ *
+ * artyficialmedia@gmail.com
+ */
+
+
 // ADD UNIQUE IDENTIFIER
 function customer_reference(){
 	$number = mt_rand(100000, 999999);
