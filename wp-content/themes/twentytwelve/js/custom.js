@@ -5,5 +5,4 @@ $(function(){
 
 	$(".gform_wrapper .readonly input").attr('readonly', 'readonly').css("background","#CCC");
 
-
 })

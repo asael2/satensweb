@@ -449,31 +449,48 @@ function twentytwelve_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
 
+/*CUSTOM*/
+// GRAVITY FORMS FUNCTIONS
+
+add_filter("gform_name_first", "change_name_first", 2, 1);
+	function change_name_first($label, $form_id){
+return "Nombres";
+}
+
+add_filter("gform_name_last", "change_name_last", 2, 1);
+	function change_name_last($label, $form_id){
+return "Apellidos";
+}
+
 // ADD UNIQUE IDENTIFIER
-function customer_reference(){
-	$number = mt_rand(100000, 999999);
-	return 'ES-' . substr($number,0,11).'-PR';
-};
 add_filter('gform_field_value_uuid', 'customer_reference');
 
-/* Disable the Admin Bar. */
-add_filter( 'show_admin_bar', '__return_false' );
+function customer_reference(){
+	function reference(){
+		$number = mt_rand(100000, 999999);
+		$valor = substr($number,0,11);	
+		return $valor;
+	};
 
- function yoast_hide_admin_bar_settings() {
-?>
-	<style type="text/css">
-		.show-admin-bar {
-			display: none;
-		}
-	</style>
-<?php
+	$valor = reference();	
+	$newCustomId = 'ES-'.$valor.'-PR';
+	return $newCustomId;
 }
 
-function yoast_disable_admin_bar() {
-    add_filter( 'show_admin_bar', '__return_false' );
-    add_action( 'admin_print_scripts-profile.php', 
-         'yoast_hide_admin_bar_settings' );
-}
-add_action( 'init', 'yoast_disable_admin_bar' , 9 );
+/*add_filter('gform_field_value_your_parameter', 'my_custom_population_function');
+function my_custom_population_function($value){
+    return 'boom!';
+}*/
+
+/*
+add_filter('gform_field_value_genid', 'save_genid');
+function save_genid($savedValor){
+	this.$savedValor = $savedValor;
+	
+echo "saved: " . $savedValor;
+	return $savedValor;
+};
+*/
+
 
 ?>
