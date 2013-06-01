@@ -1,7 +1,7 @@
 <?php
 class GFCommon{
 
-    public static $version = "1.7.3";
+    public static $version = "1.7.5";
     public static $tab_index = 1;
     public static $errors = array();
 
@@ -1407,7 +1407,7 @@ class GFCommon{
         $replyTo = rgempty("replyToField", $form["notification"]) ? rgget("replyTo", $form["notification"]): rgget($form["notification"]["replyToField"], $lead);
 
         if(rgempty("routing", $form["notification"])){
-            $email_to = rgget("to", $form["notification"]);
+            $email_to = rgempty("toField", $form["notification"]) ? rgget("to", $form["notification"]) : rgget("toField", $form["notification"]);
         }
         else{
             $email_to = array();
@@ -1624,15 +1624,21 @@ class GFCommon{
         $bcc = str_replace(" ", "", $bcc);
 
         //invalid to email address or no content. can't send email
-        if(!GFCommon::is_valid_email($to) || (empty($subject) && empty($message)))
+        if(!GFCommon::is_valid_email($to) || (empty($subject) && empty($message))){
+         	GFCommon::log_debug("Cannot send email because either the TO address is invalid or there is no SUBJECT or MESSAGE.");
+         	GFCommon::log_debug(print_r(compact("to", "subject", "message"), true));
             return;
+		}
 
         if(!GFCommon::is_valid_email($from))
             $from = get_bloginfo("admin_email");
 
         //invalid from address. can't send email
-        if(!GFCommon::is_valid_email($from))
+        if(!GFCommon::is_valid_email($from)){
+         	GFCommon::log_debug("Cannot send email because the FROM address is invalid.");
+         	GFCommon::log_debug(print_r(compact("to", "from", "subject"), true));
             return;
+		}
 
         $content_type = $message_format == "html" ? "text/html" : "text/plain";
 
@@ -4733,7 +4739,7 @@ class GFCommon{
 
     public static function evaluate_conditional_logic($logic, $form, $lead) {
 
-        if(!$logic)
+        if(!$logic || !is_array($logic["rules"]))
             return true;
 
         $match_count = 0;
@@ -5221,6 +5227,22 @@ class GFCommon{
 
     }
 
+    private function requires_gf_vars() {
+        $dependent_scripts = array( 'gform_form_admin', 'gform_gravityforms', 'gform_form_editor' );
+        foreach( $dependent_scripts as $script ) {
+            $value = wp_script_is( $script );
+            if( wp_script_is( $script ) )
+                return true;
+        }
+        return false;
+    }
+
+    public static function maybe_output_gf_vars() {
+        if( self::requires_gf_vars() ){
+            echo '<script type="text/javascript">' . self::gf_vars(false) . '</script>';
+        }
+    }
+
 }
 
 class GFCategoryWalker extends Walker {
@@ -5333,8 +5355,13 @@ class GFCache {
         return $success;
     }
 
-    public static function flush() {
+    public static function flush($flush_persistent = false) {
         global $wpdb;
+
+        self::$_cache = array();
+
+        if(false === $flush_persistent)
+            return true;
 
         if (is_multisite()) {
             $sql = "
@@ -5353,8 +5380,6 @@ class GFCache {
         $rows_deleted = $wpdb->query($sql);
 
         $success = $rows_deleted !== false ? true : false;
-
-        self::$_cache = array();
 
         return $success;
     }

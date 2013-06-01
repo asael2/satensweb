@@ -95,7 +95,6 @@ Class GFNotification {
         <link rel="stylesheet" href="<?php echo GFCommon::get_base_url()?>/css/admin.css?ver=<?php echo GFCommon::$version ?>" />
 
         <script type="text/javascript">
-        <?php GFCommon::gf_vars(); ?>
 
         var gform_has_unsaved_changes = false;
         jQuery(document).ready(function(){

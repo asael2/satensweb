@@ -96,7 +96,6 @@ class GFFormSettings {
         <script type="text/javascript">
 
         <?php GFCommon::gf_global(); ?>
-        <?php GFCommon::gf_vars(); ?>
 
         var form = <?php echo json_encode($form); ?>;
         var fieldSettings = [];
@@ -862,7 +861,6 @@ class GFFormSettings {
         <?php $form = GFFormsModel::get_form_meta($form_id); ?>
 
         <script type="text/javascript">
-            <?php GFCommon::gf_vars(); ?>
             var form = <?php echo json_encode($form); ?>;
         </script>
 
@@ -897,8 +895,6 @@ class GFFormSettings {
         ?>
 
         <script type="text/javascript">
-
-            <?php GFCommon::gf_vars(); ?>
 
             var confirmation = <?php echo $confirmation ? json_encode($confirmation) : 'new ConfirmationObj()' ?>;
             var form = <?php echo json_encode($form); ?>;

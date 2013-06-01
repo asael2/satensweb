@@ -246,12 +246,20 @@ function twentytwelve_content_nav( $html_id ) {
 	$html_id = esc_attr( $html_id );
 
 	if ( $wp_query->max_num_pages > 1 ) : ?>
-		<nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
-			<h3 class="assistive-text"><?php _e( 'Post navigation', 'twentytwelve' ); ?></h3>
-			<div class="nav-previous alignleft"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'twentytwelve' ) ); ?></div>
-			<div class="nav-next alignright"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?></div>
-		</nav><!-- #<?php echo $html_id; ?> .navigation -->
-	<?php endif;
+
+<nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
+    <h3 class="assistive-text">
+        <?php _e( 'Post navigation', 'twentytwelve' ); ?>
+    </h3>
+    <div class="nav-previous alignleft">
+        <?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'twentytwelve' ) ); ?>
+    </div>
+    <div class="nav-next alignright">
+        <?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?>
+    </div>
+</nav>
+<!-- #<?php echo $html_id; ?> .navigation -->
+<?php endif;
 }
 endif;
 
@@ -273,18 +281,22 @@ function twentytwelve_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 		// Display trackbacks differently than normal comments.
 	?>
-	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		<p><?php _e( 'Pingback:', 'twentytwelve' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?></p>
-	<?php
+<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+    <p>
+        <?php _e( 'Pingback:', 'twentytwelve' ); ?>
+        <?php comment_author_link(); ?>
+        <?php edit_comment_link( __( '(Edit)', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?>
+    </p>
+    <?php
 			break;
 		default :
 		// Proceed with normal comments.
 		global $post;
 	?>
-	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<article id="comment-<?php comment_ID(); ?>" class="comment">
-			<header class="comment-meta comment-author vcard">
-				<?php
+<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+    <article id="comment-<?php comment_ID(); ?>" class="comment">
+        <header class="comment-meta comment-author vcard">
+            <?php
 					echo get_avatar( $comment, 44 );
 					printf( '<cite class="fn">%1$s %2$s</cite>',
 						get_comment_author_link(),
@@ -298,22 +310,27 @@ function twentytwelve_comment( $comment, $args, $depth ) {
 						sprintf( __( '%1$s at %2$s', 'twentytwelve' ), get_comment_date(), get_comment_time() )
 					);
 				?>
-			</header><!-- .comment-meta -->
-
-			<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentytwelve' ); ?></p>
-			<?php endif; ?>
-
-			<section class="comment-content comment">
-				<?php comment_text(); ?>
-				<?php edit_comment_link( __( 'Edit', 'twentytwelve' ), '<p class="edit-link">', '</p>' ); ?>
-			</section><!-- .comment-content -->
-
-			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'twentytwelve' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-			</div><!-- .reply -->
-		</article><!-- #comment-## -->
-	<?php
+        </header>
+        <!-- .comment-meta -->
+        
+        <?php if ( '0' == $comment->comment_approved ) : ?>
+        <p class="comment-awaiting-moderation">
+            <?php _e( 'Your comment is awaiting moderation.', 'twentytwelve' ); ?>
+        </p>
+        <?php endif; ?>
+        <section class="comment-content comment">
+            <?php comment_text(); ?>
+            <?php edit_comment_link( __( 'Edit', 'twentytwelve' ), '<p class="edit-link">', '</p>' ); ?>
+        </section>
+        <!-- .comment-content -->
+        
+        <div class="reply">
+            <?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'twentytwelve' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+        </div>
+        <!-- .reply --> 
+    </article>
+    <!-- #comment-## -->
+    <?php
 		break;
 	endswitch; // end comment_type check
 }
@@ -449,48 +466,75 @@ function twentytwelve_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
 
-/*CUSTOM*/
-// GRAVITY FORMS FUNCTIONS
 
-add_filter("gform_name_first", "change_name_first", 2, 1);
-	function change_name_first($label, $form_id){
-return "Nombres";
+
+// GRAVITY FORMS CUSTOM FUNCTIONS
+//LOAD CUSTOM JS
+add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
+function my_scripts_method() {
+	wp_enqueue_script(
+		'custom-script',
+		get_template_directory_uri() . '/js/custom.js',
+		array( 'jquery' )
+	);
 }
 
+// TRANSLATE NAME TAGS
+add_filter("gform_name_first", "change_name_first", 2, 1);
+function change_name_first($label, $form_id){
+	return "Nombres";
+}
 add_filter("gform_name_last", "change_name_last", 2, 1);
-	function change_name_last($label, $form_id){
-return "Apellidos";
+function change_name_last($label, $form_id){
+	return "Apellidos";
 }
 
 // ADD UNIQUE IDENTIFIER
 add_filter('gform_field_value_uuid', 'customer_reference');
-
 function customer_reference(){
-	function reference(){
-		$number = mt_rand(100000, 999999);
-		$valor = substr($number,0,11);	
-		return $valor;
-	};
-
-	$valor = reference();	
-	$newCustomId = 'ES-'.$valor.'-PR';
+	$number = mt_rand(100000, 999999);
+	$valor = substr($number,0,11);
+	$newCustomId = 'ES-'.$valor.'-PR';				
 	return $newCustomId;
 }
 
-/*add_filter('gform_field_value_your_parameter', 'my_custom_population_function');
-function my_custom_population_function($value){
-    return 'boom!';
-}*/
+//AJAX
+add_action('wp_ajax_nopriv_do_ajax', 'our_ajax_function');
+add_action('wp_ajax_do_ajax', 'our_ajax_function');
 
-/*
-add_filter('gform_field_value_genid', 'save_genid');
-function save_genid($savedValor){
-	this.$savedValor = $savedValor;
-	
-echo "saved: " . $savedValor;
-	return $savedValor;
-};
-*/
+function our_ajax_function(){
+     switch($_REQUEST['fn']){
+          case 'get_latest_posts':
+               $output = ajax_get_latest_posts($_REQUEST['count']);
+          break;
+		  case 'get_a_leads':
+               $output = ajax_get_a_leads($_REQUEST['leadid']);
+          break;
+          default:
+              $output = 'No function specified, check your jQuery.ajax() call';
+          break;
+     }
+
+	$output=json_encode($output);
+	if(is_array($output)){
+		print_r($output);   
+	}
+	else{
+		echo $output;
+	}
+	die;	
+}
+function ajax_get_latest_posts($count){
+	$posts = get_posts('numberposts='.$count);
+	return $posts;
+}
+
+function ajax_get_a_leads($leadid){
+	//$lead_id = $_GET["leadid"];
+    $lead = RGFormsModel::get_lead($leadid); 
+	//$lead =	GFFormsModel::get_leads(1);
+	return $lead;
+}
 
 
 ?>

@@ -727,6 +727,8 @@ class GFFormsModel {
         else
             $result = $wpdb->query( $wpdb->prepare("INSERT INTO $meta_table_name(form_id, $meta_name) VALUES(%d, %s)", $form_id, $form_meta ) );
 
+        self::$_current_forms[$form_id] = null;
+
         return $result;
     }
 
@@ -2064,7 +2066,7 @@ class GFFormsModel {
         // remove original post status and save it for later
         $post_status = $post_data['post_status'];
 
-        // replace original post status with 'draft' so other plugins no this post is not fully populated yet
+        // replace original post status with 'draft' so other plugins know this post is not fully populated yet
         $post_data['post_status'] = 'draft';
 
         // inserting post
@@ -2413,16 +2415,16 @@ class GFFormsModel {
             }
         }
         else{
-            //Deleting details for this field
-            $sql = $wpdb->prepare("DELETE FROM $lead_detail_table WHERE lead_id=%d AND field_number BETWEEN %s AND %s ", $lead["id"], doubleval($input_id) - 0.001, doubleval($input_id) + 0.001);
-            $wpdb->query($sql);
-
             //Deleting long field if there is one
             $sql = $wpdb->prepare("DELETE FROM $lead_detail_long_table
                                     WHERE lead_detail_id IN(
                                         SELECT id FROM $lead_detail_table WHERE lead_id=%d AND field_number BETWEEN %s AND %s
                                     )",
                                     $lead["id"], doubleval($input_id) - 0.001, doubleval($input_id) + 0.001);
+            $wpdb->query($sql);
+
+            //Deleting details for this field
+            $sql = $wpdb->prepare("DELETE FROM $lead_detail_table WHERE lead_id=%d AND field_number BETWEEN %s AND %s ", $lead["id"], doubleval($input_id) - 0.001, doubleval($input_id) + 0.001);
             $wpdb->query($sql);
         }
     }

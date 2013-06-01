@@ -82,7 +82,7 @@ function CreateConditionalLogic(objectType, obj){
 
     if(!obj.conditionalLogic)
         obj.conditionalLogic = new ConditionalLogic();
-
+    
     var hideSelected = obj.conditionalLogic.actionType == "hide" ? "selected='selected'" :"";
     var showSelected = obj.conditionalLogic.actionType == "show" ? "selected='selected'" :"";
     var allSelected = obj.conditionalLogic.logicType == "all" ? "selected='selected'" :"";
@@ -100,14 +100,18 @@ function CreateConditionalLogic(objectType, obj){
         objText = gf_vars.thisNotification
     else
         objText = gf_vars.thisFormButton;
-
-    objText = gform.applyFilters( 'gform_conditional_logic_description', objText, obj );
-
-    var str = "<select id='" + objectType + "_action_type' onchange='SetConditionalProperty(\"" + objectType + "\", \"actionType\", jQuery(this).val());'><option value='show' " + showSelected + ">" + gf_vars.show + "</option><option value='hide' " + hideSelected + ">" + gf_vars.hide + "</option></select>";
-    str += objText;
-    str += "<select id='" + objectType + "_logic_type' onchange='SetConditionalProperty(\"" + objectType + "\", \"logicType\", jQuery(this).val());'><option value='all' " + allSelected + ">" + gf_vars.all + "</option><option value='any' " + anySelected + ">" + gf_vars.any + "</option></select>";
-    str += " " + gf_vars.ofTheFollowingMatch;
-
+    
+    var descPieces = {};
+    descPieces.actionType = "<select id='" + objectType + "_action_type' onchange='SetConditionalProperty(\"" + objectType + "\", \"actionType\", jQuery(this).val());'><option value='show' " + showSelected + ">" + gf_vars.show + "</option><option value='hide' " + hideSelected + ">" + gf_vars.hide + "</option></select>";
+    descPieces.objectDescription = objText;
+    descPieces.logicType = "<select id='" + objectType + "_logic_type' onchange='SetConditionalProperty(\"" + objectType + "\", \"logicType\", jQuery(this).val());'><option value='all' " + allSelected + ">" + gf_vars.all + "</option><option value='any' " + anySelected + ">" + gf_vars.any + "</option></select>";
+    descPieces.ofTheFollowingMatch = gf_vars.ofTheFollowingMatch;
+    
+    descPiecesArr = makeArray( descPieces );
+    
+    var str = descPiecesArr.join(' ');
+    var str = gform.applyFilters( 'gform_conditional_logic_description', str, descPieces, objectType, obj );
+    
     for(var i=0; i < obj.conditionalLogic.rules.length; i++){
         var isSelected = obj.conditionalLogic.rules[i].operator == "is" ? "selected='selected'" :"";
         var isNotSelected = obj.conditionalLogic.rules[i].operator == "isnot" ? "selected='selected'" :"";
@@ -117,7 +121,7 @@ function CreateConditionalLogic(objectType, obj){
         var startsWithSelected = obj.conditionalLogic.rules[i].operator == "starts_with" ? "selected='selected'" :"";
         var endsWithSelected = obj.conditionalLogic.rules[i].operator == "ends_with" ? "selected='selected'" :"";
 
-        str += "<div width='100%'>" + GetRuleFields(objectType, i, obj.conditionalLogic.rules[i].fieldId);
+        str += "<div width='100%' class='gf_conditional_logic_rules_container'>" + GetRuleFields(objectType, i, obj.conditionalLogic.rules[i].fieldId);
         str += "<select id='" + objectType + "_rule_operator_" + i + "' onchange='SetRuleProperty(\"" + objectType + "\", " + i + ", \"operator\", jQuery(this).val());'><option value='is' " + isSelected + ">" + gf_vars.is + "</option><option value='isnot' " + isNotSelected + ">" + gf_vars.isNot + "</option><option value='>' " + greaterThanSelected + ">" + gf_vars.greaterThan + "</option><option value='<' " + lessThanSelected + ">" + gf_vars.lessThan + "</option><option value='contains' " + containsSelected + ">" + gf_vars.contains + "</option><option value='starts_with' " + startsWithSelected + ">" + gf_vars.startsWith + "</option><option value='ends_with' " + endsWithSelected + ">" + gf_vars.endsWith + "</option></select>";
         str += GetRuleValues(objectType, i, obj.conditionalLogic.rules[i].fieldId, obj.conditionalLogic.rules[i].value);
         str += "<img src='" + gf_vars.baseUrl + "/images/add.png' class='add_field_choice' title='add another rule' alt='add another rule' style='cursor:pointer; margin:0 3px;' onclick=\"InsertRule('" + objectType + "', " + (i+1) + ");\" />";
@@ -544,7 +548,7 @@ function ConfirmationObj() {
 
         f = window.form;
         id = isSet(f) ? f.id : 0;
-
+        
     };
 
     gaddon.toggleFeedActive = function(img, addon_slug, feed_id){
@@ -577,7 +581,7 @@ function ConfirmationObj() {
         $("#single_action_argument").val(id);
         $("#gform-settings").submit();
     }
-
+    
     function isValidJson(str) {
         try {
             JSON.parse(str);
@@ -1110,4 +1114,64 @@ var gfMergeTagsObj = function(form) {
 
     this.init();
 
+}
+
+var FeedConditionObj = function( args ) {
+    
+    this.strings = isSet( args.strings ) ? args.strings : {};
+    this.logicObject = args.logicObject;
+    
+    this.init = function() {
+        
+        var fcobj = this;
+        
+        gform.addFilter( 'gform_conditional_object', 'FeedConditionConditionalObject' );
+        gform.addFilter( 'gform_conditional_logic_description', 'FeedConditionConditionalDescription' );
+        
+        jQuery(document).ready(function(){
+            ToggleConditionalLogic( true, "feed_condition" );    
+        });
+        
+        jQuery('input#feed_condition_conditional_logic').parents('form').on('submit', function(){
+            jQuery('input#feed_condition_conditional_logic_object').val( JSON.stringify( fcobj.logicObject ) );
+        });
+            
+    }
+    
+    this.init();
+    
+}
+
+function FeedConditionConditionalObject( object, objectType ) {
+    
+    if( objectType != 'feed_condition' )
+        return object;
+    
+    return feedCondition.logicObject;
+}
+
+function FeedConditionConditionalDescription( description, descPieces, objectType, obj ) {
+    
+    if( objectType != 'feed_condition' )
+        return description;
+    
+    descPieces.actionType = descPieces.actionType.replace('<select', '<select style="display:none;"');
+    descPieces.objectDescription = feedCondition.strings.objectDescription;
+    var descPiecesArr = makeArray( descPieces );
+    
+    return descPiecesArr.join(' ');
+}
+
+function makeArray( object ) {
+    var array = [];
+    for( i in object ) {
+        array.push( object[i] );
+    }
+    return array;
+}
+
+function isSet( $var ) {
+    if (typeof $var != 'undefined')
+        return true
+    return false
 }

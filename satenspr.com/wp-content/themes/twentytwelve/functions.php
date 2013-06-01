@@ -449,18 +449,20 @@ function twentytwelve_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
 
-/*CUSTOM*/
-// GRAVITY FORMS FUNCTIONS
-// Traducir Labels
+
+// GRAVITY FORMS FUNCTIONS /*CUSTOM*/
+
 add_filter("gform_name_first", "change_name_first", 2, 1);
-	function change_name_first($label, $form_id){
+function change_name_first($label, $form_id){
 	return "Nombres";
 }
+
 add_filter("gform_name_last", "change_name_last", 2, 1);
-	function change_name_last($label, $form_id){
+function change_name_last($label, $form_id){
 	return "Apellidos";
 }
-// Crear identificador unico
+
+// ADD UNIQUE IDENTIFIER
 add_filter('gform_field_value_uuid', 'customer_reference');
 function customer_reference(){
 	$number = mt_rand(100000, 999999);
@@ -469,20 +471,43 @@ function customer_reference(){
 	return $newCustomId;
 }
 
-/*add_filter('gform_field_value_your_parameter', 'my_custom_population_function');
-function my_custom_population_function($value){
-    return 'boom!';
-}*/
+function my_scripts_method() {
+	wp_enqueue_script(
+		'custom-script',
+		get_template_directory_uri() . '/js/custom.js',
+		array( 'jquery' )
+	);
+}
+
+add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
+
+
+
+add_action("kws_gf_directory_detail_".$lead_id, "post_to_third_party");
+
+function post_to_third_party($entry, $form) {
+    
+	//$post_url = 'http://www.satenspr.com/?page_id=27&leadid=14&form=1';
+
+    $body = array(
+	'first_name' => $lead_id, 
+        'last_name' => $entry, 
+        'message' => $entry['3']
+        );
+    echo $body;
+  //  $request = new WP_Http();
+   // $response = $request->post($post_url);
+    
+}
+
+
+
 
 /*
-add_filter('gform_field_value_genid', 'save_genid');
-function save_genid($savedValor){
-	this.$savedValor = $savedValor;
+url
+http://www.satenspr.com/?page_id=10&leadid=13&form=1
 	
-echo "saved: " . $savedValor;
-	return $savedValor;
-};
+
+$myrows = $wpdb->get_results( "SELECT id, name FROM mytable" );
 */
-
-
 ?>

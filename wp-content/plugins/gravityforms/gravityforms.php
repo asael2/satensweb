@@ -3,7 +3,7 @@
 Plugin Name: Gravity Forms
 Plugin URI: http://www.gravityforms.com
 Description: Easily create web forms and manage form entries within the WordPress admin.
-Version: 1.7.3
+Version: 1.7.5
 Author: rocketgenius
 Author URI: http://www.rocketgenius.com
 
@@ -102,6 +102,7 @@ class GFForms {
     public static function init(){
 
         add_filter("gform_logging_supported", array("RGForms", "set_logging_supported"));
+        add_action( 'admin_head', array( 'GFCommon', 'maybe_output_gf_vars' ) );
 
         self::register_scripts();
 
@@ -214,8 +215,7 @@ class GFForms {
         add_shortcode('gravityforms', array('RGForms', 'parse_shortcode'));
     }
 
-    public static function set_logging_supported($plugins)
-    {
+    public static function set_logging_supported($plugins){
         $plugins["gravityforms"] = "Gravity Forms Core";
         return $plugins;
     }
@@ -537,8 +537,8 @@ class GFForms {
             "common" => array("qtip-init", "sack"),
             "gf_edit_forms" => array("backbone", "editor", "gform_forms", "gform_form_admin", "gform_form_editor", "gform_gravityforms", "gform_json", "gform_menu", "gform_placeholder", "jquery-ui-autocomplete", "jquery-ui-core", "jquery-ui-datepicker", "jquery-ui-sortable", "jquery-ui-tabs", "json2", "media-editor", "media-models", "media-upload", "media-views", "plupload", "plupload-flash", "plupload-html4", "plupload-html5", "plupload-silverlight", "quicktags", "rg_currency", "thickbox", "word-count", "wp-plupload", "wpdialogs-popup", "wplink"),
             "gf_edit_forms_notification" => array("editor", "word-count", "quicktags", "wpdialogs-popup", "media-upload", "wplink", "backbone", "jquery-ui-sortable", "json2", "media-editor", "media-models", "media-views", "plupload", "plupload-flash", "plupload-html4", "plupload-html5", "plupload-silverlight", "wp-plupload", "gform_placeholder", "gform_json", "jquery-ui-autocomplete"),
-            "gf_new_form" => array("thickbox", "jquery-ui-core", "jquery-ui-sortable", "jquery-ui-tabs", "rg_currency", "gforms_gravityforms" ),
-            "gf_entries" => array("thickbox", "gforms_gravityforms", "wp-lists", "gform_json"),
+            "gf_new_form" => array("thickbox", "jquery-ui-core", "jquery-ui-sortable", "jquery-ui-tabs", "rg_currency", "gform_gravityforms" ),
+            "gf_entries" => array("thickbox", "gform_gravityforms", "wp-lists", "gform_json"),
             "gf_settings" => array(),
             "gf_export" => array("gform_form_admin","jquery-ui-datepicker"),
             "gf_help" => array(),
@@ -1239,6 +1239,7 @@ class GFForms {
         case 'new_form' :
         case 'form_list':
             $scripts = array(
+                'gform_gravityforms',
                 'gform_json',
                 'gform_form_admin',
                 'thickbox'

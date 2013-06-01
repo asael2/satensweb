@@ -82,8 +82,6 @@ class GFFormList{
         <script type="text/javascript" src="<?php echo GFCommon::get_base_url() . '/js/form_admin.js' ?>"></script>
         <script type="text/javascript">
 
-            <?php GFCommon::gf_vars(); ?>
-
             jQuery(document).ready(function($) {
 
                 <?php if(rgget('page') == 'gf_new_form'): ?>
