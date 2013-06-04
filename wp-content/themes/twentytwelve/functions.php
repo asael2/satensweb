@@ -501,11 +501,15 @@ function customer_reference(){
 //AJAX
 add_action('wp_ajax_nopriv_do_ajax', 'our_ajax_function');
 add_action('wp_ajax_do_ajax', 'our_ajax_function');
+function ajax_get_latest_posts($count){
+	$posts = get_posts('numberposts='.$count);
+	return $posts;
+}
 
 function our_ajax_function(){
      switch($_REQUEST['fn']){
-          case 'get_latest_posts':
-               $output = ajax_get_latest_posts($_REQUEST['count']);
+         case 'get_a_formeta':
+               $output = ajax_get_a_formeta($_REQUEST['formMeta']);
           break;
 		  case 'get_a_leads':
                $output = ajax_get_a_leads($_REQUEST['leadid']);
@@ -524,9 +528,11 @@ function our_ajax_function(){
 	}
 	die;	
 }
-function ajax_get_latest_posts($count){
-	$posts = get_posts('numberposts='.$count);
-	return $posts;
+
+function ajax_get_a_formeta(){
+	$form_id = $_GET["form"];
+    $formMeta = RGFormsModel::get_form_meta($form_id); 
+	return $formMeta;
 }
 
 function ajax_get_a_leads($leadid){
@@ -535,6 +541,53 @@ function ajax_get_a_leads($leadid){
 	//$lead =	GFFormsModel::get_leads(1);
 	return $lead;
 }
+
+// GET INPUT VALUES
+add_action("gform_after_submission", "after_submission", 24, 1);
+
+function after_submission($entry, $form){
+
+    $name = $entry["2"];
+    $address = $entry["17"] . ', '. $entry["18"] .', '. $entry["19"];
+	echo '<h1>'.$name.'</h1>';
+}
+
+
+function display_referrer($entry_id) {
+    
+    $referrer = gform_get_meta($entry_id, 'referrer');
+    echo $referrer;
+    
+}
+
+
+
+
+// this 
+add_action('gform_after_submission_1', 'get_value_by_label', 10, 2);
+ 
+// generic logging function
+
+
+
+function get_value_by_label($key, $form, $entry) {
+	
+	foreach ($form['fields'] as &$field) {
+	
+		if ($field['type'] == ‘hidden’) {
+			$lead_key = $field['label'];
+		} else {
+			$lead_key = $field['adminLabel'];
+		}
+	
+		if ($lead_key == $key) {
+			return $entry[$field['id']];
+		}
+	}
+	
+	return false;
+}
+
 
 
 ?>

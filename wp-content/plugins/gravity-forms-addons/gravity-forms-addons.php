@@ -1535,7 +1535,7 @@ class GFDirectory {
         </form>';
         #echo $output;
 		return $output;
-#		echo $output;
+		echo $output;
 #		echo '<pre>'; print_r($filters, false).'</pre>';
 
 #		echo '<h3>Form ID #'.$form_id.'</h3>';
