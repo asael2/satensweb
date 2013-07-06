@@ -1,0 +1,374 @@
+<!--
+You are free to copy and use this sample in accordance with the terms of the
+Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>SATENS | Informe 9: Estudiante-Padre Apreciación de la Ayuda para las Clases, Tomar Exámenes, Problemas de Lectura, Escritura y Matemáticas</title>
+    
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+
+//LOADS CHART PACKAGES
+google.load("visualization", "1", {packages:["corechart"]});
+google.load('visualization', '1', {packages:['table']});
+
+//ID DE ESTUDIANTE
+
+function idest() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', ' ');
+        data.addColumn('string', ' ');
+        data.addColumn('string', ' ');
+		data.addColumn('string', ' ');
+        data.addRows([
+          ['Nombre',  'Edwin', 'Género', 'Masculino'],
+          ['Apellido',   'Merced',  'Grado', ' Noveno'],
+          ['Número de Record', '001', 'Fecha de Nacimiento', '01/01/2013']
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('estid'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+
+//PIE CHART1
+
+function piechart1() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  1],
+	['Nada', 1],
+	['Un Poco', 1],
+	['Bastante', 1],
+	['Mucho', 4],
+	
+	
+	]);
+
+	var options = {
+		title: 'Por Ciento Estimado de la Ayuda de Acomodos Para las Clases',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('piecharta'));
+	charte.draw(datae, options);
+
+}
+//CHART 1      
+
+function chart1() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Durante las clases');
+        data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'Nada');
+		data.addColumn('boolean', 'Un Poco');
+		data.addColumn('boolean', 'Bastante');
+		data.addColumn('boolean', 'Mucho');
+		
+        data.addRows([['Grabar al maestro durante la clase',  true, null, null, null, null]]);
+        data.addRows([['Tener tiempo adicional para realizar las tarea',  null, true, null, null, null]]);
+		data.addRows([['Hacer anotaciones de la clase',  null, null, true, null, null]]);
+        data.addRows([['Grabar los libros de texto',  null, null, null, true, null]]);
+		data.addRows([['Usar una computadora para escribir',  null, null, null, null, true]]);
+        data.addRows([['Hacer tareas y pruebas alternas',  null, null, null, null, true]]);
+		data.addRows([['Hacer preguntas durante las clases',  null, null, null, null, true]]);
+        data.addRows([['Participar de un grupo de estudio',  null, null, null, null, true]]);
+		
+
+        var table = new google.visualization.Table(document.getElementById('visualizationa'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+	  
+//CHART 2  
+
+
+function piechart2() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  0],
+	['Nada', 1],
+	['Un Poco', 1],
+	['Bastante', 1],
+	['Mucho', 1],
+	
+	
+	]);
+
+	var options = {
+		title: 'Por Ciento Estimado de la Ayuda de Acomodos Para  Tomar Exámenes',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('piechartb'));
+	charte.draw(datae, options);
+
+}
+    
+function chart2() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Al prepararte para una prueba/examen, ¿Cuáles acomodos serian de mayor beneficio para ti?');
+        data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'Nada');
+		data.addColumn('boolean', 'Un Poco');
+		data.addColumn('boolean', 'Bastante');
+		data.addColumn('boolean', 'Mucho');
+		
+        data.addRows([['Pedir tiempo adicional para completar el examen',  null, true, null, null, null]]);
+        data.addRows([['Tomar el examen en otro salón (ej: menos ruidoso, ventilado, iluminado, otro.)',  null, null, true, null, null]]);
+		data.addRows([['Pedir que el examen sea dado de forma oral',  null, null, null, true, null]]);
+        data.addRows([['Pedir asistencia en las áreas de escritura',  null, null, null, null, true]]);
+		
+
+        var table = new google.visualization.Table(document.getElementById('visualizationb'));
+        table.draw(data, {showRowNumber: false});
+      }	 	  
+	
+//CHART 3 
+
+
+function piechart3() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  0],
+	['Nada', 0],
+	['Un Poco', 1],
+	['Bastante', 1],
+	['Mucho', 1],
+	
+	
+	]);
+
+	var options = {
+		title: 'Por Ciento Estimado de la Ayuda de Acomodos Para la Lectura',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('piechartc'));
+	charte.draw(datae, options);
+
+}
+     
+function chart3() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'De presentar dificultad con la lectura, ¿Cuáles acomodos serían de mayor beneficio para ti?');
+        data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'Nada');
+		data.addColumn('boolean', 'Un Poco');
+		data.addColumn('boolean', 'Bastante');
+		data.addColumn('boolean', 'Mucho');
+		
+        data.addRows([['Pedir que alguien lea en voz alta los textos',  null, null, true, null, null]]);
+        data.addRows([['Pedir guías de estudio',  null, null, null, true, null]]);
+		data.addRows([['Pedir tiempo adicional para leer',  null, null, null, null, true]]);
+ 
+		
+
+        var table = new google.visualization.Table(document.getElementById('visualizationc'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+	  
+//CHART 4 
+
+function piechart4() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  1],
+	['Nada', 1,],
+	['Un Poco', 1],
+	['Bastante', 1],
+	['Mucho', 1],
+	
+	
+	]);
+
+	var options = {
+		title: 'Por Ciento Estimado de la Ayuda de Acomodos Para la Escritura',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('piechartd'));
+	charte.draw(datae, options);
+
+}
+
+   
+function chart4() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'De presentar dificultad con la escritura, ¿Cuáles acomodos serían de mayor beneficio para ti?');
+       data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'Nada');
+		data.addColumn('boolean', 'Un Poco');
+		data.addColumn('boolean', 'Bastante');
+		data.addColumn('boolean', 'Mucho');
+		
+        data.addRows([['Pedir que me revisen los escritos para corregirlos',  true, null, null, null, null]]);
+        data.addRows([['Dictarme el trabajo para luego escribirlo',  null, true, null, null, null]]);
+		data.addRows([['Presentar trabajos de forma oral',  null, null, true, null, null]]);
+        data.addRows([['Solicitar a alguien que tome notas en clase',  null, null, null, true, null]]);
+		data.addRows([['Grabar las clases',  null, null, null, null, true]]);
+
+		
+
+        var table = new google.visualization.Table(document.getElementById('visualizationd'));
+        table.draw(data, {showRowNumber: false});
+      }	 	  
+	  
+//CHART 5 
+
+
+function piechart5() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  1],
+	['Nada', 1,],
+	['Un Poco', 1],
+	['Bastante', 1],
+	['Mucho', 2],
+	
+	
+	]);
+
+	var options = {
+		title: 'Por Ciento Estimado de la Ayuda de Acomodos Para Matemáticas',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('piecharte'));
+	charte.draw(datae, options);
+
+}
+
+    
+function chart5() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'De presentar dificultad con las matemáticas, ¿Cuáles acomodos serían de mayor beneficio para ti?');
+        data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'Nada');
+		data.addColumn('boolean', 'Un Poco');
+		data.addColumn('boolean', 'Bastante');
+		data.addColumn('boolean', 'Mucho');
+		
+        data.addRows([['Pedir explicaciones adicionales',  true, null, null, null, null]]);
+        data.addRows([['Hacer lista de los pasos para resolver un problema',  null, true, null, null, null]]);
+		data.addRows([['Programar periodo para trabajar individualmente con la maestra',  null, null, true, null, null]]);
+        data.addRows([['Utilizar papel cuadriculado',  null, null, null, true, null]]);
+		data.addRows([['Utilizar una calculadora gráfica',  null, null, null, null, true]]);
+        data.addRows([['Pedir que lean el examen en un grupo pequeño',  null, null, null, null, true]]);
+
+		
+
+        var table = new google.visualization.Table(document.getElementById('visualizatione'));
+        table.draw(data, {showRowNumber: false});
+      }	
+	  
+//CHART 6  
+
+function piechart6() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  1],
+	['Nada', 1,],
+	['Un Poco', 1],
+	['Bastante', 1],
+	['Mucho', 1],
+	
+	
+	]);
+
+	var options = {
+		title: 'Por Ciento Estimado de la Ayuda de Acomodos Para Organizarse',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('piechartf'));
+	charte.draw(datae, options);
+
+}
+
+
+    
+function chart6() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'De presentar dificultad con la organización, ¿Cuáles acomodos serían de mayor beneficio para ti?');
+        data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'Nada');
+		data.addColumn('boolean', 'Un Poco');
+		data.addColumn('boolean', 'Bastante');
+		data.addColumn('boolean', 'Mucho');
+		
+        data.addRows([['Pedir una descripción escrita del curso',  true, null, null, null, null]]);
+        data.addRows([['Tener las tareas/trabajo antes de tiempo',  null, true, null, null, null]]);
+		data.addRows([['Mantener un calendario con todas las tareas y trabajos',  null, null, true, null, null]]);
+        data.addRows([['Fragmentar tareas o trabajos extensos en partes',  null, null, null, true, null]]);
+		data.addRows([['Pedir al maestro que verifique mi plan de las tareas del curso',  null, null, null, null, true]]);
+		
+
+        var table = new google.visualization.Table(document.getElementById('visualizationf'));
+        table.draw(data, {showRowNumber: false});
+      }	  
+	  
+// CALLBACKS
+  	  google.setOnLoadCallback(idest);
+	  
+  	  google.setOnLoadCallback(chart1);
+	   google.setOnLoadCallback(piechart1);
+      google.setOnLoadCallback(chart2);
+	  google.setOnLoadCallback(piechart2);
+	  google.setOnLoadCallback(chart3);
+	  google.setOnLoadCallback(piechart3);
+	  google.setOnLoadCallback(chart4);
+	  google.setOnLoadCallback(piechart4);
+	  google.setOnLoadCallback(chart5);
+	  google.setOnLoadCallback(piechart5);
+	  google.setOnLoadCallback(chart6); 
+	  google.setOnLoadCallback(piechart6); 
+	  
+    </script>
+    
+   
+  <style type="text/css">
+  body h1 {
+	color: #80455f;
+}
+  body h2 {
+	color: #FFF;
+	background-color: #80455f;
+}
+  </style>
+  
+
+  </head>
+  <body style="font-family: Arial; border: 0 none; font-size: 16px;">
+  
+  <h1>Informe 9: Estudiante-Padre Apreciación de la Ayuda de Acomodos* para las Clases, Tomar Exámenes, Problemas de Lectura, Escritura y Matemáticas</h1>
+  
+  <hr />
+    <h2>Información del Estudiante</h2>
+    <div id="estid" style="width: 600px; height: 101px;"></div>
+  <hr />
+  <p>*Estos acomodos identificados por el estudante (y su parde o encargado) deben ser evaluados por la escuela o institución educativa, de acuerdo a la necesidad del estudiante, según aplique.
+  <h2>Estimado de la Ayuda de Acomodos Para las Clases</h2>
+  <div id="piecharta" style="width: 600px; height: 275px;"></div>
+  <div id="visualizationa" style="width: 600px; height: 275px;"></div>
+  <h2>Estimado de la Ayuda de Acomodos Para  Tomar Exámenes</h2>
+  <div id="piechartb" style="width: 600px; height: 275px;"></div>
+  <div id="visualizationb" style="width: 600px; height: 250px;"></div>
+  <h2>Estimado de la Ayuda de Acomodos Para la Lectura</h2>
+  <div id="piechartc" style="width: 600px; height: 275px;"></div>
+  <div id="visualizationc" style="width: 600px; height: 175px;"></div>
+  <h2>Estimado de la Ayuda de Acomodos Para la Escritura</h2>
+   <div id="piechartd" style="width: 600px; height: 275px;"></div>
+  <div id="visualizationd" style="width: 600px; height: 225px;"></div>
+  <h2>Estimado de la Ayuda de Acomodos Para Matemáticas</h2>
+   <div id="piecharte" style="width: 600px; height: 275px;"></div>
+  <div id="visualizatione" style="width: 600px; height: 275px;"></div>
+  <h2>Estimado de la Ayuda de Acomodos Para Organizarse</h2>
+   <div id="piechartf" style="width: 600px; height: 275px;"></div>
+  <div id="visualizationf" style="width: 600px; height: 275px;"></div>
+
+</body>
+</html>
+​

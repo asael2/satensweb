@@ -1,0 +1,305 @@
+<!--
+You are free to copy and use this sample in accordance with the terms of the
+Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>SATENS | Informe 5: Auto Conocimiento de Información sobre su Necesidad Especial/Discapacidad</title>
+    
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+//LOADS CHART PACKAGES
+google.load("visualization", "1", {packages:["corechart"]});
+google.load('visualization', '1', {packages:['table']});
+
+//ID DE ESTUDIANTE
+
+function idest() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', ' ');
+        data.addColumn('string', ' ');
+        data.addColumn('string', ' ');
+		data.addColumn('string', ' ');
+        data.addRows([
+          ['Nombre',  'Edwin', 'Género', 'Masculino'],
+          ['Apellido',   'Merced',  'Grado', ' Noveno'],
+          ['Número de Record', '001', 'Fecha de Nacimiento', '01/01/2013']
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('estid'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+
+//CHART 1      
+
+	  
+
+		
+		
+		function chart1() {
+        var data = google.visualization.arrayToDataTable([
+     ['Respuesta | Sí = 1 No = 0', 'Valor'],
+          ['Respuesta | Sí = 1 No = 0',  1],
+        ]);
+        var options = {
+          title: 'Conoce lo que es una discapacidad/impedimento',
+		  legend: {position: 'none'},
+		  vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, title:'Respuesta | Sí = 1 No = 0'},
+		  tooltip: {trigger: 'none'},
+		  bar: {groupWidth: 100}
+		 
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('visualizationa'));
+        chart.draw(data, options);
+		}  	  
+
+//CHART 2      
+	/*function chart2() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Identifica su discapacidad / impedimento');
+        data.addColumn('boolean', 'Selección');
+        data.addRows([
+          ['Sí', true],
+          ['No', null]
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('visualizationb'));
+        table.draw(data, {showRowNumber: false});
+      }*/
+
+
+		
+				function chart2() {
+        var data = google.visualization.arrayToDataTable([
+     ['Respuesta | Sí = 1 No = 0', 'Valor'],
+          ['Respuesta | Sí = 1 No = 0',  1],
+        ]);
+        var options = {
+          title: 'Identifica su discapacidad / impedimento',
+		  legend: {position: 'none'},
+		  vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, title:'Respuesta | Sí = 1 No = 0'},
+		  tooltip: {trigger: 'none'},
+		  bar: {groupWidth: 100}
+		 
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('visualizationb'));
+        chart.draw(data, options);
+		}  
+	  
+
+// TEXT REPORT HERE
+
+
+//CHART 3	  
+	/*	function chart3() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', '¿Conoce sobre el Plan Educativo Individualizado (PEI)  y como le ayuda al presente y para el futuro con sus planes de estudio?');
+        data.addColumn('boolean', 'Selección');
+        data.addRows([
+          ['Sí', true],
+          ['No', null]
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('visualizationc'));
+        table.draw(data, {showRowNumber: false});
+      }*/
+	  
+//COMMENT 1
+
+ function comment1() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Cómo describe en sus propias palabras su discapacidad o impedimento');
+        data.addRows([
+          ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elit tortor, ornare facilisis quam quis, vestibulum volutpat enim. Phasellus rutrum, quam et hendrerit posuere, sem massa sodales arcu, nec vestibulum massa justo vel tellus. Nullam quis cursus ligula. Suspendisse bibendum posuere eros, non eleifend lectus. Vivamus volutpat ac nulla eget dictum. Vivamus non leo lobortis, mattis nulla ac, bibendum ligula. Sed mattis blandit tempor.'],
+
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('commenta'));
+        table.draw(data, {showRowNumber: false});
+      }	  
+	  
+//CHART3	  
+		
+
+function chart3() {
+        var data = google.visualization.arrayToDataTable([
+     ['Respuesta | Sí = 1 No = 0', 'Valor'],
+          ['Respuesta | Sí = 1 No = 0',  1],
+        ]);
+        var options = {
+          title: '¿Conoce sobre el Plan Educativo Individualizado (PEI)  y como le ayuda al presente y para el futuro con sus planes de estudio?',
+		  legend: {position: 'none'},
+		  vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, title:'Respuesta | Sí = 1 No = 0'},
+		  tooltip: {trigger: 'none'},
+		  bar: {groupWidth: 100}
+		 
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('visualizationc'));
+        chart.draw(data, options);
+		}  
+	  
+
+
+//CHART 4
+
+			
+				function chart4() {
+        var data = google.visualization.arrayToDataTable([
+     ['Respuesta | Sí = 1 No = 0', 'Valor'],
+          ['Respuesta | Sí = 1 No = 0',  1],
+        ]);
+        var options = {
+          title: 'Ha asistido a reuniones en la escuela para hablar sobre su PEI con un grupo de maestro/a, trabajador/a social, consejero/a, madre/padre y otros.',
+		  legend: {position: 'none'},
+		  vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, title:'Respuesta | Sí = 1 No = 0'},
+		  tooltip: {trigger: 'none'},
+		  bar: {groupWidth: 100}
+		 
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('visualizationd'));
+        chart.draw(data, options);
+		} 
+			  
+	  
+//COMMENT 2
+
+ function comment2() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Cómo el PEI puede ser de ayuda al presente y en el futuro');
+        data.addRows([
+          ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elit tortor, ornare facilisis quam quis, vestibulum volutpat enim. Phasellus rutrum, quam et hendrerit posuere, sem massa sodales arcu, nec vestibulum massa justo vel tellus. Nullam quis cursus ligula. Suspendisse bibendum posuere eros, non eleifend lectus. Vivamus volutpat ac nulla eget dictum. Vivamus non leo lobortis, mattis nulla ac, bibendum ligula. Sed mattis blandit tempor.'],
+
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('commentb'));
+        table.draw(data, {showRowNumber: false});
+      }	  
+	  
+//CHART 5
+/*function chart5() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', '¿Conoce el significado de auto-abogacía?');
+        data.addColumn('boolean', 'Selección');
+        data.addRows([
+          ['Sí', true],
+          ['No', null]
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('visualizatione'));
+        table.draw(data, {showRowNumber: false});
+      } */
+	  
+	  
+		
+			function chart5() {
+        var data = google.visualization.arrayToDataTable([
+     ['Respuesta | Sí = 1 No = 0', 'Valor'],
+          ['Respuesta | Sí = 1 No = 0',  1],
+        ]);
+        var options = {
+          title: '¿Conoce el significado de auto-abogacía?',
+		  legend: {position: 'none'},
+		  vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, title:'Respuesta | Sí = 1 No = 0'},
+		  tooltip: {trigger: 'none'},
+		  bar: {groupWidth: 100}
+		 
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('visualizatione'));
+        chart.draw(data, options);
+		} 
+	  
+//CHART 6 
+
+ /*	function chart6() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', '¿Conoce sobre organizaciones del gobierno y comunitarias o personas que pueden ayudarle a defender sus derechos?');
+        data.addColumn('boolean', 'Selección');
+        data.addRows([
+          ['Sí', true],
+          ['No', null]
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('visualizationf'));
+        table.draw(data, {showRowNumber: false});
+      }*/
+	  
+	
+		
+				function chart6() {
+        var data = google.visualization.arrayToDataTable([
+     ['Respuesta | Sí = 1 No = 0', 'Valor'],
+          ['Respuesta | Sí = 1 No = 0',  1],
+        ]);
+        var options = {
+          title: 'Conocimiento sobre organizaciones o personas pueden ayudar para aprender sobre defensa de derechos',
+		  legend: {position: 'none'},
+		  vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, title:'Respuesta | Sí = 1 No = 0'},
+		  tooltip: {trigger: 'none'},
+		  bar: {groupWidth: 100}
+		 
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('visualizationf'));
+        chart.draw(data, options);
+		} 
+	
+//CHART 7
+	 	/*function chart6() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Conocimiento sobre organizaciones o personas pueden ayudar para aprender sobre defensa de derechos?');
+        data.addColumn('boolean', 'Selección');
+        data.addRows([
+          ['Sí', true],
+          ['No', null]
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('visualizationf'));
+        table.draw(data, {showRowNumber: false});
+      }*/
+	  
+
+
+//FUNCTION CALLS
+ 	  google.setOnLoadCallback(idest);
+  	  google.setOnLoadCallback(chart1);
+      google.setOnLoadCallback(chart2);
+	  google.setOnLoadCallback(chart3);
+	  google.setOnLoadCallback(comment1);
+	  google.setOnLoadCallback(chart4);
+	  google.setOnLoadCallback(comment2);
+	  google.setOnLoadCallback(chart5);
+	  google.setOnLoadCallback(chart6); 
+	  google.setOnLoadCallback(chart7); 
+	  
+    </script>
+  <style type="text/css">
+  body h1 {
+	color: #80455f;
+}
+  body h2 {
+	color: #FFF;
+	background-color: #80455f;
+}
+  </style>
+  </head>
+  <body style="font-family: Arial; border: 0 none; font-size: 16px;">
+  <h1>Informe 5: Auto Conocimiento Información sobre su Necesidad Especial/Discapacidad  </h1>
+  <hr />
+    <div id="estid" style="width: 600px; height: 101px;"></div>
+  <hr />
+<h2>Información</h2>
+    <div id="visualizationa" style="width: 600px; height: 250px;"></div>
+    <div id="visualizationb" style="width: 600px; height: 250px;"></div>
+    <div id="visualizationc" style="width: 600px; height: 250px;"></div>
+    <div id="commenta" style="width: 600px; height: 250px;"></div>
+    <div id="visualizationd" style="width: 600px; height: 250px;"></div>
+    <div id="commentb" style="width: 600px; height: 250px;"></div>
+    <div id="visualizatione" style="width: 600px; height: 250px;"></div>
+	<div id="visualizationf" style="width: 600px; height: 250px;"></div>
+    <div id="visualizationg" style="width: 600px; height: 250px;"></div>
+</body>
+</html>
+​

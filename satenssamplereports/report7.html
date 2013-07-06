@@ -1,0 +1,278 @@
+<!--
+You are free to copy and use this sample in accordance with the terms of the
+Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>SATENS | Informe 7: Áreas de Destrezas Funcionales Identificadas por el Estudiante y su Padre, Madre o Encargado para Atenderse Durante Año Escolar</title>
+    
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+//LOADS CHART PACKAGES
+google.load("visualization", "1", {packages:["corechart"]});
+google.load('visualization', '1', {packages: ['gauge']});
+google.load('visualization', '1', {packages:['table']});
+
+//ID DE ESTUDIANTE
+
+function idest() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', ' ');
+        data.addColumn('string', ' ');
+        data.addColumn('string', ' ');
+		data.addColumn('string', ' ');
+        data.addRows([
+          ['Nombre',  'Edwin', 'Género', 'Masculino'],
+          ['Apellido',   'Merced',  'Grado', ' Noveno'],
+          ['Número de Record', '001', 'Fecha de Nacimiento', '01/01/2013']
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('estid'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+
+//CHART 1      
+/*function chart1() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Áreas que el/la estudiante y su padre, madre o encargado consideran deben atenderse durante el año escolar (Destrezas Laborales).');
+        data.addColumn('boolean', 'Sí');
+        data.addColumn('boolean', 'No');
+        data.addRows([
+          ['Seguir directrices/instrucciones', null, true],
+          ['Aceptar críticas', true,  null],
+          ['Prestar atención a detalles', null, true],
+		  ['Completar tareas', null, true],
+		  ['Asistencia y puntualidad', null, true],
+		  ['Destreza con el uso de computadoras', null, true],
+		  ['Usar vestimenta apropiada para ir a un trabajo', null, true],
+		  ['Trabajar a un paso/ritmo satisfactorio', null, true],
+		  ['Producir trabajo de forma satisfactoria', null, true],
+		  ['Respetar la autoridad', null, true],
+		  ['Trabajar independientemente', null, true],
+		  ['Organizar el tiempo y materiales efectivamente', true,  null],
+          ['Solicitar ayuda cuando la necesite', null, true],
+		  ['Demostrar destrezas de Razonamiento Crítico', null, true],
+		  ['Explorar Carreras Profesionales/Técnicas', null, true],
+		  ['Adquisición de experiencia laboral', null, true],
+		  ['Gestionar búsqueda de trabajo', null, true],
+		  ['Completar solicitudes de empleo', null, true],
+		  ['Buscar y asistir a entrevistas de empleo', null, true],
+		  ['Concluir en un empleo apropiadamente', null, true],
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('visualizationa'));
+        table.draw(data, {showRowNumber: false});
+      }*/	 
+	  
+function chart1() {
+ var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Áreas que el/la estudiante y su padre, madre o encargado consideran deben atenderse durante el año escolar (Destrezas Laborales).');
+  data.addColumn('number', 'Respuestas | S&iacute; = Azul    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   No = Rojo');
+  data.addRows([
+	     ['Seguir directrices/instrucciones', 1],
+          ['Aceptar críticas', 1],
+          ['Prestar atención a detalles', 1],
+		  ['Completar tareas', 1],
+		  ['Asistencia y puntualidad', -1],
+		  ['Destreza con el uso de computadoras', -1],
+		  ['Usar vestimenta apropiada para ir a un trabajo', -1],
+		  ['Trabajar a un paso/ritmo satisfactorio', 1],
+		  ['Producir trabajo de forma satisfactoria', 1],
+		  ['Respetar la autoridad', 1],
+		  ['Trabajar independientemente', -1],
+		  ['Organizar el tiempo y materiales efectivamente', -1],
+          ['Solicitar ayuda cuando la necesite', 1],
+		  ['Demostrar destrezas de Razonamiento Crítico', 1],
+		  ['Explorar Carreras Profesionales/Técnicas', -1],
+		  ['Adquisición de experiencia laboral', -1],
+		  ['Gestionar búsqueda de trabajo', -1],
+		  ['Completar solicitudes de empleo', 1],
+		  ['Buscar y asistir a entrevistas de empleo', 1],
+		  ['Concluir en un empleo apropiadamente', 1],
+	
+	
+  ]);
+
+var table = new google.visualization.Table(document.getElementById('visualizationa'));
+
+var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
+
+formatter.format(data, 1); 
+
+   
+table.draw(data, {allowHtml: true, showRowNumber: false});
+
+}
+	  
+	  
+//CHART 2     
+/*function chart2() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Áreas que el/la estudiante y su padre, madre o encargado consideran deben atenderse durante el año escolar (Destrezas Personales)');
+        data.addColumn('boolean', 'Sí');
+        data.addColumn('boolean', 'No');
+        data.addRows([
+          ['Conocer sus derechos y responsabilidades', null, true],
+          ['Identifica sus emociones y como desembocarlas adecuadamente', true,  null],
+          ['Establece sus metas', null, true],
+		  ['Resolver problemas efectivamente', null, true],
+		  ['Manejar el estrés', null, true],
+		  ['Organizar su tiempo personal', null, true],
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('visualizationb'));
+        table.draw(data, {showRowNumber: false});
+      }	*/
+	  
+	  
+	  function chart2() {
+ var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Áreas que el/la estudiante y su padre, madre o encargado consideran deben atenderse durante el año escolar (Destrezas Personales).');
+  data.addColumn('number', 'Respuestas | S&iacute; = Azul    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   No = Rojo');
+  data.addRows([
+	      ['Conocer sus derechos y responsabilidades', -1],
+          ['Identifica sus emociones y como desembocarlas adecuadamente', 1],
+          ['Establece sus metas', 1],
+		  ['Resolver problemas efectivamente', -1],
+		  ['Manejar el estrés', 1],
+		  ['Organizar su tiempo personal', -1],
+  ]);
+
+var table = new google.visualization.Table(document.getElementById('visualizationb'));
+
+var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
+
+formatter.format(data, 1); 
+
+   
+table.draw(data, {allowHtml: true, showRowNumber: false});
+
+}
+	  
+
+//CHART 3    
+/*function chart3() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Áreas que el/la estudiante y su padre, madre o encargado consideran deben atenderse durante el año escolar (Destrezas V.I. y del Diario Vivir).');
+        data.addColumn('boolean', 'Sí');
+        data.addColumn('boolean', 'No');
+        data.addRows([
+          ['Rendir o completar la planilla de contribución sobre impuestos (Si aplica)', null, true],
+          ['Mantener espacios de la casa limpios', true,  null],
+          ['Reconocer roles cívicos y las responsabilidades', null, true],
+		  ['Reconocer las figuras de autoridad, reglas y leyes', null, true],
+		  ['Comprender el proceso de las elecciones y como votar', null, true],
+		  ['Saber los eventos que pasan en la comunidad', null, true],
+		  ['Conocer las opciones de adquirir una vivienda', null, true],
+		  ['Comprar vestimenta/ropa', null, true],
+		  ['Conocer las opciones de transportación disponibles', null, true],
+		  ['Tomar clases de guiar y obtener licencia de conducir', null, true],
+		  ['Saber tomar direcciones para ir a los sitios', null, true],
+		  ['Conocer los primeros auxilios básicos', true,  null],
+          ['Tener buenas destrezas de aseo personal', null, true],
+		  ['Lavar y planchar la ropa', null, true],
+		  ['Hacer compras', null, true],
+		  ['Manejar dinero', null, true],
+		  ['Presupuestar dinero', null, true],
+		  ['Calcular un salario', null, true],
+		  ['Conocimiento de información del banco', null, true],
+		  ['Identificar actividades para recrearse', null, true],
+		  ['Asistir a eventos', null, true],
+		  ['Identificar organizaciones de la comunidad', null, true],
+		  ['Pagar cuentas', null, true],
+		  ['Cocinar', null, true],
+		  ['Seguir una receta', null, true],
+		  ['Ordenar de un menu', null, true],
+		  ['Llevar una dieta saludable', null, true],
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('visualizationc'));
+        table.draw(data, {showRowNumber: false});
+      }	*/
+	  
+	  
+	  function chart3() {
+ var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Áreas que el/la estudiante y su padre, madre o encargado consideran deben atenderse durante el año escolar (Destrezas V.I. y del Diario Vivir).');
+  data.addColumn('number', 'Respuestas | S&iacute; = Azul    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   No = Rojo');
+  data.addRows([
+	      ['Rendir o completar la planilla de contribución sobre impuestos (Si aplica)', -1],
+          ['Mantener espacios de la casa limpios', 1],
+          ['Reconocer roles cívicos y las responsabilidades', 1],
+		  ['Reconocer las figuras de autoridad, reglas y leyes', -1],
+		  ['Comprender el proceso de las elecciones y como votar', -1],
+		  ['Saber los eventos que pasan en la comunidad', -1],
+		  ['Conocer las opciones de adquirir una vivienda', -1],
+		  ['Comprar vestimenta/ropa', -1],
+		  ['Conocer las opciones de transportación disponibles', -1],
+		  ['Tomar clases de guiar y obtener licencia de conducir', -1],
+		  ['Saber tomar direcciones para ir a los sitios', -1],
+		  ['Conocer los primeros auxilios básicos', -1],
+          ['Tener buenas destrezas de aseo personal', -1],
+		  ['Lavar y planchar la ropa', -1],
+		  ['Hacer compras', -1],
+		  ['Manejar dinero', 1],
+		  ['Presupuestar dinero', 1],
+		  ['Calcular un salario', 1],
+		  ['Conocimiento de información del banco', -1],
+		  ['Identificar actividades para recrearse', -1],
+		  ['Asistir a eventos', -1],
+		  ['Identificar organizaciones de la comunidad', -1],
+		  ['Pagar cuentas', -1],
+		  ['Cocinar', -1],
+		  ['Seguir una receta', -1],
+		  ['Ordenar de un menu', 1],
+		  ['Llevar una dieta saludable', 1],
+	
+	
+  ]);
+
+var table = new google.visualization.Table(document.getElementById('visualizationc'));
+
+var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
+
+formatter.format(data, 1); 
+
+   
+table.draw(data, {allowHtml: true, showRowNumber: false});
+
+}
+	  
+
+//FUNCTION CALLS
+ 	  google.setOnLoadCallback(idest);
+  	  google.setOnLoadCallback(chart1);
+      google.setOnLoadCallback(chart2);
+	  google.setOnLoadCallback(chart3);
+	
+	  
+    </script>
+  <style type="text/css">
+  body h1 {
+	color: #80455f;
+}
+  body h2 {
+	color: #FFF;
+	background-color: #80455f;
+}
+  </style>
+  </head>
+  <body style="font-family: Arial; border: 0 none; font-size: 16px;">
+  <h1>Informe 7: Áreas de Destrezas Funcionales Identificadas por el Estudiante y su Padre, Madre o Encargado para Atenderse Durante Año Escolar</h1>
+  <hr />
+    <div id="estid" style="width: 600px; height: 101px;"></div>
+  <hr />
+<h2>Destrezas Laborales Identificadas</h2>
+    <div id="visualizationa" style="width: 900px; height: 525px;"></div>
+<h2>Destrezas Personales Identificadas</h2>
+	<div id="visualizationb" style="width: 900px; height: 200px;"></div>
+<h2>Destrezas del Diario Vivir Identificadas</h2>
+    <div id="visualizationc" style="width: 900px; height: 700px;"></div>
+
+</body>
+</html>
+​

@@ -1,0 +1,1278 @@
+<!--
+You are free to copy and use this sample in accordance with the terms of the
+Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>SATENS | Informe 8: Evaluación de Destrezas del Diario Vivir, Cocina y Preparación de Alimentos, Lavado de Ropa, Convivencia Familiar , Limpieza en el Hogar, Limpieza del Patio, Asuntos Personales, Salud, Comunitarias, Tiempo Libre, Planes ocupacionales futuros y vivienda.</title>
+    
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+
+//LOADS CHART PACKAGES
+google.load("visualization", "1", {packages:["corechart"]});
+google.load('visualization', '1', {packages:['table']});
+google.load('visualization', '1', {packages: ['gauge']});
+
+//ID DE ESTUDIANTE
+
+function idest() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', ' ');
+        data.addColumn('string', ' ');
+        data.addColumn('string', ' ');
+		data.addColumn('string', ' ');
+        data.addRows([
+          ['Nombre',  'Edwin', 'Género', 'Masculino'],
+          ['Apellido',   'Merced',  'Grado', ' Noveno'],
+          ['Número de Record', '001', 'Fecha de Nacimiento', '01/01/2013']
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('estid'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+
+
+//CHART 1      
+
+function chart1() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica', 5],
+	['No Domina', 10],
+	['En Proceso', 5],
+	['Domina', 10],
+	]);
+
+	var options = {
+		title: 'Porciento de Dominio de Destrezas para la Vida',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('visualizationa'));
+	charte.draw(datae, options);
+
+}
+
+function table1() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Destrezas');
+        data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'No Domina');
+		data.addColumn('boolean', 'En Proceso');
+		data.addColumn('boolean', 'Domina');
+		
+        data.addRows([['Obtener licencia para conducir',  true, null, null, null]]);
+        data.addRows([['Tomar clases para conducir',  true, null, null, null]]);
+		data.addRows([['Saber opciones para transportarse',  true, null, null, null]]);
+        data.addRows([['Asistir a eventos/actividades',  true, null, null, null]]);
+		data.addRows([['Identificar recursos en la comunidad',  true, null, null, null]]);
+        data.addRows([['Identificar actividades de tiempo libre',  null, true, null, null]]);
+		data.addRows([['Mantener el hogar limpio',  null, true, null, null]]);
+        data.addRows([['Saber opciones de vivienda',  null, true, null, null]]);
+		data.addRows([['Pagar cuentas',  null, null, null, true]]);
+        data.addRows([['Radicar Planillas sobre impuestos',  null, true, null, null]]);
+		data.addRows([['Conocer servicios bancarios',  null, true, null, null]]);
+        data.addRows([['Dar cambio correcto',  null, true, null, null]]);
+		data.addRows([['Manejar dinero en general',  null, true, null, null]]);
+        data.addRows([['Realizar compras por si mismo',  null, true, null, null]]);
+		data.addRows([['Cómo votar en elecciones(si aplica)',  null, null, null, true]]);
+        data.addRows([['Calcular un salario',  null, true, null, null]]);
+		data.addRows([['Respetar figuras de autoridad',  null, true, null, null]]);
+        data.addRows([['Reconocer responsabilidades cívicas',  null, null, true, null]]);
+		data.addRows([['Ordenar un menú en un restaurante',  null, null, true, null]]);
+        data.addRows([['Seguir una receta',  null, null, true, null]]);
+		data.addRows([['Cocinar y preparar comida/alimentos',  null, null, null, true]]);
+		data.addRows([['Comprar comida/alimentos',  null, null, true, null]]);
+        data.addRows([['Llevar una dieta saludable',  null, null, true, null]]);
+		data.addRows([['Lavar y planchar su propia ropa',  null, null, null, true]]);
+        data.addRows([['Comprar ropa apropiada',  null, null, null, true]]);
+		data.addRows([['Identificar primeros auxilios',  null, null, null, true]]);
+        data.addRows([['Buenas destrezas de aseo personal',  null, null, null, true]]);
+		data.addRows([['Comprar un carro',  null, null, null, true]]);
+        data.addRows([['Leer e interpretar mapas',  null, null, null, true]]);
+		data.addRows([['Otro',  null, null, null, true]]);
+
+        var table = new google.visualization.Table(document.getElementById('tablea'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+	  
+/*	  function table1a() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Se Evidencia:');
+        data.addColumn('boolean', 'Sí');
+        data.addColumn('boolean', 'No');
+	
+		
+        data.addRows([['Obtener licencia para conducir',  true, null]]);
+        data.addRows([['Tomar clases para conducir',  true, null]]);
+		data.addRows([['Saber opciones para transportarse',  true, null]]);
+        data.addRows([['Asistir a eventos/actividades',  true, null]]);
+		data.addRows([['Identificar recursos en la comunidad',  true, null]]);
+        data.addRows([['Identificar actividades de tiempo libre',  true, null]]);
+		data.addRows([['Mantener el hogar limpio',  true, null]]);
+        data.addRows([['Saber opciones de vivienda',  true, null]]);
+		data.addRows([['Pagar cuentas',  true, null]]);
+        data.addRows([['Radicar Planillas sobre impuestos',  true, null]]);
+		data.addRows([['Conocer servicios bancarios',  true, null]]);
+        data.addRows([['Dar cambio correcto',  true, null]]);
+		data.addRows([['Manejar dinero en general',  true, null]]);
+        data.addRows([['Realizar compras por si mismo',  true, null]]);
+		data.addRows([['Cómo votar en elecciones(si aplica)',  true, null]]);
+        data.addRows([['Calcular un salario',  true, null]]);
+		data.addRows([['Respetar figuras de autoridad',  true, null]]);
+        data.addRows([['Reconocer responsabilidades cívicas',  true, null]]);
+		data.addRows([['Ordenar un menú en un restaurante',  true, null]]);
+        data.addRows([['Seguir una receta',  true, null]]);
+		data.addRows([['Cocinar y preparar comida/alimentos',  true, null]]);
+		data.addRows([['Comprar comida/alimentos',  true, null]]);
+        data.addRows([['Llevar una dieta saludable',  true, null]]);
+		data.addRows([['Lavar y planchar su propia ropa',  true, null]]);
+        data.addRows([['Comprar ropa apropiada',  true, null]]);
+		data.addRows([['Identificar primeros auxilios',  true, null]]);
+        data.addRows([['Buenas destrezas de aseo personal',  true, null]]);
+		data.addRows([['Comprar un carro',  true, null]]);
+        data.addRows([['Leer e interpretar mapas',  true, null]]);
+		data.addRows([['Otro',  true, null]]);
+
+        var table = new google.visualization.Table(document.getElementById('tableaa'));
+        table.draw(data, {showRowNumber: false});
+      }	 */
+	  
+	  
+	  function table1a() {
+ var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Se Evidencia:');
+  data.addColumn('number', 'Respuestas | S&iacute; = Azul    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   No = Rojo');
+
+ 		data.addRows([['Obtener licencia para conducir',  1]]),
+        data.addRows([['Tomar clases para conducir',  1]]),
+		data.addRows([['Saber opciones para transportarse',  -1]]),
+        data.addRows([['Asistir a eventos/actividades',  -1]]),
+		data.addRows([['Identificar recursos en la comunidad',  -1]]),
+        data.addRows([['Identificar actividades de tiempo libre',  -1]]),
+		data.addRows([['Mantener el hogar limpio',  1]]),
+        data.addRows([['Saber opciones de vivienda', 1]]),
+		data.addRows([['Pagar cuentas',  -1]]),
+        data.addRows([['Radicar Planillas sobre impuestos',  -1]]),
+		data.addRows([['Conocer servicios bancarios',  1]]),
+        data.addRows([['Dar cambio correcto',  1]]),
+		data.addRows([['Manejar dinero en general',  1]]),
+        data.addRows([['Realizar compras por si mismo',  -1]]);
+		data.addRows([['Cómo votar en elecciones(si aplica)',  1]]),
+        data.addRows([['Calcular un salario',  -1]]),
+		data.addRows([['Respetar figuras de autoridad',  1]]);
+        data.addRows([['Reconocer responsabilidades cívicas', 1]]),
+		data.addRows([['Ordenar un menú en un restaurante',  1]]),
+        data.addRows([['Seguir una receta',  -1]]),
+		data.addRows([['Cocinar y preparar comida/alimentos',  -1]]),
+		data.addRows([['Comprar comida/alimentos',  -1]]),
+        data.addRows([['Llevar una dieta saludable',  -1]]),
+		data.addRows([['Lavar y planchar su propia ropa',  -1]]),
+        data.addRows([['Comprar ropa apropiada',  -1]]),
+		data.addRows([['Identificar primeros auxilios',  -1]]),
+        data.addRows([['Buenas destrezas de aseo personal',  1]]),
+		data.addRows([['Comprar un carro', 1]]),
+        data.addRows([['Leer e interpretar mapas',  1]]),
+		data.addRows([['Otro',  1]])
+
+
+var table = new google.visualization.Table(document.getElementById('tableaa'));
+
+var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
+
+formatter.format(data, 1); 
+
+   
+table.draw(data, {allowHtml: true, showRowNumber: false});
+
+}
+	  
+
+//CHART 2    
+
+function chart2() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  1],
+	['No Domina', 2],
+	['En Proceso', 2],
+	['Domina',      3],
+	]);
+
+	var options = {
+		title: 'Porciento de Dominio de Destrezas de Cocina',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('visualizationb'));
+	charte.draw(datae, options);
+
+} 
+	  
+function table2() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Destrezas');
+        data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'No Domina');
+		data.addColumn('boolean', 'En Proceso');
+		data.addColumn('boolean', 'Domina');
+		
+        data.addRows([['Operar enseres eléctricos',  true, null, null, null]]);
+        data.addRows([['Utilizar cubiertos de la cocina',  null, true, null, null]]);
+		data.addRows([['Planificar  la preparación de alimentos',  null, true, null, null]]);
+        data.addRows([['Seguir una receta',  null, null, true, null]]);
+		data.addRows([['Recoger los sobrantes de la comida',  null, null, true, null]]);
+        data.addRows([['Poner la mesa',  null, null, null, true]]);
+		data.addRows([['Fregar platos',  null, null, null, true]]);
+        data.addRows([['Conocer productos enlatados',  null, null, null, true]]);
+		
+		
+        var table = new google.visualization.Table(document.getElementById('tableb'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+	  
+	  /*function table2b() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Se Evidencia:');
+        data.addColumn('boolean', 'Sí');
+        data.addColumn('boolean', 'No');
+	
+		
+        data.addRows([['Operar enseres eléctricos',  true, null]]);
+        data.addRows([['Utilizar cubiertos de la cocina',  true, null]]);
+		data.addRows([['Planificar  la preparación de alimentos',  true, null]]);
+        data.addRows([['Seguir una receta',  true, null]]);
+		data.addRows([['Recoger los sobrantes de la comida',  true, null]]);
+        data.addRows([['Poner la mesa',  true, null]]);
+		data.addRows([['Fregar platos',  true, null]]);
+        data.addRows([['Conocer productos enlatados',  true, null]]);
+		
+		
+        var table = new google.visualization.Table(document.getElementById('tablebb'));
+        table.draw(data, {showRowNumber: false});
+      }	  */
+	  
+	  
+	  function table2b() {
+ var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Se Evidencia:');
+  data.addColumn('number', 'Respuestas | S&iacute; = Azul    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   No = Rojo');
+
+    	data.addRows([['Operar enseres eléctricos', 1]]),
+        data.addRows([['Utilizar cubiertos de la cocina',  -1]]),
+		data.addRows([['Planificar  la preparación de alimentos',  1]]),
+        data.addRows([['Seguir una receta',  -1]]),
+		data.addRows([['Recoger los sobrantes de la comida',  -1]]),
+        data.addRows([['Poner la mesa',  -1]]),
+		data.addRows([['Fregar platos',  1]]),
+        data.addRows([['Conocer productos enlatados',  1]])
+
+
+var table = new google.visualization.Table(document.getElementById('tablebb'));
+
+var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
+
+formatter.format(data, 1); 
+
+   
+table.draw(data, {allowHtml: true, showRowNumber: false});
+
+}
+	  
+	  
+//CHART 3    
+
+	  
+//CHART 3	  
+function chart3() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  1],
+	['No Domina', 2],
+	['En Proceso',3],
+	['Domina',     1],
+	]);
+
+	var options = {
+		title: 'Porciento de Dominio de Destrezas de lavandería/”laundry” personal',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('visualizationc'));
+	charte.draw(datae, options);
+
+}	  
+function table3() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Destrezas de lavandería/laundry personal');
+        data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'No Domina');
+		data.addColumn('boolean', 'En Proceso');
+		data.addColumn('boolean', 'Domina');
+		
+        data.addRows([['Colocar ropa sucia en el canasto/ hamper',  true, null, null, null]]);
+		data.addRows([['Clasificar la ropa para lavarla',  null, true, null, null]]);
+        data.addRows([['Usar lavadora y secadora',  null, true, null, null]]);
+		data.addRows([['Planchar',  null, null, true, null]]);
+        data.addRows([['Lavar a mano',  null, null, true, null]]);
+		data.addRows([['Doblar ropa limpia',  null, null, true, null]]);
+        data.addRows([['Guardar/Organizar la ropa',  null, null, null, true]]);
+		
+		
+        var table = new google.visualization.Table(document.getElementById('tablec'));
+        table.draw(data, {showRowNumber: false});
+      }		
+	  
+	  function table3c() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Se Evidencia');
+        data.addColumn('boolean', 'Sí');
+        data.addColumn('boolean', 'No');
+		
+		
+        data.addRows([['Colocar ropa sucia en el canasto/ hamper',  true, null]]);
+		data.addRows([['Clasificar la ropa para lavarla',  true, null]]);
+        data.addRows([['Usar lavadora y secadora',  true, null]]);
+		data.addRows([['Planchar',  true, null]]);
+        data.addRows([['Lavar a mano',  true, null]]);
+		data.addRows([['Doblar ropa limpia',  true, null]]);
+        data.addRows([['Guardar/Organizar la ropa',  true, null]]);
+		
+		
+        var table = new google.visualization.Table(document.getElementById('tablecc'));
+        table.draw(data, {showRowNumber: false});
+      }	
+	    
+		
+		function table3c() {
+ var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Se Evidencia:');
+  data.addColumn('number', 'Respuestas | S&iacute; = Azul    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   No = Rojo');
+
+      data.addRows([['Colocar ropa sucia en el canasto/ hamper',  1]]),
+		data.addRows([['Clasificar la ropa para lavarla',  1]]),
+        data.addRows([['Usar lavadora y secadora',  -1]]),
+		data.addRows([['Planchar',  -1]]),
+        data.addRows([['Lavar a mano',  -1]]),
+		data.addRows([['Doblar ropa limpia',  1]]),
+        data.addRows([['Guardar/Organizar la ropa',  1]])
+
+
+var table = new google.visualization.Table(document.getElementById('tablecc'));
+
+var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
+
+formatter.format(data, 1); 
+
+   
+table.draw(data, {allowHtml: true, showRowNumber: false});
+
+}
+		
+//CHART 4    
+function chart4() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  1],
+	['No Domina', 1],
+	['En Proceso',2],
+	['Domina',      1],
+	]);
+
+	var options = {
+		title: 'Porciento de Dominio de Destrezas de convivencia familiar',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('visualizationd'));
+	charte.draw(datae, options);
+
+}	  
+function table4() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Destrezas de convivencia familiar');
+ 	    data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'No Domina');
+		data.addColumn('boolean', 'En Proceso');
+		data.addColumn('boolean', 'Domina');
+		
+        data.addRows([['Leer el periódico',  true, null, null, null]]);
+		data.addRows([['Ayudar a cuidar personas',  null, true, null, null]]);
+        data.addRows([['Participar en decisiones familiares',  null, null, true, null]]);
+		data.addRows([['Planificar actividades de familia',  null, null, true, null]]);
+        data.addRows([['Ayudar a cuidar las mascotas',  null, null, null, true]]);
+		
+        var table = new google.visualization.Table(document.getElementById('tabled'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+	  
+	  /*function table4d() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Se Evidencia');
+ 	    data.addColumn('boolean', 'Sí');
+        data.addColumn('boolean', 'No');
+	
+		
+        data.addRows([['Leer el periódico',  true, null]]);
+		data.addRows([['Ayudar a cuidar personas',  true, null]]);
+        data.addRows([['Participar en decisiones familiares',  true, null]]);
+		data.addRows([['Planificar actividades de familia',  true, null]]);
+        data.addRows([['Ayudar a cuidar las mascotas',  true, null]]);
+		
+        var table = new google.visualization.Table(document.getElementById('tabled'));
+        table.draw(data, {showRowNumber: false});
+      }	 */
+	  
+	  
+	  
+	  function table4d() {
+ var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Se Evidencia:');
+  data.addColumn('number', 'Respuestas | S&iacute; = Azul    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   No = Rojo');
+
+      data.addRows([['Leer el periódico',  -1]]),
+		data.addRows([['Ayudar a cuidar personas',  -1]]),
+        data.addRows([['Participar en decisiones familiares',  1]]),
+		data.addRows([['Planificar actividades de familia',  1]]),
+        data.addRows([['Ayudar a cuidar las mascotas',  1]])
+
+
+var table = new google.visualization.Table(document.getElementById('tabledd'));
+
+var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
+
+formatter.format(data, 1); 
+
+   
+table.draw(data, {allowHtml: true, showRowNumber: false});
+
+}
+	  
+
+//CHART 5    
+function chart5() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  1],
+	['No Domina', 2],
+	['En Proceso',1],
+	['Domina',      4],
+	]);
+
+	var options = {
+		title: 'Porciento de Dominio de Destrezas de limpieza en el hogar',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('visualizatione'));
+	charte.draw(datae, options);
+
+}		 
+function table5() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Destrezas');
+        data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'No Domina');
+		data.addColumn('boolean', 'En Proceso');
+		data.addColumn('boolean', 'Domina');
+		
+        data.addRows([['Limpiar y recoger el cuarto',  true, null, null, null]]);
+		data.addRows([['Hacer la cama y cambiarla',  null, true, null, null]]);
+        data.addRows([['Decorar un cuarto o la casa',  null, true, null, null]]);
+		data.addRows([['Arreglar alrededor de la casa (ej:patio )',  null, null, true, null]]);
+        data.addRows([['Sacar la basura/desperdicios',  null, null, null, true]]);
+		data.addRows([['Coser o arreglar ropa',  null, null, null, true]]);
+
+        var table = new google.visualization.Table(document.getElementById('tablee'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+	  
+	  /*function table5e() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Se Evidencia:');
+        data.addColumn('boolean', 'Sí');
+        data.addColumn('boolean', 'No');
+	
+		
+        data.addRows([['Limpiar y recoger el cuarto',  true, null]]);
+		data.addRows([['Hacer la cama y cambiarla',  true, null]]);
+        data.addRows([['Decorar un cuarto o la casa',  true, null]]);
+		data.addRows([['Arreglar alrededor de la casa (ej:patio )',  true, null]]);
+        data.addRows([['Sacar la basura/desperdicios',  true, null]]);
+		data.addRows([['Coser o arreglar ropa',  true, null]]);
+
+        var table = new google.visualization.Table(document.getElementById('tableee'));
+        table.draw(data, {showRowNumber: false});
+      }	 */
+ 
+ 
+ function table5e() {
+ var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Se Evidencia:');
+  data.addColumn('number', 'Respuestas | S&iacute; = Azul    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   No = Rojo');
+
+    data.addRows([['Limpiar y recoger el cuarto',  -1]]),
+		data.addRows([['Hacer la cama y cambiarla',  -1]]),
+        data.addRows([['Decorar un cuarto o la casa',  1]]),
+		data.addRows([['Arreglar alrededor de la casa (ej:patio )',  1]]),
+        data.addRows([['Sacar la basura/desperdicios',  1]]),
+		data.addRows([['Coser o arreglar ropa',  1]])
+
+var table = new google.visualization.Table(document.getElementById('tableee'));
+
+var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
+
+formatter.format(data, 1); 
+
+   
+table.draw(data, {allowHtml: true, showRowNumber: false});
+
+}
+	  
+
+//CHART 6    
+
+function chart6() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  1],
+	['No Domina', 1],
+	['En Proceso', 1],
+	['Domina',      1],
+	]);
+
+	var options = {
+		title: 'Porciento de Dominio de Destrezas de jardineria/limpieza áreas verdes',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('visualizationf'));
+	charte.draw(datae, options);
+
+}	
+	  
+function table6() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Destrezas');
+        data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'No Domina');
+		data.addColumn('boolean', 'En Proceso');
+		data.addColumn('boolean', 'Domina');
+		
+        data.addRows([['Sembrar plantas',  true, null, null, null]]);
+		data.addRows([['Podar y mantener plantas',  null, true, null, null]]);
+        data.addRows([['Desyerbar el jardín/patio',  null, null, true, null]]);
+		data.addRows([['Usar las herramientas de jardinería',  null, null, null, true]]);
+
+
+        var table = new google.visualization.Table(document.getElementById('tablef'));
+        table.draw(data, {showRowNumber: false});
+      }	
+	  
+	  
+	/*  function table6f() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Se Evidencia:');
+        data.addColumn('boolean', 'Sí');
+        data.addColumn('boolean', 'No');
+	
+		
+        data.addRows([['Sembrar plantas',  true, null]]);
+		data.addRows([['Podar y mantener plantas',  true, null]]);
+        data.addRows([['Desyerbar el jardín/patio',  true, null]]);
+		data.addRows([['Usar las herramientas de jardinería',  true, null]]);
+
+
+        var table = new google.visualization.Table(document.getElementById('tableff'));
+        table.draw(data, {showRowNumber: false});
+      }	*/
+	  
+	   function table6f() {
+ var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Se Evidencia:');
+  data.addColumn('number', 'Respuestas | S&iacute; = Azul    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   No = Rojo');
+
+  		data.addRows([['Sembrar plantas',  1]]),
+		data.addRows([['Podar y mantener plantas',  -1]]),
+        data.addRows([['Desyerbar el jardín/patio',  1]]),
+		data.addRows([['Usar las herramientas de jardinería',  -1]])
+
+var table = new google.visualization.Table(document.getElementById('tableff'));
+
+var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
+
+formatter.format(data, 1); 
+
+   
+table.draw(data, {allowHtml: true, showRowNumber: false});
+
+}
+	  
+//CHART 7   
+function chart7() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  3],
+	['No Domina', 1],
+	['En Proceso', 1],
+	['Domina',      1],
+	]);
+
+	var options = {
+		title: 'Porciento de Dominio de Destrezas Personales',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('visualizationg'));
+	charte.draw(datae, options);
+
+}	
+
+function table7() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Destrezas');
+        data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'No Domina');
+		data.addColumn('boolean', 'En Proceso');
+		data.addColumn('boolean', 'Domina');
+		
+        data.addRows([['Usar teléfono/celular',  true, null, null, null]]);
+		data.addRows([['Poseer una llave de la casa',  true, null, null, null]]);
+        data.addRows([['Presupuestar mesada',  true, null, null, null]]);
+		data.addRows([['Ir de compras',  null, true, null, null]]);
+        data.addRows([['Cuidar de su aseo personal',  null, null, true, null]]);
+		data.addRows([['Elegir vestimenta apropiada',  null, null, null, true]]);
+
+        var table = new google.visualization.Table(document.getElementById('tableg'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+	  /*
+	  function table7g() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Se Evidencia:');
+        data.addColumn('boolean', 'Sí');
+        data.addColumn('boolean', 'No');
+	
+		
+        data.addRows([['Usar teléfono/celular',  true, null]]);
+		data.addRows([['Poseer una llave de la casa',  true, null]]);
+        data.addRows([['Presupuestar mesada',  true, null]]);
+		data.addRows([['Ir de compras',  true, null]]);
+        data.addRows([['Cuidar de su aseo personal',  true, null]]);
+		data.addRows([['Elegir vestimenta apropiada',  true, null]]);
+
+        var table = new google.visualization.Table(document.getElementById('tablegg'));
+        table.draw(data, {showRowNumber: false});
+      }	 */
+
+
+ function table7g() {
+ var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Se Evidencia:');
+  data.addColumn('number', 'Respuestas | S&iacute; = Azul    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   No = Rojo');
+
+ 		data.addRows([['Usar teléfono/celular',  1]]),
+		data.addRows([['Poseer una llave de la casa',  1]]),
+        data.addRows([['Presupuestar mesada',  -1]]),
+		data.addRows([['Ir de compras',  1]]),
+        data.addRows([['Cuidar de su aseo personal',  1]]),
+		data.addRows([['Elegir vestimenta apropiada',  1]])
+
+var table = new google.visualization.Table(document.getElementById('tablegg'));
+
+var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
+
+formatter.format(data, 1); 
+
+   
+table.draw(data, {allowHtml: true, showRowNumber: false});
+ }
+
+//CHART 8   
+function chart8() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  2],
+	['No Domina',  5],
+	['En Proceso', 1],
+	['Domina',      4],
+	]);
+
+	var options = {
+		title: 'Porciento de Dominio de Destrezas de salud',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('visualizationh'));
+	charte.draw(datae, options);
+
+}
+function table8() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Destrezas');
+        data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'No Domina');
+		data.addColumn('boolean', 'En Proceso');
+		data.addColumn('boolean', 'Domina');
+		
+        data.addRows([['Comprender cuidados médicos sencillos',  true, null, null, null]]);
+		data.addRows([['Conocer información médica y de pruebas',  true, null, null, null]]);
+        data.addRows([['Preguntar a médicos, enfermera o terapistas',  null, true, null, null]]);
+		data.addRows([['Conocer nombres y usos de medicamentos',  null, true, null, null]]);
+        data.addRows([['Llevar y recoger una receta en la farmacia',  null, true, null, null]]);
+		data.addRows([['Mantener un calendario con citas médicas',  null, true, null, null]]);
+	    data.addRows([['Saber fecha de nacimiento, altura y peso',  null, true, null, null]]);
+		data.addRows([['Interpretar la lectura de un termómetro',  null, null, true, null]]);
+        data.addRows([['Saber teléfono de emergencias médicas',  null, null, null, true]]);
+		data.addRows([['Saber de métodos anticonceptivos',  null, null, null, true]]);
+        data.addRows([['Saber sobre abuso de drogas y alcohol',  null, null, null, true]]);
+		data.addRows([['Saber de organizaciones de la comunidad',  null, null, null, true]]);
+        var table = new google.visualization.Table(document.getElementById('tableh'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+
+/*function table8h() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Se Evidencia:');
+        data.addColumn('boolean', 'Sí');
+        data.addColumn('boolean', 'No');
+	
+		
+        data.addRows([['Comprender cuidados médicos sencillos',  true, null]]);
+		data.addRows([['Conocer información médica y de pruebas',  true, null]]);
+        data.addRows([['Preguntar a médicos, enfermera o terapistas',  true, null]]);
+		data.addRows([['Conocer nombres y usos de medicamentos',  true, null]]);
+        data.addRows([['Llevar y recoger una receta en la farmacia',  true, null]]);
+		data.addRows([['Mantener un calendario con citas médicas',  true, null]]);
+	    data.addRows([['Saber fecha de nacimiento, altura y peso',  true, null]]);
+		data.addRows([['Interpretar la lectura de un termómetro',  true, null]]);
+        data.addRows([['Saber teléfono de emergencias médicas',  true, null]]);
+		data.addRows([['Saber de métodos anticonceptivos',  true, null]]);
+        data.addRows([['Saber sobre abuso de drogas y alcohol',  true, null]]);
+		data.addRows([['Saber de organizaciones de la comunidad',  true, null]]);
+        var table = new google.visualization.Table(document.getElementById('tablehh'));
+        table.draw(data, {showRowNumber: false});
+      }	 */
+	  
+	  
+
+	  function table8h() {
+ var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Se Evidencia:');
+  data.addColumn('number', 'Respuestas | S&iacute; = Azul    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   No = Rojo');
+
+ 	
+        data.addRows([['Comprender cuidados médicos sencillos',  -1]]),
+		data.addRows([['Conocer información médica y de pruebas',  -1]]),
+        data.addRows([['Preguntar a médicos, enfermera o terapistas',  -1]]),
+		data.addRows([['Conocer nombres y usos de medicamentos',  -1]]),
+        data.addRows([['Llevar y recoger una receta en la farmacia',  -1]]),
+		data.addRows([['Mantener un calendario con citas médicas',  -1]]),
+	    data.addRows([['Saber fecha de nacimiento, altura y peso',  -1]]),
+		data.addRows([['Interpretar la lectura de un termómetro',  -1]]),
+        data.addRows([['Saber teléfono de emergencias médicas',  -1]]),
+		data.addRows([['Saber de métodos anticonceptivos',  -1]]),
+        data.addRows([['Saber sobre abuso de drogas y alcohol',  -1]]),
+		data.addRows([['Saber de organizaciones de la comunidad',  -1]])
+
+var table = new google.visualization.Table(document.getElementById('tablehh'));
+
+var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
+
+formatter.format(data, 1); 
+
+   
+table.draw(data, {allowHtml: true, showRowNumber: false});
+	  }
+	  	  
+//CHART 9   
+ 
+
+function chart9() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  1],
+	['No Domina', 2],
+	['En Proceso', 3],
+	['Domina',      4],
+	]);
+
+	var options = {
+		title: 'Porciento de Dominio de Destrezas de comunidad',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('visualizationi'));
+	charte.draw(datae, options);
+
+}	
+
+function table9() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Destrezas');
+        data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'No Domina');
+		data.addColumn('boolean', 'En Proceso');
+		data.addColumn('boolean', 'Domina');
+		
+        data.addRows([['Ir al pueblo o ciudad',  true, null, null, null]]);
+		data.addRows([['Conocer el sistema de transportación pública',  null, true, null, null]]);
+        data.addRows([['Localizar servicios sanitarios en lugares',  null, true, null, null]]);
+		data.addRows([['Conocer servicios y tiendas disponibles',  null, null, true, null]]);
+        data.addRows([['Utilizar teléfonos públicos',  null, null, true, null]]);
+		data.addRows([['Abrir y manejar una cuenta de banco',  null, null, true, null]]);
+	    data.addRows([['Conseguir una identificación con foto',  null, null, null, true]]);
+		data.addRows([['Conocer y utilizar el sistema de correo',  null, null, null, true]]);
+        data.addRows([['Ofrecer servicios voluntarios',  null, null, null, true]]);
+		data.addRows([['Solicitar la tarjeta de seguro social',  null, null, null, true]]);
+		
+        var table = new google.visualization.Table(document.getElementById('tablei'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+
+/*function table9i() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Se Evidencia:');
+        data.addColumn('boolean', 'Sí');
+        data.addColumn('boolean', 'No');
+
+		
+        data.addRows([['Ir al pueblo o ciudad',  true, null]]);
+		data.addRows([['Conocer el sistema de transportación pública',  true, null]]);
+        data.addRows([['Localizar servicios sanitarios en lugares',  true, null]]);
+		data.addRows([['Conocer servicios y tiendas disponibles',  true, null]]);
+        data.addRows([['Utilizar teléfonos públicos',  true, null]]);
+		data.addRows([['Abrir y manejar una cuenta de banco',  true, null]]);
+	    data.addRows([['Conseguir una identificación con foto',  true, null]]);
+		data.addRows([['Conocer y utilizar el sistema de correo',  true, null]]);
+        data.addRows([['Ofrecer servicios voluntarios',  true, null]]);
+		data.addRows([['Solicitar la tarjeta de seguro social',  true, null]]);
+		
+        var table = new google.visualization.Table(document.getElementById('tableii'));
+        table.draw(data, {showRowNumber: false});
+      }	 */
+	  
+	  
+	  
+	  function table9i() {
+ var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Se Evidencia:');
+  data.addColumn('number', 'Respuestas | S&iacute; = Azul    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   No = Rojo');
+
+ 	        data.addRows([['Ir al pueblo o ciudad',  1]]),
+		data.addRows([['Conocer el sistema de transportación pública',  1]]),
+        data.addRows([['Localizar servicios sanitarios en lugares',  -1]]),
+		data.addRows([['Conocer servicios y tiendas disponibles',  1]]),
+        data.addRows([['Utilizar teléfonos públicos',  -1]]),
+		data.addRows([['Abrir y manejar una cuenta de banco',  -1]]),
+	    data.addRows([['Conseguir una identificación con foto',  -1]]),
+		data.addRows([['Conocer y utilizar el sistema de correo',  1]]),
+        data.addRows([['Ofrecer servicios voluntarios',  1]]),
+		data.addRows([['Solicitar la tarjeta de seguro social',  1]])
+      
+
+var table = new google.visualization.Table(document.getElementById('tableii'));
+
+var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
+
+formatter.format(data, 1); 
+
+   
+table.draw(data, {allowHtml: true, showRowNumber: false});
+	  }
+	  
+	  
+//CHART 10	
+
+
+	  
+//CHART 10   
+
+	  
+function chart10() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  1],
+	['No Domina', 2],
+	['En Proceso', 3],
+	['Domina',      5],
+	]);
+
+	var options = {
+		title: 'Porciento de Dominio de Actividades o intereses en el tiempo libre',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('visualizationj'));
+	charte.draw(datae, options);
+
+}	 
+
+function table10() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Actividades o intereses en el tiempo libre');
+        data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'No Domina');
+		data.addColumn('boolean', 'En Proceso');
+		data.addColumn('boolean', 'Domina');
+		
+        data.addRows([['Ayudar a planificar una fiesta',  true, null, null, null]]);
+		data.addRows([['Invitar familiares/amigos al hogar',  null, true, null, null]]);
+        data.addRows([['Subscribirse a revistas de interés',  null, true, null, null]]);
+		data.addRows([['Leer un libro',  null, null, true, null]]);
+        data.addRows([['Planificar itinerario para ver la televisión',  null, null, true, null]]);
+		data.addRows([['Salir a pasear',  null, null, true, null]]);
+	    data.addRows([['Pertenece a un club u organización',  null, null, null, true]]);
+		data.addRows([['Asistir a campamento de verano',  null, null, null, true]]);
+        data.addRows([['Participar de actividades escolares',  null, null, null, true]]);
+		data.addRows([['Asistir a la Iglesia',  null, null, null, true]]);
+		data.addRows([['Participar o practicar un deporte',  null, null, null, true]]);
+		
+        var table = new google.visualization.Table(document.getElementById('tablej'));
+        table.draw(data, {showRowNumber: false});
+      }	  	   
+/*function table10j() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Se Evidencia');
+        data.addColumn('boolean', 'Sí');
+        data.addColumn('boolean', 'No');
+	
+		
+        data.addRows([['Ayudar a planificar una fiesta',  true, null]]);
+		data.addRows([['Invitar familiares/amigos al hogar',  true, null]]);
+        data.addRows([['Subscribirse a revistas de interés',  true, null]]);
+		data.addRows([['Leer un libro',  true, null]]);
+        data.addRows([['Planificar itinerario para ver la televisión',  true, null]]);
+		data.addRows([['Salir a pasear',  true, null]]);
+	    data.addRows([['Pertenece a un club u organización',  true, null]]);
+		data.addRows([['Asistir a campamento de verano',  true, null]]);
+        data.addRows([['Participar de actividades escolares',  true, null]]);
+		data.addRows([['Asistir a la Iglesia',  true, null]]);
+		data.addRows([['Participar o practicar un deporte',  true, null]]);
+		
+        var table = new google.visualization.Table(document.getElementById('tablejj'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+	  */
+	  
+	   function table10j() {
+ var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Se Evidencia:');
+  data.addColumn('number', 'Respuestas | S&iacute; = Azul    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   No = Rojo');
+
+ 	      data.addRows([['Ayudar a planificar una fiesta',  1]]),
+		data.addRows([['Invitar familiares/amigos al hogar',  -1]]),
+        data.addRows([['Subscribirse a revistas de interés',  -1]]),
+		data.addRows([['Leer un libro',  -1]]),
+        data.addRows([['Planificar itinerario para ver la televisión',  -1]]),
+		data.addRows([['Salir a pasear',  -1]]),
+	    data.addRows([['Pertenece a un club u organización',  -1]]),
+		data.addRows([['Asistir a campamento de verano',  -1]]),
+        data.addRows([['Participar de actividades escolares',  1]]),
+		data.addRows([['Asistir a la Iglesia',  1]]),
+		data.addRows([['Participar o practicar un deporte',  1]])
+      
+
+var table = new google.visualization.Table(document.getElementById('tablejj'));
+
+var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
+
+formatter.format(data, 1); 
+
+   
+table.draw(data, {allowHtml: true, showRowNumber: false});
+	  }
+	  
+	  
+	   
+//CHART 11   
+ 
+
+function chart11() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  1],
+	['No Domina', 1],
+	['En Proceso', 1],
+	['Domina',      2],
+	]);
+
+	var options = {
+		title: 'Porciento de Dominio de Destrezas para planes ocupacionales futuros',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('visualizationk'));
+	charte.draw(datae, options);
+
+}	
+
+function table11() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Destrezas');
+        data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'No Domina');
+		data.addColumn('boolean', 'En Proceso');
+		data.addColumn('boolean', 'Domina');
+		
+        data.addRows([['Reunirse con el Consejero Escolar o Maestra/o',  true, null, null, null]]);
+		data.addRows([['Considerar opciones de programas de estudios',  null, true, null, null]]);
+        data.addRows([['Buscar talleres y oportunidades de empleo',  null, null, true, null]]);
+		data.addRows([['Informarse de instituciones postsecundarias',  null, null, null, true]]);
+        data.addRows([['Solicitar para un trabajo',  null, null, null, true]]);
+
+        var table = new google.visualization.Table(document.getElementById('tablek'));
+        table.draw(data, {showRowNumber: false});
+      }	
+	  
+	  /*function table11k() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Se Evidencia:');
+        data.addColumn('boolean', 'Sí');
+        data.addColumn('boolean', 'No');
+	
+		
+        data.addRows([['Reunirse con el Consejero Escolar o Maestra/o',  true, null]]);
+		data.addRows([['Considerar opciones de programas de estudios',  true, null]]);
+        data.addRows([['Buscar talleres y oportunidades de empleo',  true, null]]);
+		data.addRows([['Informarse de instituciones postsecundarias',  true, null]]);
+        data.addRows([['Solicitar para un trabajo',  true, null]]);
+
+        var table = new google.visualization.Table(document.getElementById('tablekk'));
+        table.draw(data, {showRowNumber: false});
+      }	*/
+	  
+	  
+	  
+	  function table11k() {
+ var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Se Evidencia:');
+  data.addColumn('number', 'Respuestas | S&iacute; = Azul    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   No = Rojo');
+
+ 	  data.addRows([['Reunirse con el Consejero Escolar o Maestra/o',  -1]]),
+		data.addRows([['Considerar opciones de programas de estudios',  1]]),
+        data.addRows([['Buscar talleres y oportunidades de empleo',  1]]),
+		data.addRows([['Informarse de instituciones postsecundarias',  1]]),
+        data.addRows([['Solicitar para un trabajo',  -1]])
+      
+
+var table = new google.visualization.Table(document.getElementById('tablekk'));
+
+var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
+
+formatter.format(data, 1); 
+
+   
+table.draw(data, {allowHtml: true, showRowNumber: false});
+	  }
+	  
+	  
+//CHART 12 
+
+ function chart12() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  2],
+	['No Domina', 2],
+	['En Proceso', 2],
+	['Domina',      2],
+	]);
+
+	var options = {
+		title: 'Porciento de Dominio de Destrezas de Vivienda',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('visualizationl'));
+	charte.draw(datae, options);
+
+}	
+
+function table12() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Destrezas de vivienda');
+        data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'No Domina');
+		data.addColumn('boolean', 'En Proceso');
+		data.addColumn('boolean', 'Domina');
+		
+        data.addRows([['Conocer leyes de viviendas para impedidos',  true, null, null, null]]);
+		data.addRows([['Explorar complejos de vivienda asistida',  true, null, null, null]]);
+        data.addRows([['Orientarse sobre financiamiento de viviendas',  null, true, null, null]]);
+        data.addRows([['Manejo dinero y gastos de vivienda',  null, true, null, null]]);
+		data.addRows([['Conocer las responsabilidades de alquilar ',  null, null, true, null]]);
+	    data.addRows([['Verificar accesos para sillas de rueda ',  null, null, true, null]]);
+		data.addRows([['Verificar estaciones de guaguas disponibles',  null, null, null, true]]);
+		data.addRows([['Conocer los servicios de luz, agua y teléfono ',  null, null, null, true]]);
+		
+        var table = new google.visualization.Table(document.getElementById('tablel'));
+        table.draw(data, {showRowNumber: false});
+      }	  
+	  
+	  
+	 /* function table12l() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Se Evidencia');
+        data.addColumn('boolean', 'Sí');
+        data.addColumn('boolean', 'No');
+	
+		
+        data.addRows([['Conocer leyes de viviendas para impedidos',  true, null]]);
+		data.addRows([['Explorar complejos de vivienda asistida',  true, null]]);
+        data.addRows([['Orientarse sobre financiamiento de viviendas',  true, null]]);
+        data.addRows([['Manejo dinero y gastos de vivienda',  true, null]]);
+		data.addRows([['Conocer las responsabilidades de alquilar ',  true, null]]);
+	    data.addRows([['Verificar accesos para sillas de rueda ',  true, null]]);
+		data.addRows([['Verificar estaciones de guaguas disponibles',  true, null]]);
+		data.addRows([['Conocer los servicios de luz, agua y teléfono ',  true, null]]);
+		
+        var table = new google.visualization.Table(document.getElementById('tablell'));
+        table.draw(data, {showRowNumber: false});
+      }	 */
+	  
+	  
+	   function table12l() {
+ var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Se Evidencia:');
+  data.addColumn('number', 'Respuestas | S&iacute; = Azul    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   No = Rojo');
+
+    data.addRows([['Conocer leyes de viviendas para impedidos',  -1]]),
+		data.addRows([['Explorar complejos de vivienda asistida',  -1]]),
+        data.addRows([['Orientarse sobre financiamiento de viviendas',  1]]),
+        data.addRows([['Manejo dinero y gastos de vivienda',  1]]),
+		data.addRows([['Conocer las responsabilidades de alquilar ',  1]]),
+	    data.addRows([['Verificar accesos para sillas de rueda ',  -1]]),
+		data.addRows([['Verificar estaciones de guaguas disponibles',  -1]]),
+		data.addRows([['Conocer los servicios de luz, agua y teléfono ',  1]])
+      
+
+var table = new google.visualization.Table(document.getElementById('tablell'));
+
+var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
+
+formatter.format(data, 1); 
+
+   
+table.draw(data, {allowHtml: true, showRowNumber: false});
+	  }
+	  
+	   
+
+// CALLBACKS
+  	  google.setOnLoadCallback(idest);
+	  
+  	  google.setOnLoadCallback(chart1);
+	  google.setOnLoadCallback(table1);
+	  google.setOnLoadCallback(table1a);
+      google.setOnLoadCallback(chart2);
+	  google.setOnLoadCallback(table2);
+	  google.setOnLoadCallback(table2b);
+	  google.setOnLoadCallback(chart3);
+	  google.setOnLoadCallback(table3);
+	  google.setOnLoadCallback(table3c);
+	  google.setOnLoadCallback(chart4);
+	  google.setOnLoadCallback(table4);
+	  google.setOnLoadCallback(table4d);
+	  google.setOnLoadCallback(chart5);
+	  google.setOnLoadCallback(table5);
+	  google.setOnLoadCallback(table5e);
+	  google.setOnLoadCallback(chart6); 
+	  google.setOnLoadCallback(table6);
+	  google.setOnLoadCallback(table6f); 
+	  google.setOnLoadCallback(chart7);
+	  google.setOnLoadCallback(table7); 
+	  google.setOnLoadCallback(table7g);  
+	  google.setOnLoadCallback(chart8);
+	  google.setOnLoadCallback(table8);
+	  google.setOnLoadCallback(table8h);
+	  google.setOnLoadCallback(chart9);
+	  google.setOnLoadCallback(table9);
+	  google.setOnLoadCallback(table9i);
+	  google.setOnLoadCallback(chart10);
+	  google.setOnLoadCallback(table10);
+	  google.setOnLoadCallback(table10j);
+	  google.setOnLoadCallback(chart11);
+	  google.setOnLoadCallback(table11);
+	  google.setOnLoadCallback(table11k);
+	  google.setOnLoadCallback(chart12);
+	  google.setOnLoadCallback(table12);
+	  google.setOnLoadCallback(table12l);
+    </script>
+    
+   
+  <style type="text/css">
+  body h1 {
+	color: #80455f;
+}
+  body h2 {
+	color: #FFF;
+	background-color: #80455f;
+}
+  </style>
+  
+
+  </head>
+  <body style="font-family: Arial; border: 0 none; font-size: 16px;">
+  
+  <h1>Informe 8: Evaluación* de Destrezas del Diario Vivir, Cocina y Preparación de Alimentos, Lavado de Ropa, Convivencia Familiar , Limpieza en el Hogar, Limpieza del Patio, Asuntos Personales, Salud, Comunitarias, Tiempo Libre, Planes ocupacionales futuros y vivienda. </h1>
+  <p>*Los resultados en las áreas que aplican se obtuvieron a través de entrevistas, observaciones y demostraciones en coordinación con los padres y el personal de la escuela. Los mismos sirven de referencia para la planificación de los servicios de transición en la escuela.</p> 
+  <hr />
+    <h2>Información del Estudiante</h2>
+    <div id="estid" style="width: 600px; height: 101px;"></div>
+  <hr />
+  
+  <h2>Destrezas para la Vida</h2>
+  <div id="visualizationa" style="width: 600px; height: 371px;"></div></br>
+  <div id="tablea" style="width: 600px; height: 825px;"></div>
+  <div id="tableaa" style="width: 600px; height: 825px;"></div>
+  <h2>Destrezas de cocina</h2>
+  <div id="visualizationb" style="width: 600px; height: 371px;"></div></br>
+  <div id="tableb" style="width: 600px; height: 300px;"></div>
+  <div id="tablebb" style="width: 600px; height: 300px;"></div>
+  <h2>Destrezas de lavandería/”laundry” personal</h2>
+  <div id="visualizationc" style="width: 600px; height: 371px;"></div></br>
+  <div id="tablec" style="width: 600px; height: 225px;"></div>
+  <div id="tablecc" style="width: 600px; height: 225px;"></div>
+  <h2>Destrezas de convivencia familiar</h2>
+  <div id="visualizationd" style="width: 600px; height: 371px;"></div></br>
+  <div id="tabled" style="width: 600px; height: 200px;"></div>
+  <div id="tabledd" style="width: 600px; height: 200px;"></div>
+  <h2>Destrezas de limpieza en el hogar</h2>
+  <div id="visualizatione" style="width: 600px; height: 371px;"></div></br>
+  <div id="tablee" style="width: 600px; height: 225px;"></div>
+  <div id="tableee" style="width: 600px; height: 225px;"></div>
+  <h2>Destrezas de jardineria/limpieza áreas verdes</h2>
+  <div id="visualizationf" style="width: 600px; height: 371px;"></div></br>
+  <div id="tablef" style="width: 600px; height: 175px;"></div>
+  <div id="tableff" style="width: 600px; height: 175px;"></div>
+  <h2>Destrezas Personales</h2>
+  <div id="visualizationg" style="width: 600px; height: 371px;"></div></br>
+  <div id="tableg" style="width: 600px; height: 200px;"></div>
+  <div id="tablegg" style="width: 600px; height: 200px;"></div>
+  <h2>Destrezas de salud</h2>
+  <div id="visualizationh" style="width: 600px; height: 371px;"></div></br>
+  <div id="tableh" style="width: 600px; height: 450px;"></div>
+  <div id="tablehh" style="width: 600px; height: 450px;"></div>
+  <h2>Destrezas de comunidad</h2>
+  <div id="visualizationi" style="width: 600px; height: 371px;"></div></br>
+  <div id="tablei" style="width: 600px; height: 325px;"></div>
+  <div id="tableii" style="width: 600px; height: 325px;"></div>
+  <h2>Actividades o intereses en el tiempo libre</h2>
+  <div id="visualizationj" style="width: 600px; height: 371px;"></div></br>
+  <div id="tablej" style="width: 600px; height: 350px;"></div>
+  <div id="tablejj" style="width: 600px; height: 350px;"></div>
+  <h2>Destrezas para planes ocupacionales futuros</h2>
+  <div id="visualizationk" style="width: 600px; height: 371px;"></div></br>
+  <div id="tablek" style="width: 600px; height: 225px;"></div>
+  <div id="tablekk" style="width: 600px; height: 225px;"></div>
+ <h2>Destrezas de vivienda</h2>
+  <div id="visualizationl" style="width: 600px; height: 371px;"></div></br>
+  <div id="tablel" style="width: 600px; height: 300;"></div>
+  <div id="tablell" style="width: 600px; height: 300;"></div>
+</body>
+</html>
+​

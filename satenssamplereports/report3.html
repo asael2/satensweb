@@ -1,0 +1,433 @@
+<!--
+You are free to copy and use this sample in accordance with the terms of the
+Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>SATENS | Informe 3: Auto Funcionamiento que el Estudiante Identifica Tiene en la Escuela al Presente y Planes Futuros </title>
+    
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+//LOADS CHART PACKAGES
+google.load("visualization", "1", {packages:["corechart"]});
+google.load('visualization', '1', {packages: ['gauge']});
+google.load('visualization', '1', {packages:['table']});
+
+//ID DE ESTUDIANTE
+
+function idest() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', ' ');
+        data.addColumn('string', ' ');
+        data.addColumn('string', ' ');
+		data.addColumn('string', ' ');
+        data.addRows([
+          ['Nombre',  'Edwin', 'Género', 'Masculino'],
+          ['Apellido',   'Merced',  'Grado', ' Noveno'],
+          ['Número de Record', '001', 'Fecha de Nacimiento', '01/01/2013']
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('estid'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+
+//CHART 1      
+  
+	  function chart1() {
+        var data = google.visualization.arrayToDataTable([
+     ['Respuesta | Sí = 1 No = 0', 'Valor'],
+          ['Respuesta | Sí = 1 No = 0',  1],
+        ]);
+        var options = {
+          title: 'Tiene planes de continuar estudios o trabajo al terminar la escuela superior',
+		  legend: {position: 'none'},
+		  vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, title:'Respuesta | Sí = 1 No = 0'},
+		  tooltip: {trigger: 'none'},
+		  bar: {groupWidth: 100}
+		 
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('visualizationa'));
+        chart.draw(data, options);
+		}
+
+
+//CHART 2      
+	  
+	    function chart2() {
+        var data = google.visualization.arrayToDataTable([
+     ['Respuesta | Sí = 1 No = 0', 'Valor'],
+          ['Respuesta | Sí = 1 No = 0',  1],
+        ]);
+        var options = {
+          title: 'Al presente necesita ayuda para hacer sus tareas en las claseses',
+		  legend: {position: 'none'},
+		  vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, title:'Respuesta | Sí = 1 No = 0'},
+		  tooltip: {trigger: 'none'},
+		  bar: {groupWidth: 100}
+		 
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('visualizationb'));
+        chart.draw(data, options);
+		}
+
+// TEXT REPORT HERE
+
+
+//CHART 2B     
+	
+	   function chart2b() {
+        var data = google.visualization.arrayToDataTable([
+     ['Respuesta | Sí = 1 No = 0', 'Valor'],
+          ['Respuesta | Sí = 1 No = 0',  1],
+        ]);
+        var options = {
+          title: 'Tiene algún problema académico, impedimento o de salud',
+		  legend: {position: 'none'},
+		  vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, title:'Respuesta | Sí = 1 No = 0'},
+		  tooltip: {trigger: 'none'},
+		  bar: {groupWidth: 100}
+		 
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('visualization2b'));
+        chart.draw(data, options);
+		}
+
+//CHART 3	  
+	
+function chart3() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Algunas manera que identifica para estudiar en sus clases ');
+        //data.addColumn('number', 'Salary');
+        data.addColumn('boolean', 'Selección');
+        data.addRows([
+          ['Organizando su horario de estudio', true],
+          ['Repasando con frecuencia los contenidos que va aprendiendo', null],
+		  ['Estudiando antes de las clases', null],
+		  ['Todas las anteriores', null]
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('visualizationc'));
+        table.draw(data, {showRowNumber: false});
+      }
+	  
+	  
+	  
+	  
+
+//CHART 4
+  
+	     function chart4() {
+        var data = google.visualization.arrayToDataTable([
+     ['Respuesta | Sí = 1 No = 0', 'Valor'],
+          ['Respuesta | Sí = 1 No = 0',  1],
+        ]);
+        var options = {
+          title: 'Busca ayuda cuando tiene dificultades en las clases ',
+		  legend: {position: 'none'},
+		  vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, title:'Respuesta | Sí = 1 No = 0'},
+		  tooltip: {trigger: 'none'},
+		  bar: {groupWidth: 100}
+		 
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('visualizationd'));
+        chart.draw(data, options);
+		}
+	  
+//CHART 5
+  
+	       function chart5() {
+        var data = google.visualization.arrayToDataTable([
+     ['Respuesta | Sí = 1 No = 0', 'Valor'],
+          ['Respuesta | Sí = 1 No = 0',  1],
+        ]);
+        var options = {
+          title: 'Si está satisfecho/a con los cursos que toma al presente en la escuela',
+		  legend: {position: 'none'},
+		  vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, title:'Respuesta | Sí = 1 No = 0'},
+		  tooltip: {trigger: 'none'},
+		  bar: {groupWidth: 100}
+		 
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('visualizatione'));
+        chart.draw(data, options);
+		}
+	  
+//CHART 6 
+
+/*function chart6() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Interes General y/o Actividad');
+        data.addColumn('boolean', 'Sí');
+        data.addColumn('boolean', 'No');
+        data.addRows([
+          ['Sabe ir al correo, banco, hospital, entre otros',  null, true],
+          ['Participa en organizaciones o actividades en la escuela',   true,  null],
+          ['Participa de otras actividades en la comunidad', null, true],
+		  ['Tiene licencia de conducir', null, true],
+		  ['Necesita ayuda para aprobar el examen de conducir', null, true],
+		  ['Tiene conocimiento que a los 18 años de edad se puedes registrar para votar en las elecciones', null, true],
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('visualizationf'));
+        table.draw(data, {showRowNumber: false});
+      }	 */
+
+ function chart6() {
+ var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Interes General y/o Actividad');
+  data.addColumn('number', 'Respuestas | S&iacute; = Azul    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   No = Rojo');
+  data.addRows([
+    ['Sabe ir al correo, banco, hospital, entre otros', 1],
+    ['Participa en organizaciones o actividades en la escuela', -1],
+    ['Participa de otras actividades en la comunidad', 1],
+    ['Tiene licencia de conducir', 1],
+    ['Necesita ayuda para aprobar el examen de conducir', -1],
+    ['Tiene conocimiento que a los 18 años de edad se puedes registrar para votar en las elecciones', 1],
+  ]);
+
+var table = new google.visualization.Table(document.getElementById('visualizationf'));
+
+var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
+
+formatter.format(data, 1); // Apply formatter to second column
+
+   
+table.draw(data, {allowHtml: true, showRowNumber: false});
+
+}
+
+
+
+//CHART 7
+	function chart7() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Actividades de estudio y/o trabajo que planea lleva a cabo ');
+        //data.addColumn('number', 'Salary');
+        data.addColumn('boolean', 'Selección');
+        data.addRows([
+          ['No Aplica', true],
+          ['Trabajar a tiempo completo', null],
+		  ['Trabajar a medio tiemnpo', null],
+		  ['Trabajar a medio tiemnpo y estudiar a medio tiempo', null],
+		  ['Matricularse en un Instituto Técnico | Vocacional', null],
+		  ['Matricularse en la Universidad', null],
+		  ['Otra', null],
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('visualizationg'));
+        table.draw(data, {showRowNumber: false});
+      }
+	  
+//CHART 8
+
+/*function chart8() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Areas que identifica necesita mayor orientación al presente:');
+        data.addColumn('boolean', 'Sí');
+        data.addColumn('boolean', 'No');
+        data.addRows([
+          ['Información sobre carreras y áreas profesionales',  null, true],
+          ['Solicitudes de empleo',   true,  null],
+          ['Redacción del resume o perfil profesional', null, true],
+		  ['Como conseguir un trabajo', null, true],
+		  ['Informacion para hacer una entrevista exitosa', null, true],
+		  ['Programas para adquirir experiencia de trabajo', null, true],
+		  ['Cómo llenar solicitudes para la universidad/otra institución', null, true],
+		  ['Orientación de otras universidades', null, true],
+		  ['Asistencia Económica', null, true],
+		  ['Rehabilitación Vocacional', null, true],
+		  ['Otras', null, true],
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('visualizationh'));
+        table.draw(data, {showRowNumber: false});
+      }	 */
+	  
+	  
+	  function chart8() {
+ var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Areas que identifica necesita mayor orientación al presente:');
+  data.addColumn('number', 'Respuestas | S&iacute; = Azul    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   No = Rojo');
+  data.addRows([
+    ['Información sobre carreras y áreas profesionales', 1],
+          ['Solicitudes de empleo',   1],
+          ['Redacción del resume o perfil profesional', -1],
+		  ['Como conseguir un trabajo', 1],
+		  ['Informacion para hacer una entrevista exitosa', -1],
+		  ['Programas para adquirir experiencia de trabajo', 1],
+		  ['Cómo llenar solicitudes para la universidad/otra institución', 1],
+		  ['Orientación de otras universidades', -1],
+		  ['Asistencia Económica', 1],
+		  ['Rehabilitación Vocacional', 1],
+		  ['Otras', 1],
+  ]);
+
+var table = new google.visualization.Table(document.getElementById('visualizationh'));
+
+var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
+
+formatter.format(data, 1); // Apply formatter to second column
+
+   
+table.draw(data, {allowHtml: true, showRowNumber: false});
+
+}
+	  
+	  
+//CHART 9
+
+  
+	       function chart9() {
+        var data = google.visualization.arrayToDataTable([
+     ['Respuesta | Sí = 1 No = 0', 'Valor'],
+          ['Respuesta | Sí = 1 No = 0',  1],
+        ]);
+        var options = {
+          title: 'Si ha tenido alguna experiencia de trabajo “part-time”',
+		  legend: {position: 'none'},
+		  vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, title:'Respuesta | Sí = 1 No = 0'},
+		  tooltip: {trigger: 'none'},
+		  bar: {groupWidth: 100}
+		 
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('visualizationi'));
+        chart.draw(data, options);
+		}
+
+//CHART 10
+
+
+	  
+	         function chart10() {
+        var data = google.visualization.arrayToDataTable([
+     ['Respuesta | Sí = 1 No = 0', 'Valor'],
+          ['Respuesta | Sí = 1 No = 0',  1],
+        ]);
+        var options = {
+          title: 'Si necesita mejorar sus destrezas personales para tener éxito en la escuela  y prepararse para los estudios o el trabajo que interesa en el futuro',
+		  legend: {position: 'none'},
+		  vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, title:'Respuesta | Sí = 1 No = 0'},
+		  tooltip: {trigger: 'none'},
+		  bar: {groupWidth: 100}
+		 
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('visualizationj'));
+        chart.draw(data, options);
+		}
+
+//CHART 11
+
+/*function chart11() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Destrezas personales y ocupacionales  que piensa necesita mejora');
+        data.addColumn('boolean', 'Sí');
+        data.addColumn('boolean', 'No');
+        data.addRows([
+          ['Mantener un calendario o agenda',  null, true],
+          ['Trabajar independientemente',   true,  null],
+          ['Relacionarse con los demás', null, true],
+		  ['Organizar las tareas a realizar', null, true],
+		  ['Compañerismo', null, true],
+		  ['Buen manejo del tiempo con los estudios', null, true],
+		  ['Realizar trabajo de forma ordenada y precisa', null, true],
+		  ['Puntualidad', null, true],
+		  ['Buena asistencia', null, true],
+		  ['Seguir instrucciones | instrucciones', null, true],
+		  ['Dar el máximo', null, true],
+		  ['Terminar una tarea a tiempo', null, true],
+		  ['Otra', null, true]
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('visualizationk'));
+        table.draw(data, {showRowNumber: false});
+      }	 */
+	  
+	  
+	   
+	  function chart11() {
+ var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Destrezas personales y ocupacionales que piensa necesita mejora');
+  data.addColumn('number', 'Respuestas | S&iacute; = Azul    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   No = Rojo');
+  data.addRows([
+		  ['Mantener un calendario o agenda',  1],
+          ['Trabajar independientemente',   -1],
+          ['Relacionarse con los demás', -1],
+		  ['Organizar las tareas a realizar', 1],
+		  ['Compañerismo', -1],
+		  ['Buen manejo del tiempo con los estudios', 1],
+		  ['Realizar trabajo de forma ordenada y precisa', -1],
+		  ['Puntualidad', -1],
+		  ['Buena asistencia', -1],
+		  ['Seguir instrucciones | instrucciones',-1],
+		  ['Dar el máximo', -1],
+		  ['Terminar una tarea a tiempo', -1],
+		  ['Otra', 1]
+  ]);
+
+var table = new google.visualization.Table(document.getElementById('visualizationk'));
+
+var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
+
+formatter.format(data, 1); 
+
+   
+table.draw(data, {allowHtml: true, showRowNumber: false});
+
+}
+	  
+	  
+	  
+
+//FUNCTION CALLS
+ 	  google.setOnLoadCallback(idest);
+  	  google.setOnLoadCallback(chart1);
+      google.setOnLoadCallback(chart2);
+	  google.setOnLoadCallback(chart2b);
+	  google.setOnLoadCallback(chart3);
+	  google.setOnLoadCallback(chart4);
+	  google.setOnLoadCallback(chart5);
+	  google.setOnLoadCallback(chart6); 
+	  google.setOnLoadCallback(chart7); 
+	  google.setOnLoadCallback(chart8); 
+	  google.setOnLoadCallback(chart9); 
+	  google.setOnLoadCallback(chart10);
+	  google.setOnLoadCallback(chart11);
+	  
+    </script>
+  <style type="text/css">
+  body h1 {
+	color: #80455f;
+}
+  body h2 {
+	color: #FFF;
+	background-color: #80455f;
+}
+  </style>
+  </head>
+  <body style="font-family: Arial; border: 0 none; font-size: 16px;">
+  <h1>Informe 3: Auto Funcionamiento que el Estudiante Identifica Tiene en la Escuela al Presente y Planes Futuros </h1>
+  <hr />
+    <div id="estid" style="width: 600px; height: 101px;"></div>
+  <hr />
+<h2>Trabajo en la Escuela al Presente y Planes Futuros</h2>
+    <div id="visualizationa" style="width: 600px; height: 250px;"></div>
+    <div id="visualizationb" style="width: 600px; height: 250px;"></div>
+    <div id="visualization2b" style="width: 600px; height: 250px;"></div>
+    <div id="visualizationc" style="width: 600px; height: 150px;"></div>
+    <div id="visualizationd" style="width: 600px; height: 250px;"></div>
+    <div id="visualizatione" style="width: 600px; height:250px;"></div>
+<h2>Experiencias del Diario Vivir | Comunitarias</h2>
+	<div id="visualizationf" style="width: 875px; height: 200px;"></div>
+<h2>Planes Después de Terminar la Escuela Superior</h2>
+    <div id="visualizationg" style="width: 600px; height: 225px;"></div>
+    <div id="visualizationh" style="width: 875px; height: 325px;"></div>
+    <div id="visualizationi" style="width: 600px; height: 250px;"></div>
+    <div id="visualizationj" style="width: 600px; height: 250px;"></div>
+    <div id="visualizationk" style="width: 875px; height: 400px;"></div>
+</body>
+</html>
+​

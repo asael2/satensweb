@@ -1,0 +1,314 @@
+<!--
+You are free to copy and use this sample in accordance with the terms of the
+Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>SATENS | Informe 1: Auto Perfil Educativo del Estudiante, Actividades Generales e Intereses</title>
+    
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+//LOADS CHART PACKAGES
+google.load("visualization", "1", {packages:["corechart"]});
+google.load('visualization', '1', {packages: ['gauge']});
+google.load('visualization', '1', {packages:['table']});
+
+//ID DE ESTUDIANTE
+
+function idest() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', ' ');
+        data.addColumn('string', ' ');
+        data.addColumn('string', ' ');
+		data.addColumn('string', ' ');
+        data.addRows([
+          ['Nombre',  'Edwin', 'Género', 'Masculino'],
+          ['Apellido',   'Merced',  'Grado', ' Noveno'],
+          ['Número de Record', '001', 'Fecha de Nacimiento', '01/01/2013']
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('estid'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+
+//CHART 1      
+function chart1() {
+        var data = google.visualization.arrayToDataTable([
+     ['Respuesta | Sí = 1 No = 0', 'Valor'],
+          ['Respuesta | Sí = 1 No = 0',  1],
+        ]);
+        var options = {
+          title: 'Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento',
+		  legend: {position: 'none'},
+		  vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, title:'Respuesta | Sí = 1 No = 0'},
+		  tooltip: {trigger: 'none'},
+		  bar: {groupWidth: 100}
+		 
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('visualizationa'));
+        chart.draw(data, options);
+		}
+
+//CHART 2      
+	  function chart2() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Servicios que recibe en la escuela');
+        data.addColumn('boolean', 'Selección');
+        data.addRows([
+          ['Consejero Escolar', true],
+          ['Sicólogo', true],
+          ['Tutoría', null],
+          ['Terapia de Habla',  true],
+		  ['Terapia Ocupacional',  null],
+		  ['Asistencia Tecnológica',  null],
+		  ['Acomodos',  true],
+		  ['Otros',  null]
+		  
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('visualizationb'));
+        table.draw(data, {showRowNumber: false});
+      }
+	  
+ 
+//CHART 3	  
+ function chart3() {
+        var data = google.visualization.arrayToDataTable([
+          ['Destreza', 'Valor'],
+          ['Lectura', 2],
+          ['Escritura', 1],
+          ['Matemáticas', 3]
+        ]);
+
+        var options = {
+          width: 600, 
+		  height: 200,
+          min: 1, 
+		  max: 3,
+		  yellowFrom:1, yellowTo: 1.5,
+		  redFrom: 1.51, redTo: 2.5,
+		  greenFrom: 2.51, greenTo: 3,
+		  backgroundColor: {strokeWidth: 1, fill: 'white',},
+          
+          
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('visualizationc'));
+        chart.draw(data, options);
+      }
+	  
+//CHART 4	  
+
+function table3() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Autocalificación');
+        data.addColumn('boolean', 'Lectura');
+		data.addColumn('boolean', 'Escritura');
+		data.addColumn('boolean', 'Matemáticas');
+        data.addRows([
+          ['Desconozco', null, null, null],
+          ['Por debajo de los demás', null, true, null],
+          ['Igual que los demás',  true, null, null],
+		  ['Por encima de los demás',  null, null, true]
+		  
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('tablec'));
+        table.draw(data, {showRowNumber: false});
+      }
+
+//CHART 5
+function chart4() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Manera de confrontar necesidades académicas ');
+        data.addColumn('boolean', 'Selección');
+        data.addRows([
+          ['Pienso en varias soluciones', true],
+          ['Busco consejo de otros', null],
+          ['Comienzo a resolver el probelma sin tener un plan', null],
+          ['Considero las cosas positivas y negativas del problema',  null],
+		  ['Considero otra solución cuando la primera idea no parece funcionar',  true]
+		  
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('visualizationd'));
+        table.draw(data, {showRowNumber: false});
+      }
+	  
+//CHART6
+		
+		function chart5a() {
+        var data = google.visualization.arrayToDataTable([
+     ['Respuesta | Sí = 1 No = 0', 'Valor'],
+          ['Respuesta | Sí = 1 No = 0',  1],
+        ]);
+        var options = {
+          title: 'Diversión en Tiempo Libre',
+		  legend: {position: 'none'},
+		  vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, title:'Respuesta | Sí = 1 No = 0'},
+		  tooltip: {trigger: 'none'},
+		  bar: {groupWidth: 100}
+		 
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('visualizatione1'));
+        chart.draw(data, options);
+		}
+		
+//CHART7		
+		
+		function chart5b() {
+        var data = google.visualization.arrayToDataTable([
+     ['Respuesta | Sí = 1 No = 0', 'Valor'],
+          ['Respuesta | Sí = 1 No = 0',  .025],
+        ]);
+        var options = {
+          title: 'Tareas y Responsabilidades en el Hogar',
+		  legend: {position: 'none'},
+		  vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, title:'Respuesta | Sí = 1 No = 0'},
+		  tooltip: {trigger: 'none'},
+		  bar: {groupWidth: 100}
+		 
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('visualizatione2'));
+        chart.draw(data, options);
+		}
+			
+//CHART8
+
+	  
+	function chart5c() {
+        var data = google.visualization.arrayToDataTable([
+     ['Respuesta | Sí = 1 No = 0', 'Valor'],
+          ['Respuesta | Sí = 1 No = 0',  1],
+        ]);
+        var options = {
+          title: 'Aspiración a una Carrera en el Futuro',
+		  legend: {position: 'none'},
+		  vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, title:'Respuesta | Sí = 1 No = 0'},
+		  tooltip: {trigger: 'none'},
+		  bar: {groupWidth: 100}
+		 
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('visualizatione3'));
+        chart.draw(data, options);
+		}  
+	  
+	  
+	  
+//CHART 9 
+	   function chart8() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Estudios que toma al presente o interesa tomar en la escuela superior   ');
+        data.addColumn('boolean', 'Selección');
+        data.addRows([
+          ['No Aplica', null],
+          ['Programa de Preparación Universitaria', null],
+          ['Programa General', true],
+          ['Certificado Técnico / Vocaional',  null],
+		  ['Programa de Estudio y Trabajo',  null],
+		  ['Otro',  null],
+		  
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('expecta1'));
+        table.draw(data, {showRowNumber: false});
+      }
+	  
+	
+//CHART 10
+	function chart9() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Estudios que aspira seguir cuando termine la escuela superior');
+        data.addColumn('boolean', 'Selección');
+        data.addRows([
+          ['No Aplica', null],
+          ['Instituto Técnico Vocacional', null],
+          ['Grado Asociado', null],
+          ['Bachillerato de Universidad',  null],
+		  ['Programa de Estudios Cortos',  true],
+		  ['Ninguna de las Anteriores',  null],
+		  
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('expecta2'));
+        table.draw(data, {showRowNumber: false});
+      }
+	  
+//CHART 9  
+function chart10() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['Datos-Información',  3],
+	['Gente-Publico', 10],
+	['Cosas-Manual',      3],
+	
+	]);
+
+	var options = {
+		title: 'Porciento de Ocupaciones Seleccionadas por el Estudiante Relacionadas a Datos, Gente y Cosas (ver ejemplos de ocupaciones seleccionadas por el estudiante)',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('chart_div'));
+	charte.draw(datae, options);
+
+}
+
+// CALLBACKS
+  	  google.setOnLoadCallback(idest);
+  	  google.setOnLoadCallback(chart1);
+      google.setOnLoadCallback(chart2);
+	  google.setOnLoadCallback(chart3);
+	  google.setOnLoadCallback(table3);
+	  google.setOnLoadCallback(chart4);
+	  google.setOnLoadCallback(chart5a);
+	  google.setOnLoadCallback(chart5b);
+	  google.setOnLoadCallback(chart5c);
+	  google.setOnLoadCallback(chart8);  
+	  google.setOnLoadCallback(chart9);  
+	  google.setOnLoadCallback(chart10);
+    </script>
+    
+   
+  <style type="text/css">
+  body h1 {
+	color: #80455f;
+}
+  body h2 {
+	color: #FFF;
+	background-color: #80455f;
+}
+  </style>
+  
+
+  </head>
+  <body style="font-family: Arial; border: 0 none; font-size: 16px;">
+  
+  <h1>Informe 1: Auto Perfil Educativo del Estudiante, Actividades Generales e Intereses</h1>
+  <hr />
+    <div id="estid" style="width: 600px; height: 101px;"></div>
+  <hr />
+  
+  <h2>Auto Perfil Educativo del Estudiante</h2>
+    <div id="visualizationa" style="width: 600px; height: 250px;"></div>
+    <div id="visualizationb" style="width: 700px; height: 250px;"></div>
+    <h5>Autocalificación de sus destrezas en lectura, escritura y matemáticas</h5>
+    <div id="visualizationc" style="width: 600px; height: 250px;"></div>
+    <div id="tablec" style="width: 600px; height: 175px;"></div>
+    <div id="visualizationd" style="width: 600px; height: 175px;"></div>
+    <h2>Intereses y Actividades Generales</h2>
+   <div id="visualizatione1" style="width: 600px; height: 250px;"></div>
+   <div id="visualizatione2" style="width: 600px; height: 250px;"></div>
+   <div id="visualizatione3" style="width: 600px; height: 250px;"></div>
+
+<h2>Intereses y Metas de Estudios Generales</h2>
+    <div id="expecta1" style="width: 600px; height: 200px;"></div>
+    <div id="expecta2" style="width: 600px; height: 200px;"></div>
+    <div id="chart_div" style="width: 600px; height: 400px;"></div>
+</body>
+</html>
+​
