@@ -549,7 +549,7 @@ function after_submission($entry, $form){
 
     $name = $entry["2"];
     $address = $entry["17"] . ', '. $entry["18"] .', '. $entry["19"];
-	echo '<h1>'.$name.'</h1>';
+echo '<h2>'.$name.'</h2>';
 }
 
 
@@ -563,31 +563,17 @@ function display_referrer($entry_id) {
 
 
 
-// this 
-add_action('gform_after_submission_1', 'get_value_by_label', 10, 2);
+// this will dump form variables to a log file for form ID 1
+add_action('gform_after_submission_1', 'dump_variables', 10, 2);
  
 // generic logging function
-
-
-
-function get_value_by_label($key, $form, $entry) {
-	
-	foreach ($form['fields'] as &$field) {
-	
-		if ($field['type'] == ‘hidden’) {
-			$lead_key = $field['label'];
-		} else {
-			$lead_key = $field['adminLabel'];
-		}
-	
-		if ($lead_key == $key) {
-			return $entry[$field['id']];
-		}
-	}
-	
-	return false;
+function dump_variables($entry, $form) {
+    $logfile = '/gravity_log.txt';
+    $fh = fopen($logfile, 'a');
+    $ebody  = "FORM:\n" . print_r($form, TRUE);
+    $ebody .= "\n\nENTRY:\n" . print_r($entry, TRUE);
+    $ebody .= "\n\nPOST:\n" . print_r($_POST, TRUE);
+    fwrite($fh, $ebody);
+    fclose($fh);
 }
-
-
-
 ?>
