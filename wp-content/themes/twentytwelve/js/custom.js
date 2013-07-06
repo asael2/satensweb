@@ -1,10 +1,8 @@
 var respuestas, leadId;
 
-
-var reporte={};
-
-
-reporte : {
+var reporte = {
+     
+    //selectedCountry: {},
 	
 	init : function(){
 		//Fetch Parameter from URL
@@ -26,8 +24,8 @@ reporte : {
 			startDraw();
 		});
 	}	
-
 }
+
 
 
 
@@ -40,7 +38,7 @@ var pregunta = function(DOMnumber){
 var respondido = function(fieldN){
 	var fn, fvalue, fieldNumber, lares;
 	fieldNumber = fieldN;
-	$.each(reporte.respuestas, function(index){
+	$.each(respuestas, function(index){
 		fn = this["field_number"];
 		fvalue = this["value"];
 		if (fieldNumber == fn){ 
@@ -68,7 +66,7 @@ function siNo(pregunta, respuesta) {
 		title: pregunta,
 		legend: {position: 'none'},
 		vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, 
-		title:'Titulo'},
+		title:'< No - Si >'},
 		tooltip: {trigger: 'none'},
 		bar: {groupWidth: 100}
 	};
