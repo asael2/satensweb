@@ -67,15 +67,14 @@ function siNo(pregunta, respuesta) {
 	chart.draw(data, options);
 };
 
-function laDataTable(nRespuestas, tableTitle) {
-	var data = new google.visualization.DataTable();
-	
-	data.addColumn('string', tableTitle);
-	data.addColumn('boolean', 'Selección');
-	data.addRows(nRespuestas);
-	
+function laDataTable(nRespuestas) {
+
+var data = google.visualization.arrayToDataTable(nRespuestas);
+
+
+
 	var table = new google.visualization.Table(document.getElementById('visualizationb'));
-	table.draw(data, {showRowNumber: false});
+	table.draw(data, {showRowNumber: false}); 
 }
 
 function velocimetros(nRespuestas) {
@@ -115,6 +114,9 @@ function startDraw(){
 
 	//DATATABLE 1      
 	var dataSet1 = [
+
+		['Country', 'Area'],
+
 		['Consejero Escolar', 		(respondido(23.1) == "true") ], 
 		['Sicólogo', 				(respondido(23.2) == "true") ], 
 		['Tutoría', 				(respondido(23.3) == "true") ],
@@ -124,7 +126,10 @@ function startDraw(){
 		['Acomodos', 				(respondido(23.7) == "true") ],
 		['Otros',  					(respondido(23.8) == "true") ]
 	];
-	laDataTable(dataSet1, 'Servicios que recibe en su escuela');	
+	
+
+
+laDataTable(dataSet1);	
 
 
 	// VELOCIMETROS 1
@@ -160,15 +165,15 @@ $(function(){
 
 	$(".entry-view-field-name").each(function(indice, elemento) {
   		console.log($(elemento).text());
-	});
+	}); 
 */
 
-	reporte.init()
+	reporte.init() 
 
 	//SERAiD
 	$(".gform_wrapper .readonly input").attr('readonly', 'readonly').css("background","#CCC");
 	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC");
 	//TABS
 	//$( "#tabs" ).tabs(); 
-	//$(".gform_previous_button").hide();   
+	//$(".gform_previous_button").hide();    
 });
