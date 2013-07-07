@@ -1,9 +1,6 @@
 var respuestas, leadId;
 
-var reporte = {
-     
-    //selectedCountry: {},
-	
+var reporte = {	
 	init : function(){
 		//Fetch Parameter from URL
 		$.urlParam = function(name){
@@ -19,15 +16,12 @@ var reporte = {
 
 		$.get('/servicio.php?leadid='+leadId).done(function(data) {
 			respuestas = data.r;
-			console.log(respuestas);
+			//console.log(respuestas);
 			console.log("Total registros :: "+respuestas.length);
 			startDraw();
 		});
 	}	
 }
-
-
-
 
 var pregunta = function(DOMnumber){
 	var label = $(".entry-view-field-name").eq(DOMnumber).text();
@@ -49,24 +43,22 @@ var respondido = function(fieldN){
     return lares;
 }
 
-
 function studentBasicData(label, value){
 
 	$("#leadData").append("<li>"+label+" : "+value+"</li>")
 }
 
-
 function siNo(pregunta, respuesta) {
 	var data = google.visualization.arrayToDataTable([
 		['Sí | No = 0', 'Valor'],
-		['Respuesta | Sí / No ',  parseInt(respuesta)],
+		['Respuesta',  parseInt(respuesta)],
 	]);
 
 	var options = {
 		title: pregunta,
 		legend: {position: 'none'},
 		vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, 
-		title:'< No - Si >'},
+		title:'< No - - Si >'},
 		tooltip: {trigger: 'none'},
 		bar: {groupWidth: 100}
 	};
@@ -75,29 +67,32 @@ function siNo(pregunta, respuesta) {
 	chart.draw(data, options);
 };
 
-
-function laDataTable() {
-
+function laDataTable(nRespuestas, tableTitle) {
 	var data = new google.visualization.DataTable();
-
-	data.addColumn('string', 'Servicios que recibe en  la escuela');
+	
+	data.addColumn('string', tableTitle);
 	data.addColumn('boolean', 'Selección');
-
-	data.addRows([
-		['Consejero Escolar', respondido(11.1)],
-		['Sicólogo', respondido(11.2)],
-		['Tutoría', respondido(11.3)],
-		['Terapia de Habla',  respondido(11.4)],
-		['Terapia Ocupacional',  respondido(11.5)],
-		['Asistencia Tecnológica',  respondido(11.6)],
-		['Acomodos',  respondido(11.7)],
-		['Otros',  respondido(11.8)]
-	]);
-
+	data.addRows(nRespuestas);
+	
 	var table = new google.visualization.Table(document.getElementById('visualizationb'));
 	table.draw(data, {showRowNumber: false});
 }
 
+function velocimetros(nRespuestas) {
+	var data = google.visualization.arrayToDataTable(nRespuestas);
+	var options = {
+		width: 600, 
+		height: 200,
+		min: 1, 
+		max: 3,
+		yellowFrom:1, yellowTo: 1.5,
+		redFrom: 1.51, redTo: 2.5,
+		greenFrom: 2.51, greenTo: 3,
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+	};
+	var chart = new google.visualization.Gauge(document.getElementById('visualizationc'));
+	chart.draw(data, options);
+}
 //Global Scope eof///////////////////////////////////
 
 
@@ -119,38 +114,46 @@ function startDraw(){
 	siNo(pregunta(17), respondido(22) )
 
 	//DATATABLE 1      
-	//laDataTable();
+	var dataSet1 = [
+		['Consejero Escolar', 		(respondido(23.1) == "true") ], 
+		['Sicólogo', 				(respondido(23.2) == "true") ], 
+		['Tutoría', 				(respondido(23.3) == "true") ],
+		['Terapia de Habla',  		(respondido(23.4) == "true") ],
+		['Terapia Ocupacional',  	(respondido(23.5) == "true") ],
+		['Asistencia Tecnológica',	(respondido(23.6) == "true") ],
+		['Acomodos', 				(respondido(23.7) == "true") ],
+		['Otros',  					(respondido(23.8) == "true") ]
+	];
+	laDataTable(dataSet1, 'Servicios que recibe en su escuela');	
 
-		
 
-}
+	// VELOCIMETROS 1
+	var dataSet2 = [
+		['Destreza',	'Valor'],
+		['Lectura', 	parseInt(respondido(24))],
+		['Escritura',	parseInt(respondido(25))],
+		['Matemáticas',	parseInt(respondido(26))]
+	];
+	velocimetros(dataSet2);
 
-
-
-/*
-function getCBValues(eNum){
-	var b1 = eNum;
-	var b2 = b1+1;
-	var fnumber = this["field_number"];
-	var eValue = this["value"];
-	
-	if (fnumber > b1 && fnumber < b2){
-	      //console.log(eValue); 
-	      //console.log(fnumber);
-	      return eValue
-	}
-}
-
+	//DATATABLE 2
+/*	var dataSet3 = [
+      ['Desconozco',			 	null, null, null],
+      ['Por debajo de los demás',	null, true, null],
+      ['Igual que los demás',  		true, null, null],
+	  ['Por encima de los demás',  	null, null, true]
+	];
+	laDataTable(dataSet3, 'Autocalificación');
 */
 
-
+}
 
 		
 //ready
 $(function(){
-	//$(".entry-detail-view").hide(); 
+	$(".entry-detail-view").hide(); 
 	
-/*
+/* 
 	$.each(".entry-view-field-name", "body", function(){
 		console.log(this.text())
 	})
@@ -166,6 +169,6 @@ $(function(){
 	$(".gform_wrapper .readonly input").attr('readonly', 'readonly').css("background","#CCC");
 	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC");
 	//TABS
-	//$( "#tabs" ).tabs();
-	//$(".gform_previous_button").hide();
+	//$( "#tabs" ).tabs(); 
+	//$(".gform_previous_button").hide();   
 });
