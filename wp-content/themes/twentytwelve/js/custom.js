@@ -21,10 +21,10 @@ var reporte = {
 			console.log("Total registros :: "+respuestas.length);
 			startDraw();
 		});
-	}	
+	}	 
 }
 
-var pregunta = function(DOMnumber){
+var preguntaDom = function(DOMnumber){
 	var label = $(".entry-view-field-name").eq(DOMnumber).text();
 	//console.log(label);
 	return label;
@@ -91,17 +91,18 @@ function velocimetros(nRespuestas, targetDom) {
 	chart.draw(data, options);
 }
 
-function pieChart(nRespuestas, pieTittle, targetDom) {
+function pieChart(nRespuestas, pieTitle, targetDom) {
+
 	var data = google.visualization.arrayToDataTable(nRespuestas);
 
 	var options = {
-		title: pieTittle,
-		backgroundColor: {strokeWidth: 1, fill: 'white',},
-		legend: {position: 'bottom', alignment: 'start'}
+			title: pieTitle,
+			backgroundColor: {strokeWidth: 1, fill: 'white',},
+			legend: {position: 'bottom', alignment: 'start'}
 		};
+
 	var charte = new google.visualization.PieChart(document.getElementById(targetDom));
 	charte.draw(data, options);
-
 }
 
 var editLink = (function(){
@@ -116,15 +117,15 @@ var editLink = (function(){
 function startDraw(){
 
 	//SERAID, Field numbers 1
-	studentBasicData(pregunta(0) , respondido(1));	
+	studentBasicData(preguntaDom(0) , respondido(1));	
 	//Info del estudiante,Field numbers 3-6
-    studentBasicData(pregunta(1) , respondido(3));
-    studentBasicData(pregunta(2) , respondido(4));
-    studentBasicData(pregunta(3) , respondido(5));
-    studentBasicData(pregunta(4) , respondido(6));
-    studentBasicData(pregunta(5) , respondido(7));
-    studentBasicData(pregunta(6) , respondido(8));
-    studentBasicData(pregunta(7) , respondido(9));
+    studentBasicData(preguntaDom(1) , respondido(3));
+    studentBasicData(preguntaDom(2) , respondido(4));
+    studentBasicData(preguntaDom(3) , respondido(5));
+    studentBasicData(preguntaDom(4) , respondido(6));
+    studentBasicData(preguntaDom(5) , respondido(7));
+    studentBasicData(preguntaDom(6) , respondido(8));
+    studentBasicData(preguntaDom(7) , respondido(9));
 	studentBasicData("Editar", editLink);
    
  //Form Auto Perfil Educativo del Estudiante
@@ -221,6 +222,19 @@ function startDraw(){
 			['Ninguna de las Anteriores',		(respondido(42) == 5 )]
 	];
 	laDataTable(dataSet6, 'vDT-DS6');
+
+	//PIECHART
+	var pieTitle7 = 'Porciento de Ocupaciones Seleccionadas por el Estudiante Relacionadas a Datos, Gente y Cosas (ver ejemplos de ocupaciones seleccionadas por el estudiante)';
+	var dataSet7 = [
+		//Columnas
+		['Dimensión', 'Cantidad'],
+		//Filas
+		['Datos-Información',  8],
+		['Gente-Publico', 10],
+		['Cosas-Manual',      3],
+	];
+	pieChart(dataSet7, pieTitle7, 'vPie-DS7');
+
 
 //end Draw 
 }

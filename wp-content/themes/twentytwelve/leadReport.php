@@ -44,7 +44,7 @@ LeadReport Template :)
         <dd>
             <div id="vDT-DS5"></div>
             <div id="vDT-DS6"></div>
-            <div id="vPC-DS7"></div>
+            <div id="vPie-DS7"></div>
         </dd>
         
     </dl>
