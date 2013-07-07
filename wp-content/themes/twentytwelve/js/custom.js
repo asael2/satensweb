@@ -1,5 +1,6 @@
 var respuestas, leadId;
 
+
 var reporte = {	
 	init : function(){
 		//Fetch Parameter from URL
@@ -103,6 +104,11 @@ function pieChart(nRespuestas, pieTittle, targetDom) {
 
 }
 
+var editLink = (function(){
+	var editLink = $(".useredit").html()
+	console.log(editLink);
+	return editLink;
+})();
 
 //Global Scope eof///////////////////////////////////
 
@@ -119,11 +125,7 @@ function startDraw(){
     studentBasicData(pregunta(5) , respondido(7));
     studentBasicData(pregunta(6) , respondido(8));
     studentBasicData(pregunta(7) , respondido(9));
-	studentBasicData("Editar", 	(function(){
-			var editLink = $(".useredit").html()
-			console.log(editLink);
-			return editLink;
-		})());
+	studentBasicData("Editar", editLink);
    
  //Form Auto Perfil Educativo del Estudiante
 
@@ -207,32 +209,9 @@ function startDraw(){
 			['Programa de Estudio y Trabajo',  null],
 			['Otro',  null],
 
-		['Pienso en varias soluciones', 										(respondido(27.1) == "true") ],
-		['Busco consejo de otros', 												(respondido(27.2) == "true") ],
-		['Comienzo a resolver el probelma sin tener un plan', 					(respondido(27.3) == "true") ],
-		['Considero las cosas positivas y negativas del problema', 				(respondido(27.4) == "true") ],
-		['Considero otra solución cuando la primera idea no parece funcionar',	(respondido(27.5) == "true") ]
-
 	];
 	laDataTable(dataSet5, 'vDT-DS5');
 
-	/*  
-	var dataSet5 = [
-			//Columnas
-			['Estudios que toma al presente o interesa tomar en la escuela superior', 'Seleccion'],
-			//Filas
-			['No Aplica', 								(respondido(33) == "true")],
-			['Programa de Preparación Universitaria', 	(respondido(33) == "true")],
-	        ['Programa General', 						(respondido(33) == "true")],
-	        ['Certificado Técnico / Vocaional',  		(respondido(33) == "true")],
-			['Programa de Estudio y Trabajo',  			(respondido(33) == "true")],
-			['Otro', 									(respondido(33) == "true")],
-	];
-	laDataTable(dataSet5, 'vDT-DS5');*/
-
-
-
-//vPC-DS7
 
 
 
