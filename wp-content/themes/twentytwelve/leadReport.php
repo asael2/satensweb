@@ -20,10 +20,10 @@ LeadReport Template :)
 	google.setOnLoadCallback(reporte); 
  </script> 
     <dl class="customReport">
+    
 		<dt class="tituloForm">Informacion del Estudiante</dt>
         <dd>
-            <ul id="leadData">
-            </ul>
+            <ul id="leadData"></ul>
         </dd>
         <dt class="tituloForm">Auto Perfil Educativo del Estudiante</dt>
         <dd>

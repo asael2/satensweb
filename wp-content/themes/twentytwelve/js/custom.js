@@ -130,7 +130,7 @@ function startDraw(){
  //Form Auto Perfil Educativo del Estudiante
 
  	//CHART
-	siNoColumnChart(pregunta(17), respondido(22), 'vSiNo-1')
+	siNoColumnChart("Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento", respondido(22), 'vSiNo-1')
 
 	//DATATABLE      
 	var dataSet1 = [
@@ -158,7 +158,6 @@ function startDraw(){
 	velocimetros(dataSet2, 'vGVel-DS2');
 
 	//DATATABLE
-	
 	var dataSet3 = [
 		//Columnas
 		['Autocalificación ', 'Lectura', 'Escritura', 'Matematicas'],
@@ -171,8 +170,7 @@ function startDraw(){
 	];
 	laDataTable(dataSet3, 'vDT-DS3');
 	
-	//DATATABLE
-	
+	//DATATABLE	
 	var dataSet4 = [
 		//Columnas
 		['Manera de confrontar necesidades académicas', 'Seleccion'],
@@ -188,32 +186,41 @@ function startDraw(){
 //Form Break<<<Intereses y Actividades Generales
 
 	//CHART 
-	siNoColumnChart(pregunta(23), respondido(29), 'vSiNo-2')
+	siNoColumnChart("Diversión en Tiempo Libre", respondido(29), 'vSiNo-2')
 	//CHART 
-	siNoColumnChart(pregunta(24), respondido(30), 'vSiNo-3')
+	siNoColumnChart("Tareas y Responsabilidades en el Hogar", respondido(30), 'vSiNo-3')
 	//CHART
-	siNoColumnChart(pregunta(25), respondido(31), 'vSiNo-4')
+	siNoColumnChart("Aspiración a una Carrera en el Futuro", respondido(31), 'vSiNo-4')
 
 //Form Break<<<Intereses y Metas de Estudios Generales
 
 	//DATATABLE  
-
 	var dataSet5 = [
 		//Columnas
 		['Estudios que toma al presente o interesa tomar en la escuela superior', 'Seleccion'],
 		//Filas
-			['No Aplica', null],
-			['Programa de Preparación Universitaria', null],
-			['Programa General', true],
-			['Certificado Técnico / Vocaional',  null],
-			['Programa de Estudio y Trabajo',  null],
-			['Otro',  null],
-
+			['No Aplica', 								(respondido(41) == 0)],
+			['Programa de Preparación Universitaria', 	(respondido(41) == 1)],
+			['Programa General', 						(respondido(41) == 2)],
+			['Certificado Técnico / Vocaional', 		(respondido(41) == 3)],
+			['Programa de Estudio y Trabajo', 			(respondido(41) == 4)],
+			['Otro', 									(respondido(41) == 5)]
 	];
 	laDataTable(dataSet5, 'vDT-DS5');
-
-
-
+	
+	//DATATABLE  
+	var dataSet6 = [
+		//Columnas
+		['Estudios que aspira seguir cuando termine la escuela superior', 'Seleccion'],
+		//Filas
+			['No Aplica',						(respondido(42) == 0 )],
+			['Instituto Técnico Vocacional',	(respondido(42) == 1 )],
+			['Grado Asociado', 					(respondido(42) == 2 )],
+			['Bachillerato de Universidad',		(respondido(42) == 3 )],
+			['Programa de Estudios Cortos',		(respondido(42) == 4 )],
+			['Ninguna de las Anteriores',		(respondido(42) == 5 )]
+	];
+	laDataTable(dataSet6, 'vDT-DS6');
 
 //end Draw 
 }
