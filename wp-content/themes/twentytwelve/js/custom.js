@@ -266,11 +266,12 @@ $(function(){
 	} else{
 		$(".customReport").hide();
 	}
-	
-	if($.urlParam('edit')){
-		console.log("Student Edit");
-		//reporte.init();
+
+	if( $.urlParam('edit') && $.urlParam('form') ){
+		$(".customReport").hide();
 	}
+	
+	
 
 	//SERAiD
 	$(".gform_wrapper .readonly input").attr('readonly', 'readonly').css("background","#CCC"); 

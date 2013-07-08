@@ -1739,9 +1739,14 @@ dl dt.tituloForm{
 }
 
 .readonly{
-    color: red;
+    color: #80445F;
 }
 
+ul#leadData li{
+	background: #12103F;
+	padding: 12px 0 6px 12px;
+	color: white;
+}
 
 
 
