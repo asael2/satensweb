@@ -1,6 +1,5 @@
 var respuestas, leadId;
 
-
 var reporte = {	
 	init : function(){
 		//Fetch Parameter from URL
@@ -128,7 +127,8 @@ function startDraw(){
     studentBasicData(preguntaDom(7) , respondido(9));
 	studentBasicData("Editar", editLink);
    
- //Form Auto Perfil Educativo del Estudiante
+ 	
+ 	//Form Beak<<< Auto Perfil Educativo del Estudiante
 
  	//CHART
 	siNoColumnChart("Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento", respondido(22), 'vSiNo-1')
@@ -146,8 +146,7 @@ function startDraw(){
 			['Asistencia Tecnológica',	(respondido(23.6) == "true") ],
 			['Acomodos', 				(respondido(23.7) == "true") ],
 			['Otros',  					(respondido(23.8) == "true") ]
-	];
-	laDataTable(dataSet1, 'vDT-DS1');
+	]; laDataTable(dataSet1, 'vDT-DS1');
 	
 	//VELOCIMETROS
 	var dataSet2 = [
@@ -155,8 +154,7 @@ function startDraw(){
 		['Lectura', 	parseInt(respondido(24))],
 		['Escritura',	parseInt(respondido(25))],
 		['Matemáticas',	parseInt(respondido(26))]
-	];
-	velocimetros(dataSet2, 'vGVel-DS2');
+	]; velocimetros(dataSet2, 'vGVel-DS2');
 
 	//DATATABLE
 	var dataSet3 = [
@@ -168,8 +166,7 @@ function startDraw(){
       	['Por debajo de los demás', (respondido(24) == 1), (respondido(25) == 1), (respondido(26) == 1)],
       	['Igual que los demás',  	(respondido(24) == 2), (respondido(25) == 2), (respondido(26) == 2)],
 	  	['Por encima de los demás', (respondido(24) == 3), (respondido(25) == 3), (respondido(26) == 3)]
-	];
-	laDataTable(dataSet3, 'vDT-DS3');
+	]; laDataTable(dataSet3, 'vDT-DS3');
 	
 	//DATATABLE	
 	var dataSet4 = [
@@ -181,10 +178,9 @@ function startDraw(){
 		['Comienzo a resolver el probelma sin tener un plan', 					(respondido(27.3) == "true") ],
 		['Considero las cosas positivas y negativas del problema', 				(respondido(27.4) == "true") ],
 		['Considero otra solución cuando la primera idea no parece funcionar',	(respondido(27.5) == "true") ]
-	];
-	laDataTable(dataSet4, 'vDT-DS4');
+	]; laDataTable(dataSet4, 'vDT-DS4');
 
-//Form Break<<<Intereses y Actividades Generales
+	//Form Break<<<Intereses y Actividades Generales
 
 	//CHART 
 	siNoColumnChart("Diversión en Tiempo Libre", respondido(29), 'vSiNo-2')
@@ -193,7 +189,7 @@ function startDraw(){
 	//CHART
 	siNoColumnChart("Aspiración a una Carrera en el Futuro", respondido(31), 'vSiNo-4')
 
-//Form Break<<<Intereses y Metas de Estudios Generales
+	//Form Break<<<Intereses y Metas de Estudios Generales
 
 	//DATATABLE  
 	var dataSet5 = [
@@ -206,8 +202,7 @@ function startDraw(){
 			['Certificado Técnico / Vocaional', 		(respondido(41) == 3)],
 			['Programa de Estudio y Trabajo', 			(respondido(41) == 4)],
 			['Otro', 									(respondido(41) == 5)]
-	];
-	laDataTable(dataSet5, 'vDT-DS5');
+	]; laDataTable(dataSet5, 'vDT-DS5');
 	
 	//DATATABLE  
 	var dataSet6 = [
@@ -229,18 +224,29 @@ function startDraw(){
 		//Columnas
 		['Dimensión', 'Cantidad'],
 		//Filas
-		['Datos-Información',  8],
-		['Gente-Publico', 10],
-		['Cosas-Manual',      3],
+		['Datos-Información',	3],
+		['Gente-Publico', 		6],
+		['Cosas-Manual', 		4]
 	];
 	pieChart(dataSet7, pieTitle7, 'vPie-DS7');
 
 
-//end Draw 
+	//end Draw 
+}
+
+var sumChkdVals = function(fNumber, optsNumber){
+	var suma=0;
+	for (var i=1;i<=optsNumber;i++){
+		campoValue = respondido(fNumber+"."+i);
+		suma = parseInt(suma) + parseInt(campoValue); 
+		console.log(suma);
+	}
+	//return suma;
 }
 
 
 
+ 
 		
 //ready
 $(function(){
@@ -257,7 +263,7 @@ $(function(){
 */
 
 	reporte.init() 
-
+ 
 	//SERAiD
 	$(".gform_wrapper .readonly input").attr('readonly', 'readonly').css("background","#CCC");
 	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC");
