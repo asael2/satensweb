@@ -1,16 +1,16 @@
 var respuestas, leadId, sumHelper;
+$.urlParam = function(name){
+	var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
+	if (results==null){
+		return null;
+	}else{
+		return results[1] || 0;
+	}
+};
 
 var reporte = {	
 	init : function(){
 		//Fetch Parameter from URL
-		$.urlParam = function(name){
-			var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
-			if (results==null){
-				return null;
-			}else{
-				return results[1] || 0;
-			}
-		};
 		
 		leadId = $.urlParam('leadid');
 
@@ -262,8 +262,11 @@ function startDraw(){
 //ready
 $(function(){
 	$(".entry-detail-view").hide(); 
+	reporte.init();
 	
-
+	if(pageId == 29){
+		var pageId = $.urlParam('form');
+	}
 	//SERAiD
 	$(".gform_wrapper .readonly input").attr('readonly', 'readonly').css("background","#CCC");
 	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC");
