@@ -1,4 +1,5 @@
-var respuestas, leadId, sumHelper;
+var respuestas, leadId, pageType;
+
 $.urlParam = function(name){
 	var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
 	if (results==null){
@@ -7,21 +8,6 @@ $.urlParam = function(name){
 		return results[1] || 0;
 	}
 };
-
-var reporte = {	
-	init : function(){
-		//Fetch Parameter from URL
-		
-		leadId = $.urlParam('leadid');
-
-		$.get('/servicio.php?leadid='+leadId).done(function(data) {
-			respuestas = data.r;
-		//	console.log(respuestas);
-			console.log("Total registros :: "+respuestas.length);
-			startDraw();
-		});
-	}	 
-}
 
 var preguntaDom = function(DOMnumber){
 	var label = $(".entry-view-field-name").eq(DOMnumber).text();
@@ -127,6 +113,21 @@ function pieChart(nRespuestas, pieTitle, targetDom) {
 
 
 //Global Scope eof///////////////////////////////////
+
+var reporte = {	
+	init : function(){
+		//Fetch Parameter from URL
+		
+		leadId = $.urlParam('leadid');
+
+		$.get('/servicio.php?leadid='+leadId).done(function(data) {
+			respuestas = data.r;
+		//	console.log(respuestas);
+			console.log("Total registros :: "+respuestas.length);
+			startDraw();
+		});
+	}	 
+}
 
 
 function startDraw(){
@@ -235,10 +236,6 @@ function startDraw(){
 	
 	laDataTable(dataSet6, 'vDT-DS6');
 
-	//console.log( sumOfFields(35, 11));
-	//console.log( sumOfFields(37, 11));
-	//console.log( sumOfFields(39, 11));
-
 	//PIECHART
 	var pieTitle7 = 'Porciento de Ocupaciones Seleccionadas por el Estudiante Relacionadas a Datos, Gente y Cosas (ver ejemplos de ocupaciones seleccionadas por el estudiante)';
 	var dataSet7 = [
@@ -252,24 +249,32 @@ function startDraw(){
 	];
 
 	pieChart(dataSet7, pieTitle7,  'vPie-DS7');
-
 	
 }//end Draw 
 
 
-
-
 //ready
 $(function(){
-	$(".entry-detail-view").hide(); 
-	reporte.init();
 	
-	if(pageId == 29){
-		var pageId = $.urlParam('form');
+	//Hide native table
+	$(".entry-detail-view").hide(); 
+	
+	// Execute report
+	if($.urlParam('form')){
+		console.log("Student Report");
+		reporte.init();
+	} else{
+		$(".customReport").hide();
 	}
+	
+	if($.urlParam('edit')){
+		console.log("Student Edit");
+		//reporte.init();
+	}
+
 	//SERAiD
-	$(".gform_wrapper .readonly input").attr('readonly', 'readonly').css("background","#CCC");
-	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC");
+	$(".gform_wrapper .readonly input").attr('readonly', 'readonly').css("background","#CCC"); 
+	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC", "color", "#FFF");
 	//TABS  
 	//$( "#tabs" ).tabs(); 
 	//$(".gform_previous_button").hide();     
