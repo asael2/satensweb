@@ -14,12 +14,14 @@ var reporte = {
 		
 		leadId = $.urlParam('leadid');
 
+
 		$.get('/servicio.php?leadid='+leadId).done(function(data) {
 			respuestas = data.r;
 			console.log(respuestas);
 			console.log("Total registros :: "+respuestas.length);
 			startDraw();
 		});
+
 	}	 
 }
 
@@ -237,6 +239,7 @@ function startDraw(){
 var sumChkdVals = function(fNumber, optsNumber){
 	var suma=0;
 	for (var i=1;i<=optsNumber;i++){
+		console.log(i+"::::Vamos I en")
 		campoValue = respondido(fNumber+"."+i);
 		suma = parseInt(suma) + parseInt(campoValue); 
 		console.log(suma);
@@ -245,12 +248,11 @@ var sumChkdVals = function(fNumber, optsNumber){
 }
 
 
-
  
 		
 //ready
 $(function(){
-	$(".entry-detail-view").hide(); 
+	//$(".entry-detail-view").hide(); 
 	
 /* 
 	$.each(".entry-view-field-name", "body", function(){
@@ -262,8 +264,8 @@ $(function(){
 	}); 
 */
 
-	reporte.init() 
- 
+	reporte.init();
+ 	
 	//SERAiD
 	$(".gform_wrapper .readonly input").attr('readonly', 'readonly').css("background","#CCC");
 	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC");
