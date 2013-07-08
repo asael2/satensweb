@@ -50,19 +50,19 @@ var editLink = function(){
 
 var sumOfFields = function(fNumber, optsNumber){
 	//Establecer un metodo para obtener el correspondiente 	optsNumber segun
-	var elvalue, suma;
-
-	for (var i=1; i<=optsNumber; i++){
+	var elvalue, i;
+	var suma =0;
+	
+	for(i=1; i<=optsNumber; i++){
 		elvalue = parseInt(respondido(fNumber+"."+i));
-		suma = parseInt(suma) + elvalue;
-		if (suma === NaN) {
-			suma = 0;
-			console.log(suma)
-		};
+		if (!elvalue == 1){
+			elvalue = 0;
+		}else{
+			suma = elvalue + suma;
+		}
 	}
-	//console.log(suma); 
 	return suma;
-}
+} 
 
 //Classes///////////////////////////////////
 function studentBasicData(label, value){
@@ -235,6 +235,10 @@ function startDraw(){
 	
 	laDataTable(dataSet6, 'vDT-DS6');
 
+	//console.log( sumOfFields(35, 11));
+	//console.log( sumOfFields(37, 11));
+	//console.log( sumOfFields(39, 11));
+
 	//PIECHART
 	var pieTitle7 = 'Porciento de Ocupaciones Seleccionadas por el Estudiante Relacionadas a Datos, Gente y Cosas (ver ejemplos de ocupaciones seleccionadas por el estudiante)';
 	var dataSet7 = [
@@ -243,7 +247,8 @@ function startDraw(){
 		//Filas					
 		['Gente-Publico', 		sumOfFields(35, 11)], //sum of field for question ID 35
 		['Cosas-Manual', 		sumOfFields(37, 11)],
-		['Datos-Información',	sumOfFields(39, 11)]		
+		['Datos-Información',	sumOfFields(39, 11)]
+	
 	];
 
 	pieChart(dataSet7, pieTitle7,  'vPie-DS7');
@@ -257,11 +262,12 @@ function startDraw(){
 //ready
 $(function(){
 	$(".entry-detail-view").hide(); 
-	reporte.init();
+	
+
 	//SERAiD
 	$(".gform_wrapper .readonly input").attr('readonly', 'readonly').css("background","#CCC");
 	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC");
-	//TABS
+	//TABS  
 	//$( "#tabs" ).tabs(); 
-	//$(".gform_previous_button").hide();    
+	//$(".gform_previous_button").hide();     
 }); 
