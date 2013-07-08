@@ -1,4 +1,4 @@
-var respuestas, leadId;
+var respuestas, leadId, sumHelper;
 
 var reporte = {	
 	init : function(){
@@ -14,14 +14,12 @@ var reporte = {
 		
 		leadId = $.urlParam('leadid');
 
-
 		$.get('/servicio.php?leadid='+leadId).done(function(data) {
 			respuestas = data.r;
-			console.log(respuestas);
+		//	console.log(respuestas);
 			console.log("Total registros :: "+respuestas.length);
 			startDraw();
 		});
-
 	}	 
 }
 
@@ -43,6 +41,27 @@ var respondido = function(fieldN){
 		}
 	});		
     return lares;
+}
+
+var editLink = function(){
+
+	return  $(".useredit").html()
+};
+
+var sumOfFields = function(fNumber, optsNumber){
+	//Establecer un metodo para obtener el correspondiente 	optsNumber segun
+	var elvalue, suma;
+
+	for (var i=1; i<=optsNumber; i++){
+		elvalue = parseInt(respondido(fNumber+"."+i));
+		suma = parseInt(suma) + elvalue;
+		if (suma === NaN) {
+			suma = 0;
+			console.log(suma)
+		};
+	}
+	//console.log(suma); 
+	return suma;
 }
 
 //Classes///////////////////////////////////
@@ -115,7 +134,6 @@ function startDraw(){
 	//SERAID, Field numbers 1
 	studentBasicData(preguntaDom(0) , respondido(1));	
 	//Info del estudiante,Field numbers 3-6
-<<<<<<< HEAD
     studentBasicData(preguntaDom(1) , respondido(3));
     studentBasicData(preguntaDom(2) , respondido(4));
     studentBasicData(preguntaDom(3) , respondido(5));
@@ -123,24 +141,10 @@ function startDraw(){
     studentBasicData(preguntaDom(5) , respondido(7));
     studentBasicData(preguntaDom(6) , respondido(8));
     studentBasicData(preguntaDom(7) , respondido(9));
-	studentBasicData("Editar", editLink);
-=======
-    studentBasicData(pregunta(1) , respondido(3));
-    studentBasicData(pregunta(2) , respondido(4));
-    studentBasicData(pregunta(3) , respondido(5));
-    studentBasicData(pregunta(4) , respondido(6));
-    studentBasicData(pregunta(5) , respondido(7));
-    studentBasicData(pregunta(6) , respondido(8));
-    studentBasicData(pregunta(7) , respondido(9));
-	studentBasicData("Editar", 	(function(){
-			var editLink = $(".useredit").html()
-			console.log(editLink);
-			return editLink;
-		})());
->>>>>>> parent of 39daa46... editLink joya
+	studentBasicData("Editar", editLink());
    
  	
- 	//Form Beak<<< Auto Perfil Educativo del Estudiante
+ //Form Beak<<< Auto Perfil Educativo del Estudiante
 
  	//CHART
 	siNoColumnChart("Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento", respondido(22), 'vSiNo-1')
@@ -192,7 +196,7 @@ function startDraw(){
 		['Considero otra solución cuando la primera idea no parece funcionar',	(respondido(27.5) == "true") ]
 	]; laDataTable(dataSet4, 'vDT-DS4');
 
-	//Form Break<<<Intereses y Actividades Generales
+//Form Break<<<Intereses y Actividades Generales
 
 	//CHART 
 	siNoColumnChart("Diversión en Tiempo Libre", respondido(29), 'vSiNo-2')
@@ -201,14 +205,13 @@ function startDraw(){
 	//CHART
 	siNoColumnChart("Aspiración a una Carrera en el Futuro", respondido(31), 'vSiNo-4')
 
-	//Form Break<<<Intereses y Metas de Estudios Generales
+//Form Break<<<Intereses y Metas de Estudios Generales
 
 	//DATATABLE  
 	var dataSet5 = [
 		//Columnas
 		['Estudios que toma al presente o interesa tomar en la escuela superior', 'Seleccion'],
 		//Filas
-<<<<<<< HEAD
 			['No Aplica', 								(respondido(41) == 0)],
 			['Programa de Preparación Universitaria', 	(respondido(41) == 1)],
 			['Programa General', 						(respondido(41) == 2)],
@@ -229,93 +232,36 @@ function startDraw(){
 			['Programa de Estudios Cortos',		(respondido(42) == 4 )],
 			['Ninguna de las Anteriores',		(respondido(42) == 5 )]
 	];
+	
 	laDataTable(dataSet6, 'vDT-DS6');
-=======
-			['No Aplica', null],
-			['Programa de Preparación Universitaria', null],
-			['Programa General', true],
-			['Certificado Técnico / Vocaional',  null],
-			['Programa de Estudio y Trabajo',  null],
-			['Otro',  null],
-
-		['Pienso en varias soluciones', 										(respondido(27.1) == "true") ],
-		['Busco consejo de otros', 												(respondido(27.2) == "true") ],
-		['Comienzo a resolver el probelma sin tener un plan', 					(respondido(27.3) == "true") ],
-		['Considero las cosas positivas y negativas del problema', 				(respondido(27.4) == "true") ],
-		['Considero otra solución cuando la primera idea no parece funcionar',	(respondido(27.5) == "true") ]
-
-	];
-	laDataTable(dataSet5, 'vDT-DS5');
-
-	/*  
-	var dataSet5 = [
-			//Columnas
-			['Estudios que toma al presente o interesa tomar en la escuela superior', 'Seleccion'],
-			//Filas
-			['No Aplica', 								(respondido(33) == "true")],
-			['Programa de Preparación Universitaria', 	(respondido(33) == "true")],
-	        ['Programa General', 						(respondido(33) == "true")],
-	        ['Certificado Técnico / Vocaional',  		(respondido(33) == "true")],
-			['Programa de Estudio y Trabajo',  			(respondido(33) == "true")],
-			['Otro', 									(respondido(33) == "true")],
-	];
-	laDataTable(dataSet5, 'vDT-DS5');*/
-
-
-
-//vPC-DS7
->>>>>>> parent of 39daa46... editLink joya
 
 	//PIECHART
 	var pieTitle7 = 'Porciento de Ocupaciones Seleccionadas por el Estudiante Relacionadas a Datos, Gente y Cosas (ver ejemplos de ocupaciones seleccionadas por el estudiante)';
 	var dataSet7 = [
 		//Columnas
 		['Dimensión', 'Cantidad'],
-		//Filas
-		['Datos-Información',	3],
-		['Gente-Publico', 		6],
-		['Cosas-Manual', 		4]
+		//Filas					
+		['Gente-Publico', 		sumOfFields(35, 11)], //sum of field for question ID 35
+		['Cosas-Manual', 		sumOfFields(37, 11)],
+		['Datos-Información',	sumOfFields(39, 11)]		
 	];
-	pieChart(dataSet7, pieTitle7, 'vPie-DS7');
+
+	pieChart(dataSet7, pieTitle7,  'vPie-DS7');
+
+	
+}//end Draw 
 
 
-	//end Draw 
-}
-
-var sumChkdVals = function(fNumber, optsNumber){
-	var suma=0;
-	for (var i=1;i<=optsNumber;i++){
-		console.log(i+"::::Vamos I en")
-		campoValue = respondido(fNumber+"."+i);
-		suma = parseInt(suma) + parseInt(campoValue); 
-		console.log(suma);
-	}
-	//return suma;
-}
 
 
- 
-		
 //ready
 $(function(){
-	//$(".entry-detail-view").hide(); 
-	
-/* 
-	$.each(".entry-view-field-name", "body", function(){
-		console.log(this.text())
-	})
-
-	$(".entry-view-field-name").each(function(indice, elemento) {
-  		console.log($(elemento).text());
-	}); 
-*/
-
+	$(".entry-detail-view").hide(); 
 	reporte.init();
- 	
 	//SERAiD
 	$(".gform_wrapper .readonly input").attr('readonly', 'readonly').css("background","#CCC");
 	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC");
 	//TABS
 	//$( "#tabs" ).tabs(); 
 	//$(".gform_previous_button").hide();    
-});
+}); 
