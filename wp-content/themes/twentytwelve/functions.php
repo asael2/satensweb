@@ -28,6 +28,10 @@
 if ( ! isset( $content_width ) )
 	$content_width = 625;
 
+/*Oculatmos Admin bar para no editores*/
+if (!current_user_can(‘edit_posts’)) {
+	show_admin_bar(false);
+}
 /**
  * Sets up theme defaults and registers the various WordPress features that
  * Twenty Twelve supports.
