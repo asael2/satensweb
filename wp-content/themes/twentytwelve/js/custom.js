@@ -1,5 +1,6 @@
+var reporte, respuestas, leadId, pageType;
 
-$.urlParam = function(name){
+$.urlParam = function (name) {
 	var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
 	if (results==null){
 		return null;
@@ -7,13 +8,14 @@ $.urlParam = function(name){
 		return results[1] || 0;
 	}
 };
-var preguntaDom = function(DOMnumber){
+
+var preguntaDom = function (DOMnumber) {
 	var label = $(".entry-view-field-name").eq(DOMnumber).text();
 	//console.log(label);
 	return label;
 };
 
-var respondido = function(fieldN){
+var respondido = function (fieldN) {
 	var fn, fvalue, fieldNumber, lares;
 	fieldNumber = fieldN;
 	$.each(respuestas, function(index){
@@ -27,12 +29,12 @@ var respondido = function(fieldN){
     return lares;
 };
 
-var editLink = function(){
+var editLink = function () {
 
 	return  $(".useredit").html()
 };
 
-var sumOfFields = function(fNumber, optsNumber){
+var sumOfFields = function (fNumber, optsNumber) {
 	//Establecer un metodo para obtener el correspondiente 	
 	//optsNumber :  posibles respuestas
 	var elvalue, i;
@@ -49,38 +51,98 @@ var sumOfFields = function(fNumber, optsNumber){
 	return suma;
 };
 
-var reporte, respuestas, leadId, pageType;
+//Classes////////////////////////////////////////////////////
 
-//Global Scope eof///////////////////////////////////
+function studentBasicData (label, value) {
 
-	reporte = {
+	$("#leadData").append("<li>"+label+" : "+value+"</li>")
+};
+
+function siNoColumnChart (pregunta, respuesta, targetDom) {
+	var data = google.visualization.arrayToDataTable([
+		['Sí | No = 0', 'Valor'],
+		['Respuesta',  parseInt(respuesta)],
+	]);
+
+	var options = {
+		title: pregunta,
+		legend: {position: 'none'},
+		vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, 
+		title:'< No - - Si >'},
+		tooltip: {trigger: 'none'},
+		bar: {groupWidth: 100}
+	};
+
+	var chart = new google.visualization.ColumnChart(document.getElementById(targetDom));
+	chart.draw(data, options);
+};
+
+function laDataTable (nRespuestas, targetDom) {
+	var data = google.visualization.arrayToDataTable(nRespuestas);
+	var table = new google.visualization.Table(document.getElementById(targetDom));
+	table.draw(data, {showRowNumber: false}); 
+};
+
+function velocimetros (nRespuestas, targetDom) {
+	var data = google.visualization.arrayToDataTable(nRespuestas);
+	var options = {
+		width: 600, 
+		height: 200,
+		min: 1, 
+		max: 3,
+		yellowFrom:1, yellowTo: 1.5,
+		redFrom: 1.51, redTo: 2.5,
+		greenFrom: 2.51, greenTo: 3,
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+	};
+	var chart = new google.visualization.Gauge(document.getElementById(targetDom));
+	chart.draw(data, options);
+};
+
+function pieChart (nRespuestas, pieTitle, targetDom) {
+
+	var data = google.visualization.arrayToDataTable(nRespuestas);
+
+	var options = {
+			title: pieTitle,
+			backgroundColor: {strokeWidth: 1, fill: 'white',},
+			legend: {position: 'bottom', alignment: 'start'},
+			width:'100%'
+		};
+
+	var charte = new google.visualization.PieChart(document.getElementById(targetDom));
+	charte.draw(data, options);
+};
+
+reporte = {
 	
-	init : function(){
-		//Fetch Parameter from URL
-		
+	init : function () {
+		//Fetch Parameter from URL	
 		leadId = $.urlParam('leadid');
-
+		//Request leads json
 		$.get('/servicio.php?leadid='+leadId).done(function(data) {
 			respuestas = data.r;
-			//console.log(respuestas);
 			console.log("Total registros :: "+respuestas.length);
+			//console.log(respuestas);
 			reporte.startDraw();
 		});
+
+		  $("h1.entry-title").html(":Reporte Grafico:") 
 	},
 
-	startDraw : function(){
+	startDraw : function () {
 
 		//SERAID, Field numbers 1
 		studentBasicData("SERA ID" , respondido(1));	
 		//Info del estudiante,Field numbers 3-6
-	    studentBasicData("Nombre: " , respondido(3));
-	    studentBasicData("Segundo Nombre: " , respondido(4));
-	    studentBasicData("Apellido: " , respondido(5));
-	    studentBasicData("Segundo Apellido: " , respondido(6));
-	    studentBasicData("Genero: " , respondido(7));
-	    studentBasicData("Fecha de nacimiento: " , respondido(8));
-	    studentBasicData("Grado: ", respondido(9));
-		studentBasicData("Editar: ", editLink());
+	    studentBasicData("Nombre " , respondido(3));
+	    studentBasicData("Segundo Nombre " , respondido(4));
+	    studentBasicData("Apellido " , respondido(5));
+	    studentBasicData("Segundo Apellido " , respondido(6));
+	    studentBasicData("Genero " , respondido(7));
+	    studentBasicData("Fecha de nacimiento " , respondido(8));
+	    studentBasicData("Grado ", respondido(9));
+		studentBasicData("Editar ", editLink());
 	   
 	 	//Form Beak<<< Auto Perfil Educativo del Estudiante
 
@@ -154,12 +216,12 @@ var reporte, respuestas, leadId, pageType;
 			//Columnas
 			['Estudios que toma al presente o interesa tomar en la escuela superior', 'Seleccion'],
 			//Filas
-				['No Aplica', 								(respondido(41) == 0)],
-				['Programa de Preparación Universitaria', 	(respondido(41) == 1)],
-				['Programa General', 						(respondido(41) == 2)],
-				['Certificado Técnico / Vocaional', 		(respondido(41) == 3)],
-				['Programa de Estudio y Trabajo', 			(respondido(41) == 4)],
-				['Otro', 									(respondido(41) == 5)]
+			['No Aplica', 								(respondido(41) == 0)],
+			['Programa de Preparación Universitaria', 	(respondido(41) == 1)],
+			['Programa General', 						(respondido(41) == 2)],
+			['Certificado Técnico / Vocaional', 		(respondido(41) == 3)],
+			['Programa de Estudio y Trabajo', 			(respondido(41) == 4)],
+			['Otro', 									(respondido(41) == 5)]
 		]; 
 		laDataTable(dataSet5, 'vDT-DS5');
 		
@@ -168,12 +230,12 @@ var reporte, respuestas, leadId, pageType;
 			//Columnas
 			['Estudios que aspira seguir cuando termine la escuela superior', 'Seleccion'],
 			//Filas
-				['No Aplica',						(respondido(42) == 0 )],
-				['Instituto Técnico Vocacional',	(respondido(42) == 1 )],
-				['Grado Asociado', 					(respondido(42) == 2 )],
-				['Bachillerato de Universidad',		(respondido(42) == 3 )],
-				['Programa de Estudios Cortos',		(respondido(42) == 4 )],
-				['Ninguna de las Anteriores',		(respondido(42) == 5 )]
+			['No Aplica',						(respondido(42) == 0 )],
+			['Instituto Técnico Vocacional',	(respondido(42) == 1 )],
+			['Grado Asociado', 					(respondido(42) == 2 )],
+			['Bachillerato de Universidad',		(respondido(42) == 3 )],
+			['Programa de Estudios Cortos',		(respondido(42) == 4 )],
+			['Ninguna de las Anteriores',		(respondido(42) == 5 )]
 		]; 
 		laDataTable(dataSet6, 'vDT-DS6');
 
@@ -189,94 +251,33 @@ var reporte, respuestas, leadId, pageType;
 		]; 
 		pieChart(dataSet7, pieTitle7,  'vPie-DS7');		
 	}
-
 };//end Reporte
 
-//Classes///////////////////////////////////
-
-function studentBasicData(label, value){
-
-	$("#leadData").append("<li>"+label+" : "+value+"</li>")
-};
-
-function siNoColumnChart(pregunta, respuesta, targetDom) {
-	var data = google.visualization.arrayToDataTable([
-		['Sí | No = 0', 'Valor'],
-		['Respuesta',  parseInt(respuesta)],
-	]);
-
-	var options = {
-		title: pregunta,
-		legend: {position: 'none'},
-		vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, 
-		title:'< No - - Si >'},
-		tooltip: {trigger: 'none'},
-		bar: {groupWidth: 100}
-	};
-
-	var chart = new google.visualization.ColumnChart(document.getElementById(targetDom));
-	chart.draw(data, options);
-};
-
-function laDataTable(nRespuestas, targetDom) {
-	var data = google.visualization.arrayToDataTable(nRespuestas);
-	var table = new google.visualization.Table(document.getElementById(targetDom));
-	table.draw(data, {showRowNumber: false}); 
-};
-
-function velocimetros(nRespuestas, targetDom) {
-	var data = google.visualization.arrayToDataTable(nRespuestas);
-	var options = {
-		width: 600, 
-		height: 200,
-		min: 1, 
-		max: 3,
-		yellowFrom:1, yellowTo: 1.5,
-		redFrom: 1.51, redTo: 2.5,
-		greenFrom: 2.51, greenTo: 3,
-		backgroundColor: {strokeWidth: 1, fill: 'white',},
-	};
-	var chart = new google.visualization.Gauge(document.getElementById(targetDom));
-	chart.draw(data, options);
-};
-
-function pieChart(nRespuestas, pieTitle, targetDom) {
-
-	var data = google.visualization.arrayToDataTable(nRespuestas);
-
-	var options = {
-			title: pieTitle,
-			backgroundColor: {strokeWidth: 1, fill: 'white',},
-			legend: {position: 'bottom', alignment: 'start'},
-			width:'578',
-            height:'250'
-		};
-
-	var charte = new google.visualization.PieChart(document.getElementById(targetDom));
-	charte.draw(data, options);
-};
-
-
-/////////////////////////////////////////////ready
-
-$(function(){
+//////onReady
+$(function () {
 	//SERAiD
 	$(".gform_wrapper .readonly input").attr('readonly', 'readonly').css("background","#CCC"); 
 	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC", "color", "#FFF");
 
-	// Lead report
+	//En Pag. REPORTE
 	if(!$.urlParam('form')){
 		$(".customReport").hide();
 	} else{
-		$(".entry-detail-view").remove();
+		$(".entry-detail-view").hide();
 		reporte.init();
+
 	}
 
-	// Edit a lead
+	//En Pag. EDITAR
 	if( $.urlParam('form') &&  $.urlParam('edit') ){
 		$(".customReport").remove();
 		console.log("Editing Student");
 	}
+
+	//En Pag. REGISTRAR
+	if ( $.urlParam('page_id') == 96  ) {
+		console.log("Lets ADD an Student");	
+	};
 	
 	//TABS  
 	//$( "#tabs" ).tabs(); 
@@ -284,4 +285,4 @@ $(function(){
 	
 	//ACCORDION
 	//$(".customReport").accordion({heightStyle: "content" });
-}); 
+});
