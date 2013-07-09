@@ -1732,14 +1732,16 @@ img#wpstats {
  
 
 
-dl dt.tituloForm{ 
-	background: rgb(245, 194, 65);
+.entry-content dl dt.tituloForm{ 
+	background: #80445F;
 	color:#FFFFFF;
-	font-size:1.8em;
-	padding: 5px;
-	margin: 25px 0;
-	cursor:pointer;
+	padding: 6px;
+	margin: 30px 0 0 0;
+	cursor:default;
+	font-weight:normal;
 }
+
+
 dd { background:whitesmoke;}
 .readonly{
     color: #80445F;

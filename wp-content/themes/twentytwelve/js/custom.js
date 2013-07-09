@@ -35,7 +35,8 @@ var editLink = function(){
 };
 
 var sumOfFields = function(fNumber, optsNumber){
-	//Establecer un metodo para obtener el correspondiente 	optsNumber segun
+	//Establecer un metodo para obtener el correspondiente 	
+	//optsNumber :  posibles respuestas
 	var elvalue, i;
 	var suma =0;
 	
@@ -104,7 +105,9 @@ function pieChart(nRespuestas, pieTitle, targetDom) {
 	var options = {
 			title: pieTitle,
 			backgroundColor: {strokeWidth: 1, fill: 'white',},
-			legend: {position: 'bottom', alignment: 'start'}
+			legend: {position: 'bottom', alignment: 'start'},
+			width:'578',
+            height:'250'
 		};
 
 	var charte = new google.visualization.PieChart(document.getElementById(targetDom));
@@ -133,19 +136,18 @@ var reporte = {
 function startDraw(){
 
 	//SERAID, Field numbers 1
-	studentBasicData(preguntaDom(0) , respondido(1));	
+	studentBasicData("SATENS ID" , respondido(1));	
 	//Info del estudiante,Field numbers 3-6
-    studentBasicData(preguntaDom(1) , respondido(3));
-    studentBasicData(preguntaDom(2) , respondido(4));
-    studentBasicData(preguntaDom(3) , respondido(5));
-    studentBasicData(preguntaDom(4) , respondido(6));
-    studentBasicData(preguntaDom(5) , respondido(7));
-    studentBasicData(preguntaDom(6) , respondido(8));
-    studentBasicData(preguntaDom(7) , respondido(9));
+    studentBasicData("Nombre" , respondido(3));
+    studentBasicData("Segundo Nombre" , respondido(4));
+    studentBasicData("Apellido" , respondido(5));
+    studentBasicData("Segundo Apellido" , respondido(6));
+    studentBasicData("Genero" , respondido(7));
+    studentBasicData("Fecha de nacimiento" , respondido(8));
+    studentBasicData("Grado", respondido(9));
 	studentBasicData("Editar", editLink());
    
- 	
- //Form Beak<<< Auto Perfil Educativo del Estudiante
+ 	//Form Beak<<< Auto Perfil Educativo del Estudiante
 
  	//CHART
 	siNoColumnChart("Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento", respondido(22), 'vSiNo-1')
@@ -197,7 +199,7 @@ function startDraw(){
 		['Considero otra solución cuando la primera idea no parece funcionar',	(respondido(27.5) == "true") ]
 	]; laDataTable(dataSet4, 'vDT-DS4');
 
-//Form Break<<<Intereses y Actividades Generales
+	//Form Break<<<Intereses y Actividades Generales
 
 	//CHART 
 	siNoColumnChart("Diversión en Tiempo Libre", respondido(29), 'vSiNo-2')
@@ -206,7 +208,7 @@ function startDraw(){
 	//CHART
 	siNoColumnChart("Aspiración a una Carrera en el Futuro", respondido(31), 'vSiNo-4')
 
-//Form Break<<<Intereses y Metas de Estudios Generales
+	//Form Break<<<Intereses y Metas de Estudios Generales
 
 	//DATATABLE  
 	var dataSet5 = [
@@ -255,24 +257,24 @@ $(function(){
 	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC", "color", "#FFF");
 
 	// Lead report
-	if($.urlParam('form')){
-		console.log("Creating Student");
-		reporte.init();
-	} else{
+	if(!$.urlParam('form')){
 		$(".customReport").hide();
+	} else{
+		console.log("en > Reporte de Estudiante . hide tbl and Rinit");
+		$(".entry-detail-view").remove();
+		reporte.init();
 	}
 
 	// Edit a lead
 	if( $.urlParam('form') &&  $.urlParam('edit') ){
 		console.log("Editing Student");
-		$(".customReport").hide();
 	}
 	
-	
-
-//ACCORDION
-$(".customReport").accordion({heightStyle: "content" });
 	//TABS  
 	//$( "#tabs" ).tabs(); 
-	//$(".gform_previous_button").hide();     
+	//$(".gform_previous_button").hide();
+	
+	//ACCORDION
+	//$(".customReport").accordion({heightStyle: "content" });
+
 }); 
