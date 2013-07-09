@@ -1,4 +1,4 @@
-var reporte, respuestas, leadId, pageType;
+var reporte, respuestas, respondido, leadId, pageType, entryTitle, preguntaDom, editLink, sumOfFields;
 
 $.urlParam = function (name) {
 	var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -9,13 +9,13 @@ $.urlParam = function (name) {
 	}
 };
 
-var preguntaDom = function (DOMnumber) {
+preguntaDom = function (DOMnumber) {
 	var label = $(".entry-view-field-name").eq(DOMnumber).text();
 	//console.log(label);
 	return label;
 };
 
-var respondido = function (fieldN) {
+respondido = function (fieldN) {
 	var fn, fvalue, fieldNumber, lares;
 	fieldNumber = fieldN;
 	$.each(respuestas, function(index){
@@ -29,12 +29,9 @@ var respondido = function (fieldN) {
     return lares;
 };
 
-var editLink = function () {
 
-	return  $(".useredit").html()
-};
 
-var sumOfFields = function (fNumber, optsNumber) {
+sumOfFields = function (fNumber, optsNumber) {
 	//Establecer un metodo para obtener el correspondiente 	
 	//optsNumber :  posibles respuestas
 	var elvalue, i;
@@ -126,11 +123,11 @@ reporte = {
 			//console.log(respuestas);
 			reporte.startDraw();
 		});
-
-		  $("h1.entry-title").html(":Reporte Grafico:") 
 	},
 
 	startDraw : function () {
+		//Page Tittle
+		$("h1.entry-title").html( "Reportes de Estudiante "+ respondido(3) );
 
 		//SERAID, Field numbers 1
 		studentBasicData("SERA ID" , respondido(1));	
@@ -142,7 +139,7 @@ reporte = {
 	    studentBasicData("Genero " , respondido(7));
 	    studentBasicData("Fecha de nacimiento " , respondido(8));
 	    studentBasicData("Grado ", respondido(9));
-		studentBasicData("Editar ", editLink());
+		studentBasicData("Editar ", this.editLink());
 	   
 	 	//Form Beak<<< Auto Perfil Educativo del Estudiante
 
@@ -252,6 +249,11 @@ reporte = {
 		pieChart(dataSet7, pieTitle7,  'vPie-DS7');		
 	}
 };//end Reporte
+
+reporte.editLink = function () {
+
+	return  $(".useredit").html()
+};
 
 //////onReady
 $(function () {
