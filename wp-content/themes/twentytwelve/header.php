@@ -41,13 +41,18 @@
 <div id="page" class="hfeed site">
 	
 	<header id="masthead" class="site-header" role="banner">
-		
 		<hgroup>
-			<img src="http://www.satenspr.com/wp-content/uploads/2013/06/logoforsatensheader.png"  alt="SATENS Logo"/>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</hgroup>
 
+			<div class="logo">
+				<img src="http://www.satenspr.com/wp-content/uploads/2013/06/logoforsatensheader.png"  alt="SATENS Logo"/>
+			</div>
+
+			<div class="typo">
+                <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+    		</div>        
+
+		</hgroup>
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
 			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>

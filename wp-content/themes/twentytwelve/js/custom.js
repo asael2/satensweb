@@ -276,6 +276,9 @@ $(function(){
 	//SERAiD
 	$(".gform_wrapper .readonly input").attr('readonly', 'readonly').css("background","#CCC"); 
 	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC", "color", "#FFF");
+
+//ACCORDION
+$(".customReport").accordion({heightStyle: "content" });
 	//TABS  
 	//$( "#tabs" ).tabs(); 
 	//$(".gform_previous_button").hide();     

@@ -945,7 +945,7 @@ img.aligncenter {
 	padding: 6px 10px 6px 0;
 }
 .site-content article {
-	border-bottom: 4px double #ededed;
+	/*border-bottom: 4px double #ededed;
 	margin-bottom: 72px;
 	margin-bottom: 5.142857143rem;
 	padding-bottom: 24px;
@@ -953,7 +953,9 @@ img.aligncenter {
 	word-wrap: break-word;
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
-	hyphens: auto;
+	hyphens: auto;*/
+
+2px solid #ededed;
 }
 .page-links {
 	clear: both;
@@ -1743,12 +1745,20 @@ dl dt.tituloForm{
 }
 
 ul#leadData li{
-	background: #12103F;
+	background: whitesmoke ;
 	padding: 12px 0 6px 12px;
-	color: white;
 }
 
+.logo, .typo{
+	display:block; float:left;
+}
+	
+.typo { 
+	margin:20px;
+}
+.typo h2{
+	line-height: 1em;
+}
 
-
-
-
+.site-header hgroup{
+	height:120px;}
