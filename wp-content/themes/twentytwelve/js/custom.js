@@ -232,9 +232,7 @@ function startDraw(){
 			['Bachillerato de Universidad',		(respondido(42) == 3 )],
 			['Programa de Estudios Cortos',		(respondido(42) == 4 )],
 			['Ninguna de las Anteriores',		(respondido(42) == 5 )]
-	];
-	
-	laDataTable(dataSet6, 'vDT-DS6');
+	]; laDataTable(dataSet6, 'vDT-DS6');
 
 	//PIECHART
 	var pieTitle7 = 'Porciento de Ocupaciones Seleccionadas por el Estudiante Relacionadas a Datos, Gente y Cosas (ver ejemplos de ocupaciones seleccionadas por el estudiante)';
@@ -245,37 +243,32 @@ function startDraw(){
 		['Gente-Publico', 		sumOfFields(35, 11)], //sum of field for question ID 35
 		['Cosas-Manual', 		sumOfFields(37, 11)],
 		['Datos-Información',	sumOfFields(39, 11)]
-	
-	];
-
-	pieChart(dataSet7, pieTitle7,  'vPie-DS7');
+	]; pieChart(dataSet7, pieTitle7,  'vPie-DS7');
 	
 }//end Draw 
 
 
 //ready
 $(function(){
-	
-	//Hide native table
-	$(".entry-detail-view").hide(); 
-	
-	// Execute report
+	//SERAiD
+	$(".gform_wrapper .readonly input").attr('readonly', 'readonly').css("background","#CCC"); 
+	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC", "color", "#FFF");
+
+	// Lead report
 	if($.urlParam('form')){
-		console.log("Student Report");
+		console.log("Creating Student");
 		reporte.init();
 	} else{
 		$(".customReport").hide();
 	}
 
-	if( $.urlParam('edit') && $.urlParam('form') ){
+	// Edit a lead
+	if( $.urlParam('form') &&  $.urlParam('edit') ){
+		console.log("Editing Student");
 		$(".customReport").hide();
 	}
 	
 	
-
-	//SERAiD
-	$(".gform_wrapper .readonly input").attr('readonly', 'readonly').css("background","#CCC"); 
-	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC", "color", "#FFF");
 
 //ACCORDION
 $(".customReport").accordion({heightStyle: "content" });
