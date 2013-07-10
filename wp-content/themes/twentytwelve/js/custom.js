@@ -1,5 +1,4 @@
 var reporte; //respuestas, this.respondido, leadId, pageType, entryTitle, preguntaDom, editLink, sumOfFields;
-
 $.urlParam = function (name) {
 	var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
 	if (results==null){
@@ -88,7 +87,7 @@ reporte = {
 
 	startDraw : function () {
 		//Page Tittle
-		$("h1.entry-title").html( "Reportes de Estudiante "+ this.respondido(3) );
+		$("h1.entry-title").html( "Reportes para "+this.respondido(3)+" "+this.respondido(5) );
 
 		//SERAID, Field numbers 1
 		studentBasicData("SERA ID" , this.respondido(1));	
@@ -203,18 +202,17 @@ reporte = {
 			//Columnas
 			['Dimensión', 'Cantidad'],
 			//Filas					
-			['Gente-Publico', 		sumOfFields(35, 11)], //sum of field for question ID 35
-			['Cosas-Manual', 		sumOfFields(37, 11)],
-			['Datos-Información',	sumOfFields(39, 11)]
+			['Gente-Publico', 		this.sumOfFields(35, 11)], //sum of field for question ID 35
+			['Cosas-Manual', 		this.sumOfFields(37, 11)],
+			['Datos-Información',	this.sumOfFields(39, 11)]
 		]; 
 		pieChart(dataSet7, pieTitle7,  'vPie-DS7');		
 	}
 };//end Reporte
 
-
 reporte.editLink = function () {
 
-	return  $(".useredit").html()
+	return  $("href", ".useredit a").html()
 };
 
 reporte.sumOfFields = function (fNumber, optsNumber) {
@@ -281,9 +279,17 @@ $(function () {
 	};
 	
 	//TABS  
-	//$( "#tabs" ).tabs(); 
+	$( "#tabs" ).tabs(); 
 	//$(".gform_previous_button").hide();
 	
 	//ACCORDION
 	//$(".customReport").accordion({heightStyle: "content" });
+
+	/*var tabs = $( "#tabs" ).tabs();
+    tabs.find( ".ui-tabs-nav" ).sortable({
+      axis: "x",
+      stop: function() {
+        tabs.tabs( "refresh" );
+      }
+    });*/
 });
