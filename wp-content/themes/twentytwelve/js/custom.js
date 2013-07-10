@@ -1,4 +1,3 @@
-//var reporte;
 //GET Param Helper
 $.urlParam = function (name) {
 	var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -145,6 +144,7 @@ var reporte = {
 	      	['Igual que los demás',  	(this.respondido(24) == 2), (this.respondido(25) == 2), (this.respondido(26) == 2)],
 		  	['Por encima de los demás', (this.respondido(24) == 3), (this.respondido(25) == 3), (this.respondido(26) == 3)]
 		]; 
+
 		laDataTable(dataSet3, 'vDT-DS3');
 		
 		//DATATABLE	
@@ -289,11 +289,30 @@ var reporte = {
 		siNoColumnChart("¿Tiene usted alguna preocupación en relación al desarrollo académico y ocupacional de su hijo/a?", this.respondido(61), 'vSiNo-16');
 
 		//FORMULARIO 3 >>>>>>>>>>>>>>>>>>>>>>>>>
+		//CHART
+		siNoColumnChart("Tiene planes de continuar estudios o trabajo al terminar la escuela superior", this.respondido(64), 'vSiNo-17');
 
+		//CHART
+		siNoColumnChart("Al presente necesita ayuda para hacer sus tareas en las clases", this.respondido(65), 'vSiNo-18');
+		
+		//CHART
+		siNoColumnChart("Tiene algún problema académico, impedimento o de salud", this.respondido(66), 'vSiNo-19');
 
+		var dataSet20 = [
+			//Columnas
+			['Autocalificación ', 'Lectura'],
+			//Filas
+			['Algunas manera que identifica para estudiar en sus clases',    (this.respondido(67) == 0)],
+			['Organizando su horario de estudio', (this.respondido(67) == 1)],
+			['Repasando con frecuencia los contenidos que va aprendiendo',   (this.respondido(67) == 2)],
+			['Estudiando antes de las clases', (this.respondido(67) == 3)],
+			['Todas las anterior', (this.respondido(67) == 3)]
+			]; laDataTable(dataSet20, 'vDT-DS20');
 
-
-
+		//CHART
+		siNoColumnChart("Busca ayuda cuando tiene dificultades en las clases", this.respondido(85), 'vSiNo-21');
+		//CHART
+		siNoColumnChart("Si está satisfecho/a con los cursos que toma al presente en la escuela", this.respondido(68), 'vSiNo-22');
 	}
 };
 //end Reporte
@@ -353,12 +372,12 @@ $(function () {
 	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC", "color", "#FFF");
 
 	//En Pag. REPORTE
-	if(!$.urlParam('form')){
-		$("#tabs").show();
-		$(".customReport").hide();
-	} else{
+	if( $.urlParam('leadid') && $.urlParam('form') ){
 		$(".entry-detail-view").hide();
+		$("#tabs").show();
 		reporte.init(); //INIT
+	} else{
+		$(".customReport").hide();
 	}
 
 	//En Pag. EDITAR
