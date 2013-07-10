@@ -1,4 +1,5 @@
-var reporte; //respuestas, this.respondido, leadId, pageType, entryTitle, preguntaDom, editLink, sumOfFields;
+//var reporte;
+//GET Param Helper
 $.urlParam = function (name) {
 	var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
 	if (results==null){
@@ -9,7 +10,6 @@ $.urlParam = function (name) {
 };
 
 //Classes////////////////////////////////////////////////////
-
 function studentBasicData (label, value) {
 
 	$("#leadData").append("<li>"+label+" : "+value+"</li>")
@@ -71,7 +71,7 @@ function pieChart (nRespuestas, pieTitle, targetDom) {
 	charte.draw(data, options);
 };
 
-reporte = {
+var reporte = {
 	
 	init : function () {
 		//Fetch Parameter from URL	
@@ -86,6 +86,7 @@ reporte = {
 	},
 
 	startDraw : function () {
+		
 		//Page Tittle
 		$("h1.entry-title").html( "Reportes para "+this.respondido(3)+" "+this.respondido(5) );
 
@@ -101,6 +102,8 @@ reporte = {
 	    studentBasicData("Grado ", this.respondido(9));
 		studentBasicData("Editar ", this.editLink());
 	   
+	 	
+	 	//FORMULARIO 1 >>>>>>>>>>>>>>>>>>>>>>>>>
 	 	//Form Beak<<< Auto Perfil Educativo del Estudiante
 
 	 	//CHART
@@ -206,9 +209,100 @@ reporte = {
 			['Cosas-Manual', 		this.sumOfFields(37, 11)],
 			['Datos-Información',	this.sumOfFields(39, 11)]
 		]; 
-		pieChart(dataSet7, pieTitle7,  'vPie-DS7');		
+		pieChart(dataSet7, pieTitle7,  'vPie-DS7');	
+
+
+		//FORMULARIO 2 >>>>>>>>>>>>>>>>>>>>>>>>>
+		//DATATABLE      
+		var dataSet8 = [
+				//Columnas
+				['Programa académico que le gustaría tomara su hijo/a en la escuela ', 'Seleccion'],
+				//Filas
+				['Programa de Preparación Universitaria', 		(this.respondido(23.1) == "true") ], 
+				['Programa General', 				(this.respondido(23.2) == "true") ], 
+				['Programa de Estudio y Trabajo', 				(this.respondido(23.3) == "true") ],
+				['Programa Vocacional | Técnico', 				(this.respondido(23.3) == "true") ],
+				['Otros',  					(this.respondido(23.8) == "true") ]
+		]; 
+		laDataTable(dataSet8, 'vDT-DS8');
+
+		//DATATABLE      
+		var dataSet9 = [
+			//Columnas
+			['Grado académico o trabajo que espera su hijo/a continúe después de la escuela superior', 'Seleccion'],
+		    //Filas
+		    ['No Aplica',   (this.respondido(47.1) == "true") ], 
+		    ['Universidad',     (this.respondido(47.2) == "true") ], 
+		    ['Grado Asociado',     (this.respondido(47.3) == "true") ],
+		    ['Empleo Especializado',    (this.respondido(47.4) == "true") ],
+		    ['Empleo Semi-especializado',   (this.respondido(47.5) == "true") ],
+		    ['Fuerzas Armadas', (this.respondido(47.6) == "true") ],
+		    ['Otro ',     (this.respondido(47.7) == "true") ]
+		]; 
+		laDataTable(dataSet9, 'vDT-DS9');
+
+		//CHART
+		siNoColumnChart("Conoce si su hijo/a tiene alguna experiencia de trabajo (part time)", this.respondido(49), 'vSiNo-10');
+		
+		//DATATABLE 
+		var dataSet11 = [
+			//Columnas
+			['Calificación del conocimiento adquirido por su hijo/a en su experiencia de trabajo anterior', 'Seleccion'],
+		    //Filas
+		    ['Ninguna',   (this.respondido(50.1) == "true") ], 
+		    ['Poco',	(this.respondido(50.2) == "true") ], 
+		    ['Mucho',     (this.respondido(50.3) == "true") ]
+		]; 
+		laDataTable(dataSet11, 'vDT-DS11');
+		
+		
+		siNoColumnChart("Opinión sobre si su hijo/a necesita mejorar en sus destrezas sociales para aumentar sus oportunidades de empleo y estudios futuros", this.respondido(51), 'vSiNo-12');
+
+		//DATATABLE      
+		var dataSet13 = [
+			//Columnas
+			['Destrezas sociales que opina su hijo/a debe mejorar', 'Seleccion'],
+		    //Filas
+		    ['Conducta',   (this.respondido(52.1) == "true") ], 
+		    ['Cortesía',     (this.respondido(52.2) == "true") ], 
+		    ['Iniiciativa',     (this.respondido(52.3) == "true") ],
+		    ['Puntualidad y Asistencia',    (this.respondido(52.4) == "true") ],
+		    ['Otro',   (this.respondido(52.5) == "true") ]
+		];
+		laDataTable(dataSet13, 'vDT-DS13');
+
+		//siNoColumnChart("Brindaría permiso a su hijo/a para que asista a talleres sobre carreras y
+		siNoColumnChart("Ocupaciones en o fuera de la escuela.", this.respondido(54), 'vSiNo-14');
+
+		//vPie-DS15
+		var pieTitle15 = 'Porciento de Ocupaciones Seleccionadas por el Estudiante Relacionadas a Datos, Gente y Cosas';
+		var dataSet15 = [
+		   //Columnas
+		   ['Dimensión', 'Cantidad'],
+		   //Filas     
+		   ['Gente-Publico',   this.sumOfFields(55, 11)], //sum of field for question ID 35
+		   ['Cosas-Manual',   this.sumOfFields(57, 11)],
+		   ['Datos-Información', this.sumOfFields(59, 11)]
+		  ]; pieChart(dataSet15, pieTitle15,  'vPie-DS15');	
+
+		//CHART
+		siNoColumnChart("¿Tiene usted alguna preocupación en relación al desarrollo académico y ocupacional de su hijo/a?", this.respondido(61), 'vSiNo-16');
+
+		//FORMULARIO 3 >>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+
 	}
-};//end Reporte
+};
+//end Reporte
+
+
+
+
+
+
 
 reporte.editLink = function () {
 
@@ -260,36 +354,33 @@ $(function () {
 
 	//En Pag. REPORTE
 	if(!$.urlParam('form')){
+		$("#tabs").show();
 		$(".customReport").hide();
 	} else{
 		$(".entry-detail-view").hide();
-		reporte.init();
-
+		reporte.init(); //INIT
 	}
 
 	//En Pag. EDITAR
-	if( $.urlParam('form') &&  $.urlParam('edit') ){
+	if( $.urlParam('form') && $.urlParam('edit') ){
 		$(".customReport").remove();
-		console.log("Editing Student");
+		console.log("Editing Student?");
 	}
 
 	//En Pag. REGISTRAR
 	if ( $.urlParam('page_id') == 96  ) {
-		console.log("Lets ADD an Student");	
+		console.log("Lets ADD an Student!");	
+	};
+
+	//En Pag. ESTUDIANTES
+	if ( $.urlParam('page_id') == 94  ) {
+		console.log("Here we have all our students!");
+		//$("#tabs").hide();
 	};
 	
 	//TABS  
 	$( "#tabs" ).tabs(); 
-	//$(".gform_previous_button").hide();
-	
+
 	//ACCORDION
 	//$(".customReport").accordion({heightStyle: "content" });
-
-	/*var tabs = $( "#tabs" ).tabs();
-    tabs.find( ".ui-tabs-nav" ).sortable({
-      axis: "x",
-      stop: function() {
-        tabs.tabs( "refresh" );
-      }
-    });*/
 });
