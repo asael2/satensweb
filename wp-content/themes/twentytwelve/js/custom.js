@@ -80,10 +80,6 @@
 
 
 var reporte = {
-	getDataTables: function(){
-		var dt  = $.getScript('/wp-content/themes/twentytwelve/js/datatables.js');
-		return dt;
-	},
 	
 	init : function () {
 		//Fetch Parameter from URL	
@@ -93,20 +89,14 @@ var reporte = {
 			respuestas = data.r;
 			console.log("Total registros :: "+respuestas.length);
 			//console.log(respuestas);
-			//.done(function(){
-			//reporte.dataTables();
-			//});
-			//reporte.startDraw(
-			console.log(	reporte.getDataTables() );
-			//	);
+			reporte.startDraw();
 
-		});
+			});
+		//});
 	},
 
-	startDraw : function (dt) {
-		var dTable = dt;
+	startDraw : function () {
 
-		//var DSet0, DSet1;
 		studentBasicData("Nombre " , this.respondido(3));
 		studentBasicData("Segundo Nombre " , this.respondido(4));
 		studentBasicData("Apellido " , this.respondido(5));
@@ -114,11 +104,13 @@ var reporte = {
 		studentBasicData("Genero " , this.respondido(7));
 		studentBasicData("Fecha de nacimiento " , this.respondido(8));
 		studentBasicData("Grado ", this.respondido(9));
+		//Draws
+		$.getScript('/wp-content/themes/twentytwelve/js/datatables.js').done(function(){
+			reporte.dataTables();
+		});
 		
-		siNoColumnChart(dTable[0], this.respondido(22), "vSiNo-0");
-	//	siNoColumnChart(dTable[DSet0], this.respondido(22), "vSiNo-0");
-		
-		laDataTable(dTable[1], 'vDT-DS1');
+		siNoColumnChart("Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento", this.respondido(22), "vSiNo-0");
+
 
 	}
 }; //end Reporte
