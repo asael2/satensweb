@@ -1,78 +1,89 @@
+/*Data-Graphics reports for SATENSPR by artyficial.net */
+
 //GET Param Helper
-$.urlParam = function (name) {
-	var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
-	if (results==null){
-		return null;
-	}else{
-		return results[1] || 0;
-	}
-};
+	$.urlParam = function (name) {
+		var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
+		if (results==null){
+			return null;
+		}else{
+			return results[1] || 0;
+		}
+	};
 
 //Classes////////////////////////////////////////////////////
-function studentBasicData (label, value) {
+	function studentBasicData (label, value) {
 
-	$("#leadData").append("<li>"+label+" : "+value+"</li>")
-};
-
-function siNoColumnChart (pregunta, respuesta, targetDom) {
-	var data = google.visualization.arrayToDataTable([
-		['Sí | No = 0', 'Valor'],
-		['Respuesta',  parseInt(respuesta)],
-	]);
-
-	var options = {
-		title: pregunta,
-		legend: {position: 'none'},
-		vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, 
-		title:'< No - - Si >'},
-		tooltip: {trigger: 'none'},
-		bar: {groupWidth: 100}
+		$("#leadData").append("<li>"+label+" : "+value+"</li>")
 	};
 
-	var chart = new google.visualization.ColumnChart(document.getElementById(targetDom));
-	chart.draw(data, options);
-};
+	function siNoColumnChart (pregunta, respuesta, targetDom) {
+		var data = google.visualization.arrayToDataTable([
+			['Sí | No = 0', 'Valor'],
+			['Respuesta',  parseInt(respuesta)],
+		]);
 
-function laDataTable (nRespuestas, targetDom) {
-	var data = google.visualization.arrayToDataTable(nRespuestas);
-	var table = new google.visualization.Table(document.getElementById(targetDom));
-	table.draw(data, {showRowNumber: false}); 
-};
-
-function velocimetros (nRespuestas, targetDom) {
-	var data = google.visualization.arrayToDataTable(nRespuestas);
-	var options = {
-		width: 600, 
-		height: 200,
-		min: 1, 
-		max: 3,
-		yellowFrom:1, yellowTo: 1.5,
-		redFrom: 1.51, redTo: 2.5,
-		greenFrom: 2.51, greenTo: 3,
-		backgroundColor: {strokeWidth: 1, fill: 'white',},
-	};
-	var chart = new google.visualization.Gauge(document.getElementById(targetDom));
-	chart.draw(data, options);
-};
-
-function pieChart (nRespuestas, pieTitle, targetDom) {
-
-	var data = google.visualization.arrayToDataTable(nRespuestas);
-
-	var options = {
-			title: pieTitle,
-			backgroundColor: {strokeWidth: 1, fill: 'white',},
-			legend: {position: 'bottom', alignment: 'start'},
-			width:'100%'
+		var options = {
+			title: pregunta,
+			legend: {position: 'none'},
+			vAxis:{minValue:0,maxValue:1,gridlines:{count:2}, 
+			title:'< No - - Si >'},
+			tooltip: {trigger: 'none'},
+			bar: {groupWidth: 100}
 		};
 
-	var charte = new google.visualization.PieChart(document.getElementById(targetDom));
-	charte.draw(data, options);
-};
+		var chart = new google.visualization.ColumnChart(document.getElementById(targetDom));
+		chart.draw(data, options);
+	};
+
+	function pieChart (nRespuestas, pieTitle, targetDom) {
+		var data = google.visualization.arrayToDataTable(nRespuestas);
+		var options = {
+				title: pieTitle,
+				backgroundColor: {strokeWidth: 1, fill: 'white',},
+				legend: {position: 'bottom', alignment: 'start'},
+				width:'100%'
+			};
+		var charte = new google.visualization.PieChart(document.getElementById(targetDom));
+		charte.draw(data, options);
+	};
+
+	function laDataTable (nRespuestas, targetDom) {
+		var data = google.visualization.arrayToDataTable(nRespuestas);
+		var table = new google.visualization.Table(document.getElementById(targetDom));
+		table.draw(data, {showRowNumber: false}); 
+	};
+
+	function laDataTableDos(nRespuestas, targetDom) {
+		var data = google.visualization.arrayToDataTable(nRespuestas);
+		var table = new google.visualization.Table(document.getElementById(targetDom));
+		var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
+		formatter.format(data, 1); // Apply formatter to second column
+		table.draw(data, {allowHtml: true, showRowNumber: false});
+	};
+
+	function velocimetros (nRespuestas, targetDom) {
+		var data = google.visualization.arrayToDataTable(nRespuestas);
+		var options = {
+			width: 600, 
+			height: 200,
+			min: 1, 
+			max: 3,
+			yellowFrom:1, yellowTo: 1.5,
+			redFrom: 1.51, redTo: 2.5,
+			greenFrom: 2.51, greenTo: 3,
+			backgroundColor: {strokeWidth: 1, fill: 'white',},
+		};
+		var chart = new google.visualization.Gauge(document.getElementById(targetDom));
+		chart.draw(data, options);
+	};
 
 
 
 var reporte = {
+	getDataTables: function(){
+		var dt  = $.getScript('/wp-content/themes/twentytwelve/js/datatables.js');
+		return dt;
+	},
 	
 	init : function () {
 		//Fetch Parameter from URL	
@@ -82,12 +93,20 @@ var reporte = {
 			respuestas = data.r;
 			console.log("Total registros :: "+respuestas.length);
 			//console.log(respuestas);
-			reporte.startDraw();
+			//.done(function(){
+			//reporte.dataTables();
+			//});
+			//reporte.startDraw(
+			console.log(	reporte.getDataTables() );
+			//	);
+
 		});
 	},
 
-	startDraw : function () {
+	startDraw : function (dt) {
+		var dTable = dt;
 
+		//var DSet0, DSet1;
 		studentBasicData("Nombre " , this.respondido(3));
 		studentBasicData("Segundo Nombre " , this.respondido(4));
 		studentBasicData("Apellido " , this.respondido(5));
@@ -95,11 +114,11 @@ var reporte = {
 		studentBasicData("Genero " , this.respondido(7));
 		studentBasicData("Fecha de nacimiento " , this.respondido(8));
 		studentBasicData("Grado ", this.respondido(9));
-		//studentBasicData("Editar ", this.editLink());	
-
-		//LOAD DATATABLES
-		reporte.getDataTables();
-
+		
+		siNoColumnChart(dTable[0], this.respondido(22), "vSiNo-0");
+	//	siNoColumnChart(dTable[DSet0], this.respondido(22), "vSiNo-0");
+		
+		laDataTable(dTable[1], 'vDT-DS1');
 
 	}
 }; //end Reporte
