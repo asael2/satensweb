@@ -5,7 +5,7 @@ reporte.dataTables = function(){
 	//Form Beak<<< Auto Perfil Educativo del Estudiante
 
 	//CHART
-	//siNoColumnChart("Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento", this.respondido(22), "vSiNo-0")
+	siNoColumnChart("Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento", this.respondido(22), "vSiNo-0")
 
 	//DATATABLE      
 	var dataSet1 = [

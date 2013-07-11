@@ -1,4 +1,5 @@
 /*Data-Graphics reports for SATENSPR by artyficial.net */
+var respuestas;
 
 //GET Param Helper
 	$.urlParam = function (name) {
@@ -87,15 +88,15 @@ var reporte = {
 		//Request leads json
 		$.get('/servicio.php?leadid='+leadId).done(function(data) {
 			respuestas = data.r;
-			console.log("Total registros :: "+respuestas.length);
+			console.log("Reg : "+respuestas.length);
 			//console.log(respuestas);
-			reporte.startDraw();
+			
 
 			});
 		//});
 	},
 
-	startDraw : function () {
+	startDraw : function (datatables) {
 
 		studentBasicData("Nombre " , this.respondido(3));
 		studentBasicData("Segundo Nombre " , this.respondido(4));
@@ -104,15 +105,20 @@ var reporte = {
 		studentBasicData("Genero " , this.respondido(7));
 		studentBasicData("Fecha de nacimiento " , this.respondido(8));
 		studentBasicData("Grado ", this.respondido(9));
-		//Draws
-		$.getScript('/wp-content/themes/twentytwelve/js/datatables.js').done(function(){
-			reporte.dataTables();
-		});
 		
-		siNoColumnChart("Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento", this.respondido(22), "vSiNo-0");
+		//Draws
+		console.log("En startDraw: "+datatables);
 
+		laDataTable(datatables["DTB1"], 'vDT-DS1');
+
+		/*$.get('/wp-content/themes/twentytwelve/js/datatables.json').done(function(data){
+			reporte.dataTables();
+			siNoColumnChart("Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento", reporte.respondido(22), "vSiNo-0");
+		});
+		*/
 
 	}
+
 }; //end Reporte
 
 
@@ -165,12 +171,24 @@ $(function () {
 	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC", "color", "#FFF");
 
 	//En Pag. REPORTE
-	if( $.urlParam('leadid') && $.urlParam('form') ){
-		$(".entry-detail-view").hide();
-		$("#tabs").show();
-		reporte.init(); //INIT
-	} else{
-		$(".customReport").hide();
+	if( $.urlParam('leadid') && $.urlParam('form') )  {
+		
+		reporte.init();	
+		$(".entry-detail-view").hide(); //Hide Directory's table.
+		
+		//TABS  
+		$( "#tabsInforme" ).tabs(function() {
+			
+			console.log("cargo tabs");
+			
+			$.get('/wp-content/themes/twentytwelve/js/datatables.json').done(function(data){
+				reporte.startDraw(data);
+			});	
+  							
+		})
+	}else{
+
+		$("#tabsInforme").hide();
 	}
 
 	//En Pag. EDITAR
@@ -181,17 +199,17 @@ $(function () {
 
 	//En Pag. REGISTRAR
 	if ( $.urlParam('page_id') == 96  ) {
+
 		console.log("Lets ADD an Student!");	
 	};
 
 	//En Pag. ESTUDIANTES
 	if ( $.urlParam('page_id') == 94  ) {
+
 		console.log("Here we have all our students!");
-		//$("#tabs").hide();
 	};
 	
-	//TABS  
-	$( "#tabs" ).tabs(); 
+
 
 	//ACCORDION
 	//$(".customReport").accordion({heightStyle: "content" });
