@@ -1729,6 +1729,9 @@ img#wpstats {
 }
 
 /*CUSTOM*/
+ 
+
+
 .entry-content dl dt.tituloForm{ 
 	background: #80445F;
 	color:#FFFFFF;
@@ -1738,17 +1741,15 @@ img#wpstats {
 	font-weight:normal;
 }
 
+
+dd { background:whitesmoke;}
 .readonly{
     color: #80445F;
 }
-ul#leadData{
-	list-style:none;
-	width: 420px;
-}
+
 ul#leadData li{
 	background: whitesmoke ;
-	padding: 4px 12px;
-	margin: 4px;
+	padding: 12px 0 6px 12px;
 }
 
 .logo, .typo{

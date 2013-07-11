@@ -7,23 +7,26 @@ get_header(); ?>
 
 <!--Load the Google AJAX API-->
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript"> google.load('visualization', '1', {'packages':['corechart', 'table', 'gauge']}); google.setOnLoadCallback(reporte); </script>
+<script type="text/javascript">
+	google.load('visualization', '1', {'packages':['corechart', 'table', 'gauge']});
+	google.setOnLoadCallback(reporte); 
+ </script>
 
 <div id="primary" class="site-content">
 <div id="content" role="main">
-<?php while ( have_posts() ) : the_post(); ?>
-<?php get_template_part( 'content', 'page' ); ?>
-<?php endwhile; // end of the loop. ?>
+
+	<?php while ( have_posts() ) : the_post(); ?>
+		<?php get_template_part( 'content', 'page' ); ?>
+	<?php endwhile; // end of the loop. ?>
+
 <?php get_footer(); ?>
 
-<!-- find this in ESTUDIANTES Page.
+<!-- find it in ESTUDIANTES Page
 
 
 [printfriendly]
 [directory form="33" lightboxsettings="images" titleshow="false" tfoot="false"]
-<ul id="leadData">
-</ul>
-<div id="tabsInforme">
+<div id="tabs">
     <ul>
         <li><a href="#tabs-1">Reporte 1</a></li>
         <li><a href="#tabs-2">Reporte 2</a></li>
@@ -82,7 +85,7 @@ get_header(); ?>
             </dd>
             <dt class="tituloForm">Experiencias del Diario Vivir | Comunitarias</dt>
             <dd>
-                <div id="vDT2-DS23"></div>
+                <div id=""></div>
             </dd>
             <dt class="tituloForm">Planes Después de Terminar la Escuela Superior</dt>
             <dd>
