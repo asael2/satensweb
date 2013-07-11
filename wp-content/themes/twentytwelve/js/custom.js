@@ -1,5 +1,5 @@
 /*Data-Graphics reports for SATENSPR by artyficial.net */
-
+var DS0, DS1, DS2, DS3;
 //GET Param Helper
 	$.urlParam = function (name) {
 		var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -109,10 +109,10 @@ var reporte = {
 			reporte.dataTables();
 		});
 		
-		siNoColumnChart("Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento", this.respondido(22), "vSiNo-0");
-
+//		siNoColumnChart("Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento", this.respondido(22), "vSiNo-0");
 
 	}
+
 }; //end Reporte
 
 
