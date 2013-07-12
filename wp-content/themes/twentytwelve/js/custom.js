@@ -1,5 +1,12 @@
 /*Data-Graphics reports for SATENSPR by artyficial.net */
+<<<<<<< HEAD
 var respuestas;
+=======
+var DS0, DS1, DS2, DS3, DS4, DS5, DS6, DS7, DS8, DS9, DS10, 
+DS11, DS12, DS13, DS14, DS15, DS16, DS17, DS18, DS19, 
+DS20, DS21, DS22, DS23, DS24, DS25, DS26, DS27, DS28, DS29, DS30, DS31/*, 
+DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
+>>>>>>> origin/workin-rama
 
 //GET Param Helper
 	$.urlParam = function (name) {
@@ -78,6 +85,15 @@ var respuestas;
 		chart.draw(data, options);
 	};
 
+	function formBreak(domReport, domTitle){
+
+		$(domReport).append("<dt class='tituloForm'>"+domTitle+"</dt>");		
+	};
+
+	function addDomChart (domReport, domChart){
+
+		$("dd", domReport).append("<div id=" +domChart+ "></div>");
+	};
 
 
 var reporte = {
@@ -85,19 +101,26 @@ var reporte = {
 	init : function () {
 		//Fetch Parameter from URL	
 		leadId = $.urlParam('leadid');
-		//Request leads json
+		//Request Lead's
 		$.get('/servicio.php?leadid='+leadId).done(function(data) {
 			respuestas = data.r;
 			console.log("Reg : "+respuestas.length);
 			//console.log(respuestas);
+<<<<<<< HEAD
 			
 
+=======
+			reporte.startDraw();
+>>>>>>> origin/workin-rama
 			});
-		//});
 	},
 
+<<<<<<< HEAD
 	startDraw : function (datatables) {
 
+=======
+	startDraw : function () {
+>>>>>>> origin/workin-rama
 		studentBasicData("Nombre " , this.respondido(3));
 		studentBasicData("Segundo Nombre " , this.respondido(4));
 		studentBasicData("Apellido " , this.respondido(5));
@@ -115,12 +138,14 @@ var reporte = {
 			reporte.dataTables();
 			siNoColumnChart("Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento", reporte.respondido(22), "vSiNo-0");
 		});
+<<<<<<< HEAD
 		*/
 
+=======
+>>>>>>> origin/workin-rama
 	}
 
 }; //end Reporte
-
 
 reporte.respondido = function (fieldN) {
 	var fn, fvalue, fieldNumber, lares;
@@ -157,13 +182,7 @@ reporte.sumOfFields = function (fNumber, optsNumber) {
 	}
 	return suma;
 };
-/*
-reporte.preguntaDom = function (DOMnumber) {
-	var label = $(".entry-view-field-name").eq(DOMnumber).text();
-	//console.log(label);
-	return label;
-};
-*/
+
 //////onReady
 $(function () {
 	//SERAiD
@@ -214,3 +233,4 @@ $(function () {
 	//ACCORDION
 	//$(".customReport").accordion({heightStyle: "content" });
 });
+
