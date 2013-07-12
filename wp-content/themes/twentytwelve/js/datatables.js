@@ -1,16 +1,14 @@
 reporte.dataTables = function(){
 
-
 //FORMULARIO 1 >>>>>>>>>>>>>>>>>>>>>>>>>
-	//Form Beak<<< Auto Perfil Educativo del Estudiante
-	//sino
-	addDom(".form1", "vSiNo-0");
+	
+	////////////////Form Beak<<< Auto Perfil Educativo del Estudiante
+	//sino	
 	DS0 = "Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento";
+	addDom(".form1", "vSiNo-0"); 
 	siNoColumnChart(DS0, this.respondido(22), "vSiNo-0");
-
 	
 	//DATATABLE      
-	addDom(".form1","vDT-DS1");
 	DS1 = [
 		//Columnas
 		['Servicios que recibe en la escuela', 'Recibe'],
@@ -23,21 +21,20 @@ reporte.dataTables = function(){
 		['Asistencia Tecnológica',	(this.respondido(23.6) == "true") ],
 		['Acomodos', 				(this.respondido(23.7) == "true") ],
 		['Otros',  					(this.respondido(23.8) == "true") ]
-	]; 
+	];
+	addDom(".form1", "vDT-DS1"); 
 	laDataTable(DS1, 'vDT-DS1');
-
 	
-
 	//VELOCIMETROS
-	addDom("vGVel-DS2");
 	DS2 = [
 		['Destreza',	'Valor'],
 		['Lectura', 	parseInt(this.respondido(24))],
 		['Escritura',	parseInt(this.respondido(25))],
 		['Matemáticas',	parseInt(this.respondido(26))]
-	]; 
+	];
+	addDom(".form1", "vGVel-DS2"); 
 	velocimetros(DS2, 'vGVel-DS2');
-
+	
 	//DATATABLE
 	DS3 = [
 		//Columnas
@@ -49,6 +46,7 @@ reporte.dataTables = function(){
 		['Igual que los demás',  	(this.respondido(24) == 2), (this.respondido(25) == 2), (this.respondido(26) == 2)],
 		['Por encima de los demás', (this.respondido(24) == 3), (this.respondido(25) == 3), (this.respondido(26) == 3)]
 	]; 
+	addDom(".form1", 'vDT-DS3');
 	laDataTable(DS3, 'vDT-DS3');
 
 	//DATATABLE	
@@ -62,25 +60,27 @@ reporte.dataTables = function(){
 		['Considero las cosas positivas y negativas del problema', 				(this.respondido(27.4) == "true") ],
 		['Considero otra solución cuando la primera idea no parece funcionar',	(this.respondido(27.5) == "true") ]
 	]; 
+	addDom(".form1", 'vDT-DS4');
 	laDataTable(DS4, 'vDT-DS4');
 
-	//Form Break<<<Intereses y Actividades Generales
-
-	//sino	
+	////////////////Form Break<<<Intereses y Actividades Generales
+	//sino
 	DS5 = "Diversión en Tiempo Libre";
+	addDom(".form1", 'vSiNo-5');	
 	siNoColumnChart(DS5, this.respondido(29), 'vSiNo-5');
 	
 	//sino 
 	DS6 = "Tareas y Responsabilidades en el Hogar";
+	addDom(".form1", 'vSiNo-6');
 	siNoColumnChart(DS6, this.respondido(30), 'vSiNo-6');
 	
 	//sino
 	DS7 = "Aspiración a una Carrera en el Futuro";
+	addDom(".form1", 'vSiNo-7');
 	siNoColumnChart(DS7, this.respondido(31), 'vSiNo-7');
 
 	//Form Break<<<Intereses y Metas de Estudios Generales
-
-	//DATATABLE  
+	//DATATABLE 
 	DS8 = [
 		//Columnas
 		['Estudios que toma al presente o interesa tomar en la escuela superior', 'Seleccion'],
@@ -92,9 +92,10 @@ reporte.dataTables = function(){
 		['Programa de Estudio y Trabajo', 			(this.respondido(41) == 4)],
 		['Otro', 									(this.respondido(41) == 5)]
 	]; 
+	addDom(".form1", 'vDT-DS8'); 
 	laDataTable(DS8, 'vDT-DS8');
 
-	//DATATABLE  
+	//DATATABLE 
 	DS9 = [
 		//Columnas
 		['Estudios que aspira seguir cuando termine la escuela superior', 'Seleccion'],
@@ -106,6 +107,7 @@ reporte.dataTables = function(){
 		['Programa de Estudios Cortos',		(this.respondido(42) == 4 )],
 		['Ninguna de las Anteriores',		(this.respondido(42) == 5 )]
 	]; 
+	addDom(".form1", 'vDT-DS9'); 
 	laDataTable(DS9, 'vDT-DS9');
 
 	//PIECHART
@@ -117,6 +119,7 @@ reporte.dataTables = function(){
 		['Cosas-Manual', 		this.sumOfFields(37, 11)],
 		['Datos-Información',	this.sumOfFields(39, 11)]
 	]; 
+	addDom(".form1", 'vPie-DS10');
 	pieChart(DS10, 'Porciento de Ocupaciones Seleccionadas por el Estudiante Relacionadas a Datos, Gente y Cosas',  'vPie-DS10');	
 
 //FORMULARIO 2 >>>>>>>>>>>>>>>>>>>>>>>>>
@@ -133,6 +136,7 @@ reporte.dataTables = function(){
 		['Programa Vocacional | Técnico', 			(this.respondido(23.3) == "true") ],
 		['Otros',  									(this.respondido(23.8) == "true") ]
 	]; 
+	addDom(".form2", 'vPie-DS11');
 	laDataTable(DS11, 'vDT-DS11');
 
 	//DATATABLE      
@@ -148,10 +152,12 @@ reporte.dataTables = function(){
 		['Fuerzas Armadas', (this.respondido(47.6) == "true") ],
 		['Otro ',     (this.respondido(47.7) == "true") ]
 	]; 
+	addDom(".form2", 'vDT-DS12');
 	laDataTable(DS12, 'vDT-DS12');
 
 	//sino
 	DS13 = "Conoce si su hijo/a tiene alguna experiencia de trabajo (part time)"; 
+	addDom(".form2", 'vSiNo-13');
 	siNoColumnChart(DS13, this.respondido(49), 'vSiNo-13');
 
 	//DATATABLE 
@@ -163,10 +169,12 @@ reporte.dataTables = function(){
 		['Poco',	(this.respondido(50.2) == "true") ], 
 		['Mucho',     (this.respondido(50.3) == "true") ]
 	]; 
+	addDom(".form2", 'vDT-DS14');
 	laDataTable(DS14, 'vDT-DS14');
 
 	//sino
 	DS15 ="Opinión sobre si su hijo/a necesita mejorar en sus destrezas sociales para aumentar sus oportunidades de empleo y estudios futuros";
+	addDom(".form2", 'vSiNo-15');
 	siNoColumnChart(DS15, this.respondido(51), 'vSiNo-15');
 
 	//DATATABLE      
@@ -180,10 +188,12 @@ reporte.dataTables = function(){
 		['Puntualidad y Asistencia',    (this.respondido(52.4) == "true") ],
 		['Otro',   (this.respondido(52.5) == "true") ]
 	];
+	addDom(".form2", 'vDT-DS16');
 	laDataTable(DS16, 'vDT-DS16');
 
 	//sino
 	DS17 = "Ocupaciones en o fuera de la escuela."; 
+	addDom(".form2", 'vSiNo-17');
 	siNoColumnChart(DS17, this.respondido(54), 'vSiNo-17');
 
 	//vPie-DS15
@@ -195,24 +205,29 @@ reporte.dataTables = function(){
 		['Cosas-Manual',   this.sumOfFields(57, 11)],
 		['Datos-Información', this.sumOfFields(59, 11)]
 	]; 
+	addDom(".form2", 'vPie-DS18');
 	pieChart(DS18, 'Porciento de Ocupaciones Seleccionadas por el Estudiante Relacionadas a Datos, Gente y Cosas',  'vPie-DS18');	
 
 	//sino
 	DS19 = "¿Tiene usted alguna preocupación en relación al desarrollo académico y ocupacional de su hijo/a?"
+	addDom(".form2", 'vSiNo-19');
 	siNoColumnChart(DS19, this.respondido(61), 'vSiNo-19');
 
 //FORMULARIO 3 >>>>>>>>>>>>>>>>>>>>>>>>>
 
 	//sino
 	DS20 = "Tiene planes de continuar estudios o trabajo al terminar la escuela superior"; 
+	addDom(".form2", 'vSiNo-20');
 	siNoColumnChart(DS20, this.respondido(64), 'vSiNo-20');
 
 	//sino
 	DS21 = "Al presente necesita ayuda para hacer sus tareas en las clases";
+	addDom(".form2", 'vSiNo-21');
 	siNoColumnChart(DS21, this.respondido(65), 'vSiNo-21');
 
 	//sino
 	DS22 = "Tiene algún problema académico, impedimento o de salud"; 
+	addDom(".form2", 'vSiNo-22');
 	siNoColumnChart(DS22, this.respondido(66), 'vSiNo-22');
 
 	DS23 = [
@@ -225,14 +240,17 @@ reporte.dataTables = function(){
 		['Estudiando antes de las clases', (this.respondido(67) == 3)],
 		['Todas las anterior', (this.respondido(67) == 3)]
 	]; 
+	addDom(".form2", 'vSiNo-23');
 	laDataTable(DS23, 'vDT-DS23');
 
 	//sino
 	DS24 = "Busca ayuda cuando tiene dificultades en las clases";
+	addDom(".form2", 'vSiNo-24');
 	siNoColumnChart(DS24, this.respondido(85), 'vSiNo-24');
 	
 	//sino
 	DS25 = "Si está satisfecho/a con los cursos que toma al presente en la escuela"; 
+	addDom(".form2", 'vSiNo-25');
 	siNoColumnChart(DS25, this.respondido(68), 'vSiNo-25');
 
 	//Form Beak<<< Experiencias del Diario Vivir | Comunitarias	
@@ -247,6 +265,7 @@ reporte.dataTables = function(){
 		['Necesita ayuda para aprobar el examen de conducir', -1],
 		['Tiene conocimiento que a los 18 años de edad se puedes registrar para votar en las elecciones', 1],
 	]; 
+	addDom(".form2", 'vDT2-DS26');
 	laDataTableDos(DS26, 'vDT2-DS26');
 
 	//Form Beak<<< Planes Después de Terminar la Escuela Superior
@@ -259,6 +278,7 @@ reporte.dataTables = function(){
 		['Estudiando antes de las clases', (this.respondido(67) == 3)],
 		['Todas las anterior', (this.respondido(67) == 3)]
 	]; 
+	addDom(".form2", 'vDT-DS27');
 	laDataTable(DS27, 'vDT-DS27');
 
 	//Form Beak<<< Experiencias del Diario Vivir | Comunitarias
@@ -273,13 +293,16 @@ reporte.dataTables = function(){
 		['Necesita ayuda para aprobar el examen de conducir', -1],
 		['Tiene conocimiento que a los 18 años de edad se puedes registrar para votar en las elecciones', 1],
 	]; 
+	addDom(".form2", 'vDT2-DS28');
 	laDataTableDos(DS28, 'vDT2-DS28');
 
 	//sino
-	DS29 = "Busca ayuda cuando tiene dificultades en las clases"
+	DS29 = "Busca ayuda cuando tiene dificultades en las clases";
+	addDom(".form2", 'vSiNo-29');
 	siNoColumnChart(DS29, this.respondido(85), 'vSiNo-29');
 	//sino
 	DS30 = "Si está satisfecho/a con los cursos que toma al presente en la escuela"; 
+	addDom(".form2", 'vSiNo-30');
 	siNoColumnChart(DS30, this.respondido(68), 'vSiNo-30');
 
 	//Form Beak<<< Experiencias del Diario Vivir | Comunitarias
@@ -294,6 +317,7 @@ reporte.dataTables = function(){
 		['Necesita ayuda para aprobar el examen de conducir', -1],
 		['Tiene conocimiento que a los 18 años de edad se puedes registrar para votar en las elecciones', 1],
 	]; 
+	addDom(".form2", 'vDT2-DS31');
 	laDataTableDos(DS31, 'vDT2-DS31');
 
 }
