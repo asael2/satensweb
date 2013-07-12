@@ -23,7 +23,6 @@ get_header(); ?>
 
 <!-- find it in ESTUDIANTES Page
 
-
 [printfriendly]
 [directory form="33" lightboxsettings="images" titleshow="false" tfoot="false"]
 <ul id="leadData">
@@ -58,8 +57,5 @@ get_header(); ?>
         </dl>
     </div>
 </div>
-
-
-
 
 -->
