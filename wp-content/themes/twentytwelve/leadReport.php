@@ -26,78 +26,39 @@ get_header(); ?>
 
 [printfriendly]
 [directory form="33" lightboxsettings="images" titleshow="false" tfoot="false"]
-<div id="tabs">
+<ul id="leadData">
+</ul>
+<div id="tabsInforme">
     <ul>
         <li><a href="#tabs-1">Reporte 1</a></li>
         <li><a href="#tabs-2">Reporte 2</a></li>
         <li><a href="#tabs-3">Reporte 3</a></li>
+        <li><a href="#tabs-4">Reporte 4 </a></li>
+        <li><a href="#tabs-5">Reporte 5 </a></li>
+        <li><a href="#tabs-6">Reporte 6 </a></li>
+        <li><a href="#tabs-7">Reporte 7 </a></li>
+        <li><a href="#tabs-8">Reporte 8 </a></li>
+        <li><a href="#tabs-9">Reporte 9 </a></li>
+        <li><a href="#tabs-10">Reporte 1 0</a></li>
+        <li><a href="#tabs-11">Reporte 1 1</a></li>
     </ul>
     <div id="tabs-1">
-        <dl class="customReport">
-            <dt class="tituloForm">Auto Perfil Educativo del Estudiante</dt>
-            <dd>
-                <div id="vSiNo-1"></div>
-                <div id="vDT-DS1"></div>
-                <div id="vGVel-DS2"></div>
-                <div id="vDT-DS3"></div>
-                <div id="vDT-DS4"></div>
-            </dd>
-            <dt class="tituloForm">Intereses y Actividades Generales</dt>
-            <dd>
-                <div id="vSiNo-2"></div>
-                <div id="vSiNo-3"></div>
-                <div id="vSiNo-4"></div>
-            </dd>
-            <dt class="tituloForm">Intereses y Metas de Estudios Generales</dt>
-            <dd>
-                <div id="vDT-DS5"></div>
-                <div id="vDT-DS6"></div>
-                <div id="vPie-DS7"></div>
-            </dd>
+        <dl class="form1">
+            <dd></dd>
         </dl>
     </div>
     <div id="tabs-2">
-        <dl class="customReport">
-            <dt class="tituloForm">Cuestionario al Padre o Encargado</dt>
-            <dd>
-                <div id="vDT-DS8"></div>
-                <div id="vDT-DS9"></div>
-                <div id="vSiNo-10"></div>
-                <div id="vDT-DS11"></div>
-                <div id="vSiNo-12"></div>
-                <div id="vDT-DS13"></div>
-                <div id="vSiNo-14"></div>
-                <div id="vPie-DS15"></div>
-                <div id="vSiNo-16"></div>
-            </dd>
+        <dl class="form2">
+            <dd></dd>
         </dl>
     </div>
     <div id="tabs-3">
-        <dl class="customReport">
-            <dt class="tituloForm">Cuestionario al Padre o Encargado</dt>
-            <dd>
-                <div id="vSiNo-17"></div>
-                <div id="vSiNo-18"></div>
-                <div id="vSiNo-19"></div>
-                <div id="vDT-DS20"></div>
-                <div id="vSiNo-21"></div>
-                <div id="vSiNo-22"></div>
-            </dd>
-            <dt class="tituloForm">Experiencias del Diario Vivir | Comunitarias</dt>
-            <dd>
-                <div id=""></div>
-            </dd>
-            <dt class="tituloForm">Planes Después de Terminar la Escuela Superior</dt>
-            <dd>
-                <div id="vDT-DS20"></div>
-                <div id=""></div>
-                <div id="vSiNo-22"></div>
-                <div id="vSiNo-22"></div>
-                <div id=""></div>
-            </dd>
+        <dl class="form3">
+            <dd></dd>
         </dl>
     </div>
 </div>
+
 
 
 
