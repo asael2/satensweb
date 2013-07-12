@@ -77,7 +77,11 @@ var DS0, DS1, DS2, DS3;
 		chart.draw(data, options);
 	};
 
-
+	function addDom (domReport, domChart){
+		var form = domReport;
+		$("dd", form).append("<div id=" +domChart+ "></div>");
+		//$("dd", domReport).append("<div id = "+domChart+" >Chart-Container</div>");
+	};
 
 var reporte = {
 	
@@ -108,9 +112,6 @@ var reporte = {
 		$.getScript('/wp-content/themes/twentytwelve/js/datatables.js').done(function(){
 			reporte.dataTables();
 		});
-		
-//		siNoColumnChart("Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento", this.respondido(22), "vSiNo-0");
-
 	}
 
 }; //end Reporte

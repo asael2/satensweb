@@ -4,10 +4,13 @@ reporte.dataTables = function(){
 //FORMULARIO 1 >>>>>>>>>>>>>>>>>>>>>>>>>
 	//Form Beak<<< Auto Perfil Educativo del Estudiante
 	//sino
+	addDom(".form1", "vSiNo-0");
 	DS0 = "Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento";
 	siNoColumnChart(DS0, this.respondido(22), "vSiNo-0");
 
+	
 	//DATATABLE      
+	addDom(".form1","vDT-DS1");
 	DS1 = [
 		//Columnas
 		['Servicios que recibe en la escuela', 'Recibe'],
@@ -23,7 +26,10 @@ reporte.dataTables = function(){
 	]; 
 	laDataTable(DS1, 'vDT-DS1');
 
+	
+
 	//VELOCIMETROS
+	addDom("vGVel-DS2");
 	DS2 = [
 		['Destreza',	'Valor'],
 		['Lectura', 	parseInt(this.respondido(24))],
@@ -271,10 +277,10 @@ reporte.dataTables = function(){
 
 	//sino
 	DS29 = "Busca ayuda cuando tiene dificultades en las clases"
-	siNoColumnChart(DS29, this.respondido(85), 'vSiNo-26');
+	siNoColumnChart(DS29, this.respondido(85), 'vSiNo-29');
 	//sino
 	DS30 = "Si está satisfecho/a con los cursos que toma al presente en la escuela"; 
-	siNoColumnChart(DS30, this.respondido(68), 'vSiNo-29');
+	siNoColumnChart(DS30, this.respondido(68), 'vSiNo-30');
 
 	//Form Beak<<< Experiencias del Diario Vivir | Comunitarias
 	DS31 = [
@@ -288,9 +294,6 @@ reporte.dataTables = function(){
 		['Necesita ayuda para aprobar el examen de conducir', -1],
 		['Tiene conocimiento que a los 18 años de edad se puedes registrar para votar en las elecciones', 1],
 	]; 
-	laDataTableDos(DS31, 'vDT2-DS28');
-
-
-
+	laDataTableDos(DS31, 'vDT2-DS31');
 
 }
