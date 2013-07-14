@@ -1,5 +1,5 @@
 reporte.dataTables = function(){
-	
+
 //FORMULARIO 1 >>>>>>>>>>>>>>>>>>>>>>>>>
 	
 	//COLUMNCHART
@@ -109,6 +109,21 @@ reporte.dataTables = function(){
 		['Datos-Información',	this.sumOfFields(39, 11)]
 	]; 
 	
+//Drawing Modules (order matters) >>>>>>>>>>>>>>>>>>>>>>>>>
 
+formBreak("Auto Perfil Educativo del Estudiante", ".form1");
+siNoColumnChart(DS0, ".form1", "vSiNo-0", "Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento");
+laDataTable(DS1, ".form1", "dt-DS1");
+velocimetros(DS2, ".form1", "vel-DS2");
+laDataTable(DS3, ".form1", "vDT-DS3");
+laDataTable(DS4, ".form1", 'vDT-DS4');
+formBreak("Intereses y Actividades Generales", ".form1");
+siNoColumnChart(DS5, ".form1", "vSiNo-5", "Diversión en Tiempo Libre");
+siNoColumnChart(DS6, ".form1", "vSiNo-6", "Tareas y Responsabilidades en el Hogar");
+siNoColumnChart(DS7, ".form1", "vSiNo-7", "Aspiración a una Carrera en el Futuro");
+formBreak("Intereses y Metas de Estudios Generales", ".form1");
+laDataTable(DS8, ".form1", 'vDT-DS8');
+laDataTable(DS9, ".form1", 'vDT-DS9');
+pieChart(DS10, ".form1", 'vPie-DS10', 'Porciento de Ocupaciones Seleccionadas por el Estudiante Relacionadas a Datos, Gente y Cosas');	
 
 }

@@ -15,9 +15,9 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 	};
 
 //Classes////////////////////////////////////////////////////
-	function formBreak(domReport, domTitle){
-
-		$(domReport).append("<dt class='tituloForm'>"+domTitle+"</dt>");		
+	function formBreak(nRespuestas, formNumb){
+		var domElemt = "<li> <h2 class='tituloForm'>"+nRespuestas+"</h2> </li>";
+		$(formNumb).append(domElemt);
 	};
 
 	function studentBasicData (label, value) {
@@ -26,7 +26,8 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 	};
 
 	function siNoColumnChart (nRespuestas, formNumb, targetDom, pregunta) {
-		$("dd", formNumb).append("<div id=" +targetDom+ "></div>");
+		var domElemt = "<li> <div id="+targetDom+"></div></li>";
+		$(formNumb).append(domElemt);		
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 
 		var options = {
@@ -42,8 +43,9 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 		chart.draw(data, options);
 	};
 
-	function pieChart (nRespuestas, formNumb, targetDom, pieTitle ) {
-		$("dd", formNumb).append("<div id=" +targetDom+ "></div>");
+	function pieChart (nRespuestas, formNumb, targetDom, pieTitle) {
+		var domElemt = "<li> <div id="+targetDom+"></div></li>";
+		$(formNumb).append(domElemt);
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var options = {
 				title: pieTitle,
@@ -56,7 +58,8 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 	};
 
 	function laDataTableDos(nRespuestas, formNumb, targetDom) {
-		$("dd", formNumb).append("<div id=" +targetDom+ "></div>");
+		var domElemt = "<li> <div id="+targetDom+"></div></li>";
+		$(formNumb).append(domElemt);
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var table = new google.visualization.Table(document.getElementById(targetDom));
 		var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
@@ -65,16 +68,16 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 	};
 
 	function laDataTable (nRespuestas, formNumb, targetDom) {
-		$("dd", formNumb).append("<div id=" +targetDom+ "></div>");
+		var domElemt = "<li> <div id="+targetDom+"></div></li>";
+		$(formNumb).append(domElemt);
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var table = new google.visualization.Table(document.getElementById(targetDom));
 		table.draw(data, {showRowNumber: false}); 
 	};
 
 	function velocimetros (nRespuestas, formNumb, targetDom) {
-
-		$("dd", formNumb).append("<div id=" +targetDom+ "></div>");
-
+		var domElemt = "<li> <div id="+targetDom+"></div></li>";
+		$(formNumb).append(domElemt);
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var options = {
 			width: 600, 
@@ -106,7 +109,6 @@ var reporte = {
 	},	
 
 	startDraw : function () {
-
 		studentBasicData("Nombre " , reporte.respondido(3));
 		studentBasicData("Segundo Nombre " , reporte.respondido(4));
 		studentBasicData("Apellido " , reporte.respondido(5));
@@ -114,40 +116,14 @@ var reporte = {
 		studentBasicData("Genero " , reporte.respondido(7));
 		studentBasicData("Fecha de nacimiento " , reporte.respondido(8));
 		studentBasicData("Grado ", reporte.respondido(9));
-		
-		//Draws
 
 		$.get('/wp-content/themes/twentytwelve/js/datatables.js').done(function(data){
 			reporte.dataTables();
-			console.log("volvi contooodo");
-
-			formBreak(".form1", "Auto Perfil Educativo del Estudiante");
-
-			siNoColumnChart(DS0, ".form1", "vSiNo-0", "Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento");
-			
-			laDataTable(DS1, ".form1", "dt-DS1");
-			
-			velocimetros(DS2, ".form1", "vel-DS2");
-			laDataTable(DS3, ".form1", "vDT-DS3");
-			laDataTable(DS4, ".form1", 'vDT-DS4');
-
-			formBreak(".form1", "Intereses y Actividades Generales");
-
-			siNoColumnChart(DS5, ".form1", "vSiNo-5", "Diversión en Tiempo Libre");
-			siNoColumnChart(DS6, ".form1", "vSiNo-6", "Tareas y Responsabilidades en el Hogar");
-			siNoColumnChart(DS7, ".form1", "vSiNo-7", "Aspiración a una Carrera en el Futuro");
-
-			formBreak(".form1", "Intereses y Metas de Estudios Generales");
-
-			laDataTable(DS8, ".form1", 'vDT-DS8');
-			laDataTable(DS9, ".form1", 'vDT-DS9');
-			pieChart(DS10, ".form1", 'vPie-DS10', 'Porciento de Ocupaciones Seleccionadas por el Estudiante Relacionadas a Datos, Gente y Cosas');	
-
+			console.log("dataTables callback");
 		});
-
 	}
 
-}; //end Reporte
+};//Reporte end
 
 reporte.respondido = function (fieldN) {
 	var fn, fvalue, fieldNumber, lares;
@@ -205,4 +181,3 @@ $(function () {
 	}
 
 });
-
