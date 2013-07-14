@@ -45,7 +45,7 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 		chart.draw(data, options);
 	};
 
-	function pieChart (nRespuestas, pieTitle, targetDom) {
+	function pieChart (nRespuestas, formNumb, targetDom, pieTitle ) {
 		$("dd", formNumb).append("<div id=" +targetDom+ "></div>");
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var options = {
@@ -122,6 +122,7 @@ var reporte = {
 
 		$.get('/wp-content/themes/twentytwelve/js/datatables.js').done(function(data){
 			reporte.dataTables();
+			console.log("volvi");
 		
 		});
 
