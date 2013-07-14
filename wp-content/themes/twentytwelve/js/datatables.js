@@ -1,14 +1,6 @@
 reporte.dataTables = function(){
 
 //FORMULARIO 1 >>>>>>>>>>>>>>>>>>>>>>>>>
-<<<<<<< HEAD
-	//Form Beak<<< Auto Perfil Educativo del Estudiante
-
-	//CHART
-	siNoColumnChart("Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento", this.respondido(22), "vSiNo-0")
-
-=======
-	
 	//Form Break<<<<<<<<<
 	formBreak(".form1", "Auto Perfil Educativo del Estudiante");
 	
@@ -17,7 +9,7 @@ reporte.dataTables = function(){
 	addDomChart(".form1", "vSiNo-0"); 
 	siNoColumnChart(DS0, this.respondido(22), "vSiNo-0");
 	
->>>>>>> origin/workin-rama
+
 	//DATATABLE      
 	DS1 = [
 		//Columnas

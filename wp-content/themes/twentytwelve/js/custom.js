@@ -1,12 +1,9 @@
 /*Data-Graphics reports for SATENSPR by artyficial.net */
-<<<<<<< HEAD
-var respuestas;
-=======
 var DS0, DS1, DS2, DS3, DS4, DS5, DS6, DS7, DS8, DS9, DS10, 
 DS11, DS12, DS13, DS14, DS15, DS16, DS17, DS18, DS19, 
 DS20, DS21, DS22, DS23, DS24, DS25, DS26, DS27, DS28, DS29, DS30, DS31/*, 
 DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
->>>>>>> origin/workin-rama
+
 
 //GET Param Helper
 	$.urlParam = function (name) {
@@ -110,25 +107,12 @@ var reporte = {
 			respuestas = data.r;
 			console.log("Reg : "+respuestas.length);
 			//console.log(respuestas);
-<<<<<<< HEAD
-			
-
-=======
 			reporte.startDraw();
-<<<<<<< HEAD
->>>>>>> origin/workin-rama
-			});
-=======
 		});
->>>>>>> origin/workin-rama
-	},
+	},	
 
-<<<<<<< HEAD
-	startDraw : function (datatables) {
-
-=======
 	startDraw : function () {
->>>>>>> origin/workin-rama
+
 		studentBasicData("Nombre " , this.respondido(3));
 		studentBasicData("Segundo Nombre " , this.respondido(4));
 		studentBasicData("Apellido " , this.respondido(5));
@@ -138,19 +122,12 @@ var reporte = {
 		studentBasicData("Grado ", this.respondido(9));
 		
 		//Draws
-		console.log("En startDraw: "+datatables);
 
-		laDataTable(datatables["DTB1"], 'vDT-DS1');
-
-		/*$.get('/wp-content/themes/twentytwelve/js/datatables.json').done(function(data){
+		$.get('/wp-content/themes/twentytwelve/js/datatables.json').done(function(data){
 			reporte.dataTables();
-			siNoColumnChart("Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento", reporte.respondido(22), "vSiNo-0");
+		
 		});
-<<<<<<< HEAD
-		*/
 
-=======
->>>>>>> origin/workin-rama
 	}
 
 }; //end Reporte
@@ -198,63 +175,17 @@ $(function () {
 	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC", "color", "#FFF");
 
 	//En Pag. REPORTE
-<<<<<<< HEAD
 	if( $.urlParam('leadid') && $.urlParam('form') )  {
 		
 		reporte.init();	
 		$(".entry-detail-view").hide(); //Hide Directory's table.
 		
 		//TABS  
-		$( "#tabsInforme" ).tabs(function() {
-			
-			console.log("cargo tabs");
-			
-			$.get('/wp-content/themes/twentytwelve/js/datatables.json').done(function(data){
-				reporte.startDraw(data);
-			});	
-  							
-		})
-	}else{
+		$( "#tabsInforme" ).tabs();
 
-=======
-	if( $.urlParam('leadid') && $.urlParam('form') ){
-		$(".entry-detail-view").hide();
-		$("#tabsInforme").tabs(); 
-		reporte.init(); //INIT
-	} else{
-		
->>>>>>> origin/workin-rama
+	}else{
 		$("#tabsInforme").hide();
 	}
-/*
-	//En Pag. EDITAR
-	if( $.urlParam('form') && $.urlParam('edit') ){ 
-		$(".customReport").remove();
-		console.log("Editing Student?");}
 
-	//En Pag. REGISTRAR
-<<<<<<< HEAD
-	if ( $.urlParam('page_id') == 96  ) {
-
-		console.log("Lets ADD an Student!");	
-	};
-=======
-	if ( $.urlParam('page_id') == 96  ) {console.log("Lets ADD an Student!")};
->>>>>>> origin/workin-rama
-
-	//En Pag. ESTUDIANTES
-	if ( $.urlParam('page_id') == 94  ) {
-
-		console.log("Here we have all our students!");
-	};
-<<<<<<< HEAD
-	
-
-
-	//ACCORDION
-	//$(".customReport").accordion({heightStyle: "content" });
-=======
-*/
->>>>>>> origin/workin-rama
 });
 
