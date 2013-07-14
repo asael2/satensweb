@@ -110,20 +110,41 @@ var reporte = {
 
 	startDraw : function () {
 
-		studentBasicData("Nombre " , this.respondido(3));
-		studentBasicData("Segundo Nombre " , this.respondido(4));
-		studentBasicData("Apellido " , this.respondido(5));
-		studentBasicData("Segundo Apellido " , this.respondido(6));
-		studentBasicData("Genero " , this.respondido(7));
-		studentBasicData("Fecha de nacimiento " , this.respondido(8));
-		studentBasicData("Grado ", this.respondido(9));
+		studentBasicData("Nombre " , reporte.respondido(3));
+		studentBasicData("Segundo Nombre " , reporte.respondido(4));
+		studentBasicData("Apellido " , reporte.respondido(5));
+		studentBasicData("Segundo Apellido " , reporte.respondido(6));
+		studentBasicData("Genero " , reporte.respondido(7));
+		studentBasicData("Fecha de nacimiento " , reporte.respondido(8));
+		studentBasicData("Grado ", reporte.respondido(9));
 		
 		//Draws
 
 		$.get('/wp-content/themes/twentytwelve/js/datatables.js').done(function(data){
 			reporte.dataTables();
-			console.log("volvi");
-		
+			console.log("volvi contooodo");
+
+			formBreak(".form1", "Auto Perfil Educativo del Estudiante");
+
+			siNoColumnChart(DS0, ".form1", "vSiNo-0", reporte.respondido(22));
+			laDataTable(DS1, ".form1", "dt-DS1");
+			velocimetros(DS2, ".form1", "vel-DS2");
+			laDataTable(DS3, ".form1", "vDT-DS3");
+			laDataTable(DS4, ".form1", 'vDT-DS4');
+
+			formBreak(".form1", "Intereses y Actividades Generales");
+
+			siNoColumnChart(DS5, ".form1", "vSiNo-5", reporte.respondido(29));
+			siNoColumnChart(DS6, ".form1", "vSiNo-6", reporte.respondido(30));
+			siNoColumnChart(DS7, ".form1", "vSiNo-7", reporte.respondido(31));
+
+			formBreak(".form1", "Intereses y Metas de Estudios Generales");
+
+			laDataTable(DS8, ".form1", 'vDT-DS8');
+			laDataTable(DS9, ".form1", 'vDT-DS9');
+			pieChart(DS10, ".form1", 'vPie-DS10', 'Porciento de Ocupaciones Seleccionadas por el Estudiante Relacionadas a Datos, Gente y Cosas');	
+
+
 		});
 
 	}
