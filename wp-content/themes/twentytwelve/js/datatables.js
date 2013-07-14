@@ -6,8 +6,7 @@ reporte.dataTables = function(){
 
 	//sino	
 	DS0 = "Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento";
-	addDomChart(".form1", "vSiNo-0"); 
-	siNoColumnChart(DS0, this.respondido(22), "vSiNo-0");
+	siNoColumnChart(DS0, ".form1", "vSiNo-0", this.respondido(22));
 	
 
 	//DATATABLE      
@@ -24,8 +23,7 @@ reporte.dataTables = function(){
 		['Acomodos', 				(this.respondido(23.7) == "true") ],
 		['Otros',  					(this.respondido(23.8) == "true") ]
 	];
-	addDomChart(".form1", "vDT-DS1"); 
-	laDataTable(DS1, 'vDT-DS1');
+	laDataTable(DS1, ".form1", "dt-DS1");
 	
 	//VELOCIMETROS
 	DS2 = [
@@ -34,8 +32,7 @@ reporte.dataTables = function(){
 		['Escritura',	parseInt(this.respondido(25))],
 		['Matemáticas',	parseInt(this.respondido(26))]
 	];
-	addDomChart(".form1", "vGVel-DS2"); 
-	velocimetros(DS2, 'vGVel-DS2');
+	velocimetros(DS2, ".form1", "vel-DS2");
 
 
 }

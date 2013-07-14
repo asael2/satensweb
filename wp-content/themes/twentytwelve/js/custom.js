@@ -4,7 +4,6 @@ DS11, DS12, DS13, DS14, DS15, DS16, DS17, DS18, DS19,
 DS20, DS21, DS22, DS23, DS24, DS25, DS26, DS27, DS28, DS29, DS30, DS31/*, 
 DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 
-
 //GET Param Helper
 	$.urlParam = function (name) {
 		var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -16,24 +15,18 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 	};
 
 //Classes////////////////////////////////////////////////////
-
 	function formBreak(domReport, domTitle){
 
 		$(domReport).append("<dt class='tituloForm'>"+domTitle+"</dt>");		
 	};
-
-	function addDomChart (domReport, domChart){
-
-		$("dd", domReport).append("<div id=" +domChart+ "></div>");
-	};
-
 
 	function studentBasicData (label, value) {
 
 		$("#leadData").append("<li>"+label+" : "+value+"</li>")
 	};
 
-	function siNoColumnChart (pregunta, respuesta, targetDom) {
+	function siNoColumnChart (pregunta, formNumb, targetDom, respuesta) {
+		$("dd", formNumb).append("<div id=" +targetDom+ "></div>");
 		var data = google.visualization.arrayToDataTable([
 			['Sí | No = 0', 'Valor'],
 			['Respuesta',  parseInt(respuesta)],
@@ -53,6 +46,7 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 	};
 
 	function pieChart (nRespuestas, pieTitle, targetDom) {
+		$("dd", formNumb).append("<div id=" +targetDom+ "></div>");
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var options = {
 				title: pieTitle,
@@ -64,16 +58,8 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 		charte.draw(data, options);
 	};
 
-	function laDataTable (nRespuestas, targetDom) {
-		
-		//addDomChart(".form1", "vDT-DS1");
-
-		var data = google.visualization.arrayToDataTable(nRespuestas);
-		var table = new google.visualization.Table(document.getElementById(targetDom));
-		table.draw(data, {showRowNumber: false}); 
-	};
-
-	function laDataTableDos(nRespuestas, targetDom) {
+	function laDataTableDos(nRespuestas, formNumb, targetDom) {
+		$("dd", formNumb).append("<div id=" +targetDom+ "></div>");
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var table = new google.visualization.Table(document.getElementById(targetDom));
 		var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
@@ -81,7 +67,17 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 		table.draw(data, {allowHtml: true, showRowNumber: false});
 	};
 
-	function velocimetros (nRespuestas, targetDom) {
+	function laDataTable (nRespuestas, formNumb, targetDom) {
+		$("dd", formNumb).append("<div id=" +targetDom+ "></div>");
+		var data = google.visualization.arrayToDataTable(nRespuestas);
+		var table = new google.visualization.Table(document.getElementById(targetDom));
+		table.draw(data, {showRowNumber: false}); 
+	};
+
+	function velocimetros (nRespuestas, formNumb, targetDom) {
+
+		$("dd", formNumb).append("<div id=" +targetDom+ "></div>");
+
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var options = {
 			width: 600, 
@@ -96,6 +92,7 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 		var chart = new google.visualization.Gauge(document.getElementById(targetDom));
 		chart.draw(data, options);
 	};
+
 
 var reporte = {
 	
