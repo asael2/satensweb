@@ -195,5 +195,116 @@ alert("god");
 	DS19 = "¿Tiene usted alguna preocupación en relación al desarrollo académico y ocupacional de su hijo/a?"
 	siNoColumnChart(DS19, ".form2", 'vSiNo-19', this.respondido(61));
 
+//FORMULARIO 3 >>>>>>>>>>>>>>>>>>>>>>>>>
+
+	//Form Break<<<<<<<<<
+	formBreak(".form3", "Trabajo en la Escuela al Presente y Planes Futuros");
+	
+	//sino
+	DS20 = "Tiene planes de continuar estudios o trabajo al terminar la escuela superior"; 
+	siNoColumnChart(DS20,".form3", 'vSiNo-20', this.respondido(64));
+
+	//sino
+	DS21 = "Al presente necesita ayuda para hacer sus tareas en las clases";
+	siNoColumnChart(DS21, ".form3", 'vSiNo-21', this.respondido(65));
+
+	//Print PARAGRAPH
+	DS22 = "Tiene algún problema académico, impedimento o de salud"; 
+	//siNoColumnChart(DS22, ".form3", 'vSiNo-22', this.respondido(66));
+
+	//DATATABLE  
+	DS23 = [
+		//Columnas
+		['Autocalificación ', 'Lectura'],
+		//Filas
+		['Algunas manera que identifica para estudiar en sus clases',    (this.respondido(67) == 0)],
+		['Organizando su horario de estudio', (this.respondido(67) == 1)],
+		['Repasando con frecuencia los contenidos que va aprendiendo',   (this.respondido(67) == 2)],
+		['Estudiando antes de las clases', (this.respondido(67) == 3)],
+		['Todas las anterior', (this.respondido(67) == 3)]]; 
+	laDataTable(DS23, ".form3", 'vDT-DS23');
+
+	//sino
+	DS24 = "Busca ayuda cuando tiene dificultades en las clases";
+	siNoColumnChart(DS24, ".form3", 'vSiNo-24', this.respondido(85));
+	
+	//sino
+	DS25 = "Si está satisfecho/a con los cursos que toma al presente en la escuela"; 
+	siNoColumnChart(DS25, ".form3", 'vSiNo-25', this.respondido(68));
+
+	//Form Break<<<<<<<<<
+	formBreak(".form3", "Experiencias del Diario Vivir | Comunitarias");
+
+	//DATATABLE  
+	DS26 = [
+		//Columnas
+		['Interes General y/o Actividad', 'Respuestas | S&iacute; = Azul No = Rojo'],
+		//Filas
+		['Sabe ir al correo, banco, hospital, entre otros',  parseInt( this.respondido(70) ) ],
+		['Participa en organizaciones o actividades en la escuela',  parseInt( this.respondido(71) ) ],
+		['Participa de otras actividades en la comunidad',  parseInt( this.respondido(72) ) ],
+		['Tiene licencia de conducir',  parseInt( this.respondido(73) ) ],
+		['Necesita ayuda para aprobar el examen de conducir',  parseInt( this.respondido(74) ) ],
+		['Tiene conocimiento que a los 18 años de edad se puedes registrar para votar en las elecciones',  parseInt( this.respondido(75) ) ],]; 
+	laDataTableDos(DS26, ".form3", 'vDT2-DS26');
+
+	//Form Break<<<<<<<<<
+	formBreak(".form3", "Planes Después de Terminar la Escuela Superior");
+
+	//DATATABLE  
+	DS27 = [
+		//Columnas
+		['Algunas manera que identifica para estudiar en sus clases ', 'Seleccion'],
+		//Filas
+		['Organizando su horario de estudio', (this.respondido(67) == 1)],
+		['Repasando con frecuencia los contenidos que va aprendiendo',   (this.respondido(67) == 2)],
+		['Estudiando antes de las clases', (this.respondido(67) == 3)],
+		['Todas las anterior', (this.respondido(67) == 3)]]; 
+	laDataTable(DS27, ".form3",'vDT-DS27');
+
+
+	//DATATABLE  
+	DS28 = [
+		//Columnas
+		['Interes General y/o Actividad', 'Respuestas | S&iacute; = Azul No = Rojo'],
+		//Filas
+		['Sabe ir al correo, banco, hospital, entre otros', parseInt( this.respondido(73) ) ],
+		['Participa en organizaciones o actividades en la escuela', parseInt( this.respondido(73) ) ],
+		['Participa de otras actividades en la comunidad', parseInt( this.respondido(73) ) ],
+		['Tiene licencia de conducir', parseInt( this.respondido(73) ) ],
+		['Necesita ayuda para aprobar el examen de conducir', parseInt( this.respondido(73) )],
+		['Tiene conocimiento que a los 18 años de edad se puedes registrar para votar en las elecciones', parseInt( this.respondido(73) ) ]
+		]; 
+	laDataTableDos(DS28, ".form2", 'vDT2-DS28');
+
+	//sino
+	DS29 = "Busca ayuda cuando tiene dificultades en las clases";
+	siNoColumnChart(DS29, ".form3", 'vSiNo-29', this.respondido(85));
+
+	//sino
+	DS30 = "Si está satisfecho/a con los cursos que toma al presente en la escuela"; 
+	siNoColumnChart(DS30, ".form3", 'vSiNo-30', this.respondido(68));
+
+	DS31 = [
+		//Columnas
+		['Destrezas personales y ocupacionales que piensa necesita mejora ', 'Respuestas | S&iacute; = Azul No = Rojo'],
+		//Filas
+		['Mantener un calendario o agenda', parseInt( this.respondido(83) )],
+		['Trabajar independientemente', parseInt( this.respondido(83) )],
+		['Relacionarse con los demás', parseInt( this.respondido(83) )],
+		['Organizar las tareas a realizar', parseInt( this.respondido(83) )],
+		['Compañerismo', parseInt( this.respondido(83) )],
+		['Buen manejo del tiempo con los estudios', parseInt( this.respondido(83) )],
+		['Realizar trabajo de forma ordenada y precisa', parseInt( this.respondido(83) )],
+		['Puntualidad', parseInt( this.respondido(83) )],
+		['Buena asistencia', parseInt( this.respondido(83) )],
+		['Seguir instrucciones | instrucciones', parseInt( this.respondido(83) )],
+		['Dar el máximo', parseInt( this.respondido(83) )],
+		['Terminar una tarea a tiempo', parseInt( this.respondido(83) )],
+		['Otra', parseInt( this.respondido(83) )],
+		]; 
+
+	laDataTableDos(DS31, ".form3", 'vDT2-DS31');
+
 
 }
