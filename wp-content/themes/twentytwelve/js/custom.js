@@ -16,17 +16,6 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 
 //Classes////////////////////////////////////////////////////
 
-<<<<<<< HEAD
-	function formBreak(domReport, domTitle, targetDom, pregunta, respuesta){
-
-		$(domReport).append("<dt class='tituloForm'>"+domTitle+"</dt>");		
-	}
-
-
-	//function addDomChart (formNum, domChart, chartType, dataset, respondido){
-	
-	//addDomChart(".form1", "vSiNo-0", siNoColumnChart, DS0, this.respondido(22) );
-=======
 	function formBreak(domReport, domTitle){
 
 		$(domReport).append("<dt class='tituloForm'>"+domTitle+"</dt>");		
@@ -36,7 +25,7 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 
 		$("dd", domReport).append("<div id=" +domChart+ "></div>");
 	};
->>>>>>> ff7166a5b958d69965821ee1dc1f57f6899b43a5
+
 
 	function studentBasicData (label, value) {
 
@@ -106,13 +95,6 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 		var chart = new google.visualization.Gauge(document.getElementById(targetDom));
 		chart.draw(data, options);
 	};
-
-<<<<<<< HEAD
-function addDomChart (domReport, domChart){
-	$("dd", domReport).append("<div id=" +domChart+ "></div>");
-};	
-=======
->>>>>>> ff7166a5b958d69965821ee1dc1f57f6899b43a5
 
 var reporte = {
 	

@@ -214,5 +214,6 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 
-
-/_notes
+# Dreamweaver added files
+_notes
+dwsync.xml
