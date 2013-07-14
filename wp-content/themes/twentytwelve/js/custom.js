@@ -25,12 +25,9 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 		$("#leadData").append("<li>"+label+" : "+value+"</li>")
 	};
 
-	function siNoColumnChart (pregunta, formNumb, targetDom, respuesta) {
+	function siNoColumnChart (nRespuestas, formNumb, targetDom, pregunta) {
 		$("dd", formNumb).append("<div id=" +targetDom+ "></div>");
-		var data = google.visualization.arrayToDataTable([
-			['Sí | No = 0', 'Valor'],
-			['Respuesta',  parseInt(respuesta)],
-		]);
+		var data = google.visualization.arrayToDataTable(nRespuestas);
 
 		var options = {
 			title: pregunta,
@@ -126,24 +123,25 @@ var reporte = {
 
 			formBreak(".form1", "Auto Perfil Educativo del Estudiante");
 
-			siNoColumnChart(DS0, ".form1", "vSiNo-0", reporte.respondido(22));
+			siNoColumnChart(DS0, ".form1", "vSiNo-0", "Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento");
+			
 			laDataTable(DS1, ".form1", "dt-DS1");
+			
 			velocimetros(DS2, ".form1", "vel-DS2");
 			laDataTable(DS3, ".form1", "vDT-DS3");
 			laDataTable(DS4, ".form1", 'vDT-DS4');
 
 			formBreak(".form1", "Intereses y Actividades Generales");
 
-			siNoColumnChart(DS5, ".form1", "vSiNo-5", reporte.respondido(29));
-			siNoColumnChart(DS6, ".form1", "vSiNo-6", reporte.respondido(30));
-			siNoColumnChart(DS7, ".form1", "vSiNo-7", reporte.respondido(31));
+			siNoColumnChart(DS5, ".form1", "vSiNo-5", "Diversión en Tiempo Libre");
+			siNoColumnChart(DS6, ".form1", "vSiNo-6", "Tareas y Responsabilidades en el Hogar");
+			siNoColumnChart(DS7, ".form1", "vSiNo-7", "Aspiración a una Carrera en el Futuro");
 
 			formBreak(".form1", "Intereses y Metas de Estudios Generales");
 
 			laDataTable(DS8, ".form1", 'vDT-DS8');
 			laDataTable(DS9, ".form1", 'vDT-DS9');
 			pieChart(DS10, ".form1", 'vPie-DS10', 'Porciento de Ocupaciones Seleccionadas por el Estudiante Relacionadas a Datos, Gente y Cosas');	
-
 
 		});
 

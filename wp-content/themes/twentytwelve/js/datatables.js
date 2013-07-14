@@ -1,12 +1,12 @@
 reporte.dataTables = function(){
-alert("god");
+	
 //FORMULARIO 1 >>>>>>>>>>>>>>>>>>>>>>>>>
 	
-	//formBreak(".form1", "Auto Perfil Educativo del Estudiante");
-
-	//sino	
-	DS0 = "Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento";
-	//siNoColumnChart(DS0, ".form1", "vSiNo-0", this.respondido(22));
+	//COLUMNCHART
+	DS0 = [
+		['Sí | No = 0', 'Valor'],
+		['Respuesta',  parseInt(this.respondido(22))]
+	];
 	
 	//DATATABLE      
 	DS1 = [
@@ -22,16 +22,14 @@ alert("god");
 		['Acomodos', 				(this.respondido(23.7) == "true") ],
 		['Otros',  					(this.respondido(23.8) == "true") ]
 	];
-	//laDataTable(DS1, ".form1", "dt-DS1");
 	
-	//VELOCIMETROS
+	//GAUGE
 	DS2 = [
 		['Destreza',	'Valor'],
 		['Lectura', 	parseInt(this.respondido(24))],
 		['Escritura',	parseInt(this.respondido(25))],
 		['Matemáticas',	parseInt(this.respondido(26))]
 	];
-	//velocimetros(DS2, ".form1", "vel-DS2");
 
 	//DATATABLE
 	DS3 = [
@@ -44,7 +42,6 @@ alert("god");
 		['Igual que los demás',  	(this.respondido(24) == 2), (this.respondido(25) == 2), (this.respondido(26) == 2)],
 		['Por encima de los demás', (this.respondido(24) == 3), (this.respondido(25) == 3), (this.respondido(26) == 3)]
 	]; 
-	//laDataTable(DS3, ".form1", "vDT-DS3");
 
 	//DATATABLE	
 	DS4 = [
@@ -57,25 +54,24 @@ alert("god");
 		['Considero las cosas positivas y negativas del problema', 				(this.respondido(27.4) == "true") ],
 		['Considero otra solución cuando la primera idea no parece funcionar',	(this.respondido(27.5) == "true") ]
 	]; 
-	//laDataTable(DS4, ".form1", 'vDT-DS4');
-
-	//Form Break<<<<<<<<<
-	//formBreak(".form1", "Intereses y Actividades Generales");
-
-	//sino
-	DS5 = "Diversión en Tiempo Libre";	
-	//siNoColumnChart(DS5, ".form1", "vSiNo-5", this.respondido(29));
 	
-	//sino 
-	DS6 = "Tareas y Responsabilidades en el Hogar";
-	//siNoColumnChart(DS6, ".form1", "vSiNo-6", this.respondido(30));
+	//COLUMNCHART
+	DS5 = [
+		['Sí | No = 0', 'Valor'],
+		['Respuesta',  parseInt(this.respondido(29))]
+	];
 	
-	//sino
-	DS7 = "Aspiración a una Carrera en el Futuro";
-	//siNoColumnChart(DS7, ".form1", "vSiNo-7", this.respondido(31));
-
-	//Form Break<<<<<<<<<
-	//formBreak(".form1", "Intereses y Metas de Estudios Generales");
+	//COLUMNCHART 
+	DS6 = [
+		['Sí | No = 0', 'Valor'],
+		['Respuesta',  parseInt(this.respondido(30))]
+	];
+	
+	//COLUMNCHART
+	DS7 = [
+		['Sí | No = 0', 'Valor'],
+		['Respuesta',  parseInt(this.respondido(31))]
+	];
 
 	//DATATABLE 
 	DS8 = [
@@ -89,7 +85,6 @@ alert("god");
 		['Programa de Estudio y Trabajo', 			(this.respondido(41) == 4)],
 		['Otro', 									(this.respondido(41) == 5)]
 	]; 
-	//laDataTable(DS8, ".form1", 'vDT-DS8');
 
 	//DATATABLE 
 	DS9 = [
@@ -103,7 +98,6 @@ alert("god");
 		['Programa de Estudios Cortos',		(this.respondido(42) == 4 )],
 		['Ninguna de las Anteriores',		(this.respondido(42) == 5 )]
 	]; 
-	//laDataTable(DS9, ".form1", 'vDT-DS9');
 
 	//PIECHART
 	DS10 = [
@@ -114,7 +108,7 @@ alert("god");
 		['Cosas-Manual', 		this.sumOfFields(37, 11)],
 		['Datos-Información',	this.sumOfFields(39, 11)]
 	]; 
-	//pieChart(DS10, ".form1", 'vPie-DS10', 'Porciento de Ocupaciones Seleccionadas por el Estudiante Relacionadas a Datos, Gente y Cosas');	
+	
 
 
 }
