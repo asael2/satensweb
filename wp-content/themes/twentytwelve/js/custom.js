@@ -19,6 +19,18 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 	};
 
 //Classes////////////////////////////////////////////////////
+
+	function formBreak(domReport, domTitle){
+
+		$(domReport).append("<dt class='tituloForm'>"+domTitle+"</dt>");		
+	};
+
+	function addDomChart (domReport, domChart){
+
+		$("dd", domReport).append("<div id=" +domChart+ "></div>");
+	};
+
+
 	function studentBasicData (label, value) {
 
 		$("#leadData").append("<li>"+label+" : "+value+"</li>")
@@ -56,6 +68,9 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 	};
 
 	function laDataTable (nRespuestas, targetDom) {
+		
+		//addDomChart(".form1", "vDT-DS1");
+
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var table = new google.visualization.Table(document.getElementById(targetDom));
 		table.draw(data, {showRowNumber: false}); 
@@ -85,17 +100,6 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 		chart.draw(data, options);
 	};
 
-	function formBreak(domReport, domTitle){
-
-		$(domReport).append("<dt class='tituloForm'>"+domTitle+"</dt>");		
-	};
-
-	function addDomChart (domReport, domChart){
-
-		$("dd", domReport).append("<div id=" +domChart+ "></div>");
-	};
-
-
 var reporte = {
 	
 	init : function () {
@@ -111,8 +115,12 @@ var reporte = {
 
 =======
 			reporte.startDraw();
+<<<<<<< HEAD
 >>>>>>> origin/workin-rama
 			});
+=======
+		});
+>>>>>>> origin/workin-rama
 	},
 
 <<<<<<< HEAD
@@ -190,6 +198,7 @@ $(function () {
 	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC", "color", "#FFF");
 
 	//En Pag. REPORTE
+<<<<<<< HEAD
 	if( $.urlParam('leadid') && $.urlParam('form') )  {
 		
 		reporte.init();	
@@ -207,30 +216,45 @@ $(function () {
 		})
 	}else{
 
+=======
+	if( $.urlParam('leadid') && $.urlParam('form') ){
+		$(".entry-detail-view").hide();
+		$("#tabsInforme").tabs(); 
+		reporte.init(); //INIT
+	} else{
+		
+>>>>>>> origin/workin-rama
 		$("#tabsInforme").hide();
 	}
-
+/*
 	//En Pag. EDITAR
-	if( $.urlParam('form') && $.urlParam('edit') ){
+	if( $.urlParam('form') && $.urlParam('edit') ){ 
 		$(".customReport").remove();
-		console.log("Editing Student?");
-	}
+		console.log("Editing Student?");}
 
 	//En Pag. REGISTRAR
+<<<<<<< HEAD
 	if ( $.urlParam('page_id') == 96  ) {
 
 		console.log("Lets ADD an Student!");	
 	};
+=======
+	if ( $.urlParam('page_id') == 96  ) {console.log("Lets ADD an Student!")};
+>>>>>>> origin/workin-rama
 
 	//En Pag. ESTUDIANTES
 	if ( $.urlParam('page_id') == 94  ) {
 
 		console.log("Here we have all our students!");
 	};
+<<<<<<< HEAD
 	
 
 
 	//ACCORDION
 	//$(".customReport").accordion({heightStyle: "content" });
+=======
+*/
+>>>>>>> origin/workin-rama
 });
 

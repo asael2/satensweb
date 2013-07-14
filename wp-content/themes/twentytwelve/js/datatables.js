@@ -281,12 +281,12 @@ reporte.dataTables = function(){
 		//Columnas
 		['Interes General y/o Actividad', 'Respuestas | S&iacute; = Azul No = Rojo'],
 		//Filas
-		['Sabe ir al correo, banco, hospital, entre otros', 1],
-		['Participa en organizaciones o actividades en la escuela', -1],
-		['Participa de otras actividades en la comunidad', 1],
-		['Tiene licencia de conducir', 1],
-		['Necesita ayuda para aprobar el examen de conducir', -1],
-		['Tiene conocimiento que a los 18 años de edad se puedes registrar para votar en las elecciones', 1],
+		['Sabe ir al correo, banco, hospital, entre otros',  parseInt( this.respondido(70) ) ],
+		['Participa en organizaciones o actividades en la escuela',  parseInt( this.respondido(71) ) ],
+		['Participa de otras actividades en la comunidad',  parseInt( this.respondido(72) ) ],
+		['Tiene licencia de conducir',  parseInt( this.respondido(73) ) ],
+		['Necesita ayuda para aprobar el examen de conducir',  parseInt( this.respondido(74) ) ],
+		['Tiene conocimiento que a los 18 años de edad se puedes registrar para votar en las elecciones',  parseInt( this.respondido(75) ) ],
 	]; 
 	addDomChart(".form3", 'vDT2-DS26');
 	laDataTableDos(DS26, 'vDT2-DS26');
@@ -315,12 +315,12 @@ reporte.dataTables = function(){
 		//Columnas
 		['Interes General y/o Actividad', 'Respuestas | S&iacute; = Azul No = Rojo'],
 		//Filas
-		['Sabe ir al correo, banco, hospital, entre otros', 1],
-		['Participa en organizaciones o actividades en la escuela', -1],
-		['Participa de otras actividades en la comunidad', 1],
-		['Tiene licencia de conducir', 1],
+		['Sabe ir al correo, banco, hospital, entre otros', parseInt( this.respondido(73) ) ],
+		['Participa en organizaciones o actividades en la escuela', parseInt( this.respondido(73) ) ],
+		['Participa de otras actividades en la comunidad', parseInt( this.respondido(73) ) ],
+		['Tiene licencia de conducir', parseInt( this.respondido(73) ) ],
 		['Necesita ayuda para aprobar el examen de conducir', -1],
-		['Tiene conocimiento que a los 18 años de edad se puedes registrar para votar en las elecciones', 1],
+		['Tiene conocimiento que a los 18 años de edad se puedes registrar para votar en las elecciones', parseInt( this.respondido(73) ) ],
 	]; 
 	addDomChart(".form2", 'vDT2-DS28');
 	laDataTableDos(DS28, 'vDT2-DS28');
