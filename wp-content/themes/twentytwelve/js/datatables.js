@@ -7,11 +7,8 @@ reporte.dataTables = function(){
 	
 	//sino	
 	DS0 = "Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento";
-	//addDomChart(".form1", "vSiNo-0"); 
-
-	addDomChart(".form1", "vSiNo-0", siNoColumnChart, DS0, this.respondido(22) );
-	
-	//siNoColumnChart(DS0, this.respondido(22), "vSiNo-0");
+	addDomChart(".form1", "vSiNo-0"); 
+	siNoColumnChart(DS0, this.respondido(22), "vSiNo-0");
 	
 	//DATATABLE      
 	DS1 = [

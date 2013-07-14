@@ -16,15 +16,15 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 
 //Classes////////////////////////////////////////////////////
 
-	function formBreak(domReport, domTitle, targetDom pregunta, respuesta, ){
+	function formBreak(domReport, domTitle, targetDom, pregunta, respuesta){
 
 		$(domReport).append("<dt class='tituloForm'>"+domTitle+"</dt>");		
 	}
 
-//function addDomChart (domReport, domChart){
-function addDomChart (formNum, domChart, chartType, dataset, respondido){
+
+	//function addDomChart (formNum, domChart, chartType, dataset, respondido){
 	
-	addDomChart(".form1", "vSiNo-0", siNoColumnChart, DS0, this.respondido(22) );
+	//addDomChart(".form1", "vSiNo-0", siNoColumnChart, DS0, this.respondido(22) );
 
 	function studentBasicData (label, value) {
 
@@ -63,6 +63,9 @@ function addDomChart (formNum, domChart, chartType, dataset, respondido){
 	};
 
 	function laDataTable (nRespuestas, targetDom) {
+		
+		//addDomChart(".form1", "vDT-DS1");
+
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var table = new google.visualization.Table(document.getElementById(targetDom));
 		table.draw(data, {showRowNumber: false}); 
@@ -92,9 +95,9 @@ function addDomChart (formNum, domChart, chartType, dataset, respondido){
 		chart.draw(data, options);
 	};
 
+function addDomChart (domReport, domChart){
 	$("dd", domReport).append("<div id=" +domChart+ "></div>");
-
-};
+};	
 
 var reporte = {
 	
