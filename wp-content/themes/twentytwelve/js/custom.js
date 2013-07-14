@@ -4,7 +4,6 @@ DS11, DS12, DS13, DS14, DS15, DS16, DS17, DS18, DS19,
 DS20, DS21, DS22, DS23, DS24, DS25, DS26, DS27, DS28, DS29, DS30, DS31/*, 
 DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 
-
 //GET Param Helper
 	$.urlParam = function (name) {
 		var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -16,28 +15,20 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 	};
 
 //Classes////////////////////////////////////////////////////
-
-	function formBreak(domReport, domTitle){
-
-		$(domReport).append("<dt class='tituloForm'>"+domTitle+"</dt>");		
+	function formBreak(nRespuestas, formNumb){
+		var domElemt = "<li> <h2 class='tituloForm'>"+nRespuestas+"</h2> </li>";
+		$(formNumb).append(domElemt);
 	};
-
-	function addDomChart (domReport, domChart){
-
-		$("dd", domReport).append("<div id=" +domChart+ "></div>");
-	};
-
 
 	function studentBasicData (label, value) {
 
 		$("#leadData").append("<li>"+label+" : "+value+"</li>")
 	};
 
-	function siNoColumnChart (pregunta, respuesta, targetDom) {
-		var data = google.visualization.arrayToDataTable([
-			['Sí | No = 0', 'Valor'],
-			['Respuesta',  parseInt(respuesta)],
-		]);
+	function siNoColumnChart (nRespuestas, formNumb, targetDom, pregunta) {
+		var domElemt = "<li> <div id="+targetDom+"></div></li>";
+		$(formNumb).append(domElemt);		
+		var data = google.visualization.arrayToDataTable(nRespuestas);
 
 		var options = {
 			title: pregunta,
@@ -52,7 +43,9 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 		chart.draw(data, options);
 	};
 
-	function pieChart (nRespuestas, pieTitle, targetDom) {
+	function pieChart (nRespuestas, formNumb, targetDom, pieTitle) {
+		var domElemt = "<li> <div id="+targetDom+"></div></li>";
+		$(formNumb).append(domElemt);
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var options = {
 				title: pieTitle,
@@ -64,16 +57,9 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 		charte.draw(data, options);
 	};
 
-	function laDataTable (nRespuestas, targetDom) {
-		
-		//addDomChart(".form1", "vDT-DS1");
-
-		var data = google.visualization.arrayToDataTable(nRespuestas);
-		var table = new google.visualization.Table(document.getElementById(targetDom));
-		table.draw(data, {showRowNumber: false}); 
-	};
-
-	function laDataTableDos(nRespuestas, targetDom) {
+	function laDataTableDos(nRespuestas, formNumb, targetDom) {
+		var domElemt = "<li> <div id="+targetDom+"></div></li>";
+		$(formNumb).append(domElemt);
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var table = new google.visualization.Table(document.getElementById(targetDom));
 		var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
@@ -81,7 +67,17 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 		table.draw(data, {allowHtml: true, showRowNumber: false});
 	};
 
-	function velocimetros (nRespuestas, targetDom) {
+	function laDataTable (nRespuestas, formNumb, targetDom) {
+		var domElemt = "<li> <div id="+targetDom+"></div></li>";
+		$(formNumb).append(domElemt);
+		var data = google.visualization.arrayToDataTable(nRespuestas);
+		var table = new google.visualization.Table(document.getElementById(targetDom));
+		table.draw(data, {showRowNumber: false}); 
+	};
+
+	function velocimetros (nRespuestas, formNumb, targetDom) {
+		var domElemt = "<li> <div id="+targetDom+"></div></li>";
+		$(formNumb).append(domElemt);
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var options = {
 			width: 600, 
@@ -96,6 +92,7 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 		var chart = new google.visualization.Gauge(document.getElementById(targetDom));
 		chart.draw(data, options);
 	};
+
 
 var reporte = {
 	
@@ -112,25 +109,21 @@ var reporte = {
 	},	
 
 	startDraw : function () {
+		studentBasicData("Nombre " , reporte.respondido(3));
+		studentBasicData("Segundo Nombre " , reporte.respondido(4));
+		studentBasicData("Apellido " , reporte.respondido(5));
+		studentBasicData("Segundo Apellido " , reporte.respondido(6));
+		studentBasicData("Genero " , reporte.respondido(7));
+		studentBasicData("Fecha de nacimiento " , reporte.respondido(8));
+		studentBasicData("Grado ", reporte.respondido(9));
 
-		studentBasicData("Nombre " , this.respondido(3));
-		studentBasicData("Segundo Nombre " , this.respondido(4));
-		studentBasicData("Apellido " , this.respondido(5));
-		studentBasicData("Segundo Apellido " , this.respondido(6));
-		studentBasicData("Genero " , this.respondido(7));
-		studentBasicData("Fecha de nacimiento " , this.respondido(8));
-		studentBasicData("Grado ", this.respondido(9));
-		
-		//Draws
-
-		$.get('/wp-content/themes/twentytwelve/js/datatables.json').done(function(data){
+		$.get('/wp-content/themes/twentytwelve/js/datatables.js').done(function(data){
 			reporte.dataTables();
-		
+			console.log("dataTables callback");
 		});
-
 	}
 
-}; //end Reporte
+};//Reporte end
 
 reporte.respondido = function (fieldN) {
 	var fn, fvalue, fieldNumber, lares;
@@ -188,4 +181,3 @@ $(function () {
 	}
 
 });
-
