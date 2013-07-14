@@ -123,7 +123,7 @@ var reporte = {
 		
 		//Draws
 
-		$.get('/wp-content/themes/twentytwelve/js/datatables.json').done(function(data){
+		$.get('/wp-content/themes/twentytwelve/js/datatables.js').done(function(data){
 			reporte.dataTables();
 		
 		});
