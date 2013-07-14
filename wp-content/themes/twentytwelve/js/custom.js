@@ -1,5 +1,9 @@
 /*Data-Graphics reports for SATENSPR by artyficial.net */
-var DS0, DS1, DS2, DS3;
+var DS0, DS1, DS2, DS3, DS4, DS5, DS6, DS7, DS8, DS9, DS10, 
+DS11, DS12, DS13, DS14, DS15, DS16, DS17, DS18, DS19, 
+DS20, DS21, DS22, DS23, DS24, DS25, DS26, DS27, DS28, DS29, DS30, DS31/*, 
+DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
+
 //GET Param Helper
 	$.urlParam = function (name) {
 		var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -11,6 +15,17 @@ var DS0, DS1, DS2, DS3;
 	};
 
 //Classes////////////////////////////////////////////////////
+
+	function formBreak(domReport, domTitle, targetDom pregunta, respuesta, ){
+
+		$(domReport).append("<dt class='tituloForm'>"+domTitle+"</dt>");		
+	}
+
+//function addDomChart (domReport, domChart){
+function addDomChart (formNum, domChart, chartType, dataset, respondido){
+	
+	addDomChart(".form1", "vSiNo-0", siNoColumnChart, DS0, this.respondido(22) );
+
 	function studentBasicData (label, value) {
 
 		$("#leadData").append("<li>"+label+" : "+value+"</li>")
@@ -77,30 +92,25 @@ var DS0, DS1, DS2, DS3;
 		chart.draw(data, options);
 	};
 
-	function addDom (domReport, domChart){
-		var form = domReport;
-		$("dd", form).append("<div id=" +domChart+ "></div>");
-		//$("dd", domReport).append("<div id = "+domChart+" >Chart-Container</div>");
-	};
+	$("dd", domReport).append("<div id=" +domChart+ "></div>");
+
+};
 
 var reporte = {
 	
 	init : function () {
 		//Fetch Parameter from URL	
 		leadId = $.urlParam('leadid');
-		//Request leads json
+		//Request Lead's
 		$.get('/servicio.php?leadid='+leadId).done(function(data) {
 			respuestas = data.r;
 			console.log("Total registros :: "+respuestas.length);
 			//console.log(respuestas);
 			reporte.startDraw();
-
-			});
-		//});
+		});
 	},
 
 	startDraw : function () {
-
 		studentBasicData("Nombre " , this.respondido(3));
 		studentBasicData("Segundo Nombre " , this.respondido(4));
 		studentBasicData("Apellido " , this.respondido(5));
@@ -113,9 +123,7 @@ var reporte = {
 			reporte.dataTables();
 		});
 	}
-
 }; //end Reporte
-
 
 reporte.respondido = function (fieldN) {
 	var fn, fvalue, fieldNumber, lares;
@@ -152,13 +160,7 @@ reporte.sumOfFields = function (fNumber, optsNumber) {
 	}
 	return suma;
 };
-/*
-reporte.preguntaDom = function (DOMnumber) {
-	var label = $(".entry-view-field-name").eq(DOMnumber).text();
-	//console.log(label);
-	return label;
-};
-*/
+
 //////onReady
 $(function () {
 	//SERAiD
@@ -168,32 +170,26 @@ $(function () {
 	//En Pag. REPORTE
 	if( $.urlParam('leadid') && $.urlParam('form') ){
 		$(".entry-detail-view").hide();
-		$("#tabs").show();
+		$("#tabsInforme").tabs(); 
 		reporte.init(); //INIT
 	} else{
-		$(".customReport").hide();
+		
+		$("#tabsInforme").hide();
 	}
-
+/*
 	//En Pag. EDITAR
-	if( $.urlParam('form') && $.urlParam('edit') ){
+	if( $.urlParam('form') && $.urlParam('edit') ){ 
 		$(".customReport").remove();
-		console.log("Editing Student?");
-	}
+		console.log("Editing Student?");}
 
 	//En Pag. REGISTRAR
-	if ( $.urlParam('page_id') == 96  ) {
-		console.log("Lets ADD an Student!");	
-	};
+	if ( $.urlParam('page_id') == 96  ) {console.log("Lets ADD an Student!")};
 
 	//En Pag. ESTUDIANTES
 	if ( $.urlParam('page_id') == 94  ) {
 		console.log("Here we have all our students!");
 		//$("#tabs").hide();
 	};
-	
-	//TABS  
-	$( "#tabs" ).tabs(); 
-
-	//ACCORDION
-	//$(".customReport").accordion({heightStyle: "content" });
+*/
 });
+
