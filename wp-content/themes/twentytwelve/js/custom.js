@@ -27,7 +27,7 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29,
 		$("#leadData").append("<li>"+label+" : "+value+"</li>")
 	};
 
-	function siNoColumnChart (nRespuestas, formNumb, targetDom, pregunta) {
+	function siNoColumnChart (nRespuestas, targetDom, formNumb, pregunta) {
 		var domElemt = "<li> <div id="+targetDom+"></div></li>";
 		$(formNumb).append(domElemt);		
 
@@ -46,7 +46,7 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29,
 		chart.draw(data, options);
 	};
 
-	function pieChart (nRespuestas, formNumb, targetDom, pieTitle) {
+	function pieChart (nRespuestas, targetDom, formNumb, pieTitle) {
 		var domElemt = "<li> <div id="+targetDom+"></div></li>";
 		$(formNumb).append(domElemt);
 		var data = google.visualization.arrayToDataTable(nRespuestas);
@@ -60,7 +60,7 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29,
 		charte.draw(data, options);
 	};
 
-	function laDataTableDos(nRespuestas, formNumb, targetDom) {
+	function laDataTableDos(nRespuestas, targetDom, formNumb) {
 		var domElemt = "<li> <div id="+targetDom+"></div></li>";
 		$(formNumb).append(domElemt);
 		var data = google.visualization.arrayToDataTable(nRespuestas);
@@ -70,7 +70,7 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29,
 		table.draw(data, {allowHtml: true, showRowNumber: false});
 	};
 
-	function laDataTable (nRespuestas, formNumb, targetDom) {
+	function laDataTable (nRespuestas, targetDom, formNumb) {
 		var domElemt = "<li> <div id="+targetDom+"></div></li>";
 		$(formNumb).append(domElemt);
 		var data = google.visualization.arrayToDataTable(nRespuestas);
@@ -78,7 +78,7 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29,
 		table.draw(data, {showRowNumber: false}); 
 	};
 
-	function velocimetros (nRespuestas, formNumb, targetDom) {
+	function velocimetros (nRespuestas, targetDom, formNumb) {
 		var domElemt = "<li> <div id="+targetDom+"></div></li>";
 		$(formNumb).append(domElemt);
 		var data = google.visualization.arrayToDataTable(nRespuestas);
