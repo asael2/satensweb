@@ -91,7 +91,6 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29,
 		chart.draw(data, options);
 	};
 
-
 var reporte = {
 	
 	init : function () {
@@ -108,21 +107,19 @@ var reporte = {
 
 	startDraw : function () {
 
-		studentBasicData("Nombre " , reporte.respondido(3));
-		studentBasicData("Segundo Nombre " , reporte.respondido(4));
-		studentBasicData("Apellido " , reporte.respondido(5));
-		studentBasicData("Segundo Apellido " , reporte.respondido(6));
-		studentBasicData("Genero " , reporte.respondido(7));
-		studentBasicData("Fecha de nacimiento " , reporte.respondido(8));
-		studentBasicData("Grado ", reporte.respondido(9));
+		studentBasicData("Nombre " , this.respondido(3));
+		studentBasicData("Segundo Nombre " , this.respondido(4));
+		studentBasicData("Apellido " , this.respondido(5));
+		studentBasicData("Segundo Apellido " , this.respondido(6));
+		studentBasicData("Genero " , this.respondido(7));
+		studentBasicData("Fecha de nacimiento " , this.respondido(8));
+		studentBasicData("Grado ", this.respondido(9));
+		studentBasicData("", "<a href="+this.editLink()+">EDITAR</a>");
 		
-		//Draws
-
 		$.get('/wp-content/themes/twentytwelve/js/datatables.js').done(function(data){
 			reporte.dataTables();
 			console.log("reporte.dataTables callback");
 		});
-
 	}
 
 }; //end Reporte
@@ -143,7 +140,7 @@ reporte.respondido = function (fieldN) {
 
 reporte.editLink = function () {
 
-	return  $("href", ".useredit a").html()
+	return  $(".useredit a").attr('href');
 };
 
 reporte.sumOfFields = function (fNumber, optsNumber) {
@@ -167,20 +164,18 @@ reporte.sumOfFields = function (fNumber, optsNumber) {
 $(function () {
 	//SERAiD
 	$(".gform_wrapper .readonly input").attr('readonly', 'readonly').css("background","#CCC"); 
-	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC", "color", "#FFF");
-
-	//En Pag. REPORTE
+	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC");
+	//REPORTE
 	if( $.urlParam('leadid') && $.urlParam('form') )  {
-		
-		reporte.init();	
-		$(".entry-detail-view").hide(); //Hide Directory's table.
-		
-		//TABS  
+		$(".entry-detail-view").hide(); //Hide Directory's table.		
 		$( "#tabsInforme" ).tabs();
-
+		reporte.init();	
 	}else{
 		$("#tabsInforme").hide();
 	}
-
+	//EDITAR Lead
+	if( $.urlParam('leadid') && $.urlParam('form') && $.urlParam('edit') )  {
+		$("#satensReport").hide();
+	}
 });
 
