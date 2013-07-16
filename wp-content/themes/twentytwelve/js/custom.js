@@ -16,9 +16,10 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29,
 	};
 
 //Classes////////////////////////////////////////////////////
-	function formBreak(domReport, domTitle){
 
-		$(domReport).append("<h3 class='tituloForm'>"+domTitle+"</h3>");		
+	function formBreak(nRespuestas, formNumb){
+		var domElemt = "<li> <h2 class='tituloForm'>"+nRespuestas+"</h2> </li>";
+		$(formNumb).append(domElemt);
 	};
 
 	function studentBasicData (label, value) {
@@ -26,8 +27,10 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29,
 		$("#leadData").append("<li>"+label+" : "+value+"</li>")
 	};
 
-	function siNoColumnChart (nRespuestas, targetDom, formNumb, pregunta) {
-		$(formNumb).append("<li><div id=" +targetDom+ "></div></li>");
+	function siNoColumnChart (nRespuestas, formNumb, targetDom, pregunta) {
+		var domElemt = "<li> <div id="+targetDom+"></div></li>";
+		$(formNumb).append(domElemt);		
+
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 
 		var options = {
@@ -43,8 +46,9 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29,
 		chart.draw(data, options);
 	};
 
-	function pieChart (nRespuestas, targetDom, formNumb, pieTitle ) {
-		$(formNumb).append("<li><div id=" +targetDom+ "></div></li>");
+	function pieChart (nRespuestas, formNumb, targetDom, pieTitle) {
+		var domElemt = "<li> <div id="+targetDom+"></div></li>";
+		$(formNumb).append(domElemt);
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var options = {
 				title: pieTitle,
@@ -56,8 +60,9 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29,
 		charte.draw(data, options);
 	};
 
-	function laDataTableDos(nRespuestas, targetDom, formNumb) {
-		$(formNumb).append("<li><div id=" +targetDom+ "></div></li>");
+	function laDataTableDos(nRespuestas, formNumb, targetDom) {
+		var domElemt = "<li> <div id="+targetDom+"></div></li>";
+		$(formNumb).append(domElemt);
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var table = new google.visualization.Table(document.getElementById(targetDom));
 		var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
@@ -65,17 +70,17 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29,
 		table.draw(data, {allowHtml: true, showRowNumber: false});
 	};
 
-	function laDataTable (nRespuestas, targetDom, formNumb) {
-		$(formNumb).append("<li><div id=" +targetDom+ "></div></li>");
+	function laDataTable (nRespuestas, formNumb, targetDom) {
+		var domElemt = "<li> <div id="+targetDom+"></div></li>";
+		$(formNumb).append(domElemt);
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var table = new google.visualization.Table(document.getElementById(targetDom));
 		table.draw(data, {showRowNumber: false}); 
 	};
 
-	function velocimetros (nRespuestas, targetDom, formNumb) {
-
-		$(formNumb).append("<li><div id=" +targetDom+ "></div></li>");
-
+	function velocimetros (nRespuestas, formNumb, targetDom) {
+		var domElemt = "<li> <div id="+targetDom+"></div></li>";
+		$(formNumb).append(domElemt);
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var options = {
 			width: 600, 
@@ -122,7 +127,7 @@ var reporte = {
 		});
 	}
 
-}; //end Reporte
+};//Reporte end
 
 reporte.respondido = function (fieldN) {
 	var fn, fvalue, fieldNumber, lares;
