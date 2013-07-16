@@ -164,11 +164,11 @@ reporte.dataTables = function(){
 		//Columnas
 		['Indique el área que usted entiende necesita mejorar', 'Seleccion'],
 		//Filas
-		['Conducta',   					parseInt(this.respondido(52.1) == 1) ], 
-		['Cortesía',     				parseInt(this.respondido(52.2) == 1) ], 
-		['Iniciativa',     				parseInt(this.respondido(52.3) == 1) ], 
-		['Puntualidad y Asistencia',	parseInt(this.respondido(52.4) == 1) ], 
-		['Otro',   						parseInt(this.respondido(52.5) == 1) ], 
+		['Cortesía',     				( this.respondido(52.1) == "1" ) ], 
+		['Iniciativa',     				( this.respondido(52.2) == "2" ) ], 
+		['Puntualidad y Asistencia',	( this.respondido(52.3) == "3" ) ], 
+		['Conducta',   					( this.respondido(52.4) == "4" ) ], 
+		['Otro',   						( this.respondido(52.5) == "5" ) ], 
 	];
 
 	//COLUMNCHART
