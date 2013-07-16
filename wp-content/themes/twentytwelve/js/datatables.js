@@ -353,7 +353,7 @@ reporte.dataTables = function(){
 	siNoColumnChart(DS_68,  "DS_68", ".form3", "Busca ayuda cuando tiene dificultades en las clases");
 	siNoColumnChart(DS_85,  "DS_85", ".form3", "Si está satisfecho/a con los cursos que toma al presente en la escuela");
 
-	formBreak(".form3", "Experiencias del Diario Vivir | Comunitarias");
+	formBreak(".form3", "Experiencias del Diario Vivir - Comunitarias");
 	
 	laDataTableDos(DS_70_75, "DS_70_75", ".form3");
 	
