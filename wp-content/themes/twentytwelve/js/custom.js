@@ -1,8 +1,9 @@
 /*Data-Graphics reports for SATENSPR by artyficial.net */
-var DS0, DS1, DS2, DS3, DS4, DS5, DS6, DS7, DS8, DS9, DS10, 
-DS11, DS12, DS13, DS14, DS15, DS16, DS17, DS18, DS19, 
-DS20, DS21, DS22, DS23, DS24, DS25, DS26, DS27, DS28, DS29, DS30, DS31/*, 
-DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
+var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29, 
+	DS_30, DS_31, DS_41, DS_42, DS_35_39, DS_45, DS_47, 
+	DS_49, DS_50, DS_51, DS_52, DS_54, DS_55_59, DS_61, 
+	DS_64, DS_65, DS_67, DS_68, DS_85, DS_70_75, DS_77, 
+	DS_79, DS_81, DS_82, DS_83;
 
 //GET Param Helper
 	$.urlParam = function (name) {
@@ -17,7 +18,7 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 //Classes////////////////////////////////////////////////////
 	function formBreak(domReport, domTitle){
 
-		$(domReport).append("<dt class='tituloForm'>"+domTitle+"</dt>");		
+		$(domReport).append("<h3 class='tituloForm'>"+domTitle+"</h3>");		
 	};
 
 	function studentBasicData (label, value) {
@@ -25,8 +26,8 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 		$("#leadData").append("<li>"+label+" : "+value+"</li>")
 	};
 
-	function siNoColumnChart (nRespuestas, formNumb, targetDom, pregunta) {
-		$("dd", formNumb).append("<div id=" +targetDom+ "></div>");
+	function siNoColumnChart (nRespuestas, targetDom, formNumb, pregunta) {
+		$(formNumb).append("<li><div id=" +targetDom+ "></div></li>");
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 
 		var options = {
@@ -42,8 +43,8 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 		chart.draw(data, options);
 	};
 
-	function pieChart (nRespuestas, formNumb, targetDom, pieTitle ) {
-		$("dd", formNumb).append("<div id=" +targetDom+ "></div>");
+	function pieChart (nRespuestas, targetDom, formNumb, pieTitle ) {
+		$(formNumb).append("<li><div id=" +targetDom+ "></div></li>");
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var options = {
 				title: pieTitle,
@@ -55,8 +56,8 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 		charte.draw(data, options);
 	};
 
-	function laDataTableDos(nRespuestas, formNumb, targetDom) {
-		$("dd", formNumb).append("<div id=" +targetDom+ "></div>");
+	function laDataTableDos(nRespuestas, targetDom, formNumb) {
+		$(formNumb).append("<li><div id=" +targetDom+ "></div></li>");
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var table = new google.visualization.Table(document.getElementById(targetDom));
 		var formatter = new google.visualization.BarFormat({width: 100, showValue: false, drawZeroLine: true, max: 1, min: -1, base: 0 });
@@ -64,16 +65,16 @@ DS32, DS33, DS34, DS34, DS36, DS37, DS38, DS39, DS40, DS41, DS42, DS43*/;
 		table.draw(data, {allowHtml: true, showRowNumber: false});
 	};
 
-	function laDataTable (nRespuestas, formNumb, targetDom) {
-		$("dd", formNumb).append("<div id=" +targetDom+ "></div>");
+	function laDataTable (nRespuestas, targetDom, formNumb) {
+		$(formNumb).append("<li><div id=" +targetDom+ "></div></li>");
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var table = new google.visualization.Table(document.getElementById(targetDom));
 		table.draw(data, {showRowNumber: false}); 
 	};
 
-	function velocimetros (nRespuestas, formNumb, targetDom) {
+	function velocimetros (nRespuestas, targetDom, formNumb) {
 
-		$("dd", formNumb).append("<div id=" +targetDom+ "></div>");
+		$(formNumb).append("<li><div id=" +targetDom+ "></div></li>");
 
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var options = {
@@ -100,7 +101,7 @@ var reporte = {
 		$.get('/servicio.php?leadid='+leadId).done(function(data) {
 			respuestas = data.r;
 			console.log("Reg : "+respuestas.length);
-			//console.log(respuestas);
+			console.log(respuestas);
 			reporte.startDraw();
 		});
 	},	
@@ -119,30 +120,7 @@ var reporte = {
 
 		$.get('/wp-content/themes/twentytwelve/js/datatables.js').done(function(data){
 			reporte.dataTables();
-			console.log("volvi contooodo");
-
-			formBreak(".form1", "Auto Perfil Educativo del Estudiante");
-
-			siNoColumnChart(DS0, ".form1", "vSiNo-0", "Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento");
-			
-			laDataTable(DS1, ".form1", "dt-DS1");
-			
-			velocimetros(DS2, ".form1", "vel-DS2");
-			laDataTable(DS3, ".form1", "vDT-DS3");
-			laDataTable(DS4, ".form1", 'vDT-DS4');
-
-			formBreak(".form1", "Intereses y Actividades Generales");
-
-			siNoColumnChart(DS5, ".form1", "vSiNo-5", "Diversión en Tiempo Libre");
-			siNoColumnChart(DS6, ".form1", "vSiNo-6", "Tareas y Responsabilidades en el Hogar");
-			siNoColumnChart(DS7, ".form1", "vSiNo-7", "Aspiración a una Carrera en el Futuro");
-
-			formBreak(".form1", "Intereses y Metas de Estudios Generales");
-
-			laDataTable(DS8, ".form1", 'vDT-DS8');
-			laDataTable(DS9, ".form1", 'vDT-DS9');
-			pieChart(DS10, ".form1", 'vPie-DS10', 'Porciento de Ocupaciones Seleccionadas por el Estudiante Relacionadas a Datos, Gente y Cosas');	
-
+			console.log("reporte.dataTables callback");
 		});
 
 	}
