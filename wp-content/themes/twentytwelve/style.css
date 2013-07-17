@@ -1743,9 +1743,13 @@ img#wpstats {
 	cursor:default;
 	font-weight:normal;
 }
-.printParagraph{
+
+p.printParagraph {
 	padding: 10px;
-	border: 1px solid;
+	width: 80%;
+	margin: 0 auto 40px auto !important;
+	background: white;
+	font-weight: bold;
 }
 
 ul#leadData{ width:360px;}

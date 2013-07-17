@@ -148,8 +148,9 @@ var reporte = {
 		
 		$.get('/wp-content/themes/twentytwelve/js/datatables.js').done(function(data){
 			reporte.dataTables();
-			console.log("reporte.dataTables callback");
 			$( "#tabsInforme" ).tabs();
+			
+			console.log("reporte.dataTables callback");
 		});
 	}
 
