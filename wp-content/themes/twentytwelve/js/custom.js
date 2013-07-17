@@ -1,9 +1,5 @@
 /*Data-Graphics reports for SATENSPR by artyficial.net */
-var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29, 
-	DS_30, DS_31, DS_41, DS_42, DS_35_39, DS_45, DS_47, 
-	DS_49, DS_50, DS_51, DS_52, DS_54, DS_55_59, DS_61, 
-	DS_64, DS_65, DS_67, DS_68, DS_85, DS_70_75, DS_77, 
-	DS_79, DS_81, DS_82, DS_83;
+
 
 //GET Param Helper
 	$.urlParam = function (name) {
@@ -17,9 +13,20 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29,
 
 //Classes////////////////////////////////////////////////////
 
-	function formBreak(nRespuestas, formNumb){
+	function formBreak(formNumb, nRespuestas){
 		var domElemt = "<li> <h2 class='tituloForm'>"+nRespuestas+"</h2> </li>";
 		$(formNumb).append(domElemt);
+	};
+
+	function printParagraph(formNumb, nRespuestas){
+		var domElemt = "<li> <p class='printParagraph'>"+nRespuestas+"</p> </li>";
+		$(formNumb).append(domElemt);
+	};
+
+	function photoPrint(nRespuestas){
+
+		var domElemt = "<img src="+nRespuestas+" />";
+		$("#leadPic").append(domElemt);
 	};
 
 	function studentBasicData (label, value) {
@@ -46,12 +53,12 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29,
 		chart.draw(data, options);
 	};
 
-	function pieChart (nRespuestas, targetDom, formNumb, pieTitle) {
+	function pieChart (nRespuestas, targetDom, formNumb, eTitle) {
 		var domElemt = "<li> <div id="+targetDom+"></div></li>";
 		$(formNumb).append(domElemt);
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var options = {
-				title: pieTitle,
+				title: eTitle,
 				backgroundColor: {strokeWidth: 1, fill: 'white',},
 				legend: {position: 'bottom', alignment: 'start'},
 				width:'100%'
@@ -96,6 +103,30 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29,
 		chart.draw(data, options);
 	};
 
+	function linearGraph (nRespuestas, targetDom, formNumb, eTitle) {
+
+		var domElemt = "<li> <div id="+targetDom+"></div></li>";
+		$(formNumb).append(domElemt);
+        
+        var data = google.visualization.arrayToDataTable(nRespuestas);
+
+		var options = {
+			title: eTitle,
+			titlePosition: 'out',
+			legend: {position: 'bottom'},
+			lineWidth: 5,
+			vAxis: {maxValue: 4},
+			hAxis: {title: "Preguntas"},
+			vAxis: {title: "Opciones"},
+			colors:['red','green'],
+			pointSize: 10,
+		};
+
+        var chart = new google.visualization.LineChart(document.getElementById(targetDom));
+        chart.draw(data, options);
+    };
+
+
 var reporte = {
 	
 	init : function () {
@@ -111,6 +142,8 @@ var reporte = {
 	},	
 
 	startDraw : function () {
+		
+		reporte.titleReplace();
 
 		studentBasicData("Nombre " , this.respondido(3));
 		studentBasicData("Segundo Nombre " , this.respondido(4));
@@ -120,10 +153,14 @@ var reporte = {
 		studentBasicData("Fecha de nacimiento " , this.respondido(8));
 		studentBasicData("Grado ", this.respondido(9));
 		studentBasicData("", "<a href="+this.editLink()+">EDITAR</a>");
-		
+		photoPrint(this.respondido(510))
+
+
 		$.get('/wp-content/themes/twentytwelve/js/datatables.js').done(function(data){
+			
 			reporte.dataTables();
-			console.log("reporte.dataTables callback");
+			$( "#tabsInforme" ).tabs();
+			//console.log("reporte.dataTables callback");
 		});
 	}
 
@@ -146,6 +183,11 @@ reporte.respondido = function (fieldN) {
 reporte.editLink = function () {
 
 	return  $(".useredit a").attr('href');
+};
+
+reporte.titleReplace = function () {
+	var alumni = "Estudiante: "+ this.respondido(3) +" "+ this.respondido(5);
+	$(".entry-title").text(alumni);
 };
 
 reporte.sumOfFields = function (fNumber, optsNumber) {
@@ -173,7 +215,7 @@ $(function () {
 	//REPORTE
 	if( $.urlParam('leadid') && $.urlParam('form') )  {
 		$(".entry-detail-view").hide(); //Hide Directory's table.		
-		$( "#tabsInforme" ).tabs();
+		
 		reporte.init();	
 	}else{
 		$("#tabsInforme").hide();
