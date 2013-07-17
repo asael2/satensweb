@@ -1743,6 +1743,10 @@ img#wpstats {
 	cursor:default;
 	font-weight:normal;
 }
+.printParagraph{
+	padding: 10px;
+	border: 1px solid;
+}
 
 ul#leadData{ width:360px;}
 ul#leadData li{	background: whitesmoke; padding:2px;}
@@ -1751,18 +1755,23 @@ ul#leadData li{	background: whitesmoke; padding:2px;}
 #satensReport li { background:whitesmoke;}
 
 
-.entry-content #tabsMenu li{ display: inline-block; margin:0;}
+.entry-content #tabsMenu li{ display: inline-block; margin: 0 3px 0 0;}
 
 .entry-content #tabsMenu li a{
 	display:block;
 	text-decoration:none;
 	display: inline-block;
-	margin: 0 3px 0 0;
+	
 	border: 1px solid #80445F;
 	padding: 6px;	
 }
 
 
+#satensReport .ui-tabs-active a{
+	background:#F59267;
+	color:white;
+	border:1px solid black;	
+}
 
 
 

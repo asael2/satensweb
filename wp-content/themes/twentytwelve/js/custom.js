@@ -18,6 +18,11 @@
 		$(formNumb).append(domElemt);
 	};
 
+	function printParagraph(formNumb, nRespuestas){
+		var domElemt = "<li> <p class='printParagraph'>"+nRespuestas+"</p> </li>";
+		$(formNumb).append(domElemt);
+	};
+
 	function studentBasicData (label, value) {
 
 		$("#leadData").append("<li>"+label+" : "+value+"</li>")
@@ -144,6 +149,7 @@ var reporte = {
 		$.get('/wp-content/themes/twentytwelve/js/datatables.js').done(function(data){
 			reporte.dataTables();
 			console.log("reporte.dataTables callback");
+			$( "#tabsInforme" ).tabs();
 		});
 	}
 
@@ -193,7 +199,7 @@ $(function () {
 	//REPORTE
 	if( $.urlParam('leadid') && $.urlParam('form') )  {
 		$(".entry-detail-view").hide(); //Hide Directory's table.		
-		$( "#tabsInforme" ).tabs();
+		
 		reporte.init();	
 	}else{
 		$("#tabsInforme").hide();

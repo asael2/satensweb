@@ -377,7 +377,6 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29, DS_30, DS_31, DS_41, DS_42,
 	];
 
 //FORMULARIO 6 >>>>>>>>>>>>>>>>>>>>>>>>>
-
 	//LINEAR GRAPH
 	DS_104_108 = [
 		//Columnas
@@ -403,7 +402,6 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29, DS_30, DS_31, DS_41, DS_42,
 		['Pregunta 8', parseInt(this.respondido(118)), 3],
 		['Pregunta 9', parseInt(this.respondido(119)), 1]
 	];
-
 	
 	//LINEAR GRAPH
 	DS_122_126 = [
@@ -431,92 +429,13 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29, DS_30, DS_31, DS_41, DS_42,
 	//LINEAR GRAPH
 	DS_138_143 = [
 		['Parte 5: Medidas', 'Respuesta del Estudiante', 'Respuesta Correcta'],
-		['Pregunta 1', parseInt(this.respondido(138)), 4],
-		['Pregunta 2', parseInt(this.respondido(139)), 4],
-		['Pregunta 3', parseInt(this.respondido(140)), 4],
-		['Pregunta 4', parseInt(this.respondido(141)), 4],
+		['Pregunta 1', parseInt(this.respondido(138)), 1],
+		['Pregunta 2', parseInt(this.respondido(139)), 1],
+		['Pregunta 3', parseInt(this.respondido(140)), 2],
+		['Pregunta 4', parseInt(this.respondido(141)), 2],
 		['Pregunta 5', parseInt(this.respondido(142)), 4],
 		['Pregunta 6', parseInt(this.respondido(143)), 4]
 	];
-
-//FORMULARIO 7 >>>>>>>>>>>>>>>>>>>>>>>>>
-
-	//DATATABLE  
-	DS_147 = [
-		//Columnas
-		['Áreas que el/la estudiante y su padre, madre o encargado consideran deben atenderse durante el año escolar (Destrezas Laborales).', 'Respuestas | S&iacute; = Azul No = Rojo'],
-		//Filas
-		['Seguir directrices/instrucciones', 				(this.respondido(147) == 1)],
-		['Aceptar críticas',   								(this.respondido(147) == 1)],
-		['Prestar atención a detalles', 					(this.respondido(147) == 1)],
-		['Completar tareas', 								(this.respondido(147) == 1)],
-		['Asistencia y puntualidad', 						(this.respondido(147) == 1)],
-		['Destreza con el uso de computadoras', 			(this.respondido(147) == 1)],
-		['Usar vestimenta apropiada para ir a un trabajo', 	(this.respondido(147) == 1)],
-		['Trabajar a un paso/ritmo satisfactorio', 			(this.respondido(147) == 1)],
-		['Producir trabajo de forma satisfactoria', 		(this.respondido(147) == 1)],
-		['Respetar la autoridad', 							(this.respondido(147) == 1)],
-		['Trabajar independientemente', 					(this.respondido(147) == 1)],
-		['Organizar el tiempo y materiales efectivamente',  (this.respondido(147) == 1)],
-		['Solicitar ayuda cuando la necesite', 				(this.respondido(147) == 1)],
-		['Demostrar destrezas de Razonamiento Crítico', 	(this.respondido(147) == 1)],
-		['Explorar Carreras Profesionales/Técnicas', 		(this.respondido(147) == 1)],
-		['Adquisición de experiencia laboral', 				(this.respondido(147) == 1)],
-		['Gestionar búsqueda de trabajo', 					(this.respondido(147) == 1)],
-		['Completar solicitudes de empleo', 				(this.respondido(147) == 1)],
-		['Concluir en un empleo apropiadamente', 			(this.respondido(147) == 1)],
-		['Otras sugerencias', 								(this.respondido(147) == 101)],
-	]; 
-
-	//DATATABLE  
-	DS_150 = [
-		//Columnas
-		['Áreas que el/la estudiante y su padre, madre o encargado consideran deben atenderse durante el año escolar (Destrezas Personales).', 'Respuestas | S&iacute; = Azul No = Rojo'],
-		//Filas
-		['Conocer sus derechos y responsabilidades', 					(this.respondido(150) == 1)],
-		['Identifica sus emociones y como desembocarlas adecuadamente', (this.respondido(150) == 1)],
-		['Establece sus metas', 										(this.respondido(150) == 1)],
-		['Resolver problemas efectivamente', 							(this.respondido(150) == 1)],
-		['Manejar el estrés', 											(this.respondido(150) == 1)],
-		['Organizar su tiempo personal', 								(this.respondido(150) == 1)],
-		['Otras sugerencias', 											(this.respondido(150) == 101)],
-	];
-
-	//DATATABLE  
-	DS_153 = [
-		//Columnas
-		['Áreas que el/la estudiante y su padre, madre o encargado consideran deben atenderse durante el año escolar (Destrezas V.I. y del Diario Vivir).', 'Respuestas | S&iacute; = Azul No = Rojo'],
-		//Filas
-		['Rendir o completar la planilla de contribución sobre impuestos (Si aplica)', 	(this.respondido(153) == 1)],
-		['Mantener espacios de la casa limpios',   										(this.respondido(153) == 1)],
-		['Reconocer roles cívicos y las responsabilidades', 							(this.respondido(153) == 1)],
-		['Reconocer las figuras de autoridad, reglas y leyes', 							(this.respondido(153) == 1)],
-		['Comprender el proceso de las elecciones y como votar', 						(this.respondido(153) == 1)],
-		['Saber los eventos que pasan en la comunidad', 								(this.respondido(153) == 1)],
-		['Conocer las opciones de adquirir una vivienda', 								(this.respondido(153) == 1)],
-		['Comprar vestimenta/ropa', 													(this.respondido(153) == 1)],
-		['Conocer las opciones de transportación disponibles', 							(this.respondido(153) == 1)],
-		['Tomar clases de guiar y obtener licencia de conducir', 						(this.respondido(153) == 1)],
-		['Saber tomar direcciones para ir a los sitios', 								(this.respondido(153) == 1)],
-		['Conocer los primeros auxilios básicos',  										(this.respondido(153) == 1)],
-		['Tener buenas destrezas de aseo personal', 									(this.respondido(153) == 1)],
-		['Lavar y planchar la ropa', 													(this.respondido(153) == 1)],
-		['Hacer compras', 																(this.respondido(153) == 1)],
-		['Manejar dinero', 																(this.respondido(153) == 1)],
-		['Presupuestar dinero', 														(this.respondido(153) == 1)],
-		['Calcular un salario', 														(this.respondido(153) == 1)],
-		['Conocimiento de información del banco', 										(this.respondido(153) == 1)],
-		['Identificar actividades para recrearse', 										(this.respondido(153) == 1)],
-		['Asistir a eventos', 															(this.respondido(153) == 1)],
-		['Identificar organizaciones de la comunidad', 									(this.respondido(153) == 1)],
-		['Pagar cuentas', 																(this.respondido(153) == 1)],
-		['Cocinar', 																	(this.respondido(153) == 1)],
-		['Seguir una receta', 															(this.respondido(153) == 1)],
-		['Ordenar de un menú', 															(this.respondido(153) == 1)],
-		['Llevar una dieta saludable', 													(this.respondido(153) == 1)],
-		['Otras sugerencias', 															(this.respondido(153) == 101)],
-
-	]; 
 
 //FORMULARIO 8 >>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -593,7 +512,9 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29, DS_30, DS_31, DS_41, DS_42,
 
 	siNoColumnChart(DS_93,	"DS_93", ".form5", "Conoce lo que es una discapacidad/impedimento");
 	siNoColumnChart(DS_94,	"DS_94", ".form5", "Identifica su discapacidad / impedimento");
+	printParagraph(".form5", this.respondido(95));
 	siNoColumnChart(DS_96,	"DS_96", ".form5", "¿Conoce sobre el Plan Educativo Individualizado (PEI) y como le ayuda al presente y para el futuro con sus planes de estudio?");
+	printParagraph(".form5", this.respondido(97));
 	siNoColumnChart(DS_98,	"DS_98", ".form5", "Ha asistido a reuniones en la escuela para hablar sobre su PEI con un grupo de maestro/a, trabajador/a social, consejero/a, madre/padre y otros.");
 	siNoColumnChart(DS_99,	"DS_99", ".form5", "¿Conoce el significado de auto-abogacía?");
 	siNoColumnChart(DS_100,	"DS_100", ".form5", "Conocimiento sobre organizaciones o personas pueden ayudar para aprender sobre defensa de derechos");
