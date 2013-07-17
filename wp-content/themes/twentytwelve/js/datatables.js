@@ -429,7 +429,7 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29, DS_30, DS_31, DS_41, DS_42,
 	];
 
 	//LINEAR GRAPH
-	 DS_138_143 = [
+	DS_138_143 = [
 		['Parte 5: Medidas', 'Respuesta del Estudiante', 'Respuesta Correcta'],
 		['Pregunta 1', parseInt(this.respondido(138)), 4],
 		['Pregunta 2', parseInt(this.respondido(139)), 4],
@@ -482,7 +482,6 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29, DS_30, DS_31, DS_41, DS_42,
 		['Otras sugerencias', 											(this.respondido(150) == 101)],
 	];
 
-
 	//DATATABLE  
 	DS_153 = [
 		//Columnas
@@ -520,6 +519,9 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29, DS_30, DS_31, DS_41, DS_42,
 	]; 
 
 //FORMULARIO 8 >>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
 
 
 // >>>>>>>>>>>>>>>>>>>> Drawing Modules (order matters) >>>>>>>>>>>>>>>>>>>>
@@ -597,11 +599,21 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29, DS_30, DS_31, DS_41, DS_42,
 	siNoColumnChart(DS_100,	"DS_100", ".form5", "Conocimiento sobre organizaciones o personas pueden ayudar para aprender sobre defensa de derechos");
 
 //F6
+	formBreak(".form6", "Parte I: Información de Oferta de Empleo");
 	linearGraph(DS_104_108,	"DS_104_108", ".form6", "Información de Oferta de Empleo");
+	
+	formBreak(".form6", "Parte II: Manejo de Cuenta de Cheques / Manejo de Dinero");
 	linearGraph(DS_111_119,	"DS_111_119", ".form6", "Manejo de Cuenta de Cheques / Manejo de Dinero");
+	
+	formBreak(".form6", "Parte III: Gráficas");
 	linearGraph(DS_122_126,	"DS_122_126", ".form6", "Gráficas");
+	
+	formBreak(".form6", "Parte IV: Estimado de Salario por Trabajo");
 	linearGraph(DS_129_136,	"DS_129_136", ".form6", "Estimado de Salario por Trabajo");
+	
+	formBreak(".form6", "Parte V: Medidas");
 	linearGraph(DS_138_143,	"DS_138_143", ".form6", "Medidas");
+
 
 }/////////////////////////////////////////////////////////////////////////
 

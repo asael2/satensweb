@@ -1745,7 +1745,7 @@ img#wpstats {
 }
 
 ul#leadData{ width:360px;}
-ul#leadData li{	background: whitesmoke; padding: 12px 0 6px 12px;}
+ul#leadData li{	background: whitesmoke; padding:2px;}
 
 #satensReport ul { list-style:none;}
 #satensReport li { background:whitesmoke;}
