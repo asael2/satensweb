@@ -1,9 +1,5 @@
 /*Data-Graphics reports for SATENSPR by artyficial.net */
-var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29, 
-	DS_30, DS_31, DS_41, DS_42, DS_35_39, DS_45, DS_47, 
-	DS_49, DS_50, DS_51, DS_52, DS_54, DS_55_59, DS_61, 
-	DS_64, DS_65, DS_67, DS_68, DS_85, DS_70_75, DS_77, 
-	DS_79, DS_81, DS_82, DS_83, DS_104_108;
+
 
 //GET Param Helper
 	$.urlParam = function (name) {
@@ -17,7 +13,7 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29,
 
 //Classes////////////////////////////////////////////////////
 
-	function formBreak(nRespuestas, formNumb){
+	function formBreak(formNumb, nRespuestas){
 		var domElemt = "<li> <h2 class='tituloForm'>"+nRespuestas+"</h2> </li>";
 		$(formNumb).append(domElemt);
 	};

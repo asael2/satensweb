@@ -1,5 +1,10 @@
 reporte.dataTables = function(){
-
+var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29, DS_30, DS_31, DS_41, DS_42, DS_35_39, 
+	DS_45, DS_47, DS_49, DS_50, DS_51, DS_52, DS_54, DS_55_59, DS_61, 
+	DS_64, DS_65, DS_67, DS_68, DS_85, DS_70_75, DS_77, DS_79, DS_81, DS_82, DS_83, 
+	DS_88, DS_89, DS_90,
+	DS_93, DS_94, DS_96, DS_98, DS_99, DS_100, 
+	DS_104_108, DS_111_119, DS_122_126, DS_129_136, DS_138_143;
 //FORMULARIO 1 >>>>>>>>>>>>>>>>>>>>>>>>>
 	
 	//COLUMNCHART
@@ -307,8 +312,6 @@ reporte.dataTables = function(){
 		['Otras', 											parseInt( this.respondido(83) ) == 101],
 	]; 
 
-
-
 //FORMULARIO 4 >>>>>>>>>>>>>>>>>>>>>>>>>
 
 	//COLUMNCHART
@@ -372,12 +375,13 @@ reporte.dataTables = function(){
 		['Respuesta',  parseInt(this.respondido(100))]
 	];
 
-
 //FORMULARIO 6 >>>>>>>>>>>>>>>>>>>>>>>>>
 
 	//LINEAR GRAPH
 	DS_104_108 = [
+		//Columnas
 		['Parte 1: Información de Oferta de Empleo', 'Respuesta del Estudiante', 'Respuesta Correcta'],
+		//Filas
 		['Pregunta 1', parseInt(this.respondido(104)), 4],
 		['Pregunta 2', parseInt(this.respondido(105)), 2],
 		['Pregunta 3', parseInt(this.respondido(106)), 3],
@@ -387,9 +391,9 @@ reporte.dataTables = function(){
 
 	//LINEAR GRAPH
 	DS_111_119 = [
-		['Parte 2: Manejo de Cuenta de Cheques / Manejo de Dinero', 'Respuesta Correcta'],
+		['Parte 2: Manejo de Cuenta de Cheques / Manejo de Dinero', 'Respuesta del Estudiante', 'Respuesta Correcta'],
 		['Pregunta 1', parseInt(this.respondido(111)), 4],
-		['Pregunta 2', parseInt(this.respondido(112)), 5],
+		['Pregunta 2', parseInt(this.respondido(112)), 4],
 		['Pregunta 3', parseInt(this.respondido(113)), 4],
 		['Pregunta 4', parseInt(this.respondido(114)), 2],
 		['Pregunta 5', parseInt(this.respondido(115)), 4],
@@ -399,32 +403,33 @@ reporte.dataTables = function(){
 		['Pregunta 9', parseInt(this.respondido(119)), 1]
 	];
 
+	
 	//LINEAR GRAPH
 	DS_122_126 = [
-		['Parte 3: Gráficas', 'Respuesta Correcta'],
+		['Parte 3: Gráficas', 'Respuesta del Estudiante', 'Respuesta Correcta'],
 		['Pregunta 1', parseInt(this.respondido(122)), 4],
 		['Pregunta 2', parseInt(this.respondido(123)), 4],
-		['Pregunta 3', parseInt(this.respondido(124)), 4],
-		['Pregunta 4', parseInt(this.respondido(125)), 4],
-		['Pregunta 5', parseInt(this.respondido(126)), 4]
+		['Pregunta 3', parseInt(this.respondido(124)), 1],
+		['Pregunta 4', parseInt(this.respondido(125)), 1],
+		['Pregunta 5', parseInt(this.respondido(126)), 1]
 	  ];
 
 	//LINEAR GRAPH
 	DS_129_136 = [
-		['Parte 4: Estimado de Salario por Trabajo', 'Respuesta Correcta'],
+		['Parte 4: Estimado de Salario por Trabajo', 'Respuesta del Estudiante', 'Respuesta Correcta'],
 		['Pregunta 1', parseInt(this.respondido(129)), 4],
-		['Pregunta 2', parseInt(this.respondido(130)), 4],
+		['Pregunta 2', parseInt(this.respondido(130)), 3],
 		['Pregunta 3', parseInt(this.respondido(131)), 4],
 		['Pregunta 4', parseInt(this.respondido(132)), 4],
-		['Pregunta 5', parseInt(this.respondido(133)), 4],
+		['Pregunta 5', parseInt(this.respondido(133)), 2],
 		['Pregunta 6', parseInt(this.respondido(134)), 4],
 		['Pregunta 7', parseInt(this.respondido(135)), 4],
-		['Pregunta 8', parseInt(this.respondido(136)), 4]
+		['Pregunta 8', parseInt(this.respondido(136)), 3]
 	];
 
 	//LINEAR GRAPH
 	 DS_138_143 = [
-		['Parte 5: Medidas', 'Respuesta Correcta'],
+		['Parte 5: Medidas', 'Respuesta del Estudiante', 'Respuesta Correcta'],
 		['Pregunta 1', parseInt(this.respondido(138)), 4],
 		['Pregunta 2', parseInt(this.respondido(139)), 4],
 		['Pregunta 3', parseInt(this.respondido(140)), 4],
@@ -433,8 +438,7 @@ reporte.dataTables = function(){
 		['Pregunta 6', parseInt(this.respondido(143)), 4]
 	];
 
-
-	//FORMULARIO 7 >>>>>>>>>>>>>>>>>>>>>>>>>
+//FORMULARIO 7 >>>>>>>>>>>>>>>>>>>>>>>>>
 
 	//DATATABLE  
 	DS_147 = [
@@ -514,14 +518,10 @@ reporte.dataTables = function(){
 
 	]; 
 
-
 //FORMULARIO 8 >>>>>>>>>>>>>>>>>>>>>>>>>
 
 
-
-
-
-//Drawing Modules (order matters) >>>>>>>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>>>> Drawing Modules (order matters) >>>>>>>>>>>>>>>>>>>>
 
 //F1
 	formBreak(".form1", "Auto Perfil Educativo del Estudiante");
@@ -558,7 +558,6 @@ reporte.dataTables = function(){
 	siNoColumnChart(DS_61, 	"DS_61", ".form2", "¿Tiene usted alguna preocupación en relación al desarrollo académico y ocupacional de su hijo/a?");
 
 //F3
-
 	formBreak(".form3", "Trabajo en la Escuela al Presente y Planes Futuros");
 	
 	siNoColumnChart(DS_64,	"DS_64", ".form3", "Conoce si su hijo/a tiene alguna experiencia de trabajo (part time)");
@@ -579,10 +578,31 @@ reporte.dataTables = function(){
 	siNoColumnChart(DS_82,	"DS_82", ".form3");
 	laDataTable(DS_83,		"DS_83", ".form3");
 
-
-
-
-	linearGraph(DS_104_108,	"DS_104_108", ".form4", "Información de Oferta de Empleo");
+//F4	
+	formBreak(".form4", "Perspectiva | Visión del Padre sobre el Diario Vivir y Actividades Comunitarias del Estudiante");
 	
+	siNoColumnChart(DS_88,	"DS_88", ".form4", "Opinión si su hijo/a tiene la capacidad para desempeñarse independientemente a través de la vida cuando sea adulto");
+	siNoColumnChart(DS_89,	"DS_89", ".form4", "Opinión si su hijo/a participa en actividades, deportes o pasatiempos en su tiempo libre");
+	siNoColumnChart(DS_90,	"DS_90", ".form4", "Opinión si su hijo/a tiene la capacidad para contribuir a la sociedad a través de la vida cuando sea adulto");
+//F5
+	formBreak(".form5", "Informacion");
+
+	siNoColumnChart(DS_93,	"DS_93", ".form5", "Conoce lo que es una discapacidad/impedimento");
+	siNoColumnChart(DS_94,	"DS_94", ".form5", "Identifica su discapacidad / impedimento");
+	siNoColumnChart(DS_96,	"DS_96", ".form5", "¿Conoce sobre el Plan Educativo Individualizado (PEI) y como le ayuda al presente y para el futuro con sus planes de estudio?");
+	siNoColumnChart(DS_98,	"DS_98", ".form5", "Ha asistido a reuniones en la escuela para hablar sobre su PEI con un grupo de maestro/a, trabajador/a social, consejero/a, madre/padre y otros.");
+	siNoColumnChart(DS_99,	"DS_99", ".form5", "¿Conoce el significado de auto-abogacía?");
+	siNoColumnChart(DS_100,	"DS_100", ".form5", "Conocimiento sobre organizaciones o personas pueden ayudar para aprender sobre defensa de derechos");
+
+//F6
+	linearGraph(DS_104_108,	"DS_104_108", ".form6", "Información de Oferta de Empleo");
+	linearGraph(DS_111_119,	"DS_111_119", ".form6", "Manejo de Cuenta de Cheques / Manejo de Dinero");
+	linearGraph(DS_122_126,	"DS_122_126", ".form6", "Gráficas");
+	linearGraph(DS_129_136,	"DS_129_136", ".form6", "Estimado de Salario por Trabajo");
+	linearGraph(DS_138_143,	"DS_138_143", ".form6", "Medidas");
+
+
+
 
 }/////////////////////////////////////////////////////////////////////////
+
