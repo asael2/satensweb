@@ -1790,13 +1790,24 @@ ul#leadData li{	background: whitesmoke; padding:2px;}
 	right:20px;
 }
 
+.entry-header {
+	margin-bottom: -45px;
+}
 .entry-content{
 	position:relative;
 }
 
 .entryback{
-	position:absolute; right:20px; top: -20px;}
+	position: absolute;
+	right: 10px;
+	top: -92px;
+	float:right;
+}
 
 
 
 
+
+.entry-header {
+margin-bottom: -40px;
+}
