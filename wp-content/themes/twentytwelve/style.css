@@ -1728,10 +1728,13 @@ img#wpstats {
 	}
 }
 
-/*CUSTOM*/
- 
 
-
+/*******************CUSTOM SATENS STYLES*******************/
+.logo, .typo{display:block; float:left;}
+.typo { margin:20px;}
+.typo h2{line-height: 1em;}
+.site-header hgroup{height:120px;}
+.readonly{color: #80445F;}
 .tituloForm{ 
 	background: #80445F;
 	color:#FFFFFF;
@@ -1741,27 +1744,70 @@ img#wpstats {
 	font-weight:normal;
 }
 
-
-dd { background:whitesmoke;}
-.readonly{
-    color: #80445F;
+p.printParagraph {
+	padding: 10px;
+	width: 80%;
+	margin: 0 auto 40px auto !important;
+	background: white;
+	font-weight: bold;
 }
 
-ul#leadData li{
-	background: whitesmoke ;
-	padding: 12px 0 6px 12px;
-}
+ul#leadData{ background:#80445F;}
+ul#leadData li{	background: whitesmoke; padding:2px;}
 
-.logo, .typo{
-	display:block; float:left;
-}
+#satensReport ul { list-style:none;}
+#satensReport li { background:whitesmoke;}
+
+
+.entry-content #tabsMenu li{ display: inline-block; margin: 0 3px 0 0;}
+
+.entry-content #tabsMenu li a{
+	display:block;
+	text-decoration:none;
+	display: inline-block;
 	
-.typo { 
-	margin:20px;
-}
-.typo h2{
-	line-height: 1em;
+	border: 1px solid #80445F;
+	padding: 6px;	
 }
 
-.site-header hgroup{
-	height:120px;}
+
+#satensReport .ui-tabs-active a{
+	background:#F59267;
+	color:white;
+	border:1px solid black;	
+}
+
+.wideSec{
+	height:280px;
+	clear:both;
+	position:relative;
+}
+
+
+#leadPic{
+	position:absolute;
+	top:10px;
+	right:20px;
+}
+
+.entry-header {
+	margin-bottom: -45px;
+}
+.entry-content{
+	position:relative;
+}
+
+.entryback{
+	position: absolute;
+	right: 10px;
+	top: -92px;
+	float:right;
+}
+
+
+
+
+
+.entry-header {
+margin-bottom: -40px;
+}
