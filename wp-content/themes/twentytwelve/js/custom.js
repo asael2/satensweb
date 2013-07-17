@@ -23,6 +23,12 @@
 		$(formNumb).append(domElemt);
 	};
 
+	function photoPrint(nRespuestas){
+
+		var domElemt = "<img src="+nRespuestas+" />";
+		$("#leadPic").append(domElemt);
+	};
+
 	function studentBasicData (label, value) {
 
 		$("#leadData").append("<li>"+label+" : "+value+"</li>")
@@ -136,6 +142,8 @@ var reporte = {
 	},	
 
 	startDraw : function () {
+		
+		reporte.titleReplace();
 
 		studentBasicData("Nombre " , this.respondido(3));
 		studentBasicData("Segundo Nombre " , this.respondido(4));
@@ -145,12 +153,14 @@ var reporte = {
 		studentBasicData("Fecha de nacimiento " , this.respondido(8));
 		studentBasicData("Grado ", this.respondido(9));
 		studentBasicData("", "<a href="+this.editLink()+">EDITAR</a>");
-		
+		photoPrint(this.respondido(510))
+
+
 		$.get('/wp-content/themes/twentytwelve/js/datatables.js').done(function(data){
+			
 			reporte.dataTables();
 			$( "#tabsInforme" ).tabs();
-			
-			console.log("reporte.dataTables callback");
+			//console.log("reporte.dataTables callback");
 		});
 	}
 
@@ -173,6 +183,11 @@ reporte.respondido = function (fieldN) {
 reporte.editLink = function () {
 
 	return  $(".useredit a").attr('href');
+};
+
+reporte.titleReplace = function () {
+	var alumni = "Estudiante: "+ this.respondido(3) +" "+ this.respondido(5);
+	$(".entry-title").text(alumni);
 };
 
 reporte.sumOfFields = function (fNumber, optsNumber) {

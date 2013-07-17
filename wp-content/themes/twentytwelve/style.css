@@ -1752,7 +1752,7 @@ p.printParagraph {
 	font-weight: bold;
 }
 
-ul#leadData{ width:360px;}
+ul#leadData{ background:#80445F;}
 ul#leadData li{	background: whitesmoke; padding:2px;}
 
 #satensReport ul { list-style:none;}
@@ -1776,6 +1776,27 @@ ul#leadData li{	background: whitesmoke; padding:2px;}
 	color:white;
 	border:1px solid black;	
 }
+
+.wideSec{
+	height:280px;
+	clear:both;
+	position:relative;
+}
+
+
+#leadPic{
+	position:absolute;
+	top:10px;
+	right:20px;
+}
+
+.entry-content{
+	position:relative;
+}
+
+.entryback{
+	position:absolute; right:20px; top: -20px;}
+
 
 
 
