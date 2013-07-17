@@ -97,8 +97,10 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29,
 	};
 
 	function linearGraph (nRespuestas, targetDom, formNumb, eTitle) {
-		var domElemt = "<li> <div id="+eTitle+"></div></li>";
+
+		var domElemt = "<li> <div id="+targetDom+"></div></li>";
 		$(formNumb).append(domElemt);
+        
         var data = google.visualization.arrayToDataTable(nRespuestas);
 
 		var options = {

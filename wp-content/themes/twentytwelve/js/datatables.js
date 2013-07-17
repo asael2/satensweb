@@ -378,60 +378,59 @@ reporte.dataTables = function(){
 	//LINEAR GRAPH
 	DS_104_108 = [
 		['Parte 1: Información de Oferta de Empleo', 'Respuesta del Estudiante', 'Respuesta Correcta'],
-		['Pregunta 1', parseInt(this.respondido(104), 4],
-		['Pregunta 2', parseInt(this.respondido(105), 4],
-		['Pregunta 3', parseInt(this.respondido(106), 4],
-		['Pregunta 4', parseInt(this.respondido(107), 4],
-		['Pregunta 5', parseInt(this.respondido(108), 4]
+		['Pregunta 1', parseInt(this.respondido(104)), 4],
+		['Pregunta 2', parseInt(this.respondido(105)), 2],
+		['Pregunta 3', parseInt(this.respondido(106)), 3],
+		['Pregunta 4', parseInt(this.respondido(107)), 1],
+		['Pregunta 5', parseInt(this.respondido(108)), 1]
 	];
 
 	//LINEAR GRAPH
 	DS_111_119 = [
 		['Parte 2: Manejo de Cuenta de Cheques / Manejo de Dinero', 'Respuesta Correcta'],
-		['Pregunta 1', parseInt(this.respondido(111), 4],
-		['Pregunta 2', parseInt(this.respondido(112), 4],
-		['Pregunta 3', parseInt(this.respondido(113), 4],
-		['Pregunta 4', parseInt(this.respondido(114), 4],
-		['Pregunta 5', parseInt(this.respondido(115), 4],
-		['Pregunta 6', parseInt(this.respondido(116), 4],
-		['Pregunta 7', parseInt(this.respondido(117), 4],
-		['Pregunta 8', parseInt(this.respondido(118), 4],
-		['Pregunta 9', parseInt(this.respondido(119), 4]
+		['Pregunta 1', parseInt(this.respondido(111)), 4],
+		['Pregunta 2', parseInt(this.respondido(112)), 5],
+		['Pregunta 3', parseInt(this.respondido(113)), 4],
+		['Pregunta 4', parseInt(this.respondido(114)), 2],
+		['Pregunta 5', parseInt(this.respondido(115)), 4],
+		['Pregunta 6', parseInt(this.respondido(116)), 4],
+		['Pregunta 7', parseInt(this.respondido(117)), 4],
+		['Pregunta 8', parseInt(this.respondido(118)), 3],
+		['Pregunta 9', parseInt(this.respondido(119)), 1]
 	];
 
 	//LINEAR GRAPH
 	DS_122_126 = [
 		['Parte 3: Gráficas', 'Respuesta Correcta'],
-		['Pregunta 1', parseInt(this.respondido(122), 4],
-		['Pregunta 2', parseInt(this.respondido(123), 4],
-		['Pregunta 3', parseInt(this.respondido(124), 4],
-		['Pregunta 4', parseInt(this.respondido(125), 4],
-		['Pregunta 5', parseInt(this.respondido(126), 4]
+		['Pregunta 1', parseInt(this.respondido(122)), 4],
+		['Pregunta 2', parseInt(this.respondido(123)), 4],
+		['Pregunta 3', parseInt(this.respondido(124)), 4],
+		['Pregunta 4', parseInt(this.respondido(125)), 4],
+		['Pregunta 5', parseInt(this.respondido(126)), 4]
 	  ];
 
 	//LINEAR GRAPH
 	DS_129_136 = [
 		['Parte 4: Estimado de Salario por Trabajo', 'Respuesta Correcta'],
-		['Pregunta 1', parseInt(this.respondido(129), 4],
-		['Pregunta 2', parseInt(this.respondido(130), 4],
-		['Pregunta 3', parseInt(this.respondido(131), 4],
-		['Pregunta 4', parseInt(this.respondido(132), 4],
-		['Pregunta 5', parseInt(this.respondido(133), 4],
-		['Pregunta 6', parseInt(this.respondido(134), 4],
-		['Pregunta 7', parseInt(this.respondido(135), 4],
-		['Pregunta 8', parseInt(this.respondido(136), 4]
-			
+		['Pregunta 1', parseInt(this.respondido(129)), 4],
+		['Pregunta 2', parseInt(this.respondido(130)), 4],
+		['Pregunta 3', parseInt(this.respondido(131)), 4],
+		['Pregunta 4', parseInt(this.respondido(132)), 4],
+		['Pregunta 5', parseInt(this.respondido(133)), 4],
+		['Pregunta 6', parseInt(this.respondido(134)), 4],
+		['Pregunta 7', parseInt(this.respondido(135)), 4],
+		['Pregunta 8', parseInt(this.respondido(136)), 4]
 	];
 
 	//LINEAR GRAPH
 	 DS_138_143 = [
 		['Parte 5: Medidas', 'Respuesta Correcta'],
-		['Pregunta 1', parseInt(this.respondido(138), 4],
-		['Pregunta 2', parseInt(this.respondido(139), 4],
-		['Pregunta 3', parseInt(this.respondido(140), 4],
-		['Pregunta 4', parseInt(this.respondido(141), 4],
-		['Pregunta 5', parseInt(this.respondido(142), 4],
-		['Pregunta 6', parseInt(this.respondido(143), 4]
+		['Pregunta 1', parseInt(this.respondido(138)), 4],
+		['Pregunta 2', parseInt(this.respondido(139)), 4],
+		['Pregunta 3', parseInt(this.respondido(140)), 4],
+		['Pregunta 4', parseInt(this.respondido(141)), 4],
+		['Pregunta 5', parseInt(this.respondido(142)), 4],
+		['Pregunta 6', parseInt(this.respondido(143)), 4]
 	];
 
 
@@ -580,7 +579,10 @@ reporte.dataTables = function(){
 	siNoColumnChart(DS_82,	"DS_82", ".form3");
 	laDataTable(DS_83,		"DS_83", ".form3");
 
-	linearGraph(DS_104_108,	"DS_104_108", ".form3");
+
+
+
+	linearGraph(DS_104_108,	"DS_104_108", ".form4", "Información de Oferta de Empleo");
 	
 
 }/////////////////////////////////////////////////////////////////////////
