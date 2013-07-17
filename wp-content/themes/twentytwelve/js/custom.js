@@ -3,7 +3,7 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29,
 	DS_30, DS_31, DS_41, DS_42, DS_35_39, DS_45, DS_47, 
 	DS_49, DS_50, DS_51, DS_52, DS_54, DS_55_59, DS_61, 
 	DS_64, DS_65, DS_67, DS_68, DS_85, DS_70_75, DS_77, 
-	DS_79, DS_81, DS_82, DS_83;
+	DS_79, DS_81, DS_82, DS_83, DS_104_108;
 
 //GET Param Helper
 	$.urlParam = function (name) {
@@ -46,12 +46,12 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29,
 		chart.draw(data, options);
 	};
 
-	function pieChart (nRespuestas, targetDom, formNumb, pieTitle) {
+	function pieChart (nRespuestas, targetDom, formNumb, eTitle) {
 		var domElemt = "<li> <div id="+targetDom+"></div></li>";
 		$(formNumb).append(domElemt);
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var options = {
-				title: pieTitle,
+				title: eTitle,
 				backgroundColor: {strokeWidth: 1, fill: 'white',},
 				legend: {position: 'bottom', alignment: 'start'},
 				width:'100%'
@@ -95,6 +95,28 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29,
 		var chart = new google.visualization.Gauge(document.getElementById(targetDom));
 		chart.draw(data, options);
 	};
+
+	function linearGraph (nRespuestas, targetDom, formNumb, eTitle) {
+		var domElemt = "<li> <div id="+eTitle+"></div></li>";
+		$(formNumb).append(domElemt);
+        var data = google.visualization.arrayToDataTable(nRespuestas);
+
+		var options = {
+			title: eTitle,
+			titlePosition: 'out',
+			legend: {position: 'bottom'},
+			lineWidth: 5,
+			vAxis: {maxValue: 4},
+			hAxis: {title: "Preguntas"},
+			vAxis: {title: "Opciones"},
+			colors:['red','green'],
+			pointSize: 10,
+		};
+
+        var chart = new google.visualization.LineChart(document.getElementById(targetDom));
+        chart.draw(data, options);
+    };
+
 
 var reporte = {
 	
