@@ -1728,10 +1728,13 @@ img#wpstats {
 	}
 }
 
-/*CUSTOM*/
- 
 
-
+/*******************CUSTOM SATENS STYLES*******************/
+.logo, .typo{display:block; float:left;}
+.typo { margin:20px;}
+.typo h2{line-height: 1em;}
+.site-header hgroup{height:120px;}
+.readonly{color: #80445F;}
 .tituloForm{ 
 	background: #80445F;
 	color:#FFFFFF;
@@ -1741,27 +1744,25 @@ img#wpstats {
 	font-weight:normal;
 }
 
+ul#leadData{ width:360px;}
+ul#leadData li{	background: whitesmoke; padding: 12px 0 6px 12px;}
 
-dd { background:whitesmoke;}
-.readonly{
-    color: #80445F;
-}
+#satensReport ul { list-style:none;}
+#satensReport li { background:whitesmoke;}
 
-ul#leadData li{
-	background: whitesmoke ;
-	padding: 12px 0 6px 12px;
-}
 
-.logo, .typo{
-	display:block; float:left;
-}
-	
-.typo { 
-	margin:20px;
-}
-.typo h2{
-	line-height: 1em;
+.entry-content #tabsMenu li{ display: inline-block; margin:0;}
+
+.entry-content #tabsMenu li a{
+	display:block;
+	text-decoration:none;
+	display: inline-block;
+	margin: 0 3px 0 0;
+	border: 1px solid #80445F;
+	padding: 6px;	
 }
 
-.site-header hgroup{
-	height:120px;}
+
+
+
+

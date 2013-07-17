@@ -5,6 +5,7 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29, DS_30, DS_31, DS_41, DS_42,
 	DS_88, DS_89, DS_90,
 	DS_93, DS_94, DS_96, DS_98, DS_99, DS_100, 
 	DS_104_108, DS_111_119, DS_122_126, DS_129_136, DS_138_143;
+
 //FORMULARIO 1 >>>>>>>>>>>>>>>>>>>>>>>>>
 	
 	//COLUMNCHART
@@ -578,12 +579,13 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29, DS_30, DS_31, DS_41, DS_42,
 	siNoColumnChart(DS_82,	"DS_82", ".form3");
 	laDataTable(DS_83,		"DS_83", ".form3");
 
-//F4	
+//F4
 	formBreak(".form4", "Perspectiva | Visión del Padre sobre el Diario Vivir y Actividades Comunitarias del Estudiante");
 	
 	siNoColumnChart(DS_88,	"DS_88", ".form4", "Opinión si su hijo/a tiene la capacidad para desempeñarse independientemente a través de la vida cuando sea adulto");
 	siNoColumnChart(DS_89,	"DS_89", ".form4", "Opinión si su hijo/a participa en actividades, deportes o pasatiempos en su tiempo libre");
 	siNoColumnChart(DS_90,	"DS_90", ".form4", "Opinión si su hijo/a tiene la capacidad para contribuir a la sociedad a través de la vida cuando sea adulto");
+
 //F5
 	formBreak(".form5", "Informacion");
 
@@ -600,9 +602,6 @@ var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29, DS_30, DS_31, DS_41, DS_42,
 	linearGraph(DS_122_126,	"DS_122_126", ".form6", "Gráficas");
 	linearGraph(DS_129_136,	"DS_129_136", ".form6", "Estimado de Salario por Trabajo");
 	linearGraph(DS_138_143,	"DS_138_143", ".form6", "Medidas");
-
-
-
 
 }/////////////////////////////////////////////////////////////////////////
 
