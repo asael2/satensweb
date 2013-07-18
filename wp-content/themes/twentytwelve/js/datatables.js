@@ -447,7 +447,7 @@ reporte.dataTables = function(){
 	//DATATABLE  
 	DS_147 = [
 		//Columnas
-		['Áreas que el/la estudiante y su padre, madre o encargado consideran deben atenderse durante el año escolar (Destrezas Laborales).', 'Respuestas | S&iacute; = Azul No = Rojo'],
+		['Áreas que el/la estudiante y su padre, madre o encargado consideran deben atenderse durante el año escolar (Destrezas Laborales).', 'Seleccion'],
 		//Filas
 		['Seguir directrices/instrucciones', 				(this.respondido(147) == 1)],
 		['Aceptar críticas',   								(this.respondido(147) == 1)],
@@ -474,7 +474,7 @@ reporte.dataTables = function(){
 	//DATATABLE  
 	DS_150 = [
 		//Columnas
-		['Áreas que el/la estudiante y su padre, madre o encargado consideran deben atenderse durante el año escolar (Destrezas Personales).', 'Respuestas | S&iacute; = Azul No = Rojo'],
+		['Áreas que el/la estudiante y su padre, madre o encargado consideran deben atenderse durante el año escolar (Destrezas Personales).', 'Seleccion'],
 		//Filas
 		['Conocer sus derechos y responsabilidades', 					(this.respondido(150) == 1)],
 		['Identifica sus emociones y como desembocarlas adecuadamente', (this.respondido(150) == 1)],
@@ -485,11 +485,10 @@ reporte.dataTables = function(){
 		['Otras sugerencias', 											(this.respondido(150) == 101)],
 	];
 
-
 	//DATATABLE  
 	DS_153 = [
 		//Columnas
-		['Áreas que el/la estudiante y su padre, madre o encargado consideran deben atenderse durante el año escolar (Destrezas V.I. y del Diario Vivir).', 'Respuestas | S&iacute; = Azul No = Rojo'],
+		['Áreas que el/la estudiante y su padre, madre o encargado consideran deben atenderse durante el año escolar (Destrezas V.I. y del Diario Vivir).', 'Seleccion'],
 		//Filas
 		['Rendir o completar la planilla de contribución sobre impuestos (Si aplica)', 	(this.respondido(153) == 1)],
 		['Mantener espacios de la casa limpios',   										(this.respondido(153) == 1)],
@@ -523,86 +522,6 @@ reporte.dataTables = function(){
 	]; 
 
 //FORMULARIO 8 >>>>>>>>>>>>>>>>>>>>>>>>>
-
-	//DATATABLE  
-	DS_147 = [
-		//Columnas
-		['Áreas que el/la estudiante y su padre, madre o encargado consideran deben atenderse durante el año escolar (Destrezas Laborales).', 'Respuestas | S&iacute; = Azul No = Rojo'],
-		//Filas
-		['Seguir directrices/instrucciones', 				(this.respondido(147) == 1)],
-		['Aceptar críticas',   								(this.respondido(147) == 1)],
-		['Prestar atención a detalles', 					(this.respondido(147) == 1)],
-		['Completar tareas', 								(this.respondido(147) == 1)],
-		['Asistencia y puntualidad', 						(this.respondido(147) == 1)],
-		['Destreza con el uso de computadoras', 			(this.respondido(147) == 1)],
-		['Usar vestimenta apropiada para ir a un trabajo', 	(this.respondido(147) == 1)],
-		['Trabajar a un paso/ritmo satisfactorio', 			(this.respondido(147) == 1)],
-		['Producir trabajo de forma satisfactoria', 		(this.respondido(147) == 1)],
-		['Respetar la autoridad', 							(this.respondido(147) == 1)],
-		['Trabajar independientemente', 					(this.respondido(147) == 1)],
-		['Organizar el tiempo y materiales efectivamente',  (this.respondido(147) == 1)],
-		['Solicitar ayuda cuando la necesite', 				(this.respondido(147) == 1)],
-		['Demostrar destrezas de Razonamiento Crítico', 	(this.respondido(147) == 1)],
-		['Explorar Carreras Profesionales/Técnicas', 		(this.respondido(147) == 1)],
-		['Adquisición de experiencia laboral', 				(this.respondido(147) == 1)],
-		['Gestionar búsqueda de trabajo', 					(this.respondido(147) == 1)],
-		['Completar solicitudes de empleo', 				(this.respondido(147) == 1)],
-		['Concluir en un empleo apropiadamente', 			(this.respondido(147) == 1)],
-		['Otras sugerencias', 								(this.respondido(147) == 101)],
-	]; 
-
-	//DATATABLE  
-	DS_150 = [
-		//Columnas
-		['Áreas que el/la estudiante y su padre, madre o encargado consideran deben atenderse durante el año escolar (Destrezas Personales).', 'Respuestas | S&iacute; = Azul No = Rojo'],
-		//Filas
-		['Conocer sus derechos y responsabilidades', 					(this.respondido(150) == 1)],
-		['Identifica sus emociones y como desembocarlas adecuadamente', (this.respondido(150) == 1)],
-		['Establece sus metas', 										(this.respondido(150) == 1)],
-		['Resolver problemas efectivamente', 							(this.respondido(150) == 1)],
-		['Manejar el estrés', 											(this.respondido(150) == 1)],
-		['Organizar su tiempo personal', 								(this.respondido(150) == 1)],
-		['Otras sugerencias', 											(this.respondido(150) == 101)],
-	];
-
-
-	//DATATABLE  
-	DS_153 = [
-		//Columnas
-		['Áreas que el/la estudiante y su padre, madre o encargado consideran deben atenderse durante el año escolar (Destrezas V.I. y del Diario Vivir).', 'Respuestas | S&iacute; = Azul No = Rojo'],
-		//Filas
-		['Rendir o completar la planilla de contribución sobre impuestos (Si aplica)', 	(this.respondido(153) == 1)],
-		['Mantener espacios de la casa limpios',   										(this.respondido(153) == 1)],
-		['Reconocer roles cívicos y las responsabilidades', 							(this.respondido(153) == 1)],
-		['Reconocer las figuras de autoridad, reglas y leyes', 							(this.respondido(153) == 1)],
-		['Comprender el proceso de las elecciones y como votar', 						(this.respondido(153) == 1)],
-		['Saber los eventos que pasan en la comunidad', 								(this.respondido(153) == 1)],
-		['Conocer las opciones de adquirir una vivienda', 								(this.respondido(153) == 1)],
-		['Comprar vestimenta/ropa', 													(this.respondido(153) == 1)],
-		['Conocer las opciones de transportación disponibles', 							(this.respondido(153) == 1)],
-		['Tomar clases de guiar y obtener licencia de conducir', 						(this.respondido(153) == 1)],
-		['Saber tomar direcciones para ir a los sitios', 								(this.respondido(153) == 1)],
-		['Conocer los primeros auxilios básicos',  										(this.respondido(153) == 1)],
-		['Tener buenas destrezas de aseo personal', 									(this.respondido(153) == 1)],
-		['Lavar y planchar la ropa', 													(this.respondido(153) == 1)],
-		['Hacer compras', 																(this.respondido(153) == 1)],
-		['Manejar dinero', 																(this.respondido(153) == 1)],
-		['Presupuestar dinero', 														(this.respondido(153) == 1)],
-		['Calcular un salario', 														(this.respondido(153) == 1)],
-		['Conocimiento de información del banco', 										(this.respondido(153) == 1)],
-		['Identificar actividades para recrearse', 										(this.respondido(153) == 1)],
-		['Asistir a eventos', 															(this.respondido(153) == 1)],
-		['Identificar organizaciones de la comunidad', 									(this.respondido(153) == 1)],
-		['Pagar cuentas', 																(this.respondido(153) == 1)],
-		['Cocinar', 																	(this.respondido(153) == 1)],
-		['Seguir una receta', 															(this.respondido(153) == 1)],
-		['Ordenar de un menú', 															(this.respondido(153) == 1)],
-		['Llevar una dieta saludable', 													(this.respondido(153) == 1)],
-		['Otras sugerencias', 															(this.respondido(153) == 101)],
-
-	]; 
-
-	//FORMULARIO 8 >>>>>>>>>>>>>>>>>>>>>>>>>
 
 	//SECCION 1: DESTREZAS PARA LA VIDA
 
@@ -1176,6 +1095,15 @@ reporte.dataTables = function(){
 	formBreak(".form6", "Parte V: Medidas");
 	linearGraph(DS_138_143,	"DS_138_143", ".form6", "Medidas");
 
+//F7
+	formBreak(".form7", "Destrezas Laborales Identificadas");
+	laDataTable(DS_147, "DS_147", ".form7");
+
+	formBreak(".form7", "Destrezas Personales Identificadas");
+	laDataTable(DS_150, "DS_150", ".form7");
+
+	formBreak(".form7", "Destrezas del Diario Vivir Identificadas");
+	laDataTable(DS_153, "DS_153", ".form7");
 
 }/////////////////////////////////////////////////////////////////////////
 
