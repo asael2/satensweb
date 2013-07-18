@@ -449,26 +449,26 @@ reporte.dataTables = function(){
 		//Columnas
 		['Áreas que el/la estudiante y su padre, madre o encargado consideran deben atenderse durante el año escolar (Destrezas Laborales).', 'Seleccion'],
 		//Filas
-		['Seguir directrices/instrucciones', 				(this.respondido(147) == 1)],
-		['Aceptar críticas',   								(this.respondido(147) == 1)],
-		['Prestar atención a detalles', 					(this.respondido(147) == 1)],
-		['Completar tareas', 								(this.respondido(147) == 1)],
-		['Asistencia y puntualidad', 						(this.respondido(147) == 1)],
-		['Destreza con el uso de computadoras', 			(this.respondido(147) == 1)],
-		['Usar vestimenta apropiada para ir a un trabajo', 	(this.respondido(147) == 1)],
-		['Trabajar a un paso/ritmo satisfactorio', 			(this.respondido(147) == 1)],
-		['Producir trabajo de forma satisfactoria', 		(this.respondido(147) == 1)],
-		['Respetar la autoridad', 							(this.respondido(147) == 1)],
-		['Trabajar independientemente', 					(this.respondido(147) == 1)],
-		['Organizar el tiempo y materiales efectivamente',  (this.respondido(147) == 1)],
-		['Solicitar ayuda cuando la necesite', 				(this.respondido(147) == 1)],
-		['Demostrar destrezas de Razonamiento Crítico', 	(this.respondido(147) == 1)],
-		['Explorar Carreras Profesionales/Técnicas', 		(this.respondido(147) == 1)],
-		['Adquisición de experiencia laboral', 				(this.respondido(147) == 1)],
-		['Gestionar búsqueda de trabajo', 					(this.respondido(147) == 1)],
-		['Completar solicitudes de empleo', 				(this.respondido(147) == 1)],
-		['Concluir en un empleo apropiadamente', 			(this.respondido(147) == 1)],
-		['Otras sugerencias', 								(this.respondido(147) == 101)],
+		['Seguir directrices/instrucciones', 				parseInt( this.respondido(147.1) ) == 1],
+		['Aceptar críticas',   								parseInt( this.respondido(147.2) ) == 1],
+		['Prestar atención a detalles', 					parseInt( this.respondido(147.3) ) == 1],
+		['Completar tareas', 								parseInt( this.respondido(147.4) ) == 1],
+		['Asistencia y puntualidad', 						parseInt( this.respondido(147.5) ) == 1],
+		['Destreza con el uso de computadoras', 			parseInt( this.respondido(147.6) ) == 1],
+		['Usar vestimenta apropiada para ir a un trabajo', 	parseInt( this.respondido(147.7) ) == 1],
+		['Trabajar a un paso/ritmo satisfactorio', 			parseInt( this.respondido(147.8) ) == 1],
+		['Producir trabajo de forma satisfactoria', 		parseInt( this.respondido(147.9) ) == 1],
+		['Respetar la autoridad', 							parseInt( this.respondido(147.10) ) == 1],
+		['Trabajar independientemente', 					parseInt( this.respondido(147.11) ) == 1],
+		['Organizar el tiempo y materiales efectivamente',  parseInt( this.respondido(147.12) ) == 1],
+		['Solicitar ayuda cuando la necesite', 				parseInt( this.respondido(147.13) ) == 1],
+		['Demostrar destrezas de Razonamiento Crítico', 	parseInt( this.respondido(147.14) ) == 1],
+		['Explorar Carreras Profesionales/Técnicas', 		parseInt( this.respondido(147.15) ) == 1],
+		['Adquisición de experiencia laboral', 				parseInt( this.respondido(147.16) ) == 1],
+		['Gestionar búsqueda de trabajo', 					parseInt( this.respondido(147.17) ) == 1],
+		['Completar solicitudes de empleo', 				parseInt( this.respondido(147.18) ) == 1],
+		['Concluir en un empleo apropiadamente', 			parseInt( this.respondido(147.19) ) == 1],
+		['Otras sugerencias', 								parseInt( this.respondido(147.20) ) == 101],
 	]; 
 
 	//DATATABLE  
@@ -526,42 +526,43 @@ reporte.dataTables = function(){
 	//SECCION 1: DESTREZAS PARA LA VIDA
 
 	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
-		
+
+
+
 	//DATATABLE  
 	DS_158_188 = [
 		//Columnas
 		['Destrezas para la Vida', 'No Aplica', 'No Domina', 'En Proceso', 'Domina'],
 		//Filas
-		['Obtener permiso/licencia para conducir', 				(this.respondido(158) == 1), (this.respondido(158) == 2), (this.respondido(158) == 3), (this.respondido(158) == 4)],
-		['Tomar clases para conducir',   						(this.respondido(159) == 1), (this.respondido(159) == 2), (this.respondido(159) == 3), (this.respondido(159) == 4)],						
-		['Conocer diferentes opciones para transportarse', 		(this.respondido(160) == 1), (this.respondido(160) == 2), (this.respondido(160) == 3), (this.respondido(160) == 4)],						
-		['Asistir a eventos/actividades', 						(this.respondido(161) == 1), (this.respondido(161) == 2), (this.respondido(161) == 3), (this.respondido(161) == 4)],						
-		['Identificar recursos en la comunidad',				(this.respondido(162) == 1), (this.respondido(162) == 2), (this.respondido(162) == 3), (this.respondido(162) == 4)],						
-		['Identificar actividades de tiempo libre', 			(this.respondido(163) == 1), (this.respondido(163) == 2), (this.respondido(163) == 3), (this.respondido(163) == 4)],						
-		['Mantener el hogar limpio', 							(this.respondido(164) == 1), (this.respondido(164) == 2), (this.respondido(164) == 3), (this.respondido(164) == 4)],
-		['Conocer opciones de vivienda', 						(this.respondido(165) == 1), (this.respondido(165) == 2), (this.respondido(165) == 3), (this.respondido(165) == 4)],
-		['Pagar cuentas', 										(this.respondido(166) == 1), (this.respondido(166) == 2), (this.respondido(166) == 3), (this.respondido(166) == 4)],
-		['Radicar Planillas sobre impuestos', 					(this.respondido(167) == 1), (this.respondido(167) == 2), (this.respondido(167) == 3), (this.respondido(167) == 4)],
-		['Conocer servicios bancarios', 						(this.respondido(168) == 1), (this.respondido(168) == 2), (this.respondido(168) == 3), (this.respondido(168) == 4)],
-		['Dar cambio correcto', 								(this.respondido(169) == 1), (this.respondido(169) == 2), (this.respondido(169) == 3), (this.respondido(169) == 4)],
-		['Manejar dinero en general', 							(this.respondido(170) == 1), (this.respondido(170) == 2), (this.respondido(170) == 3), (this.respondido(170) == 4)],
-		['Realizar compras por si mismo', 						(this.respondido(171) == 1), (this.respondido(171) == 2), (this.respondido(171) == 3), (this.respondido(171) == 4)],
-		['Entender las elecciones y como votar (si aplica)', 	(this.respondido(173) == 1), (this.respondido(173) == 2), (this.respondido(173) == 3), (this.respondido(173) == 4)],
-		['Respetar figuras de autoridad, reglas y leyes', 		(this.respondido(175) == 1), (this.respondido(175) == 2), (this.respondido(175) == 3), (this.respondido(175) == 4)],
-		['Calcular salario', 									(this.respondido(176) == 1), (this.respondido(176) == 2), (this.respondido(176) == 3), (this.respondido(176) == 4)],
-		['Reconocer roles y responsabilidades cívicas', 		(this.respondido(177) == 1), (this.respondido(177) == 2), (this.respondido(177) == 3), (this.respondido(177) == 4)],
-		['Ordenar un menú en un restaurante', 					(this.respondido(178) == 1), (this.respondido(178) == 2), (this.respondido(178) == 3), (this.respondido(178) == 4)],
-		['Seguir una receta', 									(this.respondido(179) == 1), (this.respondido(179) == 2), (this.respondido(179) == 3), (this.respondido(179) == 4)],
-		['Cocinar y preparar comida/alimentos', 				(this.respondido(180) == 1), (this.respondido(180) == 2), (this.respondido(180) == 3), (this.respondido(180) == 4)],
-		['Reconocer y llevar una dieta saludable', 				(this.respondido(181) == 1), (this.respondido(181) == 2), (this.respondido(181) == 3), (this.respondido(181) == 4)],
-		['Comprar comida/alimentos', 							(this.respondido(182) == 1), (this.respondido(182) == 2), (this.respondido(182) == 3), (this.respondido(182) == 4)],
-		['Lavar y planchar su propia ropa', 					(this.respondido(183) == 1), (this.respondido(183) == 2), (this.respondido(183) == 3), (this.respondido(183) == 4)],
-		['Comprar ropa apropiada', 								(this.respondido(184) == 1), (this.respondido(184) == 2), (this.respondido(184) == 3), (this.respondido(184) == 4)],
-		['Tener conocimiento básico de primeros auxilios', 		(this.respondido(185) == 1), (this.respondido(185) == 2), (this.respondido(185) == 3), (this.respondido(185) == 4)],
-		['Buenas destrezas de aseo personal', 					(this.respondido(186) == 1), (this.respondido(186) == 2), (this.respondido(186) == 3), (this.respondido(186) == 4)],
-		['Comprar un carro', 									(this.respondido(187) == 1), (this.respondido(187) == 2), (this.respondido(187) == 3), (this.respondido(187) == 4)],
-		['Leer e interpretar mapas', 							(this.respondido(188) == 1), (this.respondido(188) == 2), (this.respondido(188) == 3), (this.respondido(188) == 4)]
+		['Obtener permiso/licencia para conducir', 				parseInt( this.respondido(158)) == 1, parseInt( this.respondido(158)) == 2, parseInt( this.respondido(158)) == 3, parseInt( this.respondido(158)) == 4],
+		['Tomar clases para conducir',   						parseInt( this.respondido(159)) == 1, parseInt( this.respondido(159)) == 2, parseInt( this.respondido(159)) == 3, parseInt( this.respondido(159)) == 4],						
+		['Conocer diferentes opciones para transportarse', 		parseInt( this.respondido(160)) == 1, parseInt( this.respondido(160)) == 2, parseInt( this.respondido(160)) == 3, parseInt( this.respondido(160)) == 4],						
+		['Asistir a eventos/actividades', 						parseInt( this.respondido(161)) == 1, parseInt( this.respondido(161)) == 2, parseInt( this.respondido(161)) == 3, parseInt( this.respondido(161)) == 4],						
+		['Identificar recursos en la comunidad',				parseInt( this.respondido(162)) == 1, parseInt( this.respondido(162)) == 2, parseInt( this.respondido(162)) == 3, parseInt( this.respondido(162)) == 4],						
+		['Identificar actividades de tiempo libre', 			parseInt( this.respondido(163)) == 1, parseInt( this.respondido(163)) == 2, parseInt( this.respondido(163)) == 3, parseInt( this.respondido(163)) == 4],						
+		['Mantener el hogar limpio', 							parseInt( this.respondido(164)) == 1, parseInt( this.respondido(164)) == 2, parseInt( this.respondido(164)) == 3, parseInt( this.respondido(164)) == 4],
+		['Conocer opciones de vivienda', 						parseInt( this.respondido(165)) == 1, parseInt( this.respondido(165)) == 2, parseInt( this.respondido(165)) == 3, parseInt( this.respondido(165)) == 4],
+		['Pagar cuentas', 										parseInt( this.respondido(166)) == 1, parseInt( this.respondido(166)) == 2, parseInt( this.respondido(166)) == 3, parseInt( this.respondido(166)) == 4],
+		['Radicar Planillas sobre impuestos', 					parseInt( this.respondido(167)) == 1, parseInt( this.respondido(167)) == 2, parseInt( this.respondido(167)) == 3, parseInt( this.respondido(167)) == 4],
+		['Conocer servicios bancarios', 						parseInt( this.respondido(168)) == 1, parseInt( this.respondido(168)) == 2, parseInt( this.respondido(168)) == 3, parseInt( this.respondido(168)) == 4],
+		['Dar cambio correcto', 								parseInt( this.respondido(169)) == 1, parseInt( this.respondido(169)) == 2, parseInt( this.respondido(169)) == 3, parseInt( this.respondido(169)) == 4],
+		['Manejar dinero en general', 							parseInt( this.respondido(170)) == 1, parseInt( this.respondido(170)) == 2, parseInt( this.respondido(170)) == 3, parseInt( this.respondido(170)) == 4],
+		['Realizar compras por si mismo', 						parseInt( this.respondido(171)) == 1, parseInt( this.respondido(171)) == 2, parseInt( this.respondido(171)) == 3, parseInt( this.respondido(171)) == 4],
+		['Entender las elecciones y como votar (si aplica)', 	parseInt( this.respondido(173)) == 1, parseInt( this.respondido(173)) == 2, parseInt( this.respondido(173)) == 3, parseInt( this.respondido(173)) == 4],
+		['Respetar figuras de autoridad, reglas y leyes', 		parseInt( this.respondido(175)) == 1, parseInt( this.respondido(175)) == 2, parseInt( this.respondido(175)) == 3, parseInt( this.respondido(175)) == 4],
+		['Calcular salario', 									parseInt( this.respondido(176)) == 1, parseInt( this.respondido(176)) == 2, parseInt( this.respondido(176)) == 3, parseInt( this.respondido(176)) == 4],
+		['Reconocer roles y responsabilidades cívicas', 		parseInt( this.respondido(177)) == 1, parseInt( this.respondido(177)) == 2, parseInt( this.respondido(177)) == 3, parseInt( this.respondido(177)) == 4],
+		['Ordenar un menú en un restaurante', 					parseInt( this.respondido(178)) == 1, parseInt( this.respondido(178)) == 2, parseInt( this.respondido(178)) == 3, parseInt( this.respondido(178)) == 4],
+		['Seguir una receta', 									parseInt( this.respondido(179)) == 1, parseInt( this.respondido(179)) == 2, parseInt( this.respondido(179)) == 3, parseInt( this.respondido(179)) == 4],
+		['Cocinar y preparar comida/alimentos', 				parseInt( this.respondido(180)) == 1, parseInt( this.respondido(180)) == 2, parseInt( this.respondido(180)) == 3, parseInt( this.respondido(180)) == 4],
+		['Reconocer y llevar una dieta saludable', 				parseInt( this.respondido(181)) == 1, parseInt( this.respondido(181)) == 2, parseInt( this.respondido(181)) == 3, parseInt( this.respondido(181)) == 4],
+		['Comprar comida/alimentos', 							parseInt( this.respondido(182)) == 1, parseInt( this.respondido(182)) == 2, parseInt( this.respondido(182)) == 3, parseInt( this.respondido(182)) == 4],
+		['Lavar y planchar su propia ropa', 					parseInt( this.respondido(183)) == 1, parseInt( this.respondido(183)) == 2, parseInt( this.respondido(183)) == 3, parseInt( this.respondido(183)) == 4],
+		['Comprar ropa apropiada', 								parseInt( this.respondido(184)) == 1, parseInt( this.respondido(184)) == 2, parseInt( this.respondido(184)) == 3, parseInt( this.respondido(184)) == 4],
+		['Tener conocimiento básico de primeros auxilios', 		parseInt( this.respondido(185)) == 1, parseInt( this.respondido(185)) == 2, parseInt( this.respondido(185)) == 3, parseInt( this.respondido(185)) == 4],
+		['Buenas destrezas de aseo personal', 					parseInt( this.respondido(186)) == 1, parseInt( this.respondido(186)) == 2, parseInt( this.respondido(186)) == 3, parseInt( this.respondido(186)) == 4],
+		['Comprar un carro', 									parseInt( this.respondido(187)) == 1, parseInt( this.respondido(187)) == 2, parseInt( this.respondido(187)) == 3, parseInt( this.respondido(187)) == 4],
+		['Leer e interpretar mapas', 							parseInt( this.respondido(188)) == 1, parseInt( this.respondido(188)) == 2, parseInt( this.respondido(188)) == 3, parseInt( this.respondido(188)) == 4]
 
 	]; 
 
@@ -1106,7 +1107,9 @@ reporte.dataTables = function(){
 	laDataTable(DS_153, "DS_153", ".form7");
 
 //F8
-	
+	formBreak(".form8", "Destrezas para la Vida");
+	laDataTable(DS_158_188, "DS_158_188", ".form8");
+
 
 }/////////////////////////////////////////////////////////////////////////
 
