@@ -1759,9 +1759,9 @@ ul#leadData li{	background: whitesmoke; padding:2px;}
 #satensReport li { background:whitesmoke;}
 
 
-.entry-content #tabsMenu li{ display: inline-block; margin: 0 3px 0 0;}
+#satensReport #tabsMenu li{ display: inline-block; margin: 0 3px 0 0;}
 
-.entry-content #tabsMenu li a{
+#satensReport  #tabsMenu li a{
 	display:block;
 	text-decoration:none;
 	display: inline-block;
