@@ -1752,16 +1752,19 @@ p.printParagraph {
 	font-weight: bold;
 }
 
-ul#leadData{ background:#80445F;}
-ul#leadData li{	background: whitesmoke; padding:2px;}
+#satensReport #leadData{ background:#80445F; padding-left:10px;}
+#satensReport #leadData li{	background: whitesmoke; padding:2px;}
 
 #satensReport ul { list-style:none;}
 #satensReport li { background:whitesmoke;}
 
+#satensReport  #tabsMenu {
+	margin-bottom: 20px;
+}
 
-.entry-content #tabsMenu li{ display: inline-block; margin: 0 3px 0 0;}
+#satensReport #tabsMenu li{ display: inline-block; margin: 0 2px 0 0;}
 
-.entry-content #tabsMenu li a{
+#satensReport  #tabsMenu li a{
 	display:block;
 	text-decoration:none;
 	display: inline-block;
@@ -1804,10 +1807,16 @@ ul#leadData li{	background: whitesmoke; padding:2px;}
 	float:right;
 }
 
+#satensReport .entry-header {
+	margin-bottom: -40px;
+}
 
+.site-header h1 {
 
+	font-size: 26px;
+	font-size: 1.857142857rem;
+	line-height: 1em;
+	margin-bottom: 0;
+	margin-top: 17px;
 
-
-.entry-header {
-margin-bottom: -40px;
 }
