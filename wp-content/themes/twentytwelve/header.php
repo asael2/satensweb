@@ -48,7 +48,7 @@
 			</div>
 
 			<div class="typo">
-                <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
                 <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
     		</div>        
 

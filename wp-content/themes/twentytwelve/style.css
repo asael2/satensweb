@@ -1731,8 +1731,9 @@ img#wpstats {
 
 /*******************CUSTOM SATENS STYLES*******************/
 .logo, .typo{display:block; float:left;}
-.typo { margin:20px;}
+.typo { margin:33px 14px;}
 .typo h2{line-height: 1em;}
+.site-header h1{ line-height:1.2em;}
 .site-header hgroup{height:120px;}
 .readonly{color: #80445F;}
 .tituloForm{ 
@@ -1800,14 +1801,16 @@ ul#leadData li{	background: whitesmoke; padding:2px;}
 .entryback{
 	position: absolute;
 	right: 10px;
-	top: -92px;
+	top: -25px;
 	float:right;
 }
 
-
-
-
-
 .entry-header {
-margin-bottom: -40px;
+	margin-bottom: -40px;
 }
+
+
+
+
+
+

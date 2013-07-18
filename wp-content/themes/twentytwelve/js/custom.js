@@ -215,9 +215,10 @@ $(function () {
 	//REPORTE
 	if( $.urlParam('leadid') && $.urlParam('form') )  {
 		$(".entry-detail-view").hide(); //Hide Directory's table.		
-		
+		$(".main-navigation").hide();
 		reporte.init();	
 	}else{
+		$(".main-navigation").show();
 		$("#tabsInforme").hide();
 	}
 	//EDITAR Lead
