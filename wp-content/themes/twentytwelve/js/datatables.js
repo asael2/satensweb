@@ -1128,7 +1128,6 @@ reporte.dataTables = function(){
 	laDataTable(DS_306_317, "DS_306_317", ".form8"); 
 	laDataTableDos(DS_319_331, "DS_319_331", ".form8");
 
-
 	formBreak(".form8", "Destrezas de comunidad");
 	//piechart
 	laDataTable(DS_333_342, "DS_333_342", ".form8");

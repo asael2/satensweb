@@ -125,6 +125,18 @@
         chart.draw(data, options);
     };
 
+    function totalizar(firstField, lastField){
+
+    	var firstField, lastField, i, pieA, pieB, pieC, pieD;
+
+    	for ( i == firstField; i <= lastField; i++){
+
+    		console.log(i); 
+
+    	}
+
+    }
+
 var reporte = {
 	
 	init : function () {
