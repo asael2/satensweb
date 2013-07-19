@@ -8,8 +8,8 @@ reporte.dataTables = function(){
 	DS_153, DS_158_188, DS_191_219, DS_221_228, DS_230_237, 
 	DS_239_245, DS_247_253, DS_255_259 , DS_261_265, DS_267_272, 
 	DS_274_279, DS_281_284, DS_286_290, DS_292_297, DS_299_304, 
-	DS_306_317, DS_319_331, DS_333_342, DS_344_353, DS_355_365, 
-	DS_367_377, DS_379_383, DS_385_389, DS_391_398, DS_400_407,
+	DS_306_317, DS_319_331, DS_333_342, DS_344_353, 
+	DS_355_365, DS_367_377, DS_379_383, DS_385_389, DS_391_398, DS_400_407,
 	DS_411_418, DS_420_423, DS_429_433, DS_429_433, DS_435_440, DS_442_446, 
 	DS_451_A, DS_451_B, DS_451_C,
 	DS_455,	DS_458_466, DS_468, DS_471_479, DS_481, DS_484_497, DS_499, DS_502_509;
@@ -805,18 +805,18 @@ reporte.dataTables = function(){
 		//Columnas
 		['Destrezas de Salud', 'No Aplica', 'No Domina', 'En Proceso', 'Domina'],
 		//Filas
-		['Comprender los cuidados médicos sencillos', 													(this.respondido(306) == 1), (this.respondido(306) == 2), (this.respondido(306) == 3), (this.respondido(306) == 4)],
-		['Estar consciente de su informacion sobre su expediente médico y la informacion de pruebas',   (this.respondido(307) == 1), (this.respondido(307) == 2), (this.respondido(307) == 3), (this.respondido(307) == 4)],						
-		['Preparar de antemano preguntas a médicos, enfermera o terapistas', 							(this.respondido(308) == 1), (this.respondido(308) == 2), (this.respondido(308) == 3), (this.respondido(308) == 4)],						
-		['Conocer los nombres y usos de medicamentos', 													(this.respondido(309) == 1), (this.respondido(309) == 2), (this.respondido(309) == 3), (this.respondido(309) == 4)],						
-		['Llevar y recoger una receta en la farmacia',													(this.respondido(310) == 1), (this.respondido(310) == 2), (this.respondido(310) == 3), (this.respondido(310) == 4)],						
-		['Mantener un calendario con citas médicas', 													(this.respondido(311) == 1), (this.respondido(311) == 2), (this.respondido(311) == 3), (this.respondido(311) == 4)],						
-		['Conocer su fecha de nacimiento, altura y peso', 												(this.respondido(312) == 1), (this.respondido(312) == 2), (this.respondido(312) == 3), (this.respondido(312) == 4)],
-		['Interpretar la lectura de un termómetro', 													(this.respondido(313) == 1), (this.respondido(313) == 2), (this.respondido(313) == 3), (this.respondido(313) == 4)],
-		['Conocer números de emergencias médicas', 														(this.respondido(314) == 1), (this.respondido(314) == 2), (this.respondido(314) == 3), (this.respondido(314) == 4)],
-		['Conocer sobre sexualidad y métodos anticonceptivos', 											(this.respondido(315) == 1), (this.respondido(315) == 2), (this.respondido(315) == 3), (this.respondido(315) == 4)],
-		['Conversar sobre el abuso de drogas y alcohol con la familia', 								(this.respondido(316) == 1), (this.respondido(316) == 2), (this.respondido(316) == 3), (this.respondido(316) == 4)],
-		['Establecer contacto con organizaciones de apoyo en la comunidad', 							(this.respondido(317) == 1), (this.respondido(317) == 2), (this.respondido(317) == 3), (this.respondido(317) == 4)]
+		['Comprender los cuidados médicos sencillos', 													this.respondido(306) == 1, this.respondido(306) == 2, this.respondido(306) == 3, this.respondido(306) == 4],
+		['Estar consciente de su informacion sobre su expediente médico y la informacion de pruebas',   this.respondido(307) == 1, this.respondido(307) == 2, this.respondido(307) == 3, this.respondido(307) == 4],						
+		['Preparar de antemano preguntas a médicos, enfermera o terapistas', 							this.respondido(308) == 1, this.respondido(308) == 2, this.respondido(308) == 3, this.respondido(308) == 4],						
+		['Conocer los nombres y usos de medicamentos', 													this.respondido(309) == 1, this.respondido(309) == 2, this.respondido(309) == 3, this.respondido(309) == 4],						
+		['Llevar y recoger una receta en la farmacia',													this.respondido(310) == 1, this.respondido(310) == 2, this.respondido(310) == 3, this.respondido(310) == 4],						
+		['Mantener un calendario con citas médicas', 													this.respondido(311) == 1, this.respondido(311) == 2, this.respondido(311) == 3, this.respondido(311) == 4],						
+		['Conocer su fecha de nacimiento, altura y peso', 												this.respondido(312) == 1, this.respondido(312) == 2, this.respondido(312) == 3, this.respondido(312) == 4],
+		['Interpretar la lectura de un termómetro', 													this.respondido(313) == 1, this.respondido(313) == 2, this.respondido(313) == 3, this.respondido(313) == 4],
+		['Conocer números de emergencias médicas', 														this.respondido(314) == 1, this.respondido(314) == 2, this.respondido(314) == 3, this.respondido(314) == 4],
+		['Conocer sobre sexualidad y métodos anticonceptivos', 											this.respondido(315) == 1, this.respondido(315) == 2, this.respondido(315) == 3, this.respondido(315) == 4],
+		['Conversar sobre el abuso de drogas y alcohol con la familia', 								this.respondido(316) == 1, this.respondido(316) == 2, this.respondido(316) == 3, this.respondido(316) == 4],
+		['Establecer contacto con organizaciones de apoyo en la comunidad', 							this.respondido(317) == 1, this.respondido(317) == 2, this.respondido(317) == 3, this.respondido(317) == 4]
 	]; 
 
 	//DATATABLE  
@@ -1125,30 +1125,29 @@ reporte.dataTables = function(){
 
 	formBreak(".form8", "Destrezas de salud");
 	//piechart
-	laDataTableD(DS_306_317, "DS_306_317", ".form8");
+	laDataTable(DS_306_317, "DS_306_317", ".form8"); 
 	laDataTableDos(DS_319_331, "DS_319_331", ".form8");
-/*
 
 
 	formBreak(".form8", "Destrezas de comunidad");
 	//piechart
-	laDataTable(DS_299_304, "DS_158_188", ".form8");
+	laDataTable(DS_333_342, "DS_333_342", ".form8");
+	laDataTableDos(DS_344_353, "DS_344_353", ".form8");
 
 	formBreak(".form8", "Actividades o intereses en el tiempo libre");
 	//piechart
-	laDataTable(DS_306_317, "DS_158_188", ".form8");
+	laDataTable(DS_355_365, "DS_355_365", ".form8");
+	laDataTableDos(DS_367_377, "DS_367_377", ".form8");
 
 	formBreak(".form8", "Destrezas para planes ocupacionales futuros");
 	//piechart
-	laDataTable(DS_333_342, "DS_158_188", ".form8");
-	laDataTableDos(DS_344_353 "DS_221_228", ".form8");
+	laDataTable(DS_379_383, "DS_379_383", ".form8");
+	laDataTableDos(DS_385_389, "DS_385_389", ".form8");
 
 	formBreak(".form8", "Destrezas de vivienda");
 	//piechart
-	laDataTable(DS_367_377, "DS_158_188", ".form8");
-	laDataTableDos(DS_379_383, "DS_221_228", ".form8");
-
-*/
+	laDataTable(DS_391_398, "DS_391_398", ".form8");
+	laDataTableDos(DS_400_407, "DS_400_407", ".form8");
 
 }/////////////////////////////////////////////////////////////////////////
 
