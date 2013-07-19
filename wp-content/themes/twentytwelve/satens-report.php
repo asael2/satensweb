@@ -1,9 +1,10 @@
 <div id="satensReport">
+
     <div class="wideSec">
-        <ul id="leadData">
-        </ul>
+        <ul id="leadData"></ul>
         <div id="leadPic"></div>
     </div>
+    
     <div id="tabsInforme">
         <ul id="tabsMenu">
             <li><a href="#tabs-1">Reporte 1 </a></li>
@@ -63,4 +64,5 @@
             </ul>
         </div>
     </div>
+
 </div>
