@@ -205,7 +205,7 @@ reporte.sumOfFields = function (fNumber, optsNumber) {
 	return suma;
 };
 
-reporte.totalizar = function(firstField, lastField){
+reporte.totalSet = function(firstField, lastField){
 
     var firstField, lastField, i, pieA, pieB, pieC, pieD;
 

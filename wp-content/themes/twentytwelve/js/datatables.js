@@ -1110,33 +1110,33 @@ reporte.dataTables = function(){
 
 	formBreak(".form8", "Destrezas de limpieza en el hogar");
 	//piechart
-	laDataTable(DS_267_272, "DS_158_188", ".form8");
-	laDataTableDos(	DS_274_279, "DS_221_228", ".form8");
-
-/*
+	laDataTable(DS_267_272, "DS_267_272", ".form8");
+	laDataTableDos(DS_274_279, "DS_274_279", ".form8");
 
 	formBreak(".form8", "Destrezas de jardineria/limpieza áreas verdes");
 	//piechart
+	laDataTable(DS_281_284, "DS_281_284", ".form8");
+	laDataTableDos(DS_286_290, "DS_286_290", ".form8");
 
 	formBreak(".form8", "Destrezas Personales");
 	//piechart
-	laDataTable(DS_281_284, "DS_158_188", ".form8");
-	laDataTableDos(DS_286_290, "DS_221_228", ".form8");
+	laDataTable(DS_292_297, "DS_292_297", ".form8");
+	laDataTableDos(DS_299_304, "DS_299_304", ".form8");
 
 	formBreak(".form8", "Destrezas de salud");
 	//piechart
-	laDataTable(DS_292_297, "DS_158_188", ".form8");
-	laDataTableDos(DS_299_304, "DS_221_228", ".form8");
+	laDataTableD(DS_306_317, "DS_306_317", ".form8");
+	laDataTableDos(DS_319_331, "DS_319_331", ".form8");
+/*
+
 
 	formBreak(".form8", "Destrezas de comunidad");
 	//piechart
 	laDataTable(DS_299_304, "DS_158_188", ".form8");
-	laDataTableDos( , "DS_221_228", ".form8");
 
 	formBreak(".form8", "Actividades o intereses en el tiempo libre");
 	//piechart
 	laDataTable(DS_306_317, "DS_158_188", ".form8");
-	laDataTableDos(DS_319_331, "DS_221_228", ".form8");
 
 	formBreak(".form8", "Destrezas para planes ocupacionales futuros");
 	//piechart
