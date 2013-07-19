@@ -1,6 +1,5 @@
 /*Data-Graphics reports for SATENSPR by artyficial.net */
 
-
 //GET Param Helper
 	$.urlParam = function (name) {
 		var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -126,7 +125,6 @@
         chart.draw(data, options);
     };
 
-
 var reporte = {
 	
 	init : function () {
@@ -207,6 +205,16 @@ reporte.sumOfFields = function (fNumber, optsNumber) {
 	return suma;
 };
 
+reporte.totalizar = function(firstField, lastField){
+
+    var firstField, lastField, i, pieA, pieB, pieC, pieD;
+
+    for ( i == firstField; i <= lastField; i++){
+   		console.log(i);
+   	}
+
+};
+
 //////onReady
 $(function () {
 	//SERAiD
@@ -226,4 +234,3 @@ $(function () {
 		$("#satensReport").hide();
 	}
 });
-

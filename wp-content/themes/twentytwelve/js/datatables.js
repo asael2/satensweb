@@ -531,42 +531,42 @@ reporte.dataTables = function(){
 
 	//SECCION 1: DESTREZAS PARA LA VIDA
 
-	//PIECHART
+	
 
 	//DATATABLE  
 	DS_158_188 = [
 		//Columnas
 		['Destrezas para la Vida', 'No Aplica', 'No Domina', 'En Proceso', 'Domina'],
 		//Filas
-		['Obtener permiso/licencia para conducir', 				parseInt( this.respondido(158)) == 1, parseInt( this.respondido(158)) == 2, parseInt( this.respondido(158)) == 3, parseInt( this.respondido(158)) == 4],
-		['Tomar clases para conducir',   						parseInt( this.respondido(159)) == 1, parseInt( this.respondido(159)) == 2, parseInt( this.respondido(159)) == 3, parseInt( this.respondido(159)) == 4],						
-		['Conocer diferentes opciones para transportarse', 		parseInt( this.respondido(160)) == 1, parseInt( this.respondido(160)) == 2, parseInt( this.respondido(160)) == 3, parseInt( this.respondido(160)) == 4],						
-		['Asistir a eventos/actividades', 						parseInt( this.respondido(161)) == 1, parseInt( this.respondido(161)) == 2, parseInt( this.respondido(161)) == 3, parseInt( this.respondido(161)) == 4],						
-		['Identificar recursos en la comunidad',				parseInt( this.respondido(162)) == 1, parseInt( this.respondido(162)) == 2, parseInt( this.respondido(162)) == 3, parseInt( this.respondido(162)) == 4],						
-		['Identificar actividades de tiempo libre', 			parseInt( this.respondido(163)) == 1, parseInt( this.respondido(163)) == 2, parseInt( this.respondido(163)) == 3, parseInt( this.respondido(163)) == 4],						
-		['Mantener el hogar limpio', 							parseInt( this.respondido(164)) == 1, parseInt( this.respondido(164)) == 2, parseInt( this.respondido(164)) == 3, parseInt( this.respondido(164)) == 4],
-		['Conocer opciones de vivienda', 						parseInt( this.respondido(165)) == 1, parseInt( this.respondido(165)) == 2, parseInt( this.respondido(165)) == 3, parseInt( this.respondido(165)) == 4],
-		['Pagar cuentas', 										parseInt( this.respondido(166)) == 1, parseInt( this.respondido(166)) == 2, parseInt( this.respondido(166)) == 3, parseInt( this.respondido(166)) == 4],
-		['Radicar Planillas sobre impuestos', 					parseInt( this.respondido(167)) == 1, parseInt( this.respondido(167)) == 2, parseInt( this.respondido(167)) == 3, parseInt( this.respondido(167)) == 4],
-		['Conocer servicios bancarios', 						parseInt( this.respondido(168)) == 1, parseInt( this.respondido(168)) == 2, parseInt( this.respondido(168)) == 3, parseInt( this.respondido(168)) == 4],
-		['Dar cambio correcto', 								parseInt( this.respondido(169)) == 1, parseInt( this.respondido(169)) == 2, parseInt( this.respondido(169)) == 3, parseInt( this.respondido(169)) == 4],
-		['Manejar dinero en general', 							parseInt( this.respondido(170)) == 1, parseInt( this.respondido(170)) == 2, parseInt( this.respondido(170)) == 3, parseInt( this.respondido(170)) == 4],
-		['Realizar compras por si mismo', 						parseInt( this.respondido(171)) == 1, parseInt( this.respondido(171)) == 2, parseInt( this.respondido(171)) == 3, parseInt( this.respondido(171)) == 4],
-		['Entender las elecciones y como votar (si aplica)', 	parseInt( this.respondido(173)) == 1, parseInt( this.respondido(173)) == 2, parseInt( this.respondido(173)) == 3, parseInt( this.respondido(173)) == 4],
-		['Respetar figuras de autoridad, reglas y leyes', 		parseInt( this.respondido(175)) == 1, parseInt( this.respondido(175)) == 2, parseInt( this.respondido(175)) == 3, parseInt( this.respondido(175)) == 4],
-		['Calcular salario', 									parseInt( this.respondido(176)) == 1, parseInt( this.respondido(176)) == 2, parseInt( this.respondido(176)) == 3, parseInt( this.respondido(176)) == 4],
-		['Reconocer roles y responsabilidades cívicas', 		parseInt( this.respondido(177)) == 1, parseInt( this.respondido(177)) == 2, parseInt( this.respondido(177)) == 3, parseInt( this.respondido(177)) == 4],
-		['Ordenar un menú en un restaurante', 					parseInt( this.respondido(178)) == 1, parseInt( this.respondido(178)) == 2, parseInt( this.respondido(178)) == 3, parseInt( this.respondido(178)) == 4],
-		['Seguir una receta', 									parseInt( this.respondido(179)) == 1, parseInt( this.respondido(179)) == 2, parseInt( this.respondido(179)) == 3, parseInt( this.respondido(179)) == 4],
-		['Cocinar y preparar comida/alimentos', 				parseInt( this.respondido(180)) == 1, parseInt( this.respondido(180)) == 2, parseInt( this.respondido(180)) == 3, parseInt( this.respondido(180)) == 4],
-		['Reconocer y llevar una dieta saludable', 				parseInt( this.respondido(181)) == 1, parseInt( this.respondido(181)) == 2, parseInt( this.respondido(181)) == 3, parseInt( this.respondido(181)) == 4],
-		['Comprar comida/alimentos', 							parseInt( this.respondido(182)) == 1, parseInt( this.respondido(182)) == 2, parseInt( this.respondido(182)) == 3, parseInt( this.respondido(182)) == 4],
-		['Lavar y planchar su propia ropa', 					parseInt( this.respondido(183)) == 1, parseInt( this.respondido(183)) == 2, parseInt( this.respondido(183)) == 3, parseInt( this.respondido(183)) == 4],
-		['Comprar ropa apropiada', 								parseInt( this.respondido(184)) == 1, parseInt( this.respondido(184)) == 2, parseInt( this.respondido(184)) == 3, parseInt( this.respondido(184)) == 4],
-		['Tener conocimiento básico de primeros auxilios', 		parseInt( this.respondido(185)) == 1, parseInt( this.respondido(185)) == 2, parseInt( this.respondido(185)) == 3, parseInt( this.respondido(185)) == 4],
-		['Buenas destrezas de aseo personal', 					parseInt( this.respondido(186)) == 1, parseInt( this.respondido(186)) == 2, parseInt( this.respondido(186)) == 3, parseInt( this.respondido(186)) == 4],
-		['Comprar un carro', 									parseInt( this.respondido(187)) == 1, parseInt( this.respondido(187)) == 2, parseInt( this.respondido(187)) == 3, parseInt( this.respondido(187)) == 4],
-		['Leer e interpretar mapas', 							parseInt( this.respondido(188)) == 1, parseInt( this.respondido(188)) == 2, parseInt( this.respondido(188)) == 3, parseInt( this.respondido(188)) == 4]
+		['Obtener permiso/licencia para conducir', 				parseInt( this.respondido(158) ) == 1, parseInt( this.respondido(158) ) == 2, parseInt( this.respondido(158) ) == 3, parseInt( this.respondido(158) ) == 4],
+		['Tomar clases para conducir',   						parseInt( this.respondido(159) ) == 1, parseInt( this.respondido(159) ) == 2, parseInt( this.respondido(159) ) == 3, parseInt( this.respondido(159) ) == 4],
+		['Conocer diferentes opciones para transportarse', 		parseInt( this.respondido(160) ) == 1, parseInt( this.respondido(160) ) == 2, parseInt( this.respondido(160) ) == 3, parseInt( this.respondido(160) ) == 4],
+		['Asistir a eventos/actividades', 						parseInt( this.respondido(161) ) == 1, parseInt( this.respondido(161) ) == 2, parseInt( this.respondido(161) ) == 3, parseInt( this.respondido(161) ) == 4],
+		['Identificar recursos en la comunidad',				parseInt( this.respondido(162) ) == 1, parseInt( this.respondido(162) ) == 2, parseInt( this.respondido(162) ) == 3, parseInt( this.respondido(162) ) == 4],
+		['Identificar actividades de tiempo libre', 			parseInt( this.respondido(163) ) == 1, parseInt( this.respondido(163) ) == 2, parseInt( this.respondido(163) ) == 3, parseInt( this.respondido(163) ) == 4],
+		['Mantener el hogar limpio', 							parseInt( this.respondido(164) ) == 1, parseInt( this.respondido(164) ) == 2, parseInt( this.respondido(164) ) == 3, parseInt( this.respondido(164) ) == 4],
+		['Conocer opciones de vivienda', 						parseInt( this.respondido(165) ) == 1, parseInt( this.respondido(165) ) == 2, parseInt( this.respondido(165) ) == 3, parseInt( this.respondido(165) ) == 4],
+		['Pagar cuentas', 										parseInt( this.respondido(166) ) == 1, parseInt( this.respondido(166) ) == 2, parseInt( this.respondido(166) ) == 3, parseInt( this.respondido(166) ) == 4],
+		['Radicar Planillas sobre impuestos', 					parseInt( this.respondido(167) ) == 1, parseInt( this.respondido(167) ) == 2, parseInt( this.respondido(167) ) == 3, parseInt( this.respondido(167) ) == 4],
+		['Conocer servicios bancarios', 						parseInt( this.respondido(168) ) == 1, parseInt( this.respondido(168) ) == 2, parseInt( this.respondido(168) ) == 3, parseInt( this.respondido(168) ) == 4],
+		['Dar cambio correcto', 								parseInt( this.respondido(169) ) == 1, parseInt( this.respondido(169) ) == 2, parseInt( this.respondido(169) ) == 3, parseInt( this.respondido(169) ) == 4],
+		['Manejar dinero en general', 							parseInt( this.respondido(170) ) == 1, parseInt( this.respondido(170) ) == 2, parseInt( this.respondido(170) ) == 3, parseInt( this.respondido(170) ) == 4],
+		['Realizar compras por si mismo', 						parseInt( this.respondido(171) ) == 1, parseInt( this.respondido(171) ) == 2, parseInt( this.respondido(171) ) == 3, parseInt( this.respondido(171) ) == 4],
+		['Entender las elecciones y como votar (si aplica)', 	parseInt( this.respondido(173) ) == 1, parseInt( this.respondido(173) ) == 2, parseInt( this.respondido(173) ) == 3, parseInt( this.respondido(173) ) == 4],
+		['Respetar figuras de autoridad, reglas y leyes', 		parseInt( this.respondido(175) ) == 1, parseInt( this.respondido(175) ) == 2, parseInt( this.respondido(175) ) == 3, parseInt( this.respondido(175) ) == 4],
+		['Calcular salario', 									parseInt( this.respondido(176) ) == 1, parseInt( this.respondido(176) ) == 2, parseInt( this.respondido(176) ) == 3, parseInt( this.respondido(176) ) == 4],
+		['Reconocer roles y responsabilidades cívicas', 		parseInt( this.respondido(177) ) == 1, parseInt( this.respondido(177) ) == 2, parseInt( this.respondido(177) ) == 3, parseInt( this.respondido(177) ) == 4],
+		['Ordenar un menú en un restaurante', 					parseInt( this.respondido(178) ) == 1, parseInt( this.respondido(178) ) == 2, parseInt( this.respondido(178) ) == 3, parseInt( this.respondido(178) ) == 4],
+		['Seguir una receta', 									parseInt( this.respondido(179) ) == 1, parseInt( this.respondido(179) ) == 2, parseInt( this.respondido(179) ) == 3, parseInt( this.respondido(179) ) == 4],
+		['Cocinar y preparar comida/alimentos', 				parseInt( this.respondido(180) ) == 1, parseInt( this.respondido(180) ) == 2, parseInt( this.respondido(180) ) == 3, parseInt( this.respondido(180) ) == 4],
+		['Reconocer y llevar una dieta saludable', 				parseInt( this.respondido(181) ) == 1, parseInt( this.respondido(181) ) == 2, parseInt( this.respondido(181) ) == 3, parseInt( this.respondido(181) ) == 4],
+		['Comprar comida/alimentos', 							parseInt( this.respondido(182) ) == 1, parseInt( this.respondido(182) ) == 2, parseInt( this.respondido(182) ) == 3, parseInt( this.respondido(182) ) == 4],
+		['Lavar y planchar su propia ropa', 					parseInt( this.respondido(183) ) == 1, parseInt( this.respondido(183) ) == 2, parseInt( this.respondido(183) ) == 3, parseInt( this.respondido(183) ) == 4],
+		['Comprar ropa apropiada', 								parseInt( this.respondido(184) ) == 1, parseInt( this.respondido(184) ) == 2, parseInt( this.respondido(184) ) == 3, parseInt( this.respondido(184) ) == 4],
+		['Tener conocimiento básico de primeros auxilios', 		parseInt( this.respondido(185) ) == 1, parseInt( this.respondido(185) ) == 2, parseInt( this.respondido(185) ) == 3, parseInt( this.respondido(185) ) == 4],
+		['Buenas destrezas de aseo personal', 					parseInt( this.respondido(186) ) == 1, parseInt( this.respondido(186) ) == 2, parseInt( this.respondido(186) ) == 3, parseInt( this.respondido(186) ) == 4],
+		['Comprar un carro', 									parseInt( this.respondido(187) ) == 1, parseInt( this.respondido(187) ) == 2, parseInt( this.respondido(187) ) == 3, parseInt( this.respondido(187) ) == 4],
+		['Leer e interpretar mapas', 							parseInt( this.respondido(188) ) == 1, parseInt( this.respondido(188) ) == 2, parseInt( this.respondido(188) ) == 3, parseInt( this.respondido(188) ) == 4] 
 
 	]; 
 
@@ -985,333 +985,6 @@ reporte.dataTables = function(){
 		['Conocer sobre los servicios de; electricidad, agua y teléfono', 				parseInt( this.respondido(407) ) ]	
 	]; 
 
-//FORMULARIO 9 >>>>>>>>>>>>>>>>>>>>>>>>>
-
-	//SECCION 1: Estimado de la Ayuda de Acomodos Para las Clases
-
-	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
-		
-	//DATATABLE  
-	DS_411_418 = [
-		//Columnas
-		['Durante las Clases', 'No Aplica', 'Nada', 'Un Poco', 'Bastante', 'Mucho'],
-		//Filas
-		['Grabar al maestro durante la clase', 				(this.respondido(411) == 1), (this.respondido(411) == 2), (this.respondido(411) == 3), (this.respondido(411) == 4), (this.respondido(411) == 5)],
-		['Tener tiempo adicional para realizar las tarea',	(this.respondido(412) == 1), (this.respondido(412) == 2), (this.respondido(412) == 3), (this.respondido(412) == 4), (this.respondido(412) == 5)],
-		['Hacer anotaciones de la clase', 					(this.respondido(413) == 1), (this.respondido(413) == 2), (this.respondido(413) == 3), (this.respondido(413) == 4), (this.respondido(413) == 5)],
-		['Grabar los libros de texto', 						(this.respondido(414) == 1), (this.respondido(414) == 2), (this.respondido(414) == 3), (this.respondido(414) == 4), (this.respondido(414) == 5)],
-		['Usar una computadora para escribir', 				(this.respondido(415) == 1), (this.respondido(415) == 2), (this.respondido(415) == 3), (this.respondido(415) == 4), (this.respondido(415) == 5)],
-		['Hacer tareas y pruebas alternas', 				(this.respondido(416) == 1), (this.respondido(416) == 2), (this.respondido(416) == 3), (this.respondido(416) == 4), (this.respondido(416) == 5)],
-		['Hacer preguntas durante las clases', 				(this.respondido(417) == 1), (this.respondido(417) == 2), (this.respondido(417) == 3), (this.respondido(417) == 4), (this.respondido(417) == 5)],
-		['Participar de un grupo de estudio', 				(this.respondido(418) == 1), (this.respondido(418) == 2), (this.respondido(418) == 3), (this.respondido(418) == 4), (this.respondido(418) == 5)]
-	]; 
-
-	//SECCION 2: Estimado de la Ayuda de Acomodos Para Tomar Exámenes
-
-	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
-		
-	//DATATABLE  
-	DS_420_423 = [
-		//Columnas
-		['Al prepararte para una prueba/examen, ¿Cuáles acomodos serian de mayor beneficio para ti?', 'No Aplica', 'Nada', 'Un Poco', 'Bastante', 'Mucho'],
-		//Filas
-		['Pedir tiempo adicional para completar el examen',	(this.respondido(420) == 1), (this.respondido(420) == 2), (this.respondido(420) == 3), (this.respondido(420) == 4), (this.respondido(420) == 5)],
-		['Tomar el examen en otro salón',					(this.respondido(421) == 1), (this.respondido(421) == 2), (this.respondido(421) == 3), (this.respondido(421) == 4), (this.respondido(421) == 5)],
-		['Pedir que el examen sea dado de forma oral', 		(this.respondido(422) == 1), (this.respondido(422) == 2), (this.respondido(422) == 3), (this.respondido(422) == 4), (this.respondido(422) == 5)],
-		['Pedir asistencia en las áreas de escritura', 		(this.respondido(423) == 1), (this.respondido(423) == 2), (this.respondido(423) == 3), (this.respondido(423) == 4), (this.respondido(423) == 5)]
-	]; 
-
-	//SECCION 3: Estimado de la Ayuda de Acomodos Para la Escritura
-
-	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
-		
-	//DATATABLE  
-	DS_425_427 = [
-		//Columnas
-		['De presentar dificultad con la lectura, ¿Cuáles acomodos serían de mayor beneficio para ti?', 'No Aplica', 'Nada', 'Un Poco', 'Bastante', 'Mucho'],
-		//Filas
-		['Pedir que alguien lea en voz alta los textos', 	(this.respondido(425) == 1), (this.respondido(425) == 2), (this.respondido(425) == 3), (this.respondido(425) == 4), (this.respondido(425) == 5)],
-		['Pedir guías de estudio',							(this.respondido(426) == 1), (this.respondido(426) == 2), (this.respondido(426) == 3), (this.respondido(426) == 4), (this.respondido(426) == 5)],
-		['Pedir tiempo adicional para leer', 				(this.respondido(427) == 1), (this.respondido(427) == 2), (this.respondido(427) == 3), (this.respondido(427) == 4), (this.respondido(427) == 5)]
-	]; 
-
-	//SECCION 4: Estimado de la Ayuda de Acomodos Para la Escritura
-
-	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
-		
-	//DATATABLE  
-	DS_429_433 = [
-		//Columnas
-		['De presentar dificultad con la escritura, ¿Cuáles acomodos serían de mayor beneficio para ti?', 'No Aplica', 'Nada', 'Un Poco', 'Bastante', 'Mucho'],
-		//Filas
-		['Pedir que me revisen los escritos para corregirlos',	(this.respondido(429) == 1), (this.respondido(429) == 2), (this.respondido(429) == 3), (this.respondido(429) == 4)], (this.respondido(429) == 5)],
-		['Dictarme el trabajo para luego escribirlo',			(this.respondido(430) == 1), (this.respondido(430) == 2), (this.respondido(430) == 3), (this.respondido(430) == 4)], (this.respondido(430) == 5)],
-		['Presentar trabajos de forma oral', 					(this.respondido(431) == 1), (this.respondido(431) == 2), (this.respondido(431) == 3), (this.respondido(431) == 4)], (this.respondido(431) == 5)],
-		['Solicitar a alguien que tome notas en clase', 		(this.respondido(432) == 1), (this.respondido(432) == 2), (this.respondido(432) == 3), (this.respondido(432) == 4)], (this.respondido(432) == 5)],
-		['Grabar las clases', 									(this.respondido(433) == 1), (this.respondido(433) == 2), (this.respondido(433) == 3), (this.respondido(433) == 4)], (this.respondido(433) == 5)]	
-	]; 
-
-	//SECCION 5: Estimado de la Ayuda de Acomodos Para Matemáticas
-
-	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
-		
-	//DATATABLE  
-	DS_435_440 = [
-		//Columnas
-		['De presentar dificultad con las matemáticas, ¿Cuáles acomodos serían de mayor beneficio para ti?', 'No Aplica', 'Nada', 'Un Poco', 'Bastante', 'Mucho'],
-		//Filas
-		['Pedir explicaciones adicionales',									(this.respondido(435) == 1), (this.respondido(435) == 2), (this.respondido(435) == 3), (this.respondido(435) == 4)], (this.respondido(435) == 5)],
-		['Hacer lista de los pasos para resolver un problema',				(this.respondido(436) == 1), (this.respondido(436) == 2), (this.respondido(436) == 3), (this.respondido(436) == 4)], (this.respondido(436) == 5)],
-		['Programar periodo para trabajar individualmente con la maestra',	(this.respondido(437) == 1), (this.respondido(437) == 2), (this.respondido(437) == 3), (this.respondido(437) == 4)], (this.respondido(437) == 5)],
-		['Utilizar papel cuadriculado', 									(this.respondido(438) == 1), (this.respondido(438) == 2), (this.respondido(438) == 3), (this.respondido(438) == 4)], (this.respondido(438) == 5)],
-		['Utilizar una calculadora gráfica', 								(this.respondido(439) == 1), (this.respondido(439) == 2), (this.respondido(439) == 3), (this.respondido(439) == 4)], (this.respondido(439) == 5)],
-		['Pedir que lean el examen en un grupo pequeño', 					(this.respondido(440) == 1), (this.respondido(440) == 2), (this.respondido(440) == 3), (this.respondido(440) == 4)], (this.respondido(440) == 5)]
-	]; 
-
-
-	//SECCION 6: Estimado de la Ayuda de Acomodos Para Organizarse
-
-	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
-		
-	//DATATABLE  
-	DS_442_446 = [
-		//Columnas
-		['De presentar dificultad con la organización, ¿Cuáles acomodos serían de mayor beneficio para ti?', 'No Aplica', 'Nada', 'Un Poco', 'Bastante', 'Mucho'],
-		//Filas
-		['Pedir una descripción escrita del curso',							(this.respondido(442) == 1), (this.respondido(442) == 2), (this.respondido(442) == 3), (this.respondido(442) == 4)], (this.respondido(442) == 5)],
-		['Tener las tareas/trabajo antes de tiempo',						(this.respondido(443) == 1), (this.respondido(443) == 2), (this.respondido(443) == 3), (this.respondido(443) == 4)], (this.respondido(443) == 5)],
-		['Mantener un calendario con todas las tareas y trabajos', 			(this.respondido(444) == 1), (this.respondido(444) == 2), (this.respondido(444) == 3), (this.respondido(444) == 4)], (this.respondido(444) == 5)],
-		['Fragmentar tareas o trabajos extensos en partes', 				(this.respondido(445) == 1), (this.respondido(445) == 2), (this.respondido(445) == 3), (this.respondido(445) == 4)], (this.respondido(445) == 5)],
-		['Pedir al maestro que verifique mi plan de las tareas del curso',	(this.respondido(446) == 1), (this.respondido(446) == 2), (this.respondido(446) == 3), (this.respondido(446) == 4)], (this.respondido(446) == 5)]		
-	]; 
-
-//FORMULARIO 10 >>>>>>>>>>>>>>>>>>>>>>>>
-
-	//Eres una persona dinámica la cual disfruta de utilizar herramientas, máquinas y crear objetos con tus manos. 
-	//También te gusta o quisieras trabajar en el mantenimiento y reparación de equipos, al igual que comprender  
-	//cómo funcionan los mismos para que de esa forma sean más eficientes al manejarlos.
-	//SECCION 1
-	//DATATABLE  
-	DS_451_A = [
-		//Columnas
-		['¿Cuáles son las áreas de actividades o tareas que más te interesan?', 'Respuestas | S&iacute; = Azul No = Rojo'],
-		//Filas
-		['Prefiero hacer actividades físicas a leer un libro',										( this.respondido(451.1 == "true") )],
-		['Me gusta trabajar con mis manos', 														( this.respondido(451.5 == "true") )],
-		['Disfruto de diseñar, inventar y crear nuevas cosas',  									( this.respondido(451.9 == "true") )],
-		['Me gusta trabajar con materiales y equipo.',  											( this.respondido(451.12 == "true") )],
-		['Me gusta aprender cómo funcionan las cosas cuando las desmonto y las vuelvo a armar.',  	( this.respondido(451.15 == "true") )],
-		['Me gusta trabajar con maquinaria u objetos en vez de con personas',  						( this.respondido(451.16 == "true") )],
-		['Me gusta construir y reparar cosas.',  													( this.respondido(451.18 == "true") )],
-		['Me gusta aprender a usar herramientas diferentes.',  										( this.respondido(451.23 == "true") )]
-	]; 
-
-	//SECCION2
-	//Eres una persona que disfruta mucho de servir y ayudar otras personas. Disfrutas de cuidar, ayudar, convencer y persuadir a otros.  
-	//También te gusta ser líder o supervisor, al igual que ser y  formar parte de un equipo de trabajo.
-	//DATATABLE  
-	DS_451_B = [
-		//Columnas
-		['¿Cuáles son las áreas de actividades o tareas que más te interesan?', 'Respuestas | S&iacute; = Azul No = Rojo'],
-		//Filas
-		['Gusto de ayudar a otros cuando necesitan de mi ayuda', 				( this.respondido(451.3 == "true") )],
-		['Me gusta ser el líder de un grupo de personas.',  					( this.respondido(451.6 == "true") )],
-		['Gusto de cuidar a otros',  											( this.respondido(451.8 == "true") )],
-		['Me gustaría un trabajo manejando/ayudando personas todo el día.',  	( this.respondido(451.11 == "true") )],
-		['Me gusta compartir con otros',  										( this.respondido(451.14 == "true") )],
-		['Me gusta convencer a otros para que hagan cosas a mi manera.',		( this.respondido(451.17 == "true") )],
-		['Me gusta compartir con otras personas.',  							( this.respondido(451.20 == "true") )],
-		['Me gusta escuchar las opiniones y puntos de vista de otros.',  		( this.respondido(451.22 == "true") )]
-	];
-
-
-	//SECCION 3
-	//Eres una persona  que gustas manejar datos e información. Luce que disfrutas expresarte  a través de la escritura,  
-	//la música, el arte,  investigando y experimentando,  resolviendo problemas, estudiando y leyendo.
-	DS_451_C = [
-		//Columnas
-		['¿Cuáles son las áreas de actividades o tareas que más te interesan?', 'Respuestas | S&iacute; = Azul No = Rojo'],
-		//Filas
-		['Disfruto de juegos que me hagan pensar y hacer rompe cabezas.',									( this.respondido(451.2 == "true") )],
-		['Disfruto de lecturas que me enseñen sobre nuevos temas o tareas.', 								( this.respondido(451.4 == "true") )],
-		['Al presentarse un problema, prefiero conocer todos los hechos antes de comenzar a resolverlo',  	( this.respondido(451.7 == "true") )],
-		['Me expreso mejor a través del arte, música y escritos.',  										( this.respondido(451.10 == "true") )],
-		['Disfruto de aprender nueva información e ideas.',  												( this.respondido(451.13 == "true") )],
-		['Me gusta realizar proyectos de investigación.',  													( this.respondido(451.19 == "true") )],
-		['Me gusta pensar en nuevas ideas y sobre maneras diferentes de realizar las cosas.',  				( this.respondido(451.21 == "true") )],
-		['Se me hace más fácil seguir las instrucciones escritas .',  										( this.respondido(451.24 == "true") )]
-	]; 
-
-//FORMULARIO 11 >>>>>>>>>>>>>>>>>>>>>>>>
-
-	//SECCION 1: Destrezas Académicas que el Estudiante Indica Posee
-
-	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
-
-	//DATABLE
-	DS_455 = [
-		//Columnas
-		['Áreas Académicas que el/la estudiante indica que posee:', 'Sí', 'No'],
-		//Filas
-		['Soy bueno/a en matemáticas',				(this.respondido(455.1) == "true"), (this.respondido(455.1) == "true") )],
-		['Soy bueno/a en inglés',					(this.respondido(455.2) == "true"), (this.respondido(455.2) == "true") )],
-		['Soy bueno/a en ciencias',					(this.respondido(455.3) == "true"), (this.respondido(455.3) == "true") )],
-		['Soy bueno/a en estudios sociales',		(this.respondido(455.4) == "true"), (this.respondido(455.4) == "true") )],
-		['Soy bueno/a en estudios vocacionales',	(this.respondido(455.5) == "true"), (this.respondido(455.5) == "true") )],
-		['Soy bueno/a educación física',			(this.respondido(455.6) == "true"), (this.respondido(455.6) == "true") )],		
-		['Soy bueno/a en arte',						(this.respondido(455.7) == "true"), (this.respondido(455.7) == "true") )],
-		['Soy bueno/a en música',					(this.respondido(455.8) == "true"), (this.respondido(455.8) == "true") )],
-		['Otros',									(this.respondido(455.9) == "true"), (this.respondido(455.9) == "true") )]
-
-	]; 
-
-	//DATATABLE  
-	DS_458_466 = [
-		//Columnas
-		['Áreas Académicas que el/la estudiante indica que posee | (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
-		//Filas
-		['Soy bueno/a en matemáticas',				parseInt( this.respondido(458) )],
-		['Soy bueno/a en inglés',					parseInt( this.respondido(459) )],
-		['Soy bueno/a en ciencias',					parseInt( this.respondido(460) )],
-		['Soy bueno/a en estudios sociales',		parseInt( this.respondido(461) )],
-		['Soy bueno/a en estudios vocacionales',	parseInt( this.respondido(462) )],
-		['Soy bueno/a educación física',			parseInt( this.respondido(463) )],
-		['Soy bueno/a en arte',						parseInt( this.respondido(464) )],
-		['Soy bueno/a en música',					parseInt( this.respondido(465) )],
-		['Otros',									parseInt( this.respondido(466) )]
-	]; 
-
-
-	//SECCION 2: Capacidades Físicas que el Estudiante Indica Posee
-
-	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
-
-	//DATABLE
-	DS_468 = [
-		//Columnas
-		['Capacidades Físicas que el/la Estudiante Indica Posee', 'Sí', 'No'],
-		//Filas
-		['Puedo levantar objetos pesados',		(this.respondido(468.1) == "true"), (this.respondido(468.1) == "true") )],
-		['Puedo levantar objetos livianos',		(this.respondido(468.2) == "true"), (this.respondido(468.2) == "true") )],
-		['Puedo bailar',						(this.respondido(468.3) == "true"), (this.respondido(468.3) == "true") )],
-		['Puedo caminar distancias cortas',		(this.respondido(468.4) == "true"), (this.respondido(468.4) == "true") )],
-		['Puedo caminar distancias largas',		(this.respondido(468.5) == "true"), (this.respondido(468.5) == "true") )],
-		['Puedo correr distancias cortas',		(this.respondido(468.6) == "true"), (this.respondido(468.6) == "true") )],		
-		['Puedo subir escaleras, sogas, etc.',	(this.respondido(468.7) == "true"), (this.respondido(468.7) == "true") )],
-		['Puedo lanzar objetos',				(this.respondido(468.8) == "true"), (this.respondido(468.8) == "true") )],
-		['Puedo empujar objetos',				(this.respondido(468.9) == "true"), (this.respondido(468.9) == "true") )],
-		['Otros',								(this.respondido(468.10) == "true"), (this.respondido(468.10) == "true") )]
-	]; 
-
-	//DATATABLE  
-	DS_471_479 = [
-		//Columnas
-		['Capacidades Físicas que el/la Estudiante Indica Posee | (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
-		//Filas
-		['Puedo levantar objetos pesados',		parseInt( this.respondido(471) )],
-		['Puedo levantar objetos livianos',		parseInt( this.respondido(472) )],
-		['Puedo bailar',						parseInt( this.respondido(473) )],
-		['Puedo caminar distancias cortas',		parseInt( this.respondido(474) )],
-		['Puedo caminar distancias largas',		parseInt( this.respondido(475) )],
-		['Puedo correr distancias cortas',		parseInt( this.respondido(476) )],
-		['Puedo subir escaleras, sogas, etc.',	parseInt( this.respondido(477) )],
-		['Puedo lanzar objetos',				parseInt( this.respondido(478) )],
-		['Otros',								parseInt( this.respondido(479) )]
-
-	]; 
-
-
-	//SECCION 3: Capacidades Mentales que el Estudiante Indica Posee
-
-	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
-
-	//DATABLE
-	DS_481 = [
-		//Columnas
-		['Capacidades Mentales que el/la Estudiante Indica Posee', 'Sí', 'No'],
-		//Filas
-		['Me acuerdo bien de las cosaspoesías, chistes, información, etc.',					(this.respondido(481.1) == "true"), (this.respondido(481.1) == "true") )],
-		['Tengo buena escritura y caligrafía',												(this.respondido(481.2) == "true"), (this.respondido(482.2) == "true") )],
-		['Puedo escribir cuentos, historias, ensayos',										(this.respondido(481.3) == "true"), (this.respondido(481.3) == "true") )],
-		['Puedo hablar correctamente sin abreviar o utilizar jerga.',						(this.respondido(481.4) == "true"), (this.respondido(481.4) == "true") )],
-		['Puedo hablar con pronunciación correcta',											(this.respondido(481.5) == "true"), (this.respondido(481.5) == "true") )],
-		['Se restar correctamente',															(this.respondido(481.6) == "true"), (this.respondido(481.6) == "true") )],		
-		['Se sumar correctamente',															(this.respondido(481.7) == "true"), (this.respondido(481.7) == "true") )],
-		['Se multiplicar correctamente',													(this.respondido(481.8) == "true"), (this.respondido(481.8) == "true") )],
-		['Se dividir correctamente',														(this.respondido(481.9) == "true"), (this.respondido(481.9) == "true") )],
-		['Se resolver problemas matemáticos fácilmente',									(this.respondido(481.10) == "true"),	(this.respondido(481.10) == "true") )],
-		['Se resolver acertijos y rompecabezas',											(this.respondido(481.11) == "true"), (this.respondido(481.11) == "true") )],		
-		['Puedo leer fácilmente y entender el contenido y significado de la información',	(this.respondido(481.12) == "true"), (this.respondido(481.12) == "true") )],
-		['Otros',																			(this.respondido(481.13) == "true"), (this.respondido(481.13) == "true") )]
-
-	]; 
-
-	//DATATABLE  
-	DS_484_497 = [
-		//Columnas
-		['Capacidades Mentales que el/la Estudiante Indica Posee | (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
-		//Filas
-		['Me acuerdo bien de las cosaspoesías, chistes, información, etc.',					parseInt( this.respondido(484) )],
-		['Tengo buena escritura y caligrafía',												parseInt( this.respondido(485) )],
-		['Puedo escribir cuentos, historias, ensayos',										parseInt( this.respondido(486) )],
-		['Puedo hablar correctamente sin abreviar o utilizar jerga.',						parseInt( this.respondido(487) )],
-		['Puedo hablar con pronunciación correcta',											parseInt( this.respondido(488) )],
-		['Se restar correctamente',															parseInt( this.respondido(489) )],
-		['Se sumar correctamente',															parseInt( this.respondido(490) )],
-		['Se multiplicar correctamente',													parseInt( this.respondido(492) )],
-		['Se dividir correctamente',														parseInt( this.respondido(493) )],
-		['Se resolver problemas matemáticos fácilmente',									parseInt( this.respondido(494) )],
-		['Se resolver acertijos y rompecabezas',											parseInt( this.respondido(495) )],
-		['Puedo leer fácilmente y entender el contenido y significado de la información',	parseInt( this.respondido(496) )],
-		['Otros',																			parseInt( this.respondido(497) )]
-
-	]; 
-
-	//SECCION 4: Talentos Especiales que el Estudiante Indica Posee
-
-	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
-
-	//DATABLE
-	DS_499 = [
-		//Columnas
-		['Talentos Especiales que el/la Estudiante Indica Posee', 'Sí', 'No'],
-		//Filas
-		['Trabajo bien con las manos',					(this.respondido(499.1) == "true"), (this.respondido(499.1) == "true") )],
-		['Arreglo y monto cosas',						(this.respondido(499.2) == "true"), (this.respondido(499.2) == "true") )],
-		['Soy líder en actividades de grupo',			(this.respondido(499.3) == "true"), (this.respondido(499.3) == "true") )],
-		['Me llevo bien con sus compañeros',			(this.respondido(499.4) == "true"), (this.respondido(499.4) == "true") )],
-		['Me llevo bien con personas de autoridad',		(this.respondido(499.5) == "true"), (this.respondido(499.5) == "true") )],
-		['Se tocar música, cantar, bailar, o deportes',	(this.respondido(499.6) == "true"), (this.respondido(499.6) == "true") )],		
-		['Se dibujar, pintar y/o esculpir',				(this.respondido(499.7) == "true"), (this.respondido(499.7) == "true") )],
-		['Otros',										(this.respondido(499.8) == "true"), (this.respondido(499.8) == "true") )]
-	]; 
-
-	//DATATABLE  
-	DS_502_509 = [
-		//Columnas
-		['Talentos Especiales que el/la Estudiante Indica Posee | (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
-		//Filas
-		['Trabajo bien con las manos',					parseInt( this.respondido(502) )],
-		['Arreglo y monto cosas',						parseInt( this.respondido(503) )],
-		['Soy líder en actividades de grupo',			parseInt( this.respondido(504) )],
-		['Me llevo bien con sus compañeros',			parseInt( this.respondido(505) )],
-		['Me llevo bien con personas de autoridad',		parseInt( this.respondido(506) )],
-		['Se tocar música, cantar, bailar, o deportes',	parseInt( this.respondido(507) )],
-		['Se dibujar, pintar y/o esculpir',				parseInt( this.respondido(508) )],
-		['Otros',										parseInt( this.respondido(509) )]
-	]; 
-
-
 // >>>>>>>>>>>>>>>>>>>> Drawing Modules (order matters) >>>>>>>>>>>>>>>>>>>>
 
 //F1
@@ -1416,7 +1089,66 @@ reporte.dataTables = function(){
 
 //F8
 	formBreak(".form8", "Destrezas para la Vida");
+	//piechart
 	laDataTable(DS_158_188, "DS_158_188", ".form8");
+	laDataTableDos(DS_191_219, "DS_191_219", ".form8");
+
+	formBreak(".form8", "Destrezas de cocina");
+	//piechart
+	laDataTable(DS_221_228, "DS_221_228", ".form8");
+	laDataTableDos(DS_230_237, "DS_230_237", ".form8");
+
+	formBreak(".form8", "Destrezas de lavandería/”laundry” personal");
+	//piechart
+	laDataTable(DS_239_245, "DS_239_245", ".form8");
+	laDataTableDos(DS_247_253, "DS_247_253", ".form8");
+
+	formBreak(".form8", "Destrezas de convivencia familiar");
+	//piechart
+	laDataTable(DS_255_259, "DS_255_259", ".form8");
+	laDataTableDos(DS_261_265, "DS_261_265", ".form8");
+
+	formBreak(".form8", "Destrezas de limpieza en el hogar");
+	//piechart
+	laDataTable(DS_267_272, "DS_158_188", ".form8");
+	laDataTableDos(	DS_274_279, "DS_221_228", ".form8");
+
+/*
+
+	formBreak(".form8", "Destrezas de jardineria/limpieza áreas verdes");
+	//piechart
+
+	formBreak(".form8", "Destrezas Personales");
+	//piechart
+	laDataTable(DS_281_284, "DS_158_188", ".form8");
+	laDataTableDos(DS_286_290, "DS_221_228", ".form8");
+
+	formBreak(".form8", "Destrezas de salud");
+	//piechart
+	laDataTable(DS_292_297, "DS_158_188", ".form8");
+	laDataTableDos(DS_299_304, "DS_221_228", ".form8");
+
+	formBreak(".form8", "Destrezas de comunidad");
+	//piechart
+	laDataTable(DS_299_304, "DS_158_188", ".form8");
+	laDataTableDos( , "DS_221_228", ".form8");
+
+	formBreak(".form8", "Actividades o intereses en el tiempo libre");
+	//piechart
+	laDataTable(DS_306_317, "DS_158_188", ".form8");
+	laDataTableDos(DS_319_331, "DS_221_228", ".form8");
+
+	formBreak(".form8", "Destrezas para planes ocupacionales futuros");
+	//piechart
+	laDataTable(DS_333_342, "DS_158_188", ".form8");
+	laDataTableDos(DS_344_353 "DS_221_228", ".form8");
+
+	formBreak(".form8", "Destrezas de vivienda");
+	//piechart
+	laDataTable(DS_367_377, "DS_158_188", ".form8");
+	laDataTableDos(DS_379_383, "DS_221_228", ".form8");
+
+*/
 
 }/////////////////////////////////////////////////////////////////////////
 
