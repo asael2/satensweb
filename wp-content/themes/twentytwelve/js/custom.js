@@ -168,7 +168,7 @@ var reporte = {
 };//Reporte end
 
 reporte.sumaCampos = function(firstField, lastField){
-    var i, A = 0, B = 0, C = 0, D = 0;
+    var i, A = 0, B = 0, C = 0, D = 0, E = 0;
 	for ( i = firstField; i <= lastField; i++ ){
 		switch(this.respondido(i)){
 			case "1":
@@ -183,11 +183,14 @@ reporte.sumaCampos = function(firstField, lastField){
 			case "4":
 				D++;
 				break;
+			case "5":
+				E++;
+				break;
 			default:
 				console.log("no value in: "+i);
 		}//switch eof
 	}
-	return{ "A": A, "B":B, "C":C, "D":D };
+	return{ "A": A, "B":B, "C":C, "D":D, "E":E };
 };
 
 reporte.respondido = function (fieldN) {
