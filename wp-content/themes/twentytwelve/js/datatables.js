@@ -1108,8 +1108,6 @@ reporte.dataTables = function(){
 		['Participar de un grupo de estudio', 				(this.respondido(418) == 1), (this.respondido(418) == 2), (this.respondido(418) == 3), (this.respondido(418) == 4), (this.respondido(418) == 5)]
 	]; 
 
-//SECCION 2: Estimado de la Ayuda de Acomodos Para Tomar Exámenes
-
 	//PIECHART
 	DS_sum_420_423 = [ //sum of field 
 		//Columnas
@@ -1133,8 +1131,6 @@ reporte.dataTables = function(){
 		['Pedir asistencia en las áreas de escritura', 		(this.respondido(423) == 1), (this.respondido(423) == 2), (this.respondido(423) == 3), (this.respondido(423) == 4), (this.respondido(423) == 5)]
 	]; 
 
-//SECCION 3: Estimado de la Ayuda de Acomodos Para la Escritura
-
 	//PIECHART
 	DS_sum_425_427 = [ //sum of field 
 		//Columnas
@@ -1156,8 +1152,6 @@ reporte.dataTables = function(){
 		['Pedir guías de estudio',							(this.respondido(426) == 1), (this.respondido(426) == 2), (this.respondido(426) == 3), (this.respondido(426) == 4), (this.respondido(426) == 5)],
 		['Pedir tiempo adicional para leer', 				(this.respondido(427) == 1), (this.respondido(427) == 2), (this.respondido(427) == 3), (this.respondido(427) == 4), (this.respondido(427) == 5)]
 	]; 
-
-//SECCION 4: Estimado de la Ayuda de Acomodos Para la Escritura
 
 	//PIECHART
 	DS_sum_429_433 = [ //sum of field 
@@ -1182,8 +1176,6 @@ reporte.dataTables = function(){
 		['Solicitar a alguien que tome notas en clase', 		(this.respondido(432) == 1), (this.respondido(432) == 2), (this.respondido(432) == 3), (this.respondido(432) == 4), (this.respondido(432) == 5)],
 		['Grabar las clases', 									(this.respondido(433) == 1), (this.respondido(433) == 2), (this.respondido(433) == 3), (this.respondido(433) == 4), (this.respondido(433) == 5)]	
 	]; 
-
-//SECCION 5: Estimado de la Ayuda de Acomodos Para Matemáticas
 
 	//PIECHART
 	DS_sum_435_440 = [ //sum of field 
@@ -1210,9 +1202,6 @@ reporte.dataTables = function(){
 		['Pedir que lean el examen en un grupo pequeño', 					(this.respondido(440) == 1), (this.respondido(440) == 2), (this.respondido(440) == 3), (this.respondido(440) == 4), (this.respondido(440) == 5)]
 	]; 
 
-
-//SECCION 6: Estimado de la Ayuda de Acomodos Para Organizarse
-
 	//PIECHART
 	DS_sum_442_446 = [ //sum of field 
 		//Columnas
@@ -1236,6 +1225,11 @@ reporte.dataTables = function(){
 		['Fragmentar tareas o trabajos extensos en partes', 				(this.respondido(445) == 1), (this.respondido(445) == 2), (this.respondido(445) == 3), (this.respondido(445) == 4), (this.respondido(445) == 5)],
 		['Pedir al maestro que verifique mi plan de las tareas del curso',	(this.respondido(446) == 1), (this.respondido(446) == 2), (this.respondido(446) == 3), (this.respondido(446) == 4), (this.respondido(446) == 5)]		
 	]; 		
+
+//FORMULARIO 10 >>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
 
 // >>>>>>>>>>>>>>>>>>>> Drawing Modules (order matters) >>>>>>>>>>>>>>>>>>>>
 
@@ -1413,15 +1407,15 @@ reporte.dataTables = function(){
 	pieChart(DS_sum_425_427, "DS_sum_425_427", ".form9", 'Por Ciento Estimado de la Ayuda de Acomodos Para la Lectura');	
 	laDataTable(DS_425_427, "DS_425_427", ".form9");
 
-		formBreak(".form9", "Estimado de la Ayuda de Acomodos Para la Escritura");
+	formBreak(".form9", "Estimado de la Ayuda de Acomodos Para la Escritura");
 	pieChart(DS_sum_429_433, "DS_sum_429_433", ".form9", 'Por Ciento Estimado de la Ayuda de Acomodos Para la Escritura');	
 	laDataTable(DS_429_433, "DS_429_433", ".form9");
 
-		formBreak(".form9", "Estimado de la Ayuda de Acomodos Para Matemáticas");
+	formBreak(".form9", "Estimado de la Ayuda de Acomodos Para Matemáticas");
 	pieChart(DS_sum_435_440, "DS_sum_435_440", ".form9", 'Por Ciento Estimado de la Ayuda de Acomodos Para Matemáticas');	
 	laDataTable(DS_435_440, "DS_435_440", ".form9");
 
-		formBreak(".form9", "Estimado de la Ayuda de Acomodos Para Organizarse");
+	formBreak(".form9", "Estimado de la Ayuda de Acomodos Para Organizarse");
 	pieChart(DS_sum_442_446, "DS_sum_442_446", ".form9", 'Por Ciento Estimado de la Ayuda de Acomodos Para Organizarse');	
 	laDataTable(DS_442_446, "DS_442_446", ".form9");	
 
