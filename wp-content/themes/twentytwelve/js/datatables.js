@@ -13,7 +13,9 @@ reporte.dataTables = function(){
 	DS_411_418, DS_420_423, DS_429_433, DS_429_433, DS_435_440, DS_442_446, 
 	DS_451_A, DS_451_B, DS_451_C,
 	DS_455,	DS_458_466, DS_468, DS_471_479, DS_481, DS_484_497, DS_499, DS_502_509,
-	DS_sum_221_228;
+	DS_sum_221_228, DS_sum_158_188, DS_sum_239_245, DS_sum_391_398, DS_sum_379_383, 
+	DS_sum_355_365, DS_sum_239_245, DS_sum_255_259, DS_sum_267_272, DS_sum_281_284, 
+	DS_sum_292_297,	DS_sum_306_317, DS_sum_333_342;
 
 
 //FORMULARIO 1 >>>>>>>>>>>>>>>>>>>>>>>>>
@@ -530,7 +532,18 @@ reporte.dataTables = function(){
 
 //FORMULARIO 8 >>>>>>>>>>>>>>>>>>>>>>>>>
 
-	//SECCION 1: DESTREZAS PARA LA VIDA
+//SECCION 1: DESTREZAS PARA LA VIDA
+
+	//PIECHART
+	DS_sum_158_188 = [ //sum of field 
+		//Columnas
+		['Dimensión', 'Cantidad'],
+		//Filas					
+		['No Aplica', 		this.sumaCampos(158, 188).A ], 
+		['No Domina', 		this.sumaCampos(158, 188).B ],
+		['En Proceso',		this.sumaCampos(158, 188).C ],
+		['Domina',			this.sumaCampos(158, 188).D ]
+	];
 
 	//DATATABLE  
 	DS_158_188 = [
@@ -604,7 +617,7 @@ reporte.dataTables = function(){
 		['Leer e interpretar mapas', 							parseInt( this.respondido(219) ) ]
 	]; 
 
-	//SECCION 2: DESTREZAS DE COCINA
+//SECCION 2: DESTREZAS DE COCINA
 
 	//PIECHART
 	DS_sum_221_228 = [ //sum of field 
@@ -647,11 +660,18 @@ reporte.dataTables = function(){
 		['Familiarizado con productos enlatados', 								parseInt( this.respondido(237) ) ]
 	]; 
 
-
-	//SECCION 3: DESTREZAS DE LAVANDERIA/LAUNDRY PERSONAL
+//SECCION 3: DESTREZAS DE LAVANDERIA/LAUNDRY PERSONAL
 
 	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
+	DS_sum_239_245 = [ //sum of field 
+		//Columnas
+		['Dimensión', 'Cantidad'],
+		//Filas					
+		['No Aplica', 		this.sumaCampos(239, 245).A ], 
+		['No Domina', 		this.sumaCampos(239, 245).B ],
+		['En Proceso',		this.sumaCampos(239, 245).C ],
+		['Domina',			this.sumaCampos(239, 245).D ]
+	];
 		
 	//DATATABLE  
 	DS_239_245 = [
@@ -681,10 +701,18 @@ reporte.dataTables = function(){
 		['Guardar/organizar la ropa',  								 	parseInt( this.respondido(253) ) ]
 	]; 
 
-	//SECCION 4: DESTREZAS DE CONVEVENCIA FAMILIAR
+//SECCION 4: DESTREZAS DE CONVEVENCIA FAMILIAR
 
 	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
+	DS_sum_255_259 = [ //sum of field  
+		//Columnas
+		['Dimensión', 'Cantidad'],
+		//Filas					
+		['No Aplica', 		this.sumaCampos(255, 259).A ], 
+		['No Domina', 		this.sumaCampos(255, 259).B ],
+		['En Proceso',		this.sumaCampos(255, 259).C ],
+		['Domina',			this.sumaCampos(255, 259).D ]
+	];
 		
 	//DATATABLE  
 	DS_255_259 = [
@@ -696,7 +724,6 @@ reporte.dataTables = function(){
 		['Participar en decisiones familiares', 					(this.respondido(257) == 1), (this.respondido(257) == 2), (this.respondido(257) == 3), (this.respondido(257) == 4)],						
 		['Planificar actividades para la familia', 					(this.respondido(258) == 1), (this.respondido(258) == 2), (this.respondido(258) == 3), (this.respondido(258) == 4)],						
 		['Ayudar a cuidar las mascotas',							(this.respondido(259) == 1), (this.respondido(259) == 2), (this.respondido(259) == 3), (this.respondido(259) == 4)]
-		
 	]; 
 
 	//DATATABLE  
@@ -711,10 +738,18 @@ reporte.dataTables = function(){
 		['Ayudar a cuidar las mascotas',  							parseInt( this.respondido(265) ) ]
 	]; 
 
-	//SECCION 5: DESTREZAS DE LIMPIEZA EN EL HOGAR
+//SECCION 5: DESTREZAS DE LIMPIEZA EN EL HOGAR
 
 	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
+	DS_sum_267_272 = [ //sum of field  
+		//Columnas
+		['Dimensión', 'Cantidad'],
+		//Filas					
+		['No Aplica', 		this.sumaCampos(267, 272).A ], 
+		['No Domina', 		this.sumaCampos(267, 272).B ],
+		['En Proceso',		this.sumaCampos(267, 272).C ],
+		['Domina',			this.sumaCampos(267, 272).D ]
+	];
 		
 	//DATATABLE  
 	DS_267_272 = [
@@ -742,10 +777,18 @@ reporte.dataTables = function(){
 		['Coser o arreglar ropa',  										parseInt( this.respondido(279) ) ]
 	]; 
 
-	//SECCION 6: DESTREZAS DE JARDINERIA/AREA VERDES
+//SECCION 6: DESTREZAS DE JARDINERIA/AREA VERDES
 
 	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
+	DS_sum_281_284 = [ //sum of field  
+		//Columnas
+		['Dimensión', 'Cantidad'],
+		//Filas					
+		['No Aplica', 		this.sumaCampos(281, 284).A ], 
+		['No Domina', 		this.sumaCampos(281, 284).B ],
+		['En Proceso',		this.sumaCampos(281, 284).C ],
+		['Domina',			this.sumaCampos(281, 284).D ]
+	];
 		
 	//DATATABLE  
 	DS_281_284= [
@@ -769,11 +812,18 @@ reporte.dataTables = function(){
 		['Usar las herramientas de jardinería apropiadamente',  parseInt( this.respondido(290) ) ]
 	]; 
 
-
-	//SECCION 7: DESTREZAS PERSONALES
+//SECCION 7: DESTREZAS PERSONALES
 
 	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
+	DS_sum_292_297 = [ //sum of field  
+		//Columnas
+		['Dimensión', 'Cantidad'],
+		//Filas					
+		['No Aplica', 		this.sumaCampos(292, 297).A ], 
+		['No Domina', 		this.sumaCampos(292, 297).B ],
+		['En Proceso',		this.sumaCampos(292, 297).C ],
+		['Domina',			this.sumaCampos(292, 297).D ]
+	];
 		
 	//DATATABLE  
 	DS_292_297 = [
@@ -801,10 +851,18 @@ reporte.dataTables = function(){
 		['Eligir vestimenta apropiada',  		parseInt( this.respondido(304) ) ]
 	]; 
 
-	//SECCION 8: DESTREZAS DE SALUD
+//SECCION 8: DESTREZAS DE SALUD
 
 	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
+	DS_sum_306_317 = [ //sum of field  
+		//Columnas
+		['Dimensión', 'Cantidad'],
+		//Filas					
+		['No Aplica', 		this.sumaCampos(306, 317).A ], 
+		['No Domina', 		this.sumaCampos(306, 317).B ],
+		['En Proceso',		this.sumaCampos(306, 317).C ],
+		['Domina',			this.sumaCampos(306, 317).D ]
+	];
 		
 	//DATATABLE  
 	DS_306_317 = [
@@ -844,11 +902,18 @@ reporte.dataTables = function(){
 		['Establecer contacto con organizaciones de apoyo en la comunidad',  							parseInt( this.respondido(331) ) ]
 	]; 
 
-
-	//SECCION 9: DESTREZAS DE COMUNIDAD
+//SECCION 9: DESTREZAS DE COMUNIDAD
 
 	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
+	DS_sum_333_342 = [ //sum of field 
+		//Columnas
+		['Dimensión', 'Cantidad'],
+		//Filas					
+		['No Aplica', 		this.sumaCampos(333, 342).A ], 
+		['No Domina', 		this.sumaCampos(333, 342).B ],
+		['En Proceso',		this.sumaCampos(333, 342).C ],
+		['Domina',			this.sumaCampos(333, 342).D ]
+	];
 		
 	//DATATABLE  
 	DS_333_342 = [
@@ -884,10 +949,18 @@ reporte.dataTables = function(){
 		['Solicitar la tarjeta de seguro social',  										parseInt( this.respondido(353) ) ]
 	]; 
 
-	//SECCION 10: DESTREZAS DE TIEMPO LIBRE
+//SECCION 10: DESTREZAS DE TIEMPO LIBRE
 
 	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
+	DS_sum_355_365 = [ //sum of field  
+		//Columnas
+		['Dimensión', 'Cantidad'],
+		//Filas					
+		['No Aplica', 		this.sumaCampos(355, 365).A ], 
+		['No Domina', 		this.sumaCampos(355, 365).B ],
+		['En Proceso',		this.sumaCampos(355, 365).C ],
+		['Domina',			this.sumaCampos(355, 365).D ]
+	];
 		
 	//DATATABLE  
 	DS_355_365 = [
@@ -925,14 +998,21 @@ reporte.dataTables = function(){
 		['Participar o practicar un deporte',  							parseInt( this.respondido(377) ) ]
 	]; 
 
-
-	//SECCION 11: DESTREZAS DE BUSCAR OPCIONES DE PLANES OCUPACIONALES FUTUROS
+//SECCION 11: DESTREZAS DE BUSCAR OPCIONES DE PLANES OCUPACIONALES FUTUROS
 
 	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
+	DS_sum_379_383 = [ //sum of field 
+		//Columnas
+		['Dimensión', 'Cantidad'],
+		//Filas					
+		['No Aplica', 		this.sumaCampos(379, 383).A ], 
+		['No Domina', 		this.sumaCampos(379, 383).B ],
+		['En Proceso',		this.sumaCampos(379, 383).C ],
+		['Domina',			this.sumaCampos(379, 383).D ]
+	];
 		
 	//DATATABLE  
-	DS_379_383= [
+	DS_379_383 = [
 		//Columnas
 		['Destrezas para Buscar Opciones de Planes Ocupacionales Futuros', 'No Aplica', 'No Domina', 'En Proceso', 'Domina'],
 		//Filas
@@ -955,11 +1035,18 @@ reporte.dataTables = function(){
 		['Aprender a solicitar para un trabajo',  												parseInt( this.respondido(389) ) ]
 	]; 
 
-
-	//SECCION 12: DESTREZAS DE CONOCER Y VER OPCIONES DE VIVIENDA
+//SECCION 12: DESTREZAS DE CONOCER Y VER OPCIONES DE VIVIENDA
 
 	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
+	DS_sum_391_398 = [ //sum of field 
+		//Columnas
+		['Dimensión', 'Cantidad'],
+		//Filas					
+		['No Aplica', 		this.sumaCampos(391, 398).A ], 
+		['No Domina', 		this.sumaCampos(391, 398).B ],
+		['En Proceso',		this.sumaCampos(391, 398).C ],
+		['Domina',			this.sumaCampos(391, 398).D ]
+	];
 		
 	//DATATABLE  
 	DS_391_398 = [
@@ -1095,64 +1182,63 @@ reporte.dataTables = function(){
 
 //F8
 	formBreak(".form8", "Destrezas para la Vida");
-	//piechart
+	pieChart(DS_sum_158_188, "DS_sum_158_188", ".form8", 'Porciento de Dominio de Destrezas para la Vida');	
 	laDataTable(DS_158_188, "DS_158_188", ".form8");
 	laDataTableDos(DS_191_219, "DS_191_219", ".form8");
 
 	formBreak(".form8", "Destrezas de cocina");
-	pieChart(DS_sum_221_228,	"DS_sum_221_228", ".form8", 'Porciento de Dominio de Destrezas de Cocina');	
+	pieChart(DS_sum_221_228, "DS_sum_221_228", ".form8", 'Porciento de Dominio de Destrezas de Cocina');	
 	laDataTable(DS_221_228, "DS_221_228", ".form8");
 	laDataTableDos(DS_230_237, "DS_230_237", ".form8");
 
 	formBreak(".form8", "Destrezas de lavandería/”laundry” personal");
-	//piechart
+	pieChart(DS_sum_239_245, "DS_sum_239_245", ".form8", 'Porciento de Dominio de Destrezas de lavandería/laundry personal');
 	laDataTable(DS_239_245, "DS_239_245", ".form8");
 	laDataTableDos(DS_247_253, "DS_247_253", ".form8");
 
 	formBreak(".form8", "Destrezas de convivencia familiar");
-	//piechart
+	pieChart(DS_sum_255_259, "DS_sum_255_259", ".form8", 'Porciento de Dominio de Destrezas de convivencia familiar');	
 	laDataTable(DS_255_259, "DS_255_259", ".form8");
 	laDataTableDos(DS_261_265, "DS_261_265", ".form8");
 
 	formBreak(".form8", "Destrezas de limpieza en el hogar");
-	//piechart
+	pieChart(DS_sum_267_272, "DS_sum_267_272", ".form8", 'Porciento de Dominio de Destrezas de limpieza en el hogar');	
 	laDataTable(DS_267_272, "DS_267_272", ".form8");
 	laDataTableDos(DS_274_279, "DS_274_279", ".form8");
 
 	formBreak(".form8", "Destrezas de jardineria/limpieza áreas verdes");
-	//piechart
+	pieChart(DS_sum_281_284, "DS_sum_281_284", ".form8", 'Porciento de Dominio de Destrezas de jardineria/limpieza áreas verdes');	
 	laDataTable(DS_281_284, "DS_281_284", ".form8");
 	laDataTableDos(DS_286_290, "DS_286_290", ".form8");
 
 	formBreak(".form8", "Destrezas Personales");
-	//piechart
+	pieChart(DS_sum_292_297, "DS_sum_292_297", ".form8", 'Porciento de Dominio de Destrezas Personales');	
 	laDataTable(DS_292_297, "DS_292_297", ".form8");
 	laDataTableDos(DS_299_304, "DS_299_304", ".form8");
 
 	formBreak(".form8", "Destrezas de salud");
-	//piechart
+	pieChart(DS_sum_306_317, "DS_sum_306_317", ".form8", 'Porciento de Dominio de Destrezas de salud');	
 	laDataTable(DS_306_317, "DS_306_317", ".form8"); 
 	laDataTableDos(DS_319_331, "DS_319_331", ".form8");
 
 	formBreak(".form8", "Destrezas de comunidad");
-	//piechart
+	pieChart(DS_sum_333_342, "DS_sum_333_342", ".form8", 'Porciento de Dominio de Destrezas de comunidad');	
 	laDataTable(DS_333_342, "DS_333_342", ".form8");
 	laDataTableDos(DS_344_353, "DS_344_353", ".form8");
 
 	formBreak(".form8", "Actividades o intereses en el tiempo libre");
-	//piechart
+	pieChart(DS_sum_355_365, "DS_sum_355_365", ".form8", 'Porciento de Dominio de Actividades o intereses en el tiempo libre');	
 	laDataTable(DS_355_365, "DS_355_365", ".form8");
 	laDataTableDos(DS_367_377, "DS_367_377", ".form8");
 
 	formBreak(".form8", "Destrezas para planes ocupacionales futuros");
-	//piechart
+	pieChart(DS_sum_379_383, "DS_sum_379_383", ".form8", 'Porciento de Dominio de Destrezas para planes ocupacionales futuros');	
 	laDataTable(DS_379_383, "DS_379_383", ".form8");
 	laDataTableDos(DS_385_389, "DS_385_389", ".form8");
 
 	formBreak(".form8", "Destrezas de vivienda");
-	//piechart
+	pieChart(DS_sum_391_398, "DS_sum_391_398", ".form8", 'Porciento de Dominio de Destrezas de Vivienda');	
 	laDataTable(DS_391_398, "DS_391_398", ".form8");
 	laDataTableDos(DS_400_407, "DS_400_407", ".form8");
 
 }/////////////////////////////////////////////////////////////////////////
-

@@ -184,7 +184,7 @@ reporte.sumaCampos = function(firstField, lastField){
 				console.log("no value");
 		}//switch eof
 	}
-	return{ "A": pieA,  "B": pieB, "C":pieC, "D":pieD };
+	return{ "A": A, "B":B, "C":C, "D":D };
 };
 
 reporte.respondido = function (fieldN) {
