@@ -12,7 +12,8 @@ reporte.dataTables = function(){
 	DS_355_365, DS_367_377, DS_379_383, DS_385_389, DS_391_398, DS_400_407,
 	DS_411_418, DS_420_423, DS_429_433, DS_429_433, DS_435_440, DS_442_446, 
 	DS_451_A, DS_451_B, DS_451_C,
-	DS_455,	DS_458_466, DS_468, DS_471_479, DS_481, DS_484_497, DS_499, DS_502_509;
+	DS_455,	DS_458_466, DS_468, DS_471_479, DS_481, DS_484_497, DS_499, DS_502_509,
+	DS_sum_221_228;
 
 
 //FORMULARIO 1 >>>>>>>>>>>>>>>>>>>>>>>>>
@@ -605,16 +606,16 @@ reporte.dataTables = function(){
 
 	//SECCION 2: DESTREZAS DE COCINA
 
-	//PIECHART de siguiente
-	/*DS_35_39 = [
+	//PIECHART
+	DS_sum_221_228 = [ //sum of field 
 		//Columnas
 		['Dimensión', 'Cantidad'],
 		//Filas					
-		['cosa 1', 		this.sumOfFields(221, 228)], //sum of field 
-		['cosa 2', 		this.sumOfFields(37, 11)],
-		['cosa 3',		this.sumOfFields(39, 11)],
-		['cosa 4',		this.sumOfFields(39, 11)]
-	];*/ 
+		['No Aplica', 		this.sumaCampos(221, 228).A ], 
+		['No Domina', 		this.sumaCampos(221, 228).B ],
+		['En Proceso',		this.sumaCampos(221, 228).C ],
+		['Domina',			this.sumaCampos(221, 228).D ]
+	];
 		
 	//DATATABLE  
 	DS_221_228 = [
@@ -1099,7 +1100,7 @@ reporte.dataTables = function(){
 	laDataTableDos(DS_191_219, "DS_191_219", ".form8");
 
 	formBreak(".form8", "Destrezas de cocina");
-	//piechart
+	pieChart(DS_sum_221_228,	"DS_sum_221_228", ".form8", 'Porciento de Dominio de Destrezas de Cocina');	
 	laDataTable(DS_221_228, "DS_221_228", ".form8");
 	laDataTableDos(DS_230_237, "DS_230_237", ".form8");
 

@@ -133,8 +133,8 @@ var reporte = {
 		//Request Lead's
 		$.get('/servicio.php?leadid='+leadId).done(function(data) {
 			respuestas = data.r;
-			console.log("Reg : "+respuestas.length);
-			console.log(respuestas);
+			console.log("Regs. : "+respuestas.length);
+			//console.log(respuestas);
 			reporte.startDraw();
 		});
 	},	
@@ -164,36 +164,28 @@ var reporte = {
 
 };//Reporte end
 
-reporte.totalCampos = function(firstField, lastField){
-    
-    console.log("Sumando... "); 
-    //this.sumOfFields(221, 228)
-
-	var i, pieA = 0, pieB = 0, pieC = 0, pieD = 0;
-	
-	for ( i = firstField; i <= lastField; i++){
-
+reporte.sumaCampos = function(firstField, lastField){
+    var i, A = 0, B = 0, C = 0, D = 0;
+	for ( i = firstField; i <= lastField; i++ ){
 		switch(this.respondido(i)){
 			case "1":
-				pieA++;
+				A++;
 				break;
 			case "2":
-				pieB++;
+				B++;
 				break;
 			case "3":
-				pieC++;
+				C++;
 				break;
 			case "4":
-				pieD++;
+				D++;
 				break;
 			default:
 				console.log("no value");
-		}//switch end
+		}//switch eof
 	}
-	//console.log("A:"+pieA +" B:"+pieB +" C:"+pieC +" D:"+pieD );
 	return{ "A": pieA,  "B": pieB, "C":pieC, "D":pieD };
-}
-
+};
 
 reporte.respondido = function (fieldN) {
 	var fn, fvalue, fieldNumber, lares;
@@ -222,9 +214,8 @@ reporte.titleReplace = function () {
 reporte.sumOfFields = function (fNumber, optsNumber) {
 	//Establecer un metodo para obtener el correspondiente 	
 	//optsNumber :  posibles respuestas
-	var elvalue, i;
-	var suma =0;
-	
+	var elvalue, i, suma = 0;
+
 	for(i=1; i<=optsNumber; i++){
 		elvalue = parseInt(this.respondido(fNumber+"."+i));
 		if (!elvalue == 1){
