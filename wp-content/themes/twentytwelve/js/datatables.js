@@ -531,8 +531,6 @@ reporte.dataTables = function(){
 
 	//SECCION 1: DESTREZAS PARA LA VIDA
 
-	
-
 	//DATATABLE  
 	DS_158_188 = [
 		//Columnas
@@ -567,10 +565,9 @@ reporte.dataTables = function(){
 		['Buenas destrezas de aseo personal', 					parseInt( this.respondido(186) ) == 1, parseInt( this.respondido(186) ) == 2, parseInt( this.respondido(186) ) == 3, parseInt( this.respondido(186) ) == 4],
 		['Comprar un carro', 									parseInt( this.respondido(187) ) == 1, parseInt( this.respondido(187) ) == 2, parseInt( this.respondido(187) ) == 3, parseInt( this.respondido(187) ) == 4],
 		['Leer e interpretar mapas', 							parseInt( this.respondido(188) ) == 1, parseInt( this.respondido(188) ) == 2, parseInt( this.respondido(188) ) == 3, parseInt( this.respondido(188) ) == 4] 
-
 	]; 
 
-	//DATATABLE  
+	//DATATABLE2  
 	DS_191_219 = [
 		//Columnas
 		['Destrezas para la Vida (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
@@ -608,8 +605,16 @@ reporte.dataTables = function(){
 
 	//SECCION 2: DESTREZAS DE COCINA
 
-	//PIECHART
-	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
+	//PIECHART de siguiente
+	/*DS_35_39 = [
+		//Columnas
+		['Dimensión', 'Cantidad'],
+		//Filas					
+		['cosa 1', 		this.sumOfFields(221, 228)], //sum of field 
+		['cosa 2', 		this.sumOfFields(37, 11)],
+		['cosa 3',		this.sumOfFields(39, 11)],
+		['cosa 4',		this.sumOfFields(39, 11)]
+	];*/ 
 		
 	//DATATABLE  
 	DS_221_228 = [
@@ -619,7 +624,7 @@ reporte.dataTables = function(){
 		['Operar enseres eléctricos', 											(this.respondido(221) == 1), (this.respondido(221) == 2), (this.respondido(221) == 3), (this.respondido(221) == 4)],
 		['Utilizar utensilios comunes de la cocina',   							(this.respondido(222) == 1), (this.respondido(222) == 2), (this.respondido(222) == 3), (this.respondido(222) == 4)],						
 		['Ayudar en la planificación y durante la preparación de alimentos', 	(this.respondido(223) == 1), (this.respondido(223) == 2), (this.respondido(223) == 3), (this.respondido(223) == 4)],						
-		['Seguir una receta', 													(this.respondido(224) == 1), (this.respondido(224) == 2), (this.respondido(224) == 3), (this.respondido(225) == 4)],						
+		['Seguir una receta', 													(this.respondido(224) == 1), (this.respondido(224) == 2), (this.respondido(224) == 3), (this.respondido(224) == 4)],						
 		['Recoger los sobrantes de la comida',									(this.respondido(225) == 1), (this.respondido(225) == 2), (this.respondido(225) == 3), (this.respondido(225) == 4)],						
 		['Poner la mesa', 														(this.respondido(226) == 1), (this.respondido(226) == 2), (this.respondido(226) == 3), (this.respondido(226) == 4)],						
 		['Fregar platos', 														(this.respondido(227) == 1), (this.respondido(227) == 2), (this.respondido(227) == 3), (this.respondido(227) == 4)],

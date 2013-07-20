@@ -125,18 +125,6 @@
         chart.draw(data, options);
     };
 
-    function totalizar(firstField, lastField){
-
-    	var firstField, lastField, i, pieA, pieB, pieC, pieD;
-
-    	for ( i == firstField; i <= lastField; i++){
-
-    		console.log(i); 
-
-    	}
-
-    }
-
 var reporte = {
 	
 	init : function () {
@@ -175,6 +163,37 @@ var reporte = {
 	}
 
 };//Reporte end
+
+reporte.totalCampos = function(firstField, lastField){
+    
+    console.log("Sumando... "); 
+    //this.sumOfFields(221, 228)
+
+	var i, pieA = 0, pieB = 0, pieC = 0, pieD = 0;
+	
+	for ( i = firstField; i <= lastField; i++){
+
+		switch(this.respondido(i)){
+			case "1":
+				pieA++;
+				break;
+			case "2":
+				pieB++;
+				break;
+			case "3":
+				pieC++;
+				break;
+			case "4":
+				pieD++;
+				break;
+			default:
+				console.log("no value");
+		}//switch end
+	}
+	//console.log("A:"+pieA +" B:"+pieB +" C:"+pieC +" D:"+pieD );
+	return{ "A": pieA,  "B": pieB, "C":pieC, "D":pieD };
+}
+
 
 reporte.respondido = function (fieldN) {
 	var fn, fvalue, fieldNumber, lares;
