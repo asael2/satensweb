@@ -82,6 +82,14 @@
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var table = new google.visualization.Table(document.getElementById(targetDom));
 		table.draw(data, {showRowNumber: false}); 
+		google.visualization.events.addListener(table, 'ready', function(event) {
+			$("td:contains('✗')").css("color", "white");       
+      	});
+      	google.visualization.events.addListener(table, 'sort', function(event) {
+			$("td:contains('✗')").css("color", "white");       
+      	});
+
+
 	};
 
 	function velocimetros (nRespuestas, targetDom, formNumb) {
@@ -153,12 +161,10 @@ var reporte = {
 		studentBasicData("", "<a href="+this.editLink()+">EDITAR</a>");
 		photoPrint(this.respondido(510))
 
-
 		$.get('/wp-content/themes/twentytwelve/js/datatables.js').done(function(data){
-			
+
 			reporte.dataTables();
 			$( "#tabsInforme" ).tabs();
-			//console.log("reporte.dataTables callback");
 		});
 	}
 
