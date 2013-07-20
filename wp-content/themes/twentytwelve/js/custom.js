@@ -85,8 +85,6 @@
       	google.visualization.events.addListener(table, 'sort', function(event) {
 			$("td:contains('✗')").css("color", "white");       
       	});
-
-
 	};
 
 	function velocimetros (nRespuestas, targetDom, formNumb) {
@@ -135,6 +133,7 @@ var reporte = {
 	init : function () {
 		//Fetch Parameter from URL	
 		leadId = $.urlParam('leadid');
+		$(".loading-curtain").show();
 		//Request Lead's
 		$.get('/servicio.php?leadid='+leadId).done(function(data) {
 			respuestas = data.r;
