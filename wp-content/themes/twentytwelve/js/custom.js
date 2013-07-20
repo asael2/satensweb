@@ -82,9 +82,6 @@
 		var data = google.visualization.arrayToDataTable(nRespuestas);
 		var table = new google.visualization.Table(document.getElementById(targetDom));
 		table.draw(data, {showRowNumber: false}); 
-		google.visualization.events.addListener(table, 'ready', function(event) {
-			$("td:contains('✗')").css("color", "white");       
-      	});
       	google.visualization.events.addListener(table, 'sort', function(event) {
 			$("td:contains('✗')").css("color", "white");       
       	});
@@ -162,9 +159,9 @@ var reporte = {
 		photoPrint(this.respondido(510))
 
 		$.get('/wp-content/themes/twentytwelve/js/datatables.js').done(function(data){
-
 			reporte.dataTables();
 			$( "#tabsInforme" ).tabs();
+			$("td:contains('✗')").css("color", "white"); 
 		});
 	}
 
@@ -187,7 +184,7 @@ reporte.sumaCampos = function(firstField, lastField){
 				D++;
 				break;
 			default:
-				console.log("no value");
+				console.log("no value in: "+i);
 		}//switch eof
 	}
 	return{ "A": A, "B":B, "C":C, "D":D };
