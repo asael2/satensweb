@@ -14,7 +14,7 @@ get_header(); ?>
 
 <div id="primary" class="site-content">
 <div id="content" role="main">
-	<div class="loading-curtain">Cargando...</div>
+	<div class="loading-curtain">Cargando Reporte del Estudiante</div>
 	<?php while ( have_posts() ) : the_post(); ?>
 		<?php get_template_part( 'content', 'page' ); ?>
         <?php get_template_part( 'satens', 'report' ); ?>

@@ -159,9 +159,9 @@ var reporte = {
 
 		$.get('/wp-content/themes/twentytwelve/js/datatables.js').done(function(data){
 			reporte.dataTables();
-			$( "#tabsInforme" ).tabs();
 			$("td:contains('✗')").css("color", "white"); 
-			$(".loading-curtain").slideDown();
+			$("#tabsInforme").tabs();
+			$(".loading-curtain").fade("fast");
 		});
 	}
 
