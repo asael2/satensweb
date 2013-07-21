@@ -1730,6 +1730,7 @@ img#wpstats {
 
 
 /*******************CUSTOM SATENS STYLES*******************/
+
 .logo, .typo{display:block; float:left;}
 .typo { margin:20px;}
 .typo h2{line-height: 1em;}
@@ -1751,7 +1752,7 @@ p.printParagraph {
 	background: white;
 	font-weight: bold;
 }
-
+#satensReport{position:relative;}
 #satensReport #leadData{ background:#80445F; padding-left:10px;}
 #leadData li{	background: whitesmoke; padding:5px;}
 
@@ -1821,6 +1822,20 @@ p.printParagraph {
 
 }
 
-.google-visualization-table-td-bool:contains("✗"){
-	color:red;
+#input_33_191, #input_33_192, #input_33_193, #input_33_194, #input_33_195, #input_33_196, #input_33_197, #input_33_198, #input_33_199, #input_33_200, #input_33_201, #input_33_202, #input_33_203, #input_33_204, #input_33_205, #input_33_206, #input_33_207, #input_33_208, #input_33_209, #input_33_210, #input_33_211, #input_33_212, #input_33_213, #input_33_214, #input_33_215, #input_33_216, #input_33_217, #input_33_218, #input_33_219 { 
+	background: lighgray;
 }
+#content{position:relative;}
+.loading-curtain {
+	background: white;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 10;
+	text-align: center;
+	padding-top: 100px;
+	display: block;
+	top: -10px;
+	font-size:1.6em;
+}
+

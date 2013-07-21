@@ -1226,7 +1226,65 @@ reporte.dataTables = function(){
 		['Pedir al maestro que verifique mi plan de las tareas del curso',	(this.respondido(446) == 1), (this.respondido(446) == 2), (this.respondido(446) == 3), (this.respondido(446) == 4), (this.respondido(446) == 5)]		
 	]; 		
 
-//FORMULARIO 10 >>>>>>>>>>>>>>>>>>>>>>>>>
+//FORMULARIO 10 >>>>>>>>>>>>>>>>>>>>>>>>
+
+	//Eres una persona dinámica la cual disfruta de utilizar herramientas, máquinas y crear objetos con tus manos. 
+	//También te gusta o quisieras trabajar en el mantenimiento y reparación de equipos, al igual que comprender  
+	//cómo funcionan los mismos para que de esa forma sean más eficientes al manejarlos.
+
+	//SECCION 1
+	//DATATABLE  
+	DS_451_A = [
+		//Columnas
+		['¿Cuáles son las áreas de actividades o tareas que más te interesan?', 'Seleccion'],
+		//Filas
+		['Prefiero hacer actividades físicas a leer un libro',										( this.respondido(451.1) == "1"  )],
+		['Me gusta trabajar con mis manos', 														( this.respondido(451.5) == "1"  )],
+		['Disfruto de diseñar, inventar y crear nuevas cosas',  									( this.respondido(451.9) == "1"  )],
+		['Me gusta trabajar con materiales y equipo.',  											( this.respondido(451.12) == "1" )],
+		['Me gusta aprender cómo funcionan las cosas cuando las desmonto y las vuelvo a armar.',  	( this.respondido(451.15) == "1" )],
+		['Me gusta trabajar con maquinaria u objetos en vez de con personas',  						( this.respondido(451.16) == "1" )],
+		['Me gusta construir y reparar cosas.',  													( this.respondido(451.18) == "1" )],
+		['Me gusta aprender a usar herramientas diferentes.',  										( this.respondido(451.23) == "1" )]
+	]; 
+
+	//SECCION2
+	//Eres una persona que disfruta mucho de servir y ayudar otras personas. Disfrutas de cuidar, ayudar, convencer y persuadir a otros.  
+	//También te gusta ser líder o supervisor, al igual que ser y  formar parte de un equipo de trabajo.
+	//DATATABLE  
+	DS_451_B = [
+		//Columnas
+		['¿Cuáles son las áreas de actividades o tareas que más te interesan?', 'Seleccion'],
+		//Filas
+		['Gusto de ayudar a otros cuando necesitan de mi ayuda', 				 this.respondido(451.3) == "1"],
+		['Me gusta ser el líder de un grupo de personas.',  					 this.respondido(451.6) == "1"],
+		['Gusto de cuidar a otros',  											 this.respondido(451.8) == "1"],
+		['Me gustaría un trabajo manejando/ayudando personas todo el día.',  	 this.respondido(451.11) == "1"],
+		['Me gusta compartir con otros',  										 this.respondido(451.14) == "1"],
+		['Me gusta convencer a otros para que hagan cosas a mi manera.',		 this.respondido(451.17) == "1"],
+		['Me gusta compartir con otras personas.',  							 this.respondido(451.20) == "1"],
+		['Me gusta escuchar las opiniones y puntos de vista de otros.',  		 this.respondido(451.22) == "1"]
+	];
+
+
+	//SECCION 3
+	//Eres una persona  que gustas manejar datos e información. Luce que disfrutas expresarte  a través de la escritura,  
+	//la música, el arte,  investigando y experimentando,  resolviendo problemas, estudiando y leyendo.
+	DS_451_C = [
+		//Columnas
+		['¿Cuáles son las áreas de actividades o tareas que más te interesan?', 'Seleccion'],
+		//Filas
+		['Disfruto de juegos que me hagan pensar y hacer rompe cabezas.',									this.respondido(451.2 )== "1"  ],
+		['Disfruto de lecturas que me enseñen sobre nuevos temas o tareas.', 								this.respondido(451.4 )== "1"  ],
+		['Al presentarse un problema, prefiero conocer todos los hechos antes de comenzar a resolverlo',  	this.respondido(451.7 )== "1"  ],
+		['Me expreso mejor a través del arte, música y escritos.',  										this.respondido(451.10) == "1" ],
+		['Disfruto de aprender nueva información e ideas.',  												this.respondido(451.13) == "1" ],
+		['Me gusta realizar proyectos de investigación.',  													this.respondido(451.19) == "1" ],
+		['Me gusta pensar en nuevas ideas y sobre maneras diferentes de realizar las cosas.',  				this.respondido(451.21) == "1" ],
+		['Se me hace más fácil seguir las instrucciones escritas .',  										this.respondido(451.24) == "1" ]
+	]; 
+
+//FORMULARIO 11 >>>>>>>>>>>>>>>>>>>>>>>>
 
 
 
@@ -1418,5 +1476,12 @@ reporte.dataTables = function(){
 	formBreak(".form9", "Estimado de la Ayuda de Acomodos Para Organizarse");
 	pieChart(DS_sum_442_446, "DS_sum_442_446", ".form9", 'Por Ciento Estimado de la Ayuda de Acomodos Para Organizarse');	
 	laDataTable(DS_442_446, "DS_442_446", ".form9");	
+
+//F10
+	
+	formBreak(".form10", "Estudiante: Intereses y Preferencias");
+	laDataTable(DS_451_A, "DS_451_A", ".form10");
+	laDataTable(DS_451_B, "DS_451_B", ".form10");
+	laDataTable(DS_451_C, "DS_451_C", ".form10");
 
 }/////////////////////////////////////////////////////////////////////////

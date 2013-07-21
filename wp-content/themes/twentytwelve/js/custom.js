@@ -161,6 +161,7 @@ var reporte = {
 			reporte.dataTables();
 			$( "#tabsInforme" ).tabs();
 			$("td:contains('✗')").css("color", "white"); 
+			$(".loading-curtain").slideDown();
 		});
 	}
 
@@ -249,12 +250,14 @@ $(function () {
 	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC");
 	//REPORTE
 	if( $.urlParam('leadid') && $.urlParam('form') )  {
-		$(".entry-detail-view").hide(); //Hide Directory's table.		
 		$("#site-navigation").hide();
+		$(".loading-curtain").show();
+		$(".entry-detail-view").hide(); //Hide Directory's table.		
 		reporte.init();	
 	}else{
 		$("#tabsInforme").hide();
 		$("#site-navigation").show();
+		$(".loading-curtain").hide();
 	}
 	//EDITAR Lead
 	if( $.urlParam('leadid') && $.urlParam('form') && $.urlParam('edit') )  {

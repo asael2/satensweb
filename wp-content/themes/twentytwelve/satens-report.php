@@ -1,12 +1,13 @@
 <div id="satensReport">
-
+       
+        
     <div class="wideSec">
         <ul id="leadData"></ul>
         <div id="leadPic"></div>
     </div>
     
     <div id="tabsInforme">
-       	<div class="loading-curtain"></div>
+
         <ul id="tabsMenu">
             <li><a href="#tabs-1">Reporte 1 </a></li>
             <li><a href="#tabs-2">Reporte 2 </a></li>
