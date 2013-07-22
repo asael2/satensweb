@@ -161,7 +161,7 @@ var reporte = {
 			reporte.dataTables();
 			$("td:contains('✗')").css("color", "white"); 
 			$("#tabsInforme").tabs();
-			$(".loading-curtain").fade("fast");
+			$(".loading-curtain").fadeOut("fast");
 		});
 	}
 
@@ -191,6 +191,16 @@ reporte.sumaCampos = function(firstField, lastField){
 		}//switch eof
 	}
 	return{ "A": A, "B":B, "C":C, "D":D, "E":E };
+};
+
+reporte.sumaMultiCampos = function(){
+    var tempHolder, suma=0;
+    for (var i=0; i<arguments.length; i++) {
+    	valor = reporte.respondido(arguments[i]);
+    	tempHolder = parseInt(valor) || 0;
+    	suma = suma + tempHolder;
+    }
+    return suma;
 };
 
 reporte.respondido = function (fieldN) {

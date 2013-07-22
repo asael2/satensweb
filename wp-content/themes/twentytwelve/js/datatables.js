@@ -1238,14 +1238,14 @@ reporte.dataTables = function(){
 		//Columnas
 		['¿Cuáles son las áreas de actividades o tareas que más te interesan?', 'Seleccion'],
 		//Filas
-		['Prefiero hacer actividades físicas a leer un libro',										( this.respondido(451.1) == "1"  )],
-		['Me gusta trabajar con mis manos', 														( this.respondido(451.5) == "1"  )],
-		['Disfruto de diseñar, inventar y crear nuevas cosas',  									( this.respondido(451.9) == "1"  )],
-		['Me gusta trabajar con materiales y equipo.',  											( this.respondido(451.12) == "1" )],
-		['Me gusta aprender cómo funcionan las cosas cuando las desmonto y las vuelvo a armar.',  	( this.respondido(451.15) == "1" )],
-		['Me gusta trabajar con maquinaria u objetos en vez de con personas',  						( this.respondido(451.16) == "1" )],
-		['Me gusta construir y reparar cosas.',  													( this.respondido(451.18) == "1" )],
-		['Me gusta aprender a usar herramientas diferentes.',  										( this.respondido(451.23) == "1" )]
+		['Prefiero hacer actividades físicas a leer un libro',										 this.respondido(451.1) == "1" ],
+		['Me gusta trabajar con mis manos', 														 this.respondido(451.5) == "1" ],
+		['Disfruto de diseñar, inventar y crear nuevas cosas',  									 this.respondido(451.9) == "1" ],
+		['Me gusta trabajar con materiales y equipo.',  											 this.respondido(451.12) == "1" ],
+		['Me gusta aprender cómo funcionan las cosas cuando las desmonto y las vuelvo a armar.',  	 this.respondido(451.15) == "1" ],
+		['Me gusta trabajar con maquinaria u objetos en vez de con personas',  						 this.respondido(451.16) == "1" ],
+		['Me gusta construir y reparar cosas.',  													 this.respondido(451.18) == "1" ],
+		['Me gusta aprender a usar herramientas diferentes.',  										 this.respondido(451.23) == "1" ]
 	]; 
 
 	//SECCION2
@@ -1274,9 +1274,9 @@ reporte.dataTables = function(){
 		//Columnas
 		['¿Cuáles son las áreas de actividades o tareas que más te interesan?', 'Seleccion'],
 		//Filas
-		['Disfruto de juegos que me hagan pensar y hacer rompe cabezas.',									this.respondido(451.2 )== "1"  ],
-		['Disfruto de lecturas que me enseñen sobre nuevos temas o tareas.', 								this.respondido(451.4 )== "1"  ],
-		['Al presentarse un problema, prefiero conocer todos los hechos antes de comenzar a resolverlo',  	this.respondido(451.7 )== "1"  ],
+		['Disfruto de juegos que me hagan pensar y hacer rompe cabezas.',									this.respondido(451.2 ) == "1" ],
+		['Disfruto de lecturas que me enseñen sobre nuevos temas o tareas.', 								this.respondido(451.4 ) == "1" ],
+		['Al presentarse un problema, prefiero conocer todos los hechos antes de comenzar a resolverlo',  	this.respondido(451.7 ) == "1" ],
 		['Me expreso mejor a través del arte, música y escritos.',  										this.respondido(451.10) == "1" ],
 		['Disfruto de aprender nueva información e ideas.',  												this.respondido(451.13) == "1" ],
 		['Me gusta realizar proyectos de investigación.',  													this.respondido(451.19) == "1" ],
@@ -1285,6 +1285,174 @@ reporte.dataTables = function(){
 	]; 
 
 //FORMULARIO 11 >>>>>>>>>>>>>>>>>>>>>>>>
+
+	//SECCION 1: Destrezas Académicas que el Estudiante Indica Posee
+
+	//PIECHART
+	DS_NFields_1 = [
+		//Columnas
+		['Dimensión', 'Cantidad'],
+		//Filas					
+		['Gente-Publico', 		5], //sum of field for question ID 35
+		['Cosas-Manual', 		4],
+		['Datos-Información',	1]
+	]; 
+	
+
+	//DATABLE
+	DS_455 = [
+		//Columnas
+		['Áreas Académicas que el/la estudiante indica que posee:', 'Sí', 'No'],
+		//Filas
+		['Soy bueno/a en matemáticas',				this.respondido(455.1) == "1", this.respondido(455.1) == "1"],
+		['Soy bueno/a en inglés',					this.respondido(455.2) == "1", this.respondido(455.2) == "1"],
+		['Soy bueno/a en ciencias',					this.respondido(455.3) == "1", this.respondido(455.3) == "1"],
+		['Soy bueno/a en estudios sociales',		this.respondido(455.4) == "1", this.respondido(455.4) == "1"],
+		['Soy bueno/a en estudios vocacionales',	this.respondido(455.5) == "1", this.respondido(455.5) == "1"],
+		['Soy bueno/a educación física',			this.respondido(455.6) == "1", this.respondido(455.6) == "1"],		
+		['Soy bueno/a en arte',						this.respondido(455.7) == "1", this.respondido(455.7) == "1"],
+		['Soy bueno/a en música',					this.respondido(455.8) == "1", this.respondido(455.8) == "1"],
+		['Otros',									this.respondido(455.9) == "101", this.respondido(455.9) == "101"]
+	];  
+
+	//DATATABLE  
+	DS_458_466 = [
+		//Columnas
+		['Áreas Académicas que el/la estudiante indica que posee | (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
+		//Filas
+		['Soy bueno/a en matemáticas',				parseInt( this.respondido(458) )],
+		['Soy bueno/a en inglés',					parseInt( this.respondido(459) )],
+		['Soy bueno/a en ciencias',					parseInt( this.respondido(460) )],
+		['Soy bueno/a en estudios sociales',		parseInt( this.respondido(461) )],
+		['Soy bueno/a en estudios vocacionales',	parseInt( this.respondido(462) )],
+		['Soy bueno/a educación física',			parseInt( this.respondido(463) )],
+		['Soy bueno/a en arte',						parseInt( this.respondido(464) )],
+		['Soy bueno/a en música',					parseInt( this.respondido(465) )],
+		['Otros',									parseInt( this.respondido(466) )]
+	]; 
+
+
+	//SECCION 2: Capacidades Físicas que el Estudiante Indica Posee
+
+	//PIECHART
+	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
+
+	//DATABLE
+	DS_468 = [
+		//Columnas
+		['Capacidades Físicas que el/la Estudiante Indica Posee', 'Sí', 'No'],
+		//Filas
+		['Puedo levantar objetos pesados',		this.respondido(468.1) == "1", this.respondido(468.1) == "1" ],
+		['Puedo levantar objetos livianos',		this.respondido(468.2) == "1", this.respondido(468.2) == "1" ],
+		['Puedo bailar',						this.respondido(468.3) == "1", this.respondido(468.3) == "1" ],
+		['Puedo caminar distancias cortas',		this.respondido(468.4) == "1", this.respondido(468.4) == "1" ],
+		['Puedo caminar distancias largas',		this.respondido(468.5) == "1", this.respondido(468.5) == "1" ],
+		['Puedo correr distancias cortas',		this.respondido(468.6) == "1", this.respondido(468.6) == "1" ],		
+		['Puedo subir escaleras, sogas, etc.',	this.respondido(468.7) == "1", this.respondido(468.7) == "1" ],
+		['Puedo lanzar objetos',				this.respondido(468.8) == "1", this.respondido(468.8) == "1" ],
+		['Puedo empujar objetos',				this.respondido(468.9) == "1", this.respondido(468.9) == "1" ],
+		['Otros',								this.respondido(468.10) == "101", this.respondido(468.10) == "101"]
+	]; 
+
+	//DATATABLE  
+	DS_471_479 = [
+		//Columnas
+		['Capacidades Físicas que el/la Estudiante Indica Posee | (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
+		//Filas
+		['Puedo levantar objetos pesados',		parseInt( this.respondido(471) ) ],
+		['Puedo levantar objetos livianos',		parseInt( this.respondido(472) ) ],
+		['Puedo bailar',						parseInt( this.respondido(473) ) ],
+		['Puedo caminar distancias cortas',		parseInt( this.respondido(474) ) ],
+		['Puedo caminar distancias largas',		parseInt( this.respondido(475) ) ],
+		['Puedo correr distancias cortas',		parseInt( this.respondido(476) ) ],
+		['Puedo subir escaleras, sogas, etc.',	parseInt( this.respondido(477) ) ],
+		['Puedo lanzar objetos',				parseInt( this.respondido(478) ) ],
+		['Otros',								parseInt( this.respondido(479) ) ]
+
+	]; 
+
+
+	//SECCION 3: Capacidades Mentales que el Estudiante Indica Posee
+
+	//PIECHART
+	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
+
+	//DATABLE
+	//DATABLE
+	DS_481 = [
+		//Columnas
+		['Capacidades Mentales que el/la Estudiante Indica Posee', 'Sí', 'No'],
+		//Filas
+		['Me acuerdo bien de las cosaspoesías, chistes, información, etc.',					this.respondido(481.1) == "1", this.respondido(481.1) == "1" ],
+		['Tengo buena escritura y caligrafía',												this.respondido(481.2) == "1", this.respondido(482.2) == "1" ],
+		['Puedo escribir cuentos, historias, ensayos',										this.respondido(481.3) == "1", this.respondido(481.3) == "1" ],
+		['Puedo hablar correctamente sin abreviar o utilizar jerga.',						this.respondido(481.4) == "1", this.respondido(481.4) == "1" ],
+		['Puedo hablar con pronunciación correcta',											this.respondido(481.5) == "1", this.respondido(481.5) == "1" ],
+		['Se restar correctamente',															this.respondido(481.6) == "1", this.respondido(481.6) == "1" ],		
+		['Se sumar correctamente',															this.respondido(481.7) == "1", this.respondido(481.7) == "1" ],
+		['Se multiplicar correctamente',													this.respondido(481.8) == "1", this.respondido(481.8) == "1" ],
+		['Se dividir correctamente',														this.respondido(481.9) == "1", this.respondido(481.9) == "1" ],
+		['Se resolver problemas matemáticos fácilmente',									this.respondido(481.10) == "1", this.respondido(481.10) == "1" ],
+		['Se resolver acertijos y rompecabezas',											this.respondido(481.11) == "1", this.respondido(481.11) == "1" ],		
+		['Puedo leer fácilmente y entender el contenido y significado de la información',	this.respondido(481.12) == "1", this.respondido(481.12) == "1" ],
+		['Otros',																			this.respondido(481.13) == "101", this.respondido(481.13) == "101" ]
+	]; 
+
+	//DATATABLE  
+	DS_484_497 = [
+		//Columnas
+		['Capacidades Mentales que el/la Estudiante Indica Posee | (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
+		//Filas
+		['Me acuerdo bien de las cosaspoesías, chistes, información, etc.',					parseInt( this.respondido(484) )],
+		['Tengo buena escritura y caligrafía',												parseInt( this.respondido(485) )],
+		['Puedo escribir cuentos, historias, ensayos',										parseInt( this.respondido(486) )],
+		['Puedo hablar correctamente sin abreviar o utilizar jerga.',						parseInt( this.respondido(487) )],
+		['Puedo hablar con pronunciación correcta',											parseInt( this.respondido(488) )],
+		['Se restar correctamente',															parseInt( this.respondido(489) )],
+		['Se sumar correctamente',															parseInt( this.respondido(490) )],
+		['Se multiplicar correctamente',													parseInt( this.respondido(492) )],
+		['Se dividir correctamente',														parseInt( this.respondido(493) )],
+		['Se resolver problemas matemáticos fácilmente',									parseInt( this.respondido(494) )],
+		['Se resolver acertijos y rompecabezas',											parseInt( this.respondido(495) )],
+		['Puedo leer fácilmente y entender el contenido y significado de la información',	parseInt( this.respondido(496) )],
+		['Otros',																			parseInt( this.respondido(497) )]
+
+	]; 
+
+	//SECCION 4: Talentos Especiales que el Estudiante Indica Posee
+
+	//PIECHART
+	//OJO: CONSULTAR COMO CONSTRUIMOS ESTO (EDWIN)
+
+	//DATABLE
+	DS_499 = [
+		//Columnas
+		['Talentos Especiales que el/la Estudiante Indica Posee', 'Sí', 'No'],
+		//Filas
+		['Trabajo bien con las manos',					this.respondido(499.1) == "1", this.respondido(499.1) == "1" ],
+		['Arreglo y monto cosas',						this.respondido(499.2) == "1", this.respondido(499.2) == "1" ],
+		['Soy líder en actividades de grupo',			this.respondido(499.3) == "1", this.respondido(499.3) == "1" ],
+		['Me llevo bien con sus compañeros',			this.respondido(499.4) == "1", this.respondido(499.4) == "1" ],
+		['Me llevo bien con personas de autoridad',		this.respondido(499.5) == "1", this.respondido(499.5) == "1" ],
+		['Se tocar música, cantar, bailar, o deportes',	this.respondido(499.6) == "1", this.respondido(499.6) == "1" ],		
+		['Se dibujar, pintar y/o esculpir',				this.respondido(499.7) == "1", this.respondido(499.7) == "1" ],
+		['Otros',										this.respondido(499.8) == "101", this.respondido(499.8) == "101" ]
+	]; 
+
+	//DATATABLE  
+	DS_502_509 = [
+		//Columnas
+		['Talentos Especiales que el/la Estudiante Indica Posee | (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
+		//Filas
+		['Trabajo bien con las manos',					parseInt( this.respondido(502) )],
+		['Arreglo y monto cosas',						parseInt( this.respondido(503) )],
+		['Soy líder en actividades de grupo',			parseInt( this.respondido(504) )],
+		['Me llevo bien con sus compañeros',			parseInt( this.respondido(505) )],
+		['Me llevo bien con personas de autoridad',		parseInt( this.respondido(506) )],
+		['Se tocar música, cantar, bailar, o deportes',	parseInt( this.respondido(507) )],
+		['Se dibujar, pintar y/o esculpir',				parseInt( this.respondido(508) )],
+		['Otros',										parseInt( this.respondido(509) )]
+	]; 
 
 
 
@@ -1483,5 +1651,24 @@ reporte.dataTables = function(){
 	laDataTable(DS_451_A, "DS_451_A", ".form10");
 	laDataTable(DS_451_B, "DS_451_B", ".form10");
 	laDataTable(DS_451_C, "DS_451_C", ".form10");
+
+//F11
+	formBreak(".form11", "Destrezas Académicas que el Estudiante Indica Posee");
+	
+	pieChart(DS_55_59, 		"DS_55_59", ".form2", 'Porciento de Ocupaciones Seleccionadas por el Estudiante Relacionadas a Datos, Gente y Cosas');	
+	laDataTable(DS_455, "DS_455", ".form11");
+	laDataTableDos(DS_458_466, "DS_458_466", ".form11");
+
+	formBreak(".form11", "Capacidades Físicas que el Estudiante Indica Posee");
+	laDataTable(DS_468, "DS_468", ".form11");
+	laDataTableDos(DS_471_479, "DS_471_479", ".form11");
+
+	formBreak(".form11", "Capacidades Mentales que el Estudiante Indica Posee");
+	laDataTable(DS_481, "DS_481", ".form11");
+	laDataTableDos(DS_484_497, "DS_484_497", ".form11");
+
+	formBreak(".form11", "Talentos Especiales que el Estudiante Indica Posee");
+	laDataTable(DS_499, "DS_499", ".form11");
+	laDataTableDos(DS_502_509, "DS_502_509", ".form11");
 
 }/////////////////////////////////////////////////////////////////////////
