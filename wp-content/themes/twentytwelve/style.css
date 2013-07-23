@@ -1804,7 +1804,7 @@ p.printParagraph {
 .entryback{
 	position: absolute;
 	right: 10px;
-	top: -92px;
+	top: -50px;
 	float:right;
 }
 
@@ -1849,6 +1849,7 @@ p.printParagraph {
 	margin-top: -140px;
 	background: whitesmoke;
 	padding: 5px;
+	font-size: 0.9em;
 }
 
 
