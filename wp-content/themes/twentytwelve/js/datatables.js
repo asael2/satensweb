@@ -19,8 +19,6 @@ reporte.dataTables = function(){
 	DS_sum_411_418, DS_sum_420_423, DS_sum_425_427, DS_sum_429_433, DS_sum_435_440, DS_sum_442_446,
 	DS_MULTI_F10, DS_455_481, DS_502_523;
 
-
-
 //FORMULARIO 1 >>>>>>>>>>>>>>>>>>>>>>>>>
 	
 	//COLUMNCHART
@@ -1432,9 +1430,6 @@ reporte.dataTables = function(){
 		['Me gusta  cuidar de animales o mascotas',		parseInt( this.respondido(523) )],
 		['Otros',										parseInt( this.respondido(509) )]
 	]; 
-
-
-
 
 // >>>>>>>>>>>>>>>>>>>> Drawing Modules (order matters) >>>>>>>>>>>>>>>>>>>>
 
