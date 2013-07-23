@@ -1313,14 +1313,14 @@ class GFDirectory {
 				<?php if($search && ($lead_count > 0 || !empty($_GET['gf_search']))) { ?>
 				<form id="lead_form" method="get" action="<?php echo $formaction; ?>">
 					<p class="search-box">
-						<label class="hidden" for="lead_search"><?php _e("Search Entries:", "gravity-forms-addons"); ?></label>
+						<label class="hidden" for="lead_search"><?php _e("Buscar Registros:", "gravity-forms-addons"); ?></label>
 						<input type="text" name="gf_search" id="lead_search" value="<?php echo $search_query ?>"<?php if($searchtabindex) { echo ' tabindex="'.intval($searchtabindex).'"';}?> />
 						<?php
 							// If not using permalinks, let's make the form work!
 							echo !empty($_GET['p']) ? '<input name="p" type="hidden" value="'.esc_html($_GET['p']).'" />' : '';
 							echo !empty($_GET['page_id']) ? '<input name="page_id" type="hidden" value="'.esc_html($_GET['page_id']).'" />' : '';
 						?>
-						<input type="submit" class="button" id="lead_search_button" value="<?php _e("Search", "gravity-forms-addons") ?>"<?php if($searchtabindex) { echo ' tabindex="'.intval($searchtabindex++).'"';}?> />
+						<input type="submit" class="button" id="lead_search_button" value="<?php _e("Buscar", "gravity-forms-addons") ?>"<?php if($searchtabindex) { echo ' tabindex="'.intval($searchtabindex++).'"';}?> />
 					</p>
 				</form>
 				<?php }
