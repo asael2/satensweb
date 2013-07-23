@@ -258,19 +258,23 @@ $(function () {
 	//SERAiD
 	$(".gform_wrapper .readonly input").attr('readonly', 'readonly').css("background","#CCC"); 
 	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC");
-	//REPORTE
+	
+	//REPORTE Lead
 	if( $.urlParam('leadid') && $.urlParam('form') )  {
-		$("#site-navigation").hide();
 		$(".loading-curtain").show();
-		$(".entry-detail-view").hide(); //Hide Directory's table.		
+		$("#site-navigation, .entry-detail-view, #studentinstructions").hide();
+		//$(".entry-detail-view").hide(); //Hide Directory's table.		
 		reporte.init();	
 	}else{
 		$("#tabsInforme").hide();
 		$("#site-navigation").show();
 		$(".loading-curtain").hide();
 	}
+	
 	//EDITAR Lead
 	if( $.urlParam('leadid') && $.urlParam('form') && $.urlParam('edit') )  {
 		$("#satensReport").hide();
+
+
 	}
 });

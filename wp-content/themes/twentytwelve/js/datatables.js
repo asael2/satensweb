@@ -1,3 +1,8 @@
+//Instructions:
+//To create a new graphic, first declare its Dataset name at the top of this file.
+//Then create the correspondent Dataset and for last call the correspondent type of graphic 
+//function at the bottom of this file placing it at the desired render place.
+
 reporte.dataTables = function(){
 	var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29, 
 	DS_30, DS_31, DS_41, DS_42, DS_35_39, DS_45, DS_47, 
