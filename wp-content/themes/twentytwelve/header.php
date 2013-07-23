@@ -48,11 +48,15 @@
 			</div>
 
 			<div class="typo">
-                <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
                 <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
     		</div>        
-
+		
+        
 		</hgroup>
+        	
+        <div id="sidebar-head"  <?php dynamic_sidebar('sidebar-head'); ?>  </div>  
+        
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
 			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
@@ -63,6 +67,8 @@
 		if ( ! empty( $header_image ) ) : ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
 		<?php endif; ?>
+        
+      
 	</header><!-- #masthead -->
 
 	<div id="main" class="wrapper">

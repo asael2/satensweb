@@ -1839,3 +1839,16 @@ p.printParagraph {
 	font-size:1.6em;
 }
 
+#studentinstructions {
+	margin-bottom: 20px;
+}
+
+#sidebar-head {
+
+	width: 200px;
+	float: right;
+	margin-top: -75px;
+}
+
+
+
