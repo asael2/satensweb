@@ -16,7 +16,9 @@ reporte.dataTables = function(){
 	DS_sum_221_228, DS_sum_158_188, DS_sum_239_245, DS_sum_391_398, DS_sum_379_383, 
 	DS_sum_355_365, DS_sum_239_245, DS_sum_255_259, DS_sum_267_272, DS_sum_281_284, 
 	DS_sum_292_297,	DS_sum_306_317, DS_sum_333_342,
-	DS_sum_411_418, DS_sum_420_423, DS_sum_425_427, DS_sum_429_433, DS_sum_435_440, DS_sum_442_446;
+	DS_sum_411_418, DS_sum_420_423, DS_sum_425_427, DS_sum_429_433, DS_sum_435_440, DS_sum_442_446,
+	DS_MULTI_F10;
+
 
 
 //FORMULARIO 1 >>>>>>>>>>>>>>>>>>>>>>>>>
@@ -1228,11 +1230,16 @@ reporte.dataTables = function(){
 
 //FORMULARIO 10 >>>>>>>>>>>>>>>>>>>>>>>>
 
-	//Eres una persona dinámica la cual disfruta de utilizar herramientas, máquinas y crear objetos con tus manos. 
-	//También te gusta o quisieras trabajar en el mantenimiento y reparación de equipos, al igual que comprender  
-	//cómo funcionan los mismos para que de esa forma sean más eficientes al manejarlos.
+	//PIECHART
+	DS_MULTI_F10 = [
+		//Columnas
+		['Dimensión', 'Cantidad'],
+		//Filas					
+		['Gente-Publico', 		this.sumaMultiCampos(451.1, 451.5, 451.9, 451.12, 451.15, 451.16, 451.18, 451.23) ],
+		['Cosas-Manual', 		this.sumaMultiCampos(451.3, 451.6, 451.8, 451.11, 451.14, 451.17, 451.20, 451.22) ],
+		['Datos-Información',	this.sumaMultiCampos(451.2, 451.4, 451.7, 451.10, 451.13, 451.19, 451.21, 451.24) ]
+	]; 
 
-	//SECCION 1
 	//DATATABLE  
 	DS_451_A = [
 		//Columnas
@@ -1287,17 +1294,6 @@ reporte.dataTables = function(){
 //FORMULARIO 11 >>>>>>>>>>>>>>>>>>>>>>>>
 
 	//SECCION 1: Destrezas Académicas que el Estudiante Indica Posee
-
-	//PIECHART
-	DS_NFields_1 = [
-		//Columnas
-		['Dimensión', 'Cantidad'],
-		//Filas					
-		['Gente-Publico', 		5], //sum of field for question ID 35
-		['Cosas-Manual', 		4],
-		['Datos-Información',	1]
-	]; 
-	
 
 	//DATABLE
 	DS_455 = [
@@ -1453,8 +1449,6 @@ reporte.dataTables = function(){
 		['Se dibujar, pintar y/o esculpir',				parseInt( this.respondido(508) )],
 		['Otros',										parseInt( this.respondido(509) )]
 	]; 
-
-
 
 
 // >>>>>>>>>>>>>>>>>>>> Drawing Modules (order matters) >>>>>>>>>>>>>>>>>>>>
@@ -1648,6 +1642,7 @@ reporte.dataTables = function(){
 //F10
 	
 	formBreak(".form10", "Estudiante: Intereses y Preferencias");
+	pieChart(DS_MULTI_F10, 	"DS_MULTI_F10", ".form10", 'Porciento de Ocupaciones Seleccionadas por el Estudiante Relacionadas a Datos, Gente y Cosas');	
 	laDataTable(DS_451_A, "DS_451_A", ".form10");
 	laDataTable(DS_451_B, "DS_451_B", ".form10");
 	laDataTable(DS_451_C, "DS_451_C", ".form10");
@@ -1655,7 +1650,6 @@ reporte.dataTables = function(){
 //F11
 	formBreak(".form11", "Destrezas Académicas que el Estudiante Indica Posee");
 	
-	pieChart(DS_55_59, 		"DS_55_59", ".form2", 'Porciento de Ocupaciones Seleccionadas por el Estudiante Relacionadas a Datos, Gente y Cosas');	
 	laDataTable(DS_455, "DS_455", ".form11");
 	laDataTableDos(DS_458_466, "DS_458_466", ".form11");
 
