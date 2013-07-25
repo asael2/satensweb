@@ -188,7 +188,7 @@ reporte.sumaCampos = function(firstField, lastField){
 				E++;
 				break;
 			default:
-				console.log("no value in: "+i);
+				//console.log("no value in: "+i);
 		}//switch eof
 	}
 	return{ "A": A, "B":B, "C":C, "D":D, "E":E };
