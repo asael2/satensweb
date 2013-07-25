@@ -154,7 +154,7 @@ class LoginWithAjax {
 				self::$current_user = $loginResult;
 				/* @var $loginResult WP_User */
 				$return['result'] = true;
-				$return['message'] = __("Login Successful, redirecting...",'login-with-ajax');
+				$return['message'] = __("Credenciales correctas, ingresando...",'login-with-ajax');
 				//Do a redirect if necessary
 				$redirect = self::getLoginRedirect(self::$current_user);
 				if( $redirect != '' ){
@@ -180,7 +180,7 @@ class LoginWithAjax {
 			}
 		}else{
 			$return['result'] = false;
-			$return['error'] = __('Please supply your username and password.', 'login-with-ajax');
+			$return['error'] = __('Porfavor ingrese su usuario y clave.', 'login-with-ajax');
 		}
 		$return['action'] = 'login';
 		//Return the result array with errors etc.
