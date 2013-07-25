@@ -548,6 +548,8 @@ a:hover {
 }
 .site-header h1 a,
 .site-header h2 a {
+
+
 	color: #515151;
 	display: inline-block;
 	text-decoration: none;
@@ -761,9 +763,10 @@ article.sticky .featured-post {
 .entry-content h2,
 .comment-content h2,
 .mu_register h2 {
-	font-size: 18px;
+	/* font-size: 18px; */
 	font-size: 1.285714286rem;
-	line-height: 1.6;
+	/* line-height: 1.6; */
+	
 }
 .entry-content h3,
 .comment-content h3 {
@@ -1523,6 +1526,7 @@ img#wpstats {
 	.main-navigation li ul li a:hover {
 		background: #e3e3e3;
 		color: #444;
+
 	}
 	.main-navigation .current-menu-item > a,
 	.main-navigation .current-menu-ancestor > a,
@@ -1738,7 +1742,7 @@ img#wpstats {
 .readonly{color: #80445F;}
 .tituloForm{ 
 	background: #80445F;
-	color:#FFFFFF;
+	/* color:#FFFFFF; */
 	padding: 6px;
 	margin: 30px 0 0 0;
 	cursor:default;
@@ -1858,6 +1862,34 @@ p.printParagraph {
 	font-size: 0.9em;
 }
 
-.detail_gsection_title{
-	 color: #80445F;
+.tituloForm{
+	color: #whiteSmoke;
+	background:#F59267;
 }
+.contenidoForm{
+	background:whiteSmoke;
+}
+
+.tituloForm td, .contenidoForm td{
+	padding: 0 15px;
+}
+
+
+.entry-content tr.tituloForm h2 {
+	margin: 5px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

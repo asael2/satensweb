@@ -275,8 +275,25 @@ $(function () {
 	//EDITAR Lead
 	if( $.urlParam('leadid') && $.urlParam('form') && $.urlParam('edit') )  {
 		$("#satensReport").hide();
+		
+		//Add Forms titles class
 		$(".detail_gsection_title:contains('Formulario')").each(function(i, v){
-			$(this).css("border", "1px solid red")
+			var secFTitle = $(this).closest('tr')
+			secFTitle.addClass("tituloForm");
 		}); 
-	}
+		//Add Forms contents class
+		$(".tituloForm", "table.form-table").nextUntil(".tituloForm").addClass("contenidoForm");
+
+		//Bind click togle
+		$(".tituloForm", "table.form-table").click(function() {
+			$(this).nextUntil(".tituloForm").toggle()
+		});
+
+		//Init togles
+		$(window).load(function() {
+			$(".tituloForm", "table.form-table").nextUntil(".tituloForm").toggle();
+			$(".tituloForm:first", "table.form-table").nextUntil(".tituloForm").toggle();
+		})
+			
+	}//Editar eof
 });

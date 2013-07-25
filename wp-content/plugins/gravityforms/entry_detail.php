@@ -536,7 +536,7 @@ class GFEntryDetail{
                                 ?>
                                 <tr valign="top">
                                     <td class="detail-view">
-                                        <div style="margin-bottom:10px; border-bottom:1px dotted #ccc;"><h2 class="detail_gsection_title"><?php echo esc_html(GFCommon::get_label($field))?></h2></div>
+                                        <div class="d-view"><h2 class="detail_gsection_title"><?php echo esc_html(GFCommon::get_label($field))?></h2></div>
                                     </td>
                                 </tr>
                                 <?php
