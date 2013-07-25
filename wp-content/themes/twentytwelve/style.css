@@ -1860,9 +1860,9 @@ p.printParagraph {
 }
 
 /*///Edit lead page*/
-.entry-content tr.tituloForm h2 {
-	margin:0px;
-	font-weight: normal;
+.entry-content h2.detail_gsection_title{
+	margin:0;
+	font-weight: normal;	
 }
 
 .tituloForm td, .contenidoForm td{
@@ -1880,21 +1880,20 @@ p.printParagraph {
 }
 
 #directory33 .inside{
-	/*width:82%;*/
+	width:82%;
 	
 }
 #directory33 input.button-primary{
 	float:right;	
+	clear:both;
+	display:block;
 }
-.tituloForm td:hover{
+
+.tabTituloForm td:hover, .editActive{
 	color:white;
+	background:#F59267;
+	cursor:pointer;
 }
-
-.directory33 .entry-content h2.detail_gsection_title{
-	padding:15px 5px 5px;
-	margin: 0;		
-}
-
 
 
 

@@ -287,7 +287,9 @@ $(function () {
 
 		//Bind click togle
 		$(".tabTituloForm", "table.form-table").click(function() {
+			$(this).toggleClass('editActive');
 			$(this).nextUntil(".tabTituloForm").toggle();
+
 
 		});
 
