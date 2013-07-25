@@ -32,7 +32,7 @@
 					}
 					//Logout URL
 					?>
-					<a id="wp-logout" href="<?php echo wp_logout_url() ?>"><?php esc_html_e( 'Log Out' ,'login-with-ajax') ?></a><br />
+					<a id="wp-logout" href="<?php echo wp_logout_url() ?>"><?php esc_html_e( 'Salir' ,'login-with-ajax') ?></a><br />
 					<?php
 					//Blog Admin
 					if( current_user_can('list_users') ) {

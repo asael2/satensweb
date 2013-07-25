@@ -1744,9 +1744,7 @@ img#wpstats {
 	background: #80445F;
 	color:#FFFFFF;
 	padding: 6px;
-	margin: 30px 0 0 0;
-	cursor:default;
-	font-weight:normal;
+	cursor: pointer;
 }
 
 p.printParagraph {
@@ -1865,6 +1863,7 @@ p.printParagraph {
 /*///Edit lead page*/
 .entry-content tr.tituloForm h2 {
 	margin:0px;
+	font-weight: normal;
 }
 
 .tituloForm td, .contenidoForm td{
@@ -1873,15 +1872,20 @@ p.printParagraph {
 }
 
 .tituloForm td{
-	color: #whiteSmoke;
+	color: whiteSmoke;
 	background:#F59267;
+	padding: 5px 10px;
 }
 .contenidoForm td{
 	padding: 5px 15px;
 }
 
-
-
+.inside{
+	width:width: 82%;
+}
+.tituloForm td:hover{
+	color:white;
+}
 
 
 
