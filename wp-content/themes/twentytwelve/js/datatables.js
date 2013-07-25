@@ -1,8 +1,3 @@
-//Instructions:
-//To create a new graphic, first declare its Dataset name at the top of this file.
-//Then create the correspondent Dataset and for last call the correspondent type of graphic 
-//function at the bottom of this file placing it at the desired render place.
-
 reporte.dataTables = function(){
 	var DS_22, DS_23, DS_24_26, DS2_24_26, DS_27, DS_29, 
 	DS_30, DS_31, DS_41, DS_42, DS_35_39, DS_45, DS_47, 
@@ -23,6 +18,8 @@ reporte.dataTables = function(){
 	DS_sum_292_297,	DS_sum_306_317, DS_sum_333_342,
 	DS_sum_411_418, DS_sum_420_423, DS_sum_425_427, DS_sum_429_433, DS_sum_435_440, DS_sum_442_446,
 	DS_MULTI_F10, DS_455_481, DS_502_523;
+
+
 
 //FORMULARIO 1 >>>>>>>>>>>>>>>>>>>>>>>>>
 	
@@ -930,7 +927,7 @@ reporte.dataTables = function(){
 			['Conocer el sistema de transportación pública',   								(this.respondido(334) == 1), (this.respondido(334) == 2), (this.respondido(334) == 3), (this.respondido(334) == 4)],						
 			['Localizar servicios sanitarios en lugares no familiares', 					(this.respondido(335) == 1), (this.respondido(335) == 2), (this.respondido(335) == 3), (this.respondido(335) == 4)],						
 			['Conocer sobre los servicios y tiendas disponibles en la comunidad/pueblo',	(this.respondido(336) == 1), (this.respondido(336) == 2), (this.respondido(336) == 3), (this.respondido(336) == 4)],						
-			['Utilizar teléfonos públicos',													(this.respondido(337) == 1), (this.respondido(337) == 2), (this.respondido(337) == 3), (this.respondido(337) == 4)],						
+			['Utilizar ATH (Cajero Automático)',													(this.respondido(337) == 1), (this.respondido(337) == 2), (this.respondido(337) == 3), (this.respondido(337) == 4)],						
 			['Abrir y manejar una cuenta de banco', 										(this.respondido(338) == 1), (this.respondido(338) == 2), (this.respondido(338) == 3), (this.respondido(338) == 4)],						
 			['Conseguir una identificación con foto', 										(this.respondido(339) == 1), (this.respondido(339) == 2), (this.respondido(339) == 3), (this.respondido(339) == 4)],
 			['Conocer y utilizar el sistema de correo', 									(this.respondido(340) == 1), (this.respondido(340) == 2), (this.respondido(340) == 3), (this.respondido(340) == 4)],
@@ -947,7 +944,7 @@ reporte.dataTables = function(){
 			['Conocer el sistema de transportación pública', 								parseInt( this.respondido(345) ) ],
 			['Localizar servicios sanitarios en lugares no familiares',  					parseInt( this.respondido(346) ) ],
 			['Conocer sobre los servicios y tiendas disponibles en la comunidad/pueblo',	parseInt( this.respondido(347) ) ],
-			['Utilizar teléfonos públicos',  												parseInt( this.respondido(348) ) ],
+			['Utilizar ATH (Cajero Automático)',  												parseInt( this.respondido(348) ) ],
 			['Abrir y manejar una cuenta de banco',  										parseInt( this.respondido(349) ) ],
 			['Conseguir una identificación con foto',  										parseInt( this.respondido(350) ) ],
 			['Conocer y utilizar el sistema de correo', 									parseInt( this.respondido(351) ) ],
@@ -1033,7 +1030,7 @@ reporte.dataTables = function(){
 		DS_385_389 = [
 			//Columnas
 			['Destrezas para Buscar Opciones de Planes Ocupacionales Futuros (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
-			//Filas
+			//Fila
 			['Reunirse con el Consejero Escolar, Consejero en Rehabilitación Vocacional, otro.',  	parseInt( this.respondido(385) ) ],
 			['Considerar y auscultar opciones de programas de estudios', 							parseInt( this.respondido(386) ) ],
 			['Buscar talleres de capacitación y oportunidades de empleo',  							parseInt( this.respondido(387) ) ],
@@ -1246,7 +1243,7 @@ reporte.dataTables = function(){
 	//DATATABLE  
 	DS_451_A = [
 		//Columnas
-		['¿Cuáles son las áreas de actividades o tareas que más te interesan?', 'Seleccion'],
+		['¿Cuáles son las áreas de actividades o tareas que más te interesan? (GENTE-PÚBLICO)', 'Seleccion'],
 		//Filas
 		['Prefiero hacer actividades físicas a leer un libro',										 this.respondido(451.1) == "1" ],
 		['Me gusta trabajar con mis manos', 														 this.respondido(451.5) == "1" ],
@@ -1264,7 +1261,7 @@ reporte.dataTables = function(){
 	//DATATABLE  
 	DS_451_B = [
 		//Columnas
-		['¿Cuáles son las áreas de actividades o tareas que más te interesan?', 'Seleccion'],
+		['¿Cuáles son las áreas de actividades o tareas que más te interesan? (COSAS-MANUAL)', 'Seleccion'],
 		//Filas
 		['Gusto de ayudar a otros cuando necesitan de mi ayuda', 				 this.respondido(451.3) == "1"],
 		['Me gusta ser el líder de un grupo de personas.',  					 this.respondido(451.6) == "1"],
@@ -1282,7 +1279,7 @@ reporte.dataTables = function(){
 	//la música, el arte,  investigando y experimentando,  resolviendo problemas, estudiando y leyendo.
 	DS_451_C = [
 		//Columnas
-		['¿Cuáles son las áreas de actividades o tareas que más te interesan?', 'Seleccion'],
+		['¿Cuáles son las áreas de actividades o tareas que más te interesan? (DATOS-INFORMACIÓN)', 'Seleccion'],
 		//Filas
 		['Disfruto de juegos que me hagan pensar y hacer rompe cabezas.',									this.respondido(451.2 ) == "1" ],
 		['Disfruto de lecturas que me enseñen sobre nuevos temas o tareas.', 								this.respondido(451.4 ) == "1" ],
@@ -1435,6 +1432,9 @@ reporte.dataTables = function(){
 		['Me gusta  cuidar de animales o mascotas',		parseInt( this.respondido(523) )],
 		['Otros',										parseInt( this.respondido(509) )]
 	]; 
+
+
+
 
 // >>>>>>>>>>>>>>>>>>>> Drawing Modules (order matters) >>>>>>>>>>>>>>>>>>>>
 

@@ -23,9 +23,10 @@
 	};
 
 	function photoPrint(nRespuestas){
-
-		var domElemt = "<img src="+nRespuestas+" />";
-		$("#leadPic").append(domElemt);
+		if (nRespuestas){
+			var domElemt = "<img src="+nRespuestas+" />";
+			$("#leadPic").append(domElemt);
+		} 
 	};
 
 	function studentBasicData (label, value) {

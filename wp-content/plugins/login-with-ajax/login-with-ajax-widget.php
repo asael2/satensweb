@@ -5,8 +5,8 @@ class LoginWithAjaxWidget extends WP_Widget {
     /** constructor */
     function LoginWithAjaxWidget() {
     	$this->defaults = array(
-    		'title' => __('Log In','login-with-ajax'),
-    		'title_loggedin' => __( 'Hi', 'login-with-ajax' ).' %username%',
+    		'title' => __('Ingresar','login-with-ajax'),
+    		'title_loggedin' => __( 'Hola', 'login-with-ajax' ).' %username%',
     		'template' => 'default',
     		'profile_link' => 1,
     		'registration' => 1,
