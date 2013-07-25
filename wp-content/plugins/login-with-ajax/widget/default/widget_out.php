@@ -11,7 +11,7 @@
             <table>
                 <tr class="lwa-username">
                     <td class="lwa-username-label">
-                        <label><?php esc_html_e( 'Username','login-with-ajax' ) ?></label>
+                        <label><?php esc_html_e( 'Usuario','login-with-ajax' ) ?></label>
                     </td>
                     <td class="lwa-username-input">
                         <input type="text" name="log" />
@@ -19,7 +19,7 @@
                 </tr>
                 <tr class="lwa-password">
                     <td class="lwa-password-label">
-                        <label><?php esc_html_e( 'Password','login-with-ajax' ) ?></label>
+                        <label><?php esc_html_e( 'Clave','login-with-ajax' ) ?></label>
                     </td>
                     <td class="lwa-password-input">
                         <input type="password" name="pwd" />
@@ -28,12 +28,12 @@
                 <tr><td colspan="2"><?php do_action('login_form'); ?></td></tr>
                 <tr class="lwa-submit">
                     <td class="lwa-submit-button">
-                        <input type="submit" name="wp-submit" id="lwa_wp-submit" value="<?php esc_attr_e('Log In', 'login-with-ajax'); ?>" tabindex="100" />
+                        <input type="submit" name="wp-submit" id="lwa_wp-submit" value="<?php esc_attr_e('Entrar', 'login-with-ajax'); ?>" tabindex="100" />
                         <input type="hidden" name="lwa_profile_link" value="<?php echo esc_attr($lwa_data['profile_link']); ?>" />
                         <input type="hidden" name="login-with-ajax" value="login" />
                     </td>
                     <td class="lwa-submit-links">
-                        <input name="rememberme" type="checkbox" class="lwa-rememberme" value="forever" /> <label><?php esc_html_e( 'Remember Me','login-with-ajax' ) ?></label>
+                        <input name="rememberme" type="checkbox" class="lwa-rememberme" value="forever" /> <label><?php esc_html_e( 'Recordar','login-with-ajax' ) ?></label>
                         <br />
 						<?php if( !empty($lwa_data['remember']) ): ?>
 						<a class="lwa-links-remember" href="<?php echo esc_attr(LoginWithAjax::$url_remember); ?>" title="<?php esc_attr_e('Password Lost and Found','login-with-ajax') ?>"><?php esc_attr_e('Lost your password?','login-with-ajax') ?></a>
