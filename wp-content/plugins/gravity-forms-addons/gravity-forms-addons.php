@@ -507,7 +507,7 @@ class GFDirectory {
 	            $lead = RGFormsModel::get_lead($lead["id"]);
 
 	            do_action('kws_gf_directory_post_update_lead', $lead, $Form);
-	            _e(apply_filters('kws_gf_directory_lead_updated_message', sprintf("%sThe entry was successfully updated.%s", "<p class='updated' id='message' style='padding:.5em .75em; background-color:#ffffcc; border:1px solid #ccc;'>", "</p>"), $lead, $Form), 'gravity-forms-addons');
+	            _e(apply_filters('kws_gf_directory_lead_updated_message', sprintf("%sRegistro actualizado.%s", "<p class='updated' id='message' style='padding:.5em .75em; background-color:#ffffcc; border:1px solid #ccc;'>", "</p>"), $lead, $Form), 'gravity-forms-addons');
 	            return $lead;
             }
 		}
@@ -551,7 +551,7 @@ class GFDirectory {
 
 	            	require_once(GFCommon::get_base_path() . "/entry_detail.php");
 	            	GFEntryDetail::lead_detail_edit(apply_filters( 'kws_gf_directory_form_being_edited', $form_without_products, $lead), apply_filters( 'kws_gf_directory_lead_being_edited', $lead_without_products, $form_without_products));
-					_e('<input class="button-primary" type="submit" tabindex="4" value="'.apply_filters('kws_gf_directory_update_lead_button_text', __('Update Entry', 'gravity-forms-addons')).'" name="save" />');
+					_e('<input class="button-primary" type="submit" tabindex="4" value="'.apply_filters('kws_gf_directory_update_lead_button_text', __('Actualizar Registro', 'gravity-forms-addons')).'" name="save" />');
 				?>
 			</form>
 			<?php
@@ -917,7 +917,7 @@ class GFDirectory {
 		}
 
 		if(isset($_GET['edit'])) {
-			return '<p class="entryback"><a href="'.add_query_arg(array(), remove_query_arg(array('edit'))).'">'.esc_html(__(apply_filters('kws_gf_directory_edit_entry_cancel', "&larr; Cancel Editing"), "gravity-forms-addons")).'</a></p>';
+			return '<p class="entryback"><a href="'.add_query_arg(array(), remove_query_arg(array('edit'))).'">'.esc_html(__(apply_filters('kws_gf_directory_edit_entry_cancel', "&larr; Cancelar Edición"), "gravity-forms-addons")).'</a></p>';
 		}
 
 		list($formid, $leadid) = self::get_form_and_lead_ids();

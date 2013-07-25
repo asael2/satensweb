@@ -13,7 +13,7 @@
 //Classes////////////////////////////////////////////////////
 
 	function formBreak(formNumb, nRespuestas){
-		var domElemt = "<li> <h2 class='tituloForm'>"+nRespuestas+"</h2> </li>";
+		var domElemt = "<li><div class='tituloForm'> <h2>"+nRespuestas+"</h2> </div> </li>";
 		$(formNumb).append(domElemt);
 	};
 
@@ -274,25 +274,28 @@ $(function () {
 	
 	//EDITAR Lead
 	if( $.urlParam('leadid') && $.urlParam('form') && $.urlParam('edit') )  {
+		
 		$("#satensReport").hide();
 		
 		//Add Forms titles class
 		$(".detail_gsection_title:contains('Formulario')").each(function(i, v){
 			var secFTitle = $(this).closest('tr')
-			secFTitle.addClass("tituloForm");
+			secFTitle.addClass("tabTituloForm");
 		}); 
 		//Add Forms contents class
-		$(".tituloForm", "table.form-table").nextUntil(".tituloForm").addClass("contenidoForm");
+		$(".tabTituloForm", "table.form-table").nextUntil(".tabTituloForm").addClass("contenidoForm");
 
 		//Bind click togle
-		$(".tituloForm", "table.form-table").click(function() {
-			$(this).nextUntil(".tituloForm").toggle()
+		$(".tabTituloForm", "table.form-table").click(function() {
+			$(this).nextUntil(".tabTituloForm").toggle();
+
 		});
 
 		//Init togles
 		$(window).load(function() {
-			$(".tituloForm", "table.form-table").nextUntil(".tituloForm").toggle();
-			$(".tituloForm:first", "table.form-table").nextUntil(".tituloForm").toggle();
+			$(".tabTituloForm", "table.form-table").nextUntil(".tabTituloForm").toggle();
+			$(".tabTituloForm:first", "table.form-table").nextUntil(".tabTituloForm").toggle();
+			$("input.button-primary").css("float", right);
 		})
 			
 	}//Editar eof

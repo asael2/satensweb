@@ -10,7 +10,7 @@
 		global $current_user;
 		get_currentuserinfo();
 	?>
-	<span class="lwa-title-sub" style="display:none"><?php echo __( 'Hi', 'login-with-ajax' ) . " " . $current_user->display_name  ?></span>
+	<span class="lwa-title-sub" style="display:none"><?php echo __( 'Conectado ', 'login-with-ajax' ) . " " . $current_user->display_name  ?></span>
 	<table>
 		<tr>
 			<td class="avatar" class="lwa-avatar">
@@ -37,7 +37,7 @@
 					//Blog Admin
 					if( current_user_can('list_users') ) {
 						?>
-						<a href="<?php echo get_admin_url(); ?>"><?php esc_html_e("blog admin", 'login-with-ajax'); ?></a>
+						<a href="<?php echo get_admin_url(); ?>"><?php esc_html_e("Administrar", 'login-with-ajax'); ?></a>
 						<?php
 					}
 				?>

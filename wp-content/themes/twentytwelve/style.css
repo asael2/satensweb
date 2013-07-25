@@ -1745,6 +1745,7 @@ img#wpstats {
 	color:#FFFFFF;
 	padding: 6px;
 	cursor: pointer;
+	font-weight: normal;
 }
 
 p.printParagraph {
@@ -1771,8 +1772,6 @@ p.printParagraph {
 	display:block;
 	text-decoration:none;
 	display: inline-block;
-	
-	border: 1px solid #80445F;
 	padding: 6px;	
 }
 
@@ -1880,13 +1879,21 @@ p.printParagraph {
 	padding: 5px 15px;
 }
 
-.inside{
-	width:width: 82%;
+#directory33 .inside{
+	/*width:82%;*/
+	
+}
+#directory33 input.button-primary{
+	float:right;	
 }
 .tituloForm td:hover{
 	color:white;
 }
 
+.directory33 .entry-content h2.detail_gsection_title{
+	padding:15px 5px 5px;
+	margin: 0;		
+}
 
 
 
