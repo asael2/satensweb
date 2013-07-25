@@ -274,7 +274,8 @@ $(function () {
 	//EDITAR Lead
 	if( $.urlParam('leadid') && $.urlParam('form') && $.urlParam('edit') )  {
 		$("#satensReport").hide();
-
-
+		$(".detail_gsection_title:contains('Formulario')").each(function(i, v){
+			$(this).css("border", "1px solid red")
+		}); 
 	}
 });
