@@ -1736,7 +1736,7 @@ img#wpstats {
 /*******************CUSTOM SATENS STYLES*******************/
 
 .logo, .typo{display:block; float:left;}
-.typo { margin:20px;}
+.typo { margin:20px 14px;}
 .typo h2{line-height: 1em;}
 .site-header hgroup{height:120px;}
 .readonly{color: #80445F;}
@@ -1760,7 +1760,7 @@ p.printParagraph {
 #leadData li{	background: whitesmoke; padding:5px;}
 
 #satensReport ul { list-style:none;}
-#satensReport li { background:whitesmoke;}
+#satensReport li, .tabTituloForm { background:whitesmoke;}
 
 #satensReport  #tabsMenu {
 	margin-bottom: 20px;
@@ -1895,7 +1895,7 @@ p.printParagraph {
 .tabTituloForm td:hover, .editActive{
 	color:white;
 	background:#F59267;
-	cursor:pointer;
+	cursor:default;
 }
 
 .tabTituloForm {
@@ -1912,7 +1912,19 @@ table.form-table ul{
 	list-style:none
 }
 
+/*Scroll2Top*/
 
+.scrollup{
+    width:40px;
+    height:40px;
+    opacity:0.3;
+    position:fixed;
+    bottom:50px;
+    right:100px;
+    display:none;
+    text-indent:-9999px;
+    background: url('http://gazpo.com/downloads/tutorials/jquery/scrolltop/icon_top.png') no-repeat;
+}
 
 
 

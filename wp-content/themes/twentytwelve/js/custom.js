@@ -13,13 +13,15 @@
 //Classes////////////////////////////////////////////////////
 
 	function formBreak(formNumb, nRespuestas){
-		var domElemt = "<li><div class='tituloForm'> <h2>"+nRespuestas+"</h2> </div> </li>";
+		var domElemt = "<li><div class='tituloForm'> <h4>"+nRespuestas+"</h4> </div> </li>";
 		$(formNumb).append(domElemt);
 	};
 
 	function printParagraph(formNumb, nRespuestas){
-		var domElemt = "<li> <p class='printParagraph'>"+nRespuestas+"</p> </li>";
-		$(formNumb).append(domElemt);
+		if (nRespuestas){
+			var domElemt = "<li> <p class='printParagraph'>"+nRespuestas+"</p> </li>";
+			$(formNumb).append(domElemt);
+		}
 	};
 
 	function photoPrint(nRespuestas){
@@ -289,17 +291,13 @@ $(function () {
 		$(".tabTituloForm", "table.form-table").click(function() {
 			$(this).toggleClass('editActive');
 			$(this).nextUntil(".tabTituloForm").toggle();
-
-
 		});
 
-		//Init togples
+		//Init toggles
 		$(window).load(function() {
-			
 			$(".tabTituloForm", "table.form-table").nextUntil(".tabTituloForm").toggle();
-
-			$(".tabTituloForm:first", "table.form-table").addClass('editActive').nextUntil(".tabTituloForm").toggle();
-
+			//Int with open accordion
+			//$(".tabTituloForm:first", "table.form-table").addClass('editActive').nextUntil(".tabTituloForm").toggle();
 		})
 			
 	}//Editar eof

@@ -10,7 +10,8 @@
  * @since Twenty Twelve 1.0
  */
 ?>
-	</div><!-- #main .wrapper -->
+	<a href="#" class="scrollup">Subir</a>
+    </div><!-- #main .wrapper -->
 	<footer id="colophon" role="contentinfo">
 		<div class="site-info">
 			<?php do_action( 'twentytwelve_credits' ); ?>
