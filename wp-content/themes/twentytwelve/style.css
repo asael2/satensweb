@@ -1877,6 +1877,7 @@ p.printParagraph {
 }
 .contenidoForm td{
 	padding: 5px 15px;
+	background:white;
 }
 
 #directory33 .inside{
@@ -1919,8 +1920,8 @@ table.form-table ul{
     height:40px;
     opacity:0.3;
     position:fixed;
-    bottom:50px;
-    right:100px;
+    bottom:65px;
+    right:20px;
     display:none;
     text-indent:-9999px;
     background: url('http://gazpo.com/downloads/tutorials/jquery/scrolltop/icon_top.png') no-repeat;
