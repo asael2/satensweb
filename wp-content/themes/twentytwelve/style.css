@@ -1861,7 +1861,7 @@ p.printParagraph {
 
 /*///Edit lead page*/
 .entry-content h2.detail_gsection_title{
-	margin:0;
+	margin: 20px 10px 0;
 	font-weight: normal;	
 }
 
@@ -1884,9 +1884,12 @@ p.printParagraph {
 	
 }
 #directory33 input.button-primary{
-	float:right;	
-	clear:both;
-	display:block;
+	/* float:right; */	
+	/* clear:both; */
+	/* display:block; */
+	font-size: 1em;
+	/* margin: auto; */
+	/* text-align: center; */
 }
 
 .tabTituloForm td:hover, .editActive{
@@ -1895,10 +1898,19 @@ p.printParagraph {
 	cursor:pointer;
 }
 
+.tabTituloForm {
+	cursor:pointer;
+}
 
+.updateBtn{
+	display:block;
+	float:right;
+	font-size:1.8em;
+}
 
-
-
+table.form-table ul{
+	list-style:none
+}
 
 
 

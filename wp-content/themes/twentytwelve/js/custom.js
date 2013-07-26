@@ -293,11 +293,13 @@ $(function () {
 
 		});
 
-		//Init togles
+		//Init togples
 		$(window).load(function() {
+			
 			$(".tabTituloForm", "table.form-table").nextUntil(".tabTituloForm").toggle();
-			$(".tabTituloForm:first", "table.form-table").nextUntil(".tabTituloForm").toggle();
-			$("input.button-primary").css("float", right);
+
+			$(".tabTituloForm:first", "table.form-table").addClass('editActive').nextUntil(".tabTituloForm").toggle();
+
 		})
 			
 	}//Editar eof
