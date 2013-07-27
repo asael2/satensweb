@@ -1756,7 +1756,13 @@ p.printParagraph {
 	font-weight: bold;
 }
 #satensReport{position:relative;}
+
 #satensReport #leadData{ background:#80445F; padding-left:10px;}
+#satensReport h3{
+	font-weight: normal;
+	margin: 15px 0;
+}
+
 #leadData li{	background: whitesmoke; padding:5px;}
 
 #satensReport ul { list-style:none;}
@@ -1914,7 +1920,6 @@ table.form-table ul{
 }
 
 /*Scroll2Top*/
-
 .scrollup{
     width:40px;
     height:40px;
