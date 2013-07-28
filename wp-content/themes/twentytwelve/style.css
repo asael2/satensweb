@@ -548,6 +548,8 @@ a:hover {
 }
 .site-header h1 a,
 .site-header h2 a {
+
+
 	color: #515151;
 	display: inline-block;
 	text-decoration: none;
@@ -761,9 +763,10 @@ article.sticky .featured-post {
 .entry-content h2,
 .comment-content h2,
 .mu_register h2 {
-	font-size: 18px;
+	/* font-size: 18px; */
 	font-size: 1.285714286rem;
-	line-height: 1.6;
+	/* line-height: 1.6; */
+	
 }
 .entry-content h3,
 .comment-content h3 {
@@ -1523,6 +1526,7 @@ img#wpstats {
 	.main-navigation li ul li a:hover {
 		background: #e3e3e3;
 		color: #444;
+
 	}
 	.main-navigation .current-menu-item > a,
 	.main-navigation .current-menu-ancestor > a,
@@ -1730,8 +1734,9 @@ img#wpstats {
 
 
 /*******************CUSTOM SATENS STYLES*******************/
+
 .logo, .typo{display:block; float:left;}
-.typo { margin:20px;}
+.typo { margin:20px 14px;}
 .typo h2{line-height: 1em;}
 .site-header hgroup{height:120px;}
 .readonly{color: #80445F;}
@@ -1739,9 +1744,8 @@ img#wpstats {
 	background: #80445F;
 	color:#FFFFFF;
 	padding: 6px;
-	margin: 30px 0 0 0;
-	cursor:default;
-	font-weight:normal;
+	cursor: pointer;
+	font-weight: normal;
 }
 
 p.printParagraph {
@@ -1751,12 +1755,21 @@ p.printParagraph {
 	background: white;
 	font-weight: bold;
 }
+#satensReport{position:relative;}
 
 #satensReport #leadData{ background:#80445F; padding-left:10px;}
+<<<<<<< HEAD
+=======
+#satensReport h3{
+	font-weight: normal;
+	margin: 15px 0;
+}
+
+>>>>>>> origin/Beta-1.1
 #leadData li{	background: whitesmoke; padding:5px;}
 
 #satensReport ul { list-style:none;}
-#satensReport li { background:whitesmoke;}
+#satensReport li, .tabTituloForm { background:whitesmoke;}
 
 #satensReport  #tabsMenu {
 	margin-bottom: 20px;
@@ -1768,8 +1781,6 @@ p.printParagraph {
 	display:block;
 	text-decoration:none;
 	display: inline-block;
-	
-	border: 1px solid #80445F;
 	padding: 6px;	
 }
 
@@ -1781,16 +1792,19 @@ p.printParagraph {
 }
 
 .wideSec{
-	height:280px;
+	margin:20px 0;
 	clear:both;
 	position:relative;
 }
 
 
 #leadPic{
-	position:absolute;
-	top:10px;
-	right:20px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	max-width: 200px;
+	max-height: 134px;
+	overflow: hidden;
 }
 
 .entry-header {
@@ -1798,12 +1812,15 @@ p.printParagraph {
 }
 .entry-content{
 	position:relative;
+	clear: both;
+	display: block;
+	width: initial;
 }
 
 .entryback{
 	position: absolute;
 	right: 10px;
-	top: -92px;
+	top: -50px;
 	float:right;
 }
 
@@ -1820,3 +1837,105 @@ p.printParagraph {
 	margin-top: 17px;
 
 }
+
+#input_33_191, #input_33_192, #input_33_193, #input_33_194, #input_33_195, #input_33_196, #input_33_197, #input_33_198, #input_33_199, #input_33_200, #input_33_201, #input_33_202, #input_33_203, #input_33_204, #input_33_205, #input_33_206, #input_33_207, #input_33_208, #input_33_209, #input_33_210, #input_33_211, #input_33_212, #input_33_213, #input_33_214, #input_33_215, #input_33_216, #input_33_217, #input_33_218, #input_33_219 { 
+	background: lighgray;
+}
+#content{position:relative;}
+.loading-curtain {
+	background: white;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 10;
+	text-align: center;
+	padding-top: 100px;
+	display: block;
+	top: -10px;
+	font-size:1.6em;
+}
+
+#studentinstructions {
+	margin-bottom: 20px;
+}
+
+#sidebar-head {
+	width: 220px;
+	float: right;
+	margin-top: -140px;
+	background: whitesmoke;
+	padding: 5px;
+	font-size: 0.9em;
+}
+
+/*///Edit lead page*/
+.entry-content h2.detail_gsection_title{
+	margin: 20px 10px 0;
+	font-weight: normal;	
+}
+
+.tituloForm td, .contenidoForm td{
+	color:#12103F;
+	background:whiteSmoke;
+}
+
+.tituloForm td{
+	color: whiteSmoke;
+	background:#F59267;
+	padding: 5px 10px;
+}
+.contenidoForm td{
+	padding: 5px 15px;
+	background:white;
+}
+
+#directory33 .inside{
+	width:82%;
+	
+}
+#directory33 input.button-primary{
+	/* float:right; */	
+	/* clear:both; */
+	/* display:block; */
+	font-size: 1em;
+	/* margin: auto; */
+	/* text-align: center; */
+}
+
+.tabTituloForm td:hover, .editActive{
+	color:white;
+	background:#F59267;
+	cursor:default;
+}
+
+.tabTituloForm {
+	cursor:pointer;
+}
+
+.updateBtn{
+	display:block;
+	float:right;
+	font-size:1.8em;
+}
+
+table.form-table ul{
+	list-style:none
+}
+
+/*Scroll2Top*/
+.scrollup{
+    width:40px;
+    height:40px;
+    opacity:0.3;
+    position:fixed;
+    bottom:65px;
+    right:20px;
+    display:none;
+    text-indent:-9999px;
+    background: url('http://gazpo.com/downloads/tutorials/jquery/scrolltop/icon_top.png') no-repeat;
+}
+
+
+
+
+

@@ -1,0 +1,270 @@
+<!--
+You are free to copy and use this sample in accordance with the terms of the
+Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>SATENS | Formulario 11: Estudiante - Auto-avaluó de destrezas generales</title>
+    
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+
+//LOADS CHART PACKAGES
+google.load("visualization", "1", {packages:["corechart"]});
+google.load('visualization', '1', {packages:['table']});
+
+//ID DE ESTUDIANTE
+
+function idest() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', ' ');
+        data.addColumn('string', ' ');
+        data.addColumn('string', ' ');
+		data.addColumn('string', ' ');
+        data.addRows([
+          ['Nombre',  'Edwin', 'Género', 'Masculino'],
+          ['Apellido',   'Merced',  'Grado', ' Noveno'],
+          ['Número de Record', '001', 'Fecha de Nacimiento', '01/01/2013']
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('estid'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+
+
+//CHART 1      
+
+function chart1() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  0],
+	['No Domina', 4],
+	['En Proceso', 3],
+	['Domina',      2],
+	]);
+
+	var options = {
+		title: 'Porciento de Dominio de Áreas Académicas /Asignaturas',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('visualizationa'));
+	charte.draw(datae, options);
+
+}
+function table1() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Áreas Académicas /Asignaturas');
+        data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'No Domina');
+		data.addColumn('boolean', 'En Proceso');
+		data.addColumn('boolean', 'Domina');
+		
+        data.addRows([['Soy bueno/a en matemáticas',  null, null, null, null]]);
+        data.addRows([['Soy bueno/a en inglés',  null, null, null, null]]);
+		data.addRows([['Soy bueno/a en ciencias',  null, null, null, null]]);
+        data.addRows([['Soy bueno/a en estudios sociales',  null, null, null, null]]);
+		data.addRows([['Soy bueno/a en Estudios vocacionales (ej. agricultura, negocios, salud, salud en el hogar, mercadeo, tecnología, educación industrial)s',  null, null, null, null]]);
+        data.addRows([['Soy bueno/a educación física',  null, null, null, null]]);
+        data.addRows([['Soy bueno/a en arte',  null, null, null, null]]);
+		data.addRows([['Soy bueno/a en música',  null, null, null, null]]);
+        data.addRows([['Otros',  null, null, null, null]]);
+		
+        var table = new google.visualization.Table(document.getElementById('tablea'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+	  
+	  
+
+//CHART 2 
+
+function chart2() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  1],
+	['No Domina', 4],
+	['En Proceso', 3],
+	['Domina',      2],
+	]);
+
+	var options = {
+		title: 'Porciento de Dominio de Capacidades Físicas',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('visualizationb'));
+	charte.draw(datae, options);
+
+}  
+
+
+function table2() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Capacidades Físicas');
+        data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'No Domina');
+		data.addColumn('boolean', 'En Proceso');
+		data.addColumn('boolean', 'Domina');
+		
+        data.addRows([['Puedo levantar objetos pesados',  null, null, null, null]]);
+        data.addRows([['Puedo levantar objetos livianos',  null, null, null, null]]);
+		data.addRows([['Puedo bailar',  null, null, null, null]]);
+        data.addRows([['Puedo caminar distancias cortas',  null, null, null, null]]);
+		data.addRows([['Puedo caminar distancias largas',  null, null, null, null]]);
+        data.addRows([['Puedo correr distancias cortas',  null, null, null, null]]);
+        data.addRows([['Puedo subir escaleras, sogas, etc.',  null, null, null, null]]);
+		data.addRows([['Puedo lanzar objetos',  null, null, null, null]]);
+        data.addRows([['Puedo empujar objetos',  null, null, null, null]]);
+		data.addRows([['Otros',  null, null, null, null]]);
+		
+        var table = new google.visualization.Table(document.getElementById('tableb'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+	  
+//CHART 3  
+
+
+function chart3() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  1],
+	['No Domina', 7],
+	['En Proceso', 3],
+	['Domina',      2],
+	]);
+
+	var options = {
+		title: 'Porciento de Dominio de Capacidades Mentales',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('visualizationc'));
+	charte.draw(datae, options);
+
+}      
+function table3() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Capacidades Mentales');
+        data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'No Domina');
+		data.addColumn('boolean', 'En Proceso');
+		data.addColumn('boolean', 'Domina');
+		
+        data.addRows([['Me acuerdo bien de las cosaspoesías, chistes, información, etc.',  true, null, null, null]]);
+        data.addRows([['Tengo buena escritura y caligrafía',  null, null, null, null]]);
+		data.addRows([['Puedo escribir cuentos, historias, ensayos',  null, null, null, null]]);
+        data.addRows([['Puedo hablar correctamente sin abreviar o utilizar jerga.',  null, null, null, null]]);
+		data.addRows([['Puedo hablar con pronunciación correcta',  null, null, null, null]]);
+        data.addRows([['Se restar correctamente',  null, null, null, null]]);
+        data.addRows([['Se sumar correctamente',  null, null, null, null]]);
+		data.addRows([['Se multiplicar correctamente',  null, null, null, null]]);
+        data.addRows([['Se dividir correctamente',  null, null, null, null]]);
+		data.addRows([['Se resolver problemas matemáticos fácilmente',  null, null, null, null]]);
+		data.addRows([['Se resolver acertijos y rompecabezas',  null, null, null, null]]);
+		data.addRows([['Puedo leer fácilmente y entender el contenido y significado de la información',  null, null, null, null]]);
+		data.addRows([['Otros',  null, null, null, null]]);
+		
+        var table = new google.visualization.Table(document.getElementById('tablec'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+	  
+//CHART 4   
+
+function chart4() {
+	var datae = google.visualization.arrayToDataTable([
+	['Dimensión', 'Cantidad'],
+	['No Aplica',  0],
+	['No Domina', 5],
+	['En Proceso', 2],
+	['Domina',      1],
+	]);
+
+	var options = {
+		title: 'Porciento de Dominio de Talentos Especiales',
+		backgroundColor: {strokeWidth: 1, fill: 'white',},
+		legend: {position: 'bottom', alignment: 'start'}
+		};
+	var charte = new google.visualization.PieChart(document.getElementById('visualizationd'));
+	charte.draw(datae, options);
+
+}
+   
+function table4() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Talentos Especiales');
+        data.addColumn('boolean', 'No Aplica');
+        data.addColumn('boolean', 'No Domina');
+		data.addColumn('boolean', 'En Proceso');
+		data.addColumn('boolean', 'Domina');
+		
+        data.addRows([['Trabajo bien con las manos',  null, null, null, null]]);
+        data.addRows([['Arreglo y monto cosas',  null, null, null, null]]);
+		data.addRows([['Soy líder en actividades de grupo',  null, null, null, null]]);
+        data.addRows([['Me llevo bien con sus compañeros',  null, null, null, null]]);
+		data.addRows([['Me llevo bien con personas de autoridad',  null, null, null, null]]);
+        data.addRows([['Se tocar música, cantar, bailar, o deportes',  null, null, null, null]]);
+        data.addRows([['Se dibujar, pintar y/o esculpir',  null, null, null, null]]);
+		data.addRows([['Otros',  null, null, null, null]]);
+		
+        var table = new google.visualization.Table(document.getElementById('tabled'));
+        table.draw(data, {showRowNumber: false});
+      }	 
+
+
+
+// CALLBACKS
+  	  google.setOnLoadCallback(idest);
+	  
+  	  google.setOnLoadCallback(chart1);
+	  google.setOnLoadCallback(table1);
+	  google.setOnLoadCallback(chart2);
+	  google.setOnLoadCallback(table2);
+	  google.setOnLoadCallback(chart3);
+	  google.setOnLoadCallback(table3);
+	  google.setOnLoadCallback(chart4);
+	  google.setOnLoadCallback(table4);
+	  
+    </script>
+    
+   
+  <style type="text/css">
+  body h1 {
+	color: #80455f;
+}
+  body h2 {
+	color: #FFF;
+	background-color: #80455f;
+}
+  </style>
+  
+
+  </head>
+  <body style="font-family: Arial; border: 0 none; font-size: 16px;">
+  
+  <h1>Estudiante - Auto-Avaluó de Destrezas y Capacidades Generales*</h1>
+  <p>*Los resultados representan las áreas que el estudiante indica  “es bueno” y que posee los conocimientos y destrezas en un nivel satisfactorio. Esta información debe ser corroborada para el desarrollo de un plan de servicios de transición con la documentación, observaciones y entrevistas disponible en las áreas académicas , médicas, sensoriales  y sicológicas, entre otras.</p>
+  
+  <hr />
+    <h2>Información del Estudiante</h2>
+    <div id="estid" style="width: 600px; height: 101px;"></div>
+  <hr />
+  
+  <h2>Areas Académicas /Asignaturas</h2>
+  <div id="visualizationa" style="width: 600px; height: 371px;"></div>
+  <div id="tablea" style="width: 600px; height: 300px;"></div>
+  <h2>Capacidades Físicas</h2>
+  <div id="visualizationb" style="width: 600px; height: 371px;"></div></br>
+  <div id="tableb" style="width: 600px; height: 300px;"></div>
+  <h2>Capacidades Mentales</h2>
+  <div id="visualizationc" style="width: 600px; height: 371px;"></div></br>
+  <div id="tablec" style="width: 600px; height: 400px;"></div>
+  <h2>Talentos Especiales</h2>
+  <div id="visualizationd" style="width: 600px; height: 371px;"></div></br>
+  <div id="tabled" style="width: 600px; height: 300px;"></div>
+  
+</body>
+</html>
+​
