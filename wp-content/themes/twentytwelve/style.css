@@ -1789,7 +1789,7 @@ p.printParagraph {
 }
 
 .wideSec{
-	height:280px;
+	margin:20px 0;
 	clear:both;
 	position:relative;
 }
@@ -1797,10 +1797,10 @@ p.printParagraph {
 
 #leadPic{
 	position: absolute;
-	top: 10px;
-	right: 10px;
-	width: 240px;
-	height: 240px;
+	top: 5px;
+	right: 5px;
+	max-width: 200px;
+	max-height: 134px;
 	overflow: hidden;
 }
 

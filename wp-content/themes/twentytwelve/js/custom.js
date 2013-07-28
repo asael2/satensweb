@@ -32,8 +32,7 @@
 	};
 
 	function studentBasicData (label, value) {
-
-		$("#leadData").append("<li>"+label+" : "+value+"</li>")
+		value ? $("#leadData").append("<li>"+label+" : "+value+"</li>") : "";
 	};
 
 	function siNoColumnChart (nRespuestas, targetDom, formNumb, pregunta) {
@@ -150,13 +149,13 @@ var reporte = {
 
 	startDraw : function () {
 		reporte.titleReplace();
-		studentBasicData("Nombre " ,				this.respondido(3));
-		studentBasicData("Segundo Nombre ",			this.respondido(4) ? this.respondido(4) : "-" );
-		studentBasicData("Apellido " , 				this.respondido(5) ? this.respondido(5) : "-" );
-		studentBasicData("Segundo Apellido ",		this.respondido(6) ? this.respondido(6) : "-" );
-		studentBasicData("Genero " , 				this.respondido(7) ? this.respondido(7) : "-" );
-		studentBasicData("Fecha de nacimiento ",	this.respondido(8) ? this.respondido(8) : "-" );
-		studentBasicData("Grado ", 					this.respondido(9) ? this.respondido(9) : "-" );
+		studentBasicData("Nombre " ,				this.respondido(3) );
+		studentBasicData("Segundo Nombre ",			this.respondido(4) );
+		studentBasicData("Apellido " , 				this.respondido(5) );
+		studentBasicData("Segundo Apellido ",		this.respondido(6) );
+		studentBasicData("Genero " , 				this.respondido(7) );
+		studentBasicData("Fecha de nacimiento ",	this.respondido(8) );
+		studentBasicData("Grado ", 					this.respondido(9) );
 		studentBasicData("", 						"<a href=" + this.editLink() + ">EDITAR</a>" );
 		photoPrint(this.respondido(510));
 		$.get('/wp-content/themes/twentytwelve/js/datatables.js').done(function(data){
@@ -225,7 +224,8 @@ var reporte = {
 	};
 
 	reporte.titleReplace = function () {
-		var alumni = "Estudiante: "+ this.respondido(3) +" "+ this.respondido(5);
+		
+		var alumni = "Estudiante: "+ this.respondido(3) +" "+ (this.respondido(5)?this.respondido(5):"") ;
 		$(".entry-title").text(alumni);
 	};
 
