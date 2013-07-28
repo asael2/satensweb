@@ -230,7 +230,7 @@ var reporte = {
 	};
 	
 	reporte.deleteLead = function () {
-	    if (confirm("Confirma eliminar completamente este registro?")) {
+	    if (confirm("Eliminar Completamente Este Registro?")) {
 	    	var borrar = "/servborrar.php?leadid=" + $.urlParam('leadid');
 	    	var redireccionar = "/?page_id=94"; 
 	    	$.post(borrar).done(function(){

@@ -1936,6 +1936,10 @@ table.form-table ul{
 #leadData span.value {
 	color: #80445F;
 }
+ul#leadTools {
+	text-align: center;
+	margin-top: -5px;
+}
 #leadTools li{
 	display:inline-block;
 }
