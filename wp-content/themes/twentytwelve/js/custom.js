@@ -157,15 +157,18 @@ var reporte = {
 		studentBasicData("Genero" , 			this.respondido(7) );
 		studentBasicData("Fecha de nacimiento",	this.respondido(8) );
 		studentBasicData("Grado", 				this.respondido(9) );
-		$("#leadData").append("<div id='leadTools'> <a href=" + this.editLink() + ">EDITAR</a> </div>" );
-
+		//Avatar print
 		photoPrint(this.respondido(510));
+		//Attach LeadTools Links
+		$("#editLead").attr("href", reporte.editLink());
+		$("#deleteLead").on("click", function(){reporte.deleteLead()});
+		//Load Datatables
 		$.get('/wp-content/themes/twentytwelve/js/datatables.js').done(function(data){
 			reporte.dataTables();
 			$("td:contains('✗')").css("color", "white"); 
 			$("#tabsInforme").tabs();
-			$(".loading-curtain").fadeOut("fast");
 			$(".entryback").show();
+			$(".loading-curtain").fadeOut("fast");
 		});
 	}
 };
@@ -225,7 +228,16 @@ var reporte = {
 
 		return  $(".useredit a").attr('href');
 	};
-
+	reporte.deleteLead = function () {
+	    if (confirm("Realmente quiere eliminar este registro?")) {
+	    	var borrar = "/servborrar.php?leadid=" + $.urlParam('leadid');
+	    	var redireccionar = "/?page_id=94"; 
+	    	$.post(borrar).done(function(){
+				$(location).attr('href', redireccionar);
+	    	})
+	    }
+	    return false;
+	}
 	reporte.titleReplace = function () {
 		
 		var alumni = "Estudiante: "+ this.respondido(3) +" "+ (this.respondido(5)?this.respondido(5):"") ;
@@ -262,8 +274,7 @@ var reporte = {
 $(function () {
 	
 	//SERAiD
-	$(".gform_wrapper .readonly input").attr('readonly', 'readonly').css("background","#CCC"); 
-	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC");
+	$(".gform_wrapper .readonly input, .entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC"); 
 	
 	//REPORTE Lead
 	if( $.urlParam('leadid') && $.urlParam('form') )  {
