@@ -535,10 +535,6 @@ reporte.dataTables = function(){
 
 //FORMULARIO 8 >>>>>>>>>>>>>>>>>>>>>>>>>
 
-	//SECCION 1: DESTREZAS PARA LA VIDA
-<<<<<<< HEAD
-=======
-
 		//PIECHART
 		DS_sum_158_188 = [ //sum of field 
 			//Columnas
@@ -707,7 +703,7 @@ reporte.dataTables = function(){
 		]; 
 
 	//SECCION 4: DESTREZAS DE CONVEVENCIA FAMILIAR
->>>>>>> origin/Beta-1.1
+
 
 		//PIECHART
 		DS_sum_255_259 = [ //sum of field  
@@ -1540,8 +1536,7 @@ reporte.dataTables = function(){
 
 	formBreak(".form7", "Destrezas del Diario Vivir Identificadas");
 	laDataTable(DS_153, "DS_153", ".form7");
-<<<<<<< HEAD
-=======
+
 
 //F8
 	formBreak(".form8", "Destrezas para la Vida");
@@ -1648,7 +1643,7 @@ reporte.dataTables = function(){
 	formBreak(".form11", "Capacidades Físicas que el Estudiante Indica Posee");
 	laDataTable(DS_468, "DS_468", ".form11");
 	laDataTableDos(DS_471_479, "DS_471_479", ".form11");
->>>>>>> origin/Beta-1.1
+
 
 	formBreak(".form11", "Capacidades Mentales que el Estudiante Indica Posee");
 	laDataTable(DS_481, "DS_481", ".form11");

@@ -1758,14 +1758,12 @@ p.printParagraph {
 #satensReport{position:relative;}
 
 #satensReport #leadData{ background:#80445F; padding-left:10px;}
-<<<<<<< HEAD
-=======
+
 #satensReport h3{
 	font-weight: normal;
 	margin: 15px 0;
 }
 
->>>>>>> origin/Beta-1.1
 #leadData li{	background: whitesmoke; padding:5px;}
 
 #satensReport ul { list-style:none;}
