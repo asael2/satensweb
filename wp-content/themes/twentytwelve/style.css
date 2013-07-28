@@ -1933,7 +1933,19 @@ table.form-table ul{
     background: url('http://gazpo.com/downloads/tutorials/jquery/scrolltop/icon_top.png') no-repeat;
 }
 
+#leadData span.value {
+	color: #80445F;
+}
+#leadTools a{
+	color: whiteSmoke;
+	text-decoration: none;
+	text-align: center;
+	background: #12103F;
+	width: 100px;
+	display: block;
+}
 
-
-
+#leadTools a:hover{
+	color: #F59267;
+}
 

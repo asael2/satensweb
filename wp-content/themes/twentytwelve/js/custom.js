@@ -33,7 +33,7 @@
 
 	function studentBasicData (label, value) {
 
-		value ? $("#leadData").append(" <li><span>"+label+"</span> "+value+"</li> ") : "";
+		value ? $("#leadData").append("<li><span class='label'>"+label+" :</span> <span class='value'>"+value+"</span> </li>") : "";
 	};
 
 	function siNoColumnChart (nRespuestas, targetDom, formNumb, pregunta) {
@@ -150,14 +150,15 @@ var reporte = {
 
 	startDraw : function () {
 		reporte.titleReplace();
-		studentBasicData("Nombre :" ,				this.respondido(3) );
-		studentBasicData("Segundo Nombre :",		this.respondido(4) );
-		studentBasicData("Apellido :" , 			this.respondido(5) );
-		studentBasicData("Segundo Apellido :",		this.respondido(6) );
-		studentBasicData("Genero :" , 				this.respondido(7) );
-		studentBasicData("Fecha de nacimiento :",	this.respondido(8) );
-		studentBasicData("Grado :", 				this.respondido(9) );
-		studentBasicData("", 						"<a href=" + this.editLink() + ">EDITAR</a>" );
+		studentBasicData("Nombre" ,				this.respondido(3) );
+		studentBasicData("Segundo Nombre",		this.respondido(4) );
+		studentBasicData("Apellido" , 			this.respondido(5) );
+		studentBasicData("Segundo Apellido",	this.respondido(6) );
+		studentBasicData("Genero" , 			this.respondido(7) );
+		studentBasicData("Fecha de nacimiento",	this.respondido(8) );
+		studentBasicData("Grado", 				this.respondido(9) );
+		$("#leadData").append("<div id='leadTools'> <a href=" + this.editLink() + ">EDITAR</a> </div>" );
+
 		photoPrint(this.respondido(510));
 		$.get('/wp-content/themes/twentytwelve/js/datatables.js').done(function(data){
 			reporte.dataTables();
@@ -279,10 +280,8 @@ $(function () {
 		$("#satensReport").hide();
 		
 		//Agregar class a Titulos
-		$(".detail_gsection_title:contains('Formulario')").each(function(i, v){
-			var secFTitle = $(this).closest('tr')
-			secFTitle.addClass("tabTituloForm");
-			secFTitle.attr("id", "titulo"+i);
+		$(".detail_gsection_title:contains('Formulario')").each(function(i){
+			$(this).closest('tr').addClass("tabTituloForm").attr("id", "titulo"+i);
 		}); 
 		
 		//Agregar class a Contents
@@ -290,8 +289,7 @@ $(function () {
 
 		//Bind click togle
 		$(".tabTituloForm", "table.form-table").click(function() {
-			$(this).toggleClass('editActive');
-			$(this).nextUntil(".tabTituloForm").toggle();
+			$(this).toggleClass('editActive').nextUntil(".tabTituloForm").toggle();
 		});
 
 		//Agregar graficas de preguntas;
