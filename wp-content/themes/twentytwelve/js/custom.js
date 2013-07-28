@@ -228,8 +228,9 @@ var reporte = {
 
 		return  $(".useredit a").attr('href');
 	};
+	
 	reporte.deleteLead = function () {
-	    if (confirm("Realmente quiere eliminar este registro?")) {
+	    if (confirm("Confirma eliminar completamente este registro?")) {
 	    	var borrar = "/servborrar.php?leadid=" + $.urlParam('leadid');
 	    	var redireccionar = "/?page_id=94"; 
 	    	$.post(borrar).done(function(){
@@ -238,6 +239,7 @@ var reporte = {
 	    }
 	    return false;
 	}
+	
 	reporte.titleReplace = function () {
 		
 		var alumni = "Estudiante: "+ this.respondido(3) +" "+ (this.respondido(5)?this.respondido(5):"") ;
