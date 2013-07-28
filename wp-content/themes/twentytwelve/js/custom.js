@@ -32,7 +32,8 @@
 	};
 
 	function studentBasicData (label, value) {
-		value ? $("#leadData").append("<li>"+label+" : "+value+"</li>") : "";
+
+		value ? $("#leadData").append(" <li><span>"+label+"</span> "+value+"</li> ") : "";
 	};
 
 	function siNoColumnChart (nRespuestas, targetDom, formNumb, pregunta) {
@@ -149,13 +150,13 @@ var reporte = {
 
 	startDraw : function () {
 		reporte.titleReplace();
-		studentBasicData("Nombre " ,				this.respondido(3) );
-		studentBasicData("Segundo Nombre ",			this.respondido(4) );
-		studentBasicData("Apellido " , 				this.respondido(5) );
-		studentBasicData("Segundo Apellido ",		this.respondido(6) );
-		studentBasicData("Genero " , 				this.respondido(7) );
-		studentBasicData("Fecha de nacimiento ",	this.respondido(8) );
-		studentBasicData("Grado ", 					this.respondido(9) );
+		studentBasicData("Nombre :" ,				this.respondido(3) );
+		studentBasicData("Segundo Nombre :",		this.respondido(4) );
+		studentBasicData("Apellido :" , 			this.respondido(5) );
+		studentBasicData("Segundo Apellido :",		this.respondido(6) );
+		studentBasicData("Genero :" , 				this.respondido(7) );
+		studentBasicData("Fecha de nacimiento :",	this.respondido(8) );
+		studentBasicData("Grado :", 				this.respondido(9) );
 		studentBasicData("", 						"<a href=" + this.editLink() + ">EDITAR</a>" );
 		photoPrint(this.respondido(510));
 		$.get('/wp-content/themes/twentytwelve/js/datatables.js').done(function(data){
@@ -265,10 +266,8 @@ $(function () {
 	//REPORTE Lead
 	if( $.urlParam('leadid') && $.urlParam('form') )  {
 		$(".loading-curtain").show();
-		$("#site-navigation, .entry-detail-view, #studentinstructions").hide();
-		//$(".entry-detail-view").hide(); //Hide Directory's table.		
+		$("#site-navigation, .entry-detail-view, #studentinstructions").hide(); //Hide Directory's table.		
 		reporte.init();	
-
 	}else{
 		$("#satensReport").hide();
 		$("#site-navigation").show();
@@ -292,14 +291,13 @@ $(function () {
 		$(".detail_gsection_title:contains('Sección 4: Estimado de Salario por Trabajo')").closest('tr').after("<tr class='guideImg4'></tr>");
 		$(".guideImg4").html(" <img src= 'http://www.satenspr.com/wp-content/uploads/2013/07/calendario.png' /> ")
 
-		//Add Forms titles class
+		//Agregar class a Titulos
 		$(".detail_gsection_title:contains('Formulario')").each(function(i, v){
 			var secFTitle = $(this).closest('tr')
-			secFTitle.addClass("tabTituloForm");
-			console.log(i, v);
+			secFTitle.addClass("tabTituloForm"+i);
 		}); 
 		
-		//Add Forms contents class
+		//Agregar class a Contents
 		$(".tabTituloForm", "table.form-table").nextUntil(".tabTituloForm").addClass("contenidoForm");
 
 		//Bind click togle
@@ -329,6 +327,5 @@ $(function () {
 	    $("html, body").animate({ scrollTop: 0 }, 600);
 	    return false;
 	});
-
 
 });
