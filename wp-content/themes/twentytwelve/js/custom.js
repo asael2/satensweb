@@ -165,6 +165,7 @@ var reporte = {
 			$("td:contains('✗')").css("color", "white"); 
 			$("#tabsInforme").tabs();
 			$(".loading-curtain").fadeOut("fast");
+			$(".entryback").show();
 		});
 	}
 };
@@ -267,12 +268,13 @@ $(function () {
 	//REPORTE Lead
 	if( $.urlParam('leadid') && $.urlParam('form') )  {
 		$(".loading-curtain").show();
-		$("#site-navigation, .entry-detail-view, #studentinstructions").hide(); //Hide Directory's table.		
+		$("#site-navigation, .entry-detail-view, #studentinstructions, .entryback").hide(); //Hide Directory's table.		
 		reporte.init();	
 	}else{
 		$("#satensReport").hide();
 		$("#site-navigation").show();
 		$(".loading-curtain").hide();
+		$(".entryback").hide();
 	}
 	
 	//EDITAR Lead
