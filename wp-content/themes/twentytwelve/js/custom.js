@@ -143,7 +143,7 @@ var reporte = {
 		$.get('/servicio.php?leadid='+leadId).done(function(data) {
 			respuestas = data.r;
 			console.log("Regs. : "+respuestas.length);
-			console.log(respuestas);
+			//console.log(respuestas);
 			reporte.startDraw();
 		});
 	},	
@@ -278,6 +278,22 @@ $(function () {
 	if( $.urlParam('leadid') && $.urlParam('form') && $.urlParam('edit') )  {
 		$("#satensReport").hide();
 		
+		//Agregar class a Titulos
+		$(".detail_gsection_title:contains('Formulario')").each(function(i, v){
+			var secFTitle = $(this).closest('tr')
+			secFTitle.addClass("tabTituloForm");
+			secFTitle.attr("id", "titulo"+i);
+		}); 
+		
+		//Agregar class a Contents
+		$(".tabTituloForm", "table.form-table").nextUntil(".tabTituloForm").addClass("contenidoForm");
+
+		//Bind click togle
+		$(".tabTituloForm", "table.form-table").click(function() {
+			$(this).toggleClass('editActive');
+			$(this).nextUntil(".tabTituloForm").toggle();
+		});
+
 		//Agregar graficas de preguntas;
 		$(".detail_gsection_title:contains('Sección 1: Información de Oferta de Empleo')").closest('tr').after("<tr class='guideImg1'></tr>");
 		$(".guideImg1").html(" <img src= 'http://www.satenspr.com/wp-content/uploads/2013/05/anuncio.png' /> ");
@@ -291,22 +307,6 @@ $(function () {
 		$(".detail_gsection_title:contains('Sección 4: Estimado de Salario por Trabajo')").closest('tr').after("<tr class='guideImg4'></tr>");
 		$(".guideImg4").html(" <img src= 'http://www.satenspr.com/wp-content/uploads/2013/07/calendario.png' /> ")
 
-		//Agregar class a Titulos
-		$(".detail_gsection_title:contains('Formulario')").each(function(i, v){
-			var secFTitle = $(this).closest('tr')
-			secFTitle.addClass("tabTituloForm"+i);
-		}); 
-		
-		//Agregar class a Contents
-		$(".tabTituloForm", "table.form-table").nextUntil(".tabTituloForm").addClass("contenidoForm");
-
-		//Bind click togle
-		$(".tabTituloForm", "table.form-table").click(function() {
-			$(this).toggleClass('editActive');
-			$(this).nextUntil(".tabTituloForm").toggle();
-		});
-
-		
 		//Init toggles
 		$(window).load(function() {
 			$(".tabTituloForm", "table.form-table").nextUntil(".tabTituloForm").toggle();
