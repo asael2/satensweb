@@ -33,7 +33,7 @@
 
 	function studentBasicData (label, value) {
 
-		value ? $("#leadData").append(" <li><span>"+label+"</span> "+value+"</li> ") : "";
+		value ? $("#leadData").append("<li><span class='label'>"+label+" :</span> <span class='value'>"+value+"</span> </li>") : "";
 	};
 
 	function siNoColumnChart (nRespuestas, targetDom, formNumb, pregunta) {
@@ -143,26 +143,32 @@ var reporte = {
 		$.get('/servicio.php?leadid='+leadId).done(function(data) {
 			respuestas = data.r;
 			console.log("Regs. : "+respuestas.length);
-			console.log(respuestas);
+			//console.log(respuestas);
 			reporte.startDraw();
 		});
 	},	
 
 	startDraw : function () {
 		reporte.titleReplace();
-		studentBasicData("Nombre :" ,				this.respondido(3) );
-		studentBasicData("Segundo Nombre :",		this.respondido(4) );
-		studentBasicData("Apellido :" , 			this.respondido(5) );
-		studentBasicData("Segundo Apellido :",		this.respondido(6) );
-		studentBasicData("Genero :" , 				this.respondido(7) );
-		studentBasicData("Fecha de nacimiento :",	this.respondido(8) );
-		studentBasicData("Grado :", 				this.respondido(9) );
-		studentBasicData("", 						"<a href=" + this.editLink() + ">EDITAR</a>" );
+		studentBasicData("Nombre" ,				this.respondido(3) );
+		studentBasicData("Segundo Nombre",		this.respondido(4) );
+		studentBasicData("Apellido" , 			this.respondido(5) );
+		studentBasicData("Segundo Apellido",	this.respondido(6) );
+		studentBasicData("Genero" , 			this.respondido(7) );
+		studentBasicData("Fecha de nacimiento",	this.respondido(8) );
+		studentBasicData("Grado", 				this.respondido(9) );
+		//Avatar print
 		photoPrint(this.respondido(510));
+		//Attach LeadTools Links
+		$(".printLead").on("click", function(){window.print()});
+		$(".editLead").on("click", function(){reporte.editLink()});
+		$(".deleteLead").on("click", function(){reporte.deleteLead()});
+		//Load Datatables
 		$.get('/wp-content/themes/twentytwelve/js/datatables.js').done(function(data){
 			reporte.dataTables();
 			$("td:contains('✗')").css("color", "white"); 
 			$("#tabsInforme").tabs();
+			$(".entryback").show();
 			$(".loading-curtain").fadeOut("fast");
 		});
 	}
@@ -220,10 +226,19 @@ var reporte = {
 	};
 
 	reporte.editLink = function () {
-
-		return  $(".useredit a").attr('href');
+		var linkedit = $(".useredit a").attr('href');
+		window.location.href = linkedit;
 	};
-
+	
+	reporte.deleteLead = function () {
+    	var borrar = "/servborrar.php?leadid=" + $.urlParam('leadid');
+    	var redireccionar = "/?page_id=94"; 
+	    if (confirm("Advertencia. ¿Esta usted seguro que desea borrar este registro? Esta acción borrará el registro y todos los formularios asociados. Una vez confirme el comando no podrá deshacer la acción y no podrá recuperar el registro o los formularios asociados al mismo.")){
+	    	$.post(borrar).done(function(){$(location).attr('href', redireccionar)})
+	    }
+	    return false;
+	}
+	
 	reporte.titleReplace = function () {
 		
 		var alumni = "Estudiante: "+ this.respondido(3) +" "+ (this.respondido(5)?this.respondido(5):"") ;
@@ -260,24 +275,38 @@ var reporte = {
 $(function () {
 	
 	//SERAiD
-	$(".gform_wrapper .readonly input").attr('readonly', 'readonly').css("background","#CCC"); 
-	$(".entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC");
+	$(".gform_wrapper .readonly input, .entry-details #input_1").attr('readonly', 'readonly').css("background","#CCC"); 
 	
 	//REPORTE Lead
 	if( $.urlParam('leadid') && $.urlParam('form') )  {
-		$(".loading-curtain").show();
-		$("#site-navigation, .entry-detail-view, #studentinstructions").hide(); //Hide Directory's table.		
+		$(".loading-curtain, .editLead, .deleteLead").show();
+		$("#site-navigation, .entry-detail-view, #studentinstructions, .entryback").hide(); //Hide Directory's table.		
 		reporte.init();	
 	}else{
-		$("#satensReport").hide();
+		$("#satensReport, .editLead, .deleteLead").hide();
 		$("#site-navigation").show();
 		$(".loading-curtain").hide();
+		$(".entryback").hide();
 	}
 	
 	//EDITAR Lead
 	if( $.urlParam('leadid') && $.urlParam('form') && $.urlParam('edit') )  {
-		$("#satensReport").hide();
 		
+		$("#satensReport, .editLead").hide();
+				
+		//Agregar class a Titulos
+		$(".detail_gsection_title:contains('Formulario')").each(function(i){
+			$(this).closest('tr').addClass("tabTituloForm").attr("id", "titulo"+i);
+		}); 
+		
+		//Agregar class a Contents
+		$(".tabTituloForm", "table.form-table").nextUntil(".tabTituloForm").addClass("contenidoForm");
+
+		//Bind click togle
+		$(".tabTituloForm", "table.form-table").click(function() {
+			$(this).toggleClass('editActive').nextUntil(".tabTituloForm").toggle();
+		});
+
 		//Agregar graficas de preguntas;
 		$(".detail_gsection_title:contains('Sección 1: Información de Oferta de Empleo')").closest('tr').after("<tr class='guideImg1'></tr>");
 		$(".guideImg1").html(" <img src= 'http://www.satenspr.com/wp-content/uploads/2013/05/anuncio.png' /> ");
@@ -291,26 +320,10 @@ $(function () {
 		$(".detail_gsection_title:contains('Sección 4: Estimado de Salario por Trabajo')").closest('tr').after("<tr class='guideImg4'></tr>");
 		$(".guideImg4").html(" <img src= 'http://www.satenspr.com/wp-content/uploads/2013/07/calendario.png' /> ")
 
-		//Agregar class a Titulos
-		$(".detail_gsection_title:contains('Formulario')").each(function(i, v){
-			var secFTitle = $(this).closest('tr')
-			secFTitle.addClass("tabTituloForm"+i);
-		}); 
-		
-		//Agregar class a Contents
-		$(".tabTituloForm", "table.form-table").nextUntil(".tabTituloForm").addClass("contenidoForm");
-
-		//Bind click togle
-		$(".tabTituloForm", "table.form-table").click(function() {
-			$(this).toggleClass('editActive');
-			$(this).nextUntil(".tabTituloForm").toggle();
-		});
-
-		
 		//Init toggles
 		$(window).load(function() {
 			$(".tabTituloForm", "table.form-table").nextUntil(".tabTituloForm").toggle();
-			//Int with open accordion
+			//Init with an open accordion
 			//$(".tabTituloForm:first", "table.form-table").addClass('editActive').nextUntil(".tabTituloForm").toggle();
 		})
 	}
