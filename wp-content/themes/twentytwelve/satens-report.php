@@ -6,11 +6,6 @@
         
         <div id="leadPic"></div>
         
-        <ul id="leadTools">
-            <li><a id="editLead" href="#">Editar</a></li>
-            <li><a id="deleteLead" href="#">Eliminar</a></li>
-		</ul>
-        
     </div>
 
     <div id="tabsInforme">

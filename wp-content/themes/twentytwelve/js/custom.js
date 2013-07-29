@@ -160,8 +160,9 @@ var reporte = {
 		//Avatar print
 		photoPrint(this.respondido(510));
 		//Attach LeadTools Links
-		$("#editLead").attr("href", reporte.editLink());
-		$("#deleteLead").on("click", function(){reporte.deleteLead()});
+		$(".printLead").on("click", function(){window.print()});
+		$(".editLead").on("click", function(){reporte.editLink()});
+		$(".deleteLead").on("click", function(){reporte.deleteLead()});
 		//Load Datatables
 		$.get('/wp-content/themes/twentytwelve/js/datatables.js').done(function(data){
 			reporte.dataTables();
@@ -225,17 +226,15 @@ var reporte = {
 	};
 
 	reporte.editLink = function () {
-
-		return  $(".useredit a").attr('href');
+		var linkedit = $(".useredit a").attr('href');
+		window.location.href = linkedit;
 	};
 	
 	reporte.deleteLead = function () {
-	    if (confirm("Eliminar Completamente Este Registro?")) {
-	    	var borrar = "/servborrar.php?leadid=" + $.urlParam('leadid');
-	    	var redireccionar = "/?page_id=94"; 
-	    	$.post(borrar).done(function(){
-				$(location).attr('href', redireccionar);
-	    	})
+    	var borrar = "/servborrar.php?leadid=" + $.urlParam('leadid');
+    	var redireccionar = "/?page_id=94"; 
+	    if (confirm("Advertencia. ¿Esta usted seguro que desea borrar este registro? Esta acción borrará el registro y todos los formularios asociados. Una vez confirme el comando no podrá deshacer la acción y no podrá recuperar el registro o los formularios asociados al mismo.")){
+	    	$.post(borrar).done(function(){$(location).attr('href', redireccionar)})
 	    }
 	    return false;
 	}
@@ -280,11 +279,11 @@ $(function () {
 	
 	//REPORTE Lead
 	if( $.urlParam('leadid') && $.urlParam('form') )  {
-		$(".loading-curtain").show();
+		$(".loading-curtain, .editLead, .deleteLead").show();
 		$("#site-navigation, .entry-detail-view, #studentinstructions, .entryback").hide(); //Hide Directory's table.		
 		reporte.init();	
 	}else{
-		$("#satensReport").hide();
+		$("#satensReport, .editLead, .deleteLead").hide();
 		$("#site-navigation").show();
 		$(".loading-curtain").hide();
 		$(".entryback").hide();
@@ -292,8 +291,9 @@ $(function () {
 	
 	//EDITAR Lead
 	if( $.urlParam('leadid') && $.urlParam('form') && $.urlParam('edit') )  {
-		$("#satensReport").hide();
 		
+		$("#satensReport, .editLead").hide();
+				
 		//Agregar class a Titulos
 		$(".detail_gsection_title:contains('Formulario')").each(function(i){
 			$(this).closest('tr').addClass("tabTituloForm").attr("id", "titulo"+i);
@@ -323,7 +323,7 @@ $(function () {
 		//Init toggles
 		$(window).load(function() {
 			$(".tabTituloForm", "table.form-table").nextUntil(".tabTituloForm").toggle();
-			//Int with open accordion
+			//Init with an open accordion
 			//$(".tabTituloForm:first", "table.form-table").addClass('editActive').nextUntil(".tabTituloForm").toggle();
 		})
 	}
