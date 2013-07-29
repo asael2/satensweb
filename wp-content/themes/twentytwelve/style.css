@@ -1849,7 +1849,7 @@ p.printParagraph {
 	text-align: center;
 	padding-top: 100px;
 	display: block;
-	top: -10px;
+	top: -20px;
 	font-size:1.6em;
 }
 
@@ -1888,7 +1888,7 @@ p.printParagraph {
 }
 
 #directory33 .inside{
-	width:82%;
+	/*width:82%;*/
 	
 }
 #directory33 input.button-primary{
@@ -1924,15 +1924,45 @@ table.form-table ul{
 .scrollup{
     width:40px;
     height:40px;
-    opacity:0.3;
+    opacity:0.2;
     position:fixed;
     bottom:65px;
     right:20px;
     display:none;
     text-indent:-9999px;
-    background: url('http://gazpo.com/downloads/tutorials/jquery/scrolltop/icon_top.png') no-repeat;
+    background: url('/wp-content/uploads/2013/07/icon_top.png') no-repeat;
 }
-
+#leadData span.value {
+	color: #80445F;
+}
+ul#leadTools {
+	text-align:right;
+}
+#leadTools li{
+	display:inline-block;
+	margin:0;
+	width:100px;
+}
+#leadTools a{
+	color: whiteSmoke;
+	text-decoration: none;
+	text-align: center;
+	width: 100%;
+	display: block;
+	text-indent:-10000px;
+}
+#leadTools a.printLead{
+	background:url(/wp-content/uploads/2013/07/imprimir.png) no-repeat;
+}
+#leadTools a.editLead{
+	background:url(/wp-content/uploads/2013/07/editar.png) no-repeat;
+}
+#leadTools a.deleteLead{
+	background:url(/wp-content/uploads/2013/07/borrar.png) no-repeat;
+}
+a.editLead, a.deleteLead{
+	display:none;
+}
 
 
 
