@@ -255,7 +255,7 @@ reporte.dataTables = function(){
 	//DATATABLE  
 	DS_70_75 = [
 		//Columnas
-		['Interes General y/o Actividad', 'Respuestas | S&iacute; = Azul No = Rojo'],
+		['Interes General y/o Actividad', 'Respuestas | Si = Azul No = Rojo'],
 		//Filas
 		['Sabe ir al correo, banco, hospital, entre otros',  		parseInt( this.respondido(70) ) ],
 		['Participa en organizaciones o actividades en la escuela', parseInt( this.respondido(71) ) ],
@@ -282,19 +282,19 @@ reporte.dataTables = function(){
 	//DATATABLE  
 	DS_79 = [
 		//Columnas
-		['Areas que identifica necesita mayor orientación al presente', 'Respuestas | S&iacute; = Azul No = Rojo'],
+		['Areas que identifica necesita mayor orientación al presente', 'Respuestas | Si = Azul No = Rojo'],
 		//Filas
-		['Información sobre carreras y áreas profesionales', 				(this.respondido(79) == 1)],
-		['Solicitudes de empleo',   										(this.respondido(79) == 1)],
-		['Redacción del resume o perfil profesional', 						(this.respondido(79) == 1)],
-		['Como conseguir un trabajo', 										(this.respondido(79) == 1)],
-		['Informacion para hacer una entrevista exitosa', 					(this.respondido(79) == 1)],
-		['Programas para adquirir experiencia de trabajo', 					(this.respondido(79) == 1)],
-		['Cómo llenar solicitudes para la universidad/otra institución', 	(this.respondido(79) == 1)],
-		['Orientación de otras universidades', 								(this.respondido(79) == 1)],
-		['Asistencia Económica', 											(this.respondido(79) == 1)],
-		['Rehabilitación Vocacional', 										(this.respondido(79) == 1)],
-		['Otras', 															(this.respondido(79) == 101)],
+		['Información sobre carreras y áreas profesionales', 				parseInt(this.respondido(79.1) )== 1],
+		['Solicitudes de empleo',   										parseInt(this.respondido(79.2) )== 1],
+		['Redacción del resume o perfil profesional', 						parseInt(this.respondido(79.3) )== 1],
+		['Como conseguir un trabajo', 										parseInt(this.respondido(79.4) )== 1],
+		['Informacion para hacer una entrevista exitosa', 					parseInt(this.respondido(79.5) )== 1],
+		['Programas para adquirir experiencia de trabajo', 					parseInt(this.respondido(79.6) )== 1],
+		['Cómo llenar solicitudes para la universidad/otra institución', 	parseInt(this.respondido(79.7) )== 1],
+		['Orientación de otras universidades', 								parseInt(this.respondido(79.8) )== 1],
+		['Asistencia Económica', 											parseInt(this.respondido(79.9) )== 1],
+		['Rehabilitación Vocacional', 										parseInt(this.respondido(79.10) ) == 1],
+		['Otras', 															parseInt(this.respondido(79.11) ) == 101],
 	]; 
 	
 	//COLUMNCHART
@@ -312,21 +312,21 @@ reporte.dataTables = function(){
 	//DATATABLE  
 	DS_83 = [
 		//Columnas
-		['Destrezas personales y ocupacionales que piensa necesita mejora', 'Respuestas | S&iacute; = Azul No = Rojo'],
+		['Destrezas personales y ocupacionales que piensa necesita mejora', 'Respuestas | Si = Azul No = Rojo'],
 		//Filas
-		['Mantener un calendario o agenda', 				parseInt( this.respondido(83) ) == 1],
-		['Trabajar independientemente', 					parseInt( this.respondido(83) ) == 1],
-		['Relacionarse con los demás', 						parseInt( this.respondido(83) ) == 1],
-		['Organizar las tareas a realizar',					parseInt( this.respondido(83) ) == 1],
-		['Compañerismo', 									parseInt( this.respondido(83) ) == 1],
-		['Buen manejo del tiempo con los estudios', 		parseInt( this.respondido(83) ) == 1],
-		['Realizar trabajo de forma ordenada y precisa', 	parseInt( this.respondido(83) ) == 1],
-		['Puntualidad', 									parseInt( this.respondido(83) ) == 1],
-		['Buena asistencia', 								parseInt( this.respondido(83) ) == 1],
-		['Seguir instrucciones', 							parseInt( this.respondido(83) ) == 1],
-		['Dar el máximo', 									parseInt( this.respondido(83) ) == 1],
-		['Terminar una tarea a tiempo', 					parseInt( this.respondido(83) ) == 1],
-		['Otras', 											parseInt( this.respondido(83) ) == 101],
+		['Mantener un calendario o agenda', 				 this.respondido(83.1)  == "1" ],
+		['Trabajar independientemente', 					 this.respondido(83.2)  == "1" ],
+		['Relacionarse con los demás', 						 this.respondido(83.3)  == "1" ],
+		['Organizar las tareas a realizar',					 this.respondido(83.4)  == "1" ],
+		['Compañerismo', 									 this.respondido(83.5)  == "1" ],
+		['Buen manejo del tiempo con los estudios', 		 this.respondido(83.6)  == "1" ],
+		['Realizar trabajo de forma ordenada y precisa', 	 this.respondido(83.7)  == "1" ],
+		['Puntualidad', 									 this.respondido(83.8)  == "1" ],
+		['Buena asistencia', 								 this.respondido(83.9)  == "1" ],
+		['Seguir instrucciones', 							 this.respondido(83.10) == "1" ],
+		['Dar el máximo', 									 this.respondido(83.11) == "1" ],
+		['Terminar una tarea a tiempo', 					 this.respondido(83.12) == "1" ],
+		['Otras', 											 this.respondido(83.13) =="101"],
 	]; 
 
 //FORMULARIO 4 >>>>>>>>>>>>>>>>>>>>>>>>>
@@ -585,7 +585,7 @@ reporte.dataTables = function(){
 		//DATATABLE2  
 		DS_191_219 = [
 			//Columnas
-			['Destrezas para la Vida (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
+			['Destrezas para la Vida (Se Evidencia)', 'Respuestas | Si = Azul No = Rojo'],
 			//Filas
 			['Obtener permiso/licencia para conducir',  			parseInt( this.respondido(191) ) ],
 			['Tomar clases para conducir', 							parseInt( this.respondido(192) ) ],
@@ -649,7 +649,7 @@ reporte.dataTables = function(){
 		//DATATABLE  
 		DS_230_237 = [
 			//Columnas
-			['Destrezas de Cocina (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
+			['Destrezas de Cocina (Se Evidencia)', 'Respuestas | Si = Azul No = Rojo'],
 			//Filas
 			['Operar enseres eléctricos',  											parseInt( this.respondido(230) ) ],
 			['Utilizar utensilios comunes de la cocina', 							parseInt( this.respondido(231) ) ],
@@ -691,7 +691,7 @@ reporte.dataTables = function(){
 		//DATATABLE  
 		DS_247_253 = [
 			//Columnas
-			['Destrezas de Lavandería (Laundry) Personal (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
+			['Destrezas de Lavandería (Laundry) Personal (Se Evidencia)', 'Respuestas | Si = Azul No = Rojo'],
 			//Filas
 			['Colocar ropa sucia en el canasto/ hamper',  					parseInt( this.respondido(247) ) ],
 			['Clasificar la ropa para lavarla', 							parseInt( this.respondido(248) ) ],
@@ -731,7 +731,7 @@ reporte.dataTables = function(){
 		//DATATABLE  
 		DS_261_265 = [
 			//Columnas
-			['Destrezas de Convivencia Familiar (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
+			['Destrezas de Convivencia Familiar (Se Evidencia)', 'Respuestas | Si = Azul No = Rojo'],
 			//Filas
 			['Leer el periódico y discutir las noticias con otros',  	parseInt( this.respondido(261) ) ],
 			['Ayudar a cuidar hermanos/familiares', 					parseInt( this.respondido(262) ) ],
@@ -769,7 +769,7 @@ reporte.dataTables = function(){
 		//DATATABLE  
 		DS_274_279 = [
 			//Columnas
-			['Destrezas de Limpieza en el Hogar (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
+			['Destrezas de Limpieza en el Hogar (Se Evidencia)', 'Respuestas | Si = Azul No = Rojo'],
 			//Filas
 			['Limpiar y recoger el cuarto',  								parseInt( this.respondido(274) ) ],
 			['Hacer la cama y cambiarla', 									parseInt( this.respondido(275) ) ],
@@ -806,7 +806,7 @@ reporte.dataTables = function(){
 		//DATATABLE  
 		DS_286_290 = [
 			//Columnas
-			['Destrezas de Jardineria/Áreas verdes (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
+			['Destrezas de Jardineria/Áreas verdes (Se Evidencia)', 'Respuestas | Si = Azul No = Rojo'],
 			//Filas
 			['Sembrar plantas',  									parseInt( this.respondido(286) ) ],
 			['Podar y mantener plantas', 							parseInt( this.respondido(287) ) ],
@@ -843,7 +843,7 @@ reporte.dataTables = function(){
 		//DATATABLE  
 		DS_299_304 = [
 			//Columnas
-			['Destrezas Personales (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
+			['Destrezas Personales (Se Evidencia)', 'Respuestas | Si = Azul No = Rojo'],
 			//Filas
 			['Usar teléfono/celular',  				parseInt( this.respondido(299) ) ],
 			['Poseer una llave de la casa', 		parseInt( this.respondido(300) ) ],
@@ -888,7 +888,7 @@ reporte.dataTables = function(){
 		//DATATABLE  
 		DS_319_331 = [
 			//Columnas
-			['Destrezas de Salud (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
+			['Destrezas de Salud (Se Evidencia)', 'Respuestas | Si = Azul No = Rojo'],
 			//Filas
 			['Comprender los cuidados médicos sencillos',  													parseInt( this.respondido(319) ) ],
 			['Estar consciente de su informacion sobre su expediente médico y la informacion de pruebas', 	parseInt( this.respondido(320) ) ],
@@ -937,7 +937,7 @@ reporte.dataTables = function(){
 		//DATATABLE  
 		DS_344_353 = [
 			//Columnas
-			['Destrezas de Comunidad (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
+			['Destrezas de Comunidad (Se Evidencia)', 'Respuestas | Si = Azul No = Rojo'],
 			//Filas
 			['Transportarse alrededor del pueblo',  										parseInt( this.respondido(344) ) ],
 			['Conocer el sistema de transportación pública', 								parseInt( this.respondido(345) ) ],
@@ -985,7 +985,7 @@ reporte.dataTables = function(){
 		//DATATABLE  
 		DS_367_377 = [
 			//Columnas
-			['Destrezas de Tiempo Libre (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
+			['Destrezas de Tiempo Libre (Se Evidencia)', 'Respuestas | Si = Azul No = Rojo'],
 			//Filas
 			['Ayudar a planificar una fiesta',  							parseInt( this.respondido(367) ) ],
 			['Invitar familiares/amigos al hogar', 							parseInt( this.respondido(368) ) ],
@@ -1028,7 +1028,7 @@ reporte.dataTables = function(){
 		//DATATABLE  
 		DS_385_389 = [
 			//Columnas
-			['Destrezas para Buscar Opciones de Planes Ocupacionales Futuros (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
+			['Destrezas para Buscar Opciones de Planes Ocupacionales Futuros (Se Evidencia)', 'Respuestas | Si = Azul No = Rojo'],
 			//Fila
 			['Reunirse con el Consejero Escolar, Consejero en Rehabilitación Vocacional, otro.',  	parseInt( this.respondido(385) ) ],
 			['Considerar y auscultar opciones de programas de estudios', 							parseInt( this.respondido(386) ) ],
@@ -1068,7 +1068,7 @@ reporte.dataTables = function(){
 		//DATATABLE  
 		DS_400_407 = [
 			//Columnas
-			['Destrezas de Conocer y Ver Opciones de Vivienda (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
+			['Destrezas de Conocer y Ver Opciones de Vivienda (Se Evidencia)', 'Respuestas | Si = Azul No = Rojo'],
 			//Filas
 			['Estar consciente de las leyes de vivienda para personas con impedimentos',	parseInt( this.respondido(400) ) ],
 			['Explorar complejos de vivienda asistida u hogares', 							parseInt( this.respondido(401) ) ],
@@ -1322,7 +1322,7 @@ reporte.dataTables = function(){
 	//DATATABLE  
 	DS_458_466 = [
 		//Columnas
-		['Áreas Académicas que el/la estudiante indica que posee | (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
+		['Áreas Académicas que el/la estudiante indica que posee | (Se Evidencia)', 'Respuestas | Si = Azul No = Rojo'],
 		//Filas
 		['Soy bueno/a en matemáticas',				parseInt( this.respondido(458) )],
 		['Soy bueno/a en inglés',					parseInt( this.respondido(459) )],
@@ -1354,7 +1354,7 @@ reporte.dataTables = function(){
 	//DATATABLE  
 	DS_471_479 = [
 		//Columnas
-		['Capacidades Físicas que el/la Estudiante Indica Posee | (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
+		['Capacidades Físicas que el/la Estudiante Indica Posee | (Se Evidencia)', 'Respuestas | Si = Azul No = Rojo'],
 		//Filas
 		['Puedo levantar objetos pesados',		parseInt( this.respondido(471) ) ],
 		['Puedo levantar objetos livianos',		parseInt( this.respondido(472) ) ],
@@ -1386,7 +1386,7 @@ reporte.dataTables = function(){
 	//DATATABLE  
 	DS_484_497 = [
 		//Columnas
-		['Capacidades Mentales que el/la Estudiante Indica Posee | (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
+		['Capacidades Mentales que el/la Estudiante Indica Posee | (Se Evidencia)', 'Respuestas | Si = Azul No = Rojo'],
 		//Filas
 		['Me acuerdo bien de las cosaspoesías, chistes, información, etc.',					parseInt( this.respondido(484) )],
 		['Puedo escribir cuentos, historias, ensayos',										parseInt( this.respondido(486) )],
@@ -1419,7 +1419,7 @@ reporte.dataTables = function(){
 	//DATATABLE  
 	DS_502_523 = [
 		//Columnas
-		['Talentos Especiales que el/la Estudiante Indica Posee | (Se Evidencia)', 'Respuestas | S&iacute; = Azul No = Rojo'],
+		['Talentos Especiales que el/la Estudiante Indica Posee | (Se Evidencia)', 'Respuestas | Si = Azul No = Rojo'],
 		//Filas
 		['Trabajo bien con las manos',					parseInt( this.respondido(502) )],
 		['Arreglo y monto cosas',						parseInt( this.respondido(503) )],
@@ -1442,15 +1442,15 @@ reporte.dataTables = function(){
 	
 	siNoColumnChart(DS_22,	"DS_22", ".form1", "Recibe servicios en la escuela por algunas dificultades académicas, problemas de salud o impedimento");	
 	laDataTable(DS_23,		"DS_23", ".form1");
-	velocimetros(DS_24_26,	"DS_24_26", ".form1");
 	laDataTable(DS2_24_26,	"DS2_24_26", ".form1");
+	velocimetros(DS_24_26,	"DS_24_26", ".form1");
 	laDataTable(DS_27,		"DS_27", ".form1");
 
 	formBreak(".form1", "Intereses y Actividades Generales");
 
-	siNoColumnChart(DS_29,	"DS_29", ".form1", "Diversión en Tiempo Libre");
-	siNoColumnChart(DS_30,	"DS_30", ".form1", "Tareas y Responsabilidades en el Hogar");
-	siNoColumnChart(DS_31,	"DS_31", ".form1", "Aspiración a una Carrera en el Futuro");
+	siNoColumnChart(DS_29,	"DS_29", ".form1", "Participa en Diversión en Tiempo Libre");
+	siNoColumnChart(DS_30,	"DS_30", ".form1", "Realiza Tareas y Responsabilidades en el Hogar");
+	siNoColumnChart(DS_31,	"DS_31", ".form1", "Indica que Aspira a una Carrera en el Futuro");
 
 	formBreak(".form1", "Intereses y Metas de Estudios Generales");
 
@@ -1474,7 +1474,7 @@ reporte.dataTables = function(){
 //F3
 	formBreak(".form3", "Trabajo en la Escuela al Presente y Planes Futuros");
 	
-	siNoColumnChart(DS_64,	"DS_64", ".form3", "Conoce si su hijo/a tiene alguna experiencia de trabajo (part time)");
+	siNoColumnChart(DS_64,	"DS_64", ".form3", "Una vez completada la educación superior, tiene planes de trabajar o seguir estudiando");
 	siNoColumnChart(DS_65, 	"DS_65", ".form3", "Al presente necesita ayuda para hacer sus tareas en las clases");
 	laDataTable(DS_67, 		"DS_67", ".form3");
 	siNoColumnChart(DS_68,  "DS_68", ".form3", "Busca ayuda cuando tiene dificultades en las clases");
@@ -1488,8 +1488,8 @@ reporte.dataTables = function(){
 	
 	laDataTable(DS_77,		"DS_77", ".form3");
 	laDataTable(DS_79,		"DS_79", ".form3");
-	siNoColumnChart(DS_81,	"DS_81", ".form3");
-	siNoColumnChart(DS_82,	"DS_82", ".form3");
+	siNoColumnChart(DS_81,	"DS_81", ".form3", "¿Has trabajado alguna vez en un 'part-time' donde te hayan pagado o de voluntario, ayudando, etc?");
+	siNoColumnChart(DS_82,	"DS_82", ".form3", "¿Piensas que necesitas mejorar en tus destrezas personales para mejorar en la escuela y prepararte mejor para los estudios o el trabajo que interesas en el futuro?");
 	laDataTable(DS_83,		"DS_83", ".form3");
 
 //F4
@@ -1536,7 +1536,6 @@ reporte.dataTables = function(){
 
 	formBreak(".form7", "Destrezas del Diario Vivir Identificadas");
 	laDataTable(DS_153, "DS_153", ".form7");
-
 
 //F8
 	formBreak(".form8", "Destrezas para la Vida");
